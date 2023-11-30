@@ -1,0 +1,5 @@
+.idea/
+resources/
+build/
+cmake-build-debug/
+cmake-build-debug-coverage/
