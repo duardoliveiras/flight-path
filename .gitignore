@@ -3,3 +3,9 @@ resources/
 build/
 cmake-build-debug/
 cmake-build-debug-coverage/
+
+#source
+CMakeCache.txt
+cmake_install.cmake
+CMakeFiles/
+AEDP2
