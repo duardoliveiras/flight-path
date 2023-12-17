@@ -71,3 +71,5 @@ Exemplo:
 * [✖] O programa tem apenas funções relativamente eficientes (Evitando lentidão durante a execução)?
 
 * [✖] O programa foi documentado utilizando o `Doxygen` e apresenta a complexidade das principais funções?
+
+* [✖] O programa faz uso de algoritmos aprendidos em sala? (DFS, BFS, Connected Component, Articulation Points)?
