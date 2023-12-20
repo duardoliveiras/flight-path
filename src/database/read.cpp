@@ -1,5 +1,5 @@
 #include "read.h"
-#include "Airport.h"
+#include "../classes/Airport.h"
 #include <filesystem>
 
 Graph<Airport> createGraph()

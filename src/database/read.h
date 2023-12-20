@@ -6,8 +6,8 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
-#include "Graph.h"
-#include "Airport.h"
+#include "../classes/Graph.h"
+#include "../classes/Airport.h"
 
 Graph<Airport> createGraph();
 

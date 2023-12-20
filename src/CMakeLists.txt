@@ -5,14 +5,16 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_executable(a
         main.cpp
-        City.cpp
-        City.h
-        Airline.cpp
-        Airline.h
-        Airport.cpp
-        Airport.h
+        classes/City.cpp
+        classes/City.h
+        classes/Airline.cpp
+        classes/Airline.h
+        classes/Airport.cpp
+        classes/Airport.h
         Menu.cpp
         Menu.h
-        Graph.h
-        read.h
-        read.cpp)
+        classes/Graph.h
+        database/read.h
+        database/read.cpp
+        database/dbairport.h
+        database/dbairport.cpp)

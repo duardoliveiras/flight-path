@@ -1,8 +1,8 @@
 #ifndef MENU_H
 #define MENU_H
 
-#include "Airport.h"
-#include "read.h"
+#include "classes/Airport.h"
+#include "database/read.h"
 
 void Menu();
 void quantity();
