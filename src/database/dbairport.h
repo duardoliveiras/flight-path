@@ -8,5 +8,6 @@
 int quantityAirports(Graph<Airport> airports);
 int quantityFlights(Graph<Airport> airports);
 std::pair<int, int> quantityFlights(Graph<Airport> airports, std::string code);
+int quantityFlightsCity(Graph<Airport> airports, std::string city);
 
 #endif // DBAIRPORT_H

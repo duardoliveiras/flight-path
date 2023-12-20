@@ -31,3 +31,17 @@ std::pair<int, int> quantityFlights(Graph<Airport> airports, std::string code)
     }
     return std::pair<int, int>(count, airlines.size());
 }
+
+int quantityFlightsCity(Graph<Airport> airports, std::string city)
+{
+
+    int count = 0;
+    for (auto v : airports.getVertexSet())
+    {
+        if (v->getInfo().getCity() == city)
+        {
+            count += v->getAdj().size();
+        }
+    }
+    return count;
+}
