@@ -10,6 +10,11 @@ Airport::Airport(std::string code, std::string name, std::string country, std::s
     this->longitude = longitude;
 }
 
+bool Airport::operator==(const Airport &other) const
+{
+    return this->code == other.code;
+}
+
 void Airport::display()
 {
     std::cout << "Code: " << this->code << " / ";

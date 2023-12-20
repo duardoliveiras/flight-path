@@ -5,7 +5,7 @@
 Graph<Airport> createGraph()
 {
     Graph<Airport> airports = Graph<Airport>();
-    std::cout << "Diretório Atual: " << std::filesystem::current_path() << std::endl;
+    // std::cout << "PWD " << std::filesystem::current_path() << std::endl;
     std::ifstream file("../dataset/airports.csv", ios::in);
 
     if (!file.is_open())
@@ -31,8 +31,8 @@ Graph<Airport> createGraph()
         iss >> longitude;
 
         Airport airport(code, name, country, city, latitude, longitude);
-        airport.display();
-        //  airports.addVertex(airport);
+        // airport.display();
+        airports.addVertex(airport);
     }
 
     return airports;

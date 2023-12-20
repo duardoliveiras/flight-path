@@ -20,6 +20,7 @@ public:
     void setLatitude(double latitude);
     void setLongitude(double longitude);
     void display();
+    bool operator==(const Airport &other) const;
 
 private:
     std::string code;
