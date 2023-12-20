@@ -20,7 +20,7 @@ Pronto - [✔]
 
 - [✔] Número de vôos por cidade e por companhias aéreas.
 
-- [✖] Número de diferentes países para onde um aeroporto/cidade voa.
+- [✔] Número de diferentes países para onde um aeroporto/cidade voa.
 
 - [✖] Número de destinos (aeroportos, cidades ou paises) a partir de um determinado aeroporto (com número máximo de paradas).
 
