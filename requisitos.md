@@ -6,11 +6,11 @@ Pronto - [✔]
 
 ##### Básico
 
-- [✖] Ler dados dos CSV para estruturas do tipos grafos.
+- [✔] Ler dados dos CSV para estruturas do tipos grafos.
 
 - [✔] Obrigatório utilizar a classe de `Graph` utilizada em aulas.
 
-- [✖] Interface em linha de comando amigável.
+- [✔] Interface em linha de comando amigável.
 
 ##### Cálculos e listagem de conexões:
 
@@ -18,7 +18,7 @@ Pronto - [✔]
 
 - [✔] Quantidade de vôos saíndo de um aeroporto e quantas companhias aéreas diferentes.
 
-- [✖] Número de vôos por cidade e por companhias aéreas.
+- [✔] Número de vôos por cidade e por companhias aéreas.
 
 - [✖] Número de diferentes países para onde um aeroporto/cidade voa.
 

@@ -45,3 +45,21 @@ int quantityFlightsCity(Graph<Airport> airports, std::string city)
     }
     return count;
 }
+
+int quantityFlightsAirline(Graph<Airport> airports, std::string airline)
+{
+    int count = 0;
+
+    for (auto v : airports.getVertexSet())
+    {
+        for (auto e : v->getAdj())
+        {
+            if (e.getRoute() == airline)
+            {
+                count++;
+            }
+        }
+    }
+
+    return count;
+}

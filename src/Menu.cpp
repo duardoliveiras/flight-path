@@ -68,8 +68,7 @@ void quantity()
 void menuFlights()
 {
     int flag;
-    std::string code;
-    std::string city;
+    std::string arg;
 
     std::cout << "Number of flights:" << std::endl;
     std::cout << "-------------------------------" << std::endl;
@@ -94,12 +93,12 @@ void menuFlights()
         break;
     case 2:
         std::cout << "Type Airport code: " << std::endl;
-        std::cin >> code;
+        std::cin >> arg;
 
         system("clear");
 
-        std::cout << "Flights by Airport: " << quantityFlights(airports, code).first << std::endl;
-        std::cout << "Airlines : " << quantityFlights(airports, code).second << std::endl;
+        std::cout << "Flights by Airport: " << quantityFlights(airports, arg).first << std::endl;
+        std::cout << "Airlines : " << quantityFlights(airports, arg).second << std::endl;
         std::cout << "-------------------------------" << std::endl;
         std::cout << "Press any key to continue..." << std::endl;
         std::cin.ignore();
@@ -108,10 +107,22 @@ void menuFlights()
         break;
     case 3:
         std::cout << "Type the name of city: " << std::endl;
-        std::cin >> city;
+        std::cin >> arg;
 
         system("clear");
-        std::cout << "Flights by City: " << quantityFlightsCity(airports, city) << std::endl;
+        std::cout << "Flights by City: " << quantityFlightsCity(airports, arg) << std::endl;
+        std::cout << "-------------------------------" << std::endl;
+        std::cout << "Press any key to continue..." << std::endl;
+        std::cin.ignore();
+        std::cin.get();
+        quantity();
+        break;
+    case 4:
+        std::cout << "Type the code of Airline: " << std::endl;
+        std::cin >> arg;
+
+        system("clear");
+        std::cout << "Flights by Airline: " << quantityFlightsAirline(airports, arg) << std::endl;
         std::cout << "-------------------------------" << std::endl;
         std::cout << "Press any key to continue..." << std::endl;
         std::cin.ignore();
