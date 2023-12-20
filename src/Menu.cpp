@@ -1,6 +1,8 @@
 #include "Menu.h"
 #include <iostream>
 
+Graph<Airport> airports = readAirports();
+
 void Menu()
 {
     int flag;
@@ -45,7 +47,13 @@ void quantity()
     switch (flag)
     {
     case 1:
-        std::cout << "Quantity of airports" << std::endl;
+        system("clear");
+        std::cout << "Quantity of airports: " << quantityAirports(airports) << std::endl;
+        std::cout << "-------------------------------" << std::endl;
+        std::cout << "Press any key to continue..." << std::endl;
+        std::cin.ignore();
+        std::cin.get();
+        quantity();
         break;
     case 2:
         std::cout << "Quantity of routes" << std::endl;

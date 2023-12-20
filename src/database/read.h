@@ -9,6 +9,6 @@
 #include "../classes/Graph.h"
 #include "../classes/Airport.h"
 
-Graph<Airport> createGraph();
+Graph<Airport> readAirports();
 
 #endif // READ_H

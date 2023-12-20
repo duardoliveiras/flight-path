@@ -2,7 +2,7 @@
 #include "../classes/Airport.h"
 #include <filesystem>
 
-Graph<Airport> createGraph()
+Graph<Airport> readAirports()
 {
     Graph<Airport> airports = Graph<Airport>();
     // std::cout << "PWD " << std::filesystem::current_path() << std::endl;
