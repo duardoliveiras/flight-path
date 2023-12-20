@@ -16,7 +16,7 @@ Pronto - [✔]
 
 - [✔] Quantidade global de aeroportos e vôos disponíveis.
 
-- [✖] Quantidade de vôos saíndo de um aeroporto e quantas companhias aéreas diferentes.
+- [✔] Quantidade de vôos saíndo de um aeroporto e quantas companhias aéreas diferentes.
 
 - [✖] Número de vôos por cidade e por companhias aéreas.
 

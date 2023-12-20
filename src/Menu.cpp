@@ -90,8 +90,11 @@ void menuFlights()
         std::cout << "Type Airport code: " << std::endl;
         std::string code;
         std::cin >> code;
+
         system("clear");
-        std::cout << "Flights by Airport" << std::endl;
+        std::pair<int, int> flights = quantityFlights(airports, code);
+        std::cout << "Flights by Airport: " << flights.first << std::endl;
+        std::cout << "Airlines : " << flights.second << std::endl;
         std::cout << "-------------------------------" << std::endl;
         std::cout << "Press any key to continue..." << std::endl;
         std::cin.ignore();

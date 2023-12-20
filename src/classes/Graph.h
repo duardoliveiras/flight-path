@@ -74,6 +74,7 @@ public:
     Vertex<T> *getDest() const;
     void setDest(Vertex<T> *dest);
     double getWeight() const;
+    std::string getRoute() const;
     void setWeight(double weight);
     friend class Graph<T>;
     friend class Vertex<T>;
@@ -165,6 +166,12 @@ template <class T>
 double Edge<T>::getWeight() const
 {
     return weight;
+}
+
+template <class T>
+std::string Edge<T>::getRoute() const
+{
+    return route;
 }
 
 template <class T>
