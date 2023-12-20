@@ -1,16 +1,20 @@
 cmake_minimum_required(VERSION 3.22)
 project(AEDP2)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 20)
 
-add_executable(AEDP2
+add_executable(a
         main.cpp
-        City.cpp
-        City.h
-        Airline.cpp
-        Airline.h
-        Airport.cpp
-        Airport.h
+        classes/City.cpp
+        classes/City.h
+        classes/Airline.cpp
+        classes/Airline.h
+        classes/Airport.cpp
+        classes/Airport.h
         Menu.cpp
         Menu.h
-        Graph.h)
+        classes/Graph.h
+        database/read.h
+        database/read.cpp
+        database/dbairport.h
+        database/dbairport.cpp)

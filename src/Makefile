@@ -117,96 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named AEDP2
+# Target rules for targets named a
 
 # Build rule for target.
-AEDP2: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 AEDP2
-.PHONY : AEDP2
+a : cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 a
+.PHONY : a
 
 # fast build rule for target.
-AEDP2/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AEDP2.dir/build.make CMakeFiles/AEDP2.dir/build
-.PHONY : AEDP2/fast
-
-Airline.o: Airline.cpp.o
-.PHONY : Airline.o
-
-# target to build an object file
-Airline.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AEDP2.dir/build.make CMakeFiles/AEDP2.dir/Airline.cpp.o
-.PHONY : Airline.cpp.o
-
-Airline.i: Airline.cpp.i
-.PHONY : Airline.i
-
-# target to preprocess a source file
-Airline.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AEDP2.dir/build.make CMakeFiles/AEDP2.dir/Airline.cpp.i
-.PHONY : Airline.cpp.i
-
-Airline.s: Airline.cpp.s
-.PHONY : Airline.s
-
-# target to generate assembly for a file
-Airline.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AEDP2.dir/build.make CMakeFiles/AEDP2.dir/Airline.cpp.s
-.PHONY : Airline.cpp.s
-
-Airport.o: Airport.cpp.o
-.PHONY : Airport.o
-
-# target to build an object file
-Airport.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AEDP2.dir/build.make CMakeFiles/AEDP2.dir/Airport.cpp.o
-.PHONY : Airport.cpp.o
-
-Airport.i: Airport.cpp.i
-.PHONY : Airport.i
-
-# target to preprocess a source file
-Airport.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AEDP2.dir/build.make CMakeFiles/AEDP2.dir/Airport.cpp.i
-.PHONY : Airport.cpp.i
-
-Airport.s: Airport.cpp.s
-.PHONY : Airport.s
-
-# target to generate assembly for a file
-Airport.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AEDP2.dir/build.make CMakeFiles/AEDP2.dir/Airport.cpp.s
-.PHONY : Airport.cpp.s
-
-City.o: City.cpp.o
-.PHONY : City.o
-
-# target to build an object file
-City.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AEDP2.dir/build.make CMakeFiles/AEDP2.dir/City.cpp.o
-.PHONY : City.cpp.o
-
-City.i: City.cpp.i
-.PHONY : City.i
-
-# target to preprocess a source file
-City.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AEDP2.dir/build.make CMakeFiles/AEDP2.dir/City.cpp.i
-.PHONY : City.cpp.i
-
-City.s: City.cpp.s
-.PHONY : City.s
-
-# target to generate assembly for a file
-City.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AEDP2.dir/build.make CMakeFiles/AEDP2.dir/City.cpp.s
-.PHONY : City.cpp.s
+a/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/a.dir/build.make CMakeFiles/a.dir/build
+.PHONY : a/fast
 
 Menu.o: Menu.cpp.o
 .PHONY : Menu.o
 
 # target to build an object file
 Menu.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AEDP2.dir/build.make CMakeFiles/AEDP2.dir/Menu.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/a.dir/build.make CMakeFiles/a.dir/Menu.cpp.o
 .PHONY : Menu.cpp.o
 
 Menu.i: Menu.cpp.i
@@ -214,7 +142,7 @@ Menu.i: Menu.cpp.i
 
 # target to preprocess a source file
 Menu.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AEDP2.dir/build.make CMakeFiles/AEDP2.dir/Menu.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/a.dir/build.make CMakeFiles/a.dir/Menu.cpp.i
 .PHONY : Menu.cpp.i
 
 Menu.s: Menu.cpp.s
@@ -222,15 +150,135 @@ Menu.s: Menu.cpp.s
 
 # target to generate assembly for a file
 Menu.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AEDP2.dir/build.make CMakeFiles/AEDP2.dir/Menu.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/a.dir/build.make CMakeFiles/a.dir/Menu.cpp.s
 .PHONY : Menu.cpp.s
+
+classes/Airline.o: classes/Airline.cpp.o
+.PHONY : classes/Airline.o
+
+# target to build an object file
+classes/Airline.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/a.dir/build.make CMakeFiles/a.dir/classes/Airline.cpp.o
+.PHONY : classes/Airline.cpp.o
+
+classes/Airline.i: classes/Airline.cpp.i
+.PHONY : classes/Airline.i
+
+# target to preprocess a source file
+classes/Airline.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/a.dir/build.make CMakeFiles/a.dir/classes/Airline.cpp.i
+.PHONY : classes/Airline.cpp.i
+
+classes/Airline.s: classes/Airline.cpp.s
+.PHONY : classes/Airline.s
+
+# target to generate assembly for a file
+classes/Airline.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/a.dir/build.make CMakeFiles/a.dir/classes/Airline.cpp.s
+.PHONY : classes/Airline.cpp.s
+
+classes/Airport.o: classes/Airport.cpp.o
+.PHONY : classes/Airport.o
+
+# target to build an object file
+classes/Airport.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/a.dir/build.make CMakeFiles/a.dir/classes/Airport.cpp.o
+.PHONY : classes/Airport.cpp.o
+
+classes/Airport.i: classes/Airport.cpp.i
+.PHONY : classes/Airport.i
+
+# target to preprocess a source file
+classes/Airport.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/a.dir/build.make CMakeFiles/a.dir/classes/Airport.cpp.i
+.PHONY : classes/Airport.cpp.i
+
+classes/Airport.s: classes/Airport.cpp.s
+.PHONY : classes/Airport.s
+
+# target to generate assembly for a file
+classes/Airport.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/a.dir/build.make CMakeFiles/a.dir/classes/Airport.cpp.s
+.PHONY : classes/Airport.cpp.s
+
+classes/City.o: classes/City.cpp.o
+.PHONY : classes/City.o
+
+# target to build an object file
+classes/City.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/a.dir/build.make CMakeFiles/a.dir/classes/City.cpp.o
+.PHONY : classes/City.cpp.o
+
+classes/City.i: classes/City.cpp.i
+.PHONY : classes/City.i
+
+# target to preprocess a source file
+classes/City.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/a.dir/build.make CMakeFiles/a.dir/classes/City.cpp.i
+.PHONY : classes/City.cpp.i
+
+classes/City.s: classes/City.cpp.s
+.PHONY : classes/City.s
+
+# target to generate assembly for a file
+classes/City.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/a.dir/build.make CMakeFiles/a.dir/classes/City.cpp.s
+.PHONY : classes/City.cpp.s
+
+database/dbairport.o: database/dbairport.cpp.o
+.PHONY : database/dbairport.o
+
+# target to build an object file
+database/dbairport.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/a.dir/build.make CMakeFiles/a.dir/database/dbairport.cpp.o
+.PHONY : database/dbairport.cpp.o
+
+database/dbairport.i: database/dbairport.cpp.i
+.PHONY : database/dbairport.i
+
+# target to preprocess a source file
+database/dbairport.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/a.dir/build.make CMakeFiles/a.dir/database/dbairport.cpp.i
+.PHONY : database/dbairport.cpp.i
+
+database/dbairport.s: database/dbairport.cpp.s
+.PHONY : database/dbairport.s
+
+# target to generate assembly for a file
+database/dbairport.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/a.dir/build.make CMakeFiles/a.dir/database/dbairport.cpp.s
+.PHONY : database/dbairport.cpp.s
+
+database/read.o: database/read.cpp.o
+.PHONY : database/read.o
+
+# target to build an object file
+database/read.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/a.dir/build.make CMakeFiles/a.dir/database/read.cpp.o
+.PHONY : database/read.cpp.o
+
+database/read.i: database/read.cpp.i
+.PHONY : database/read.i
+
+# target to preprocess a source file
+database/read.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/a.dir/build.make CMakeFiles/a.dir/database/read.cpp.i
+.PHONY : database/read.cpp.i
+
+database/read.s: database/read.cpp.s
+.PHONY : database/read.s
+
+# target to generate assembly for a file
+database/read.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/a.dir/build.make CMakeFiles/a.dir/database/read.cpp.s
+.PHONY : database/read.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AEDP2.dir/build.make CMakeFiles/AEDP2.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/a.dir/build.make CMakeFiles/a.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -238,7 +286,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AEDP2.dir/build.make CMakeFiles/AEDP2.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/a.dir/build.make CMakeFiles/a.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -246,7 +294,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AEDP2.dir/build.make CMakeFiles/AEDP2.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/a.dir/build.make CMakeFiles/a.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -257,19 +305,25 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... AEDP2"
-	@echo "... Airline.o"
-	@echo "... Airline.i"
-	@echo "... Airline.s"
-	@echo "... Airport.o"
-	@echo "... Airport.i"
-	@echo "... Airport.s"
-	@echo "... City.o"
-	@echo "... City.i"
-	@echo "... City.s"
+	@echo "... a"
 	@echo "... Menu.o"
 	@echo "... Menu.i"
 	@echo "... Menu.s"
+	@echo "... classes/Airline.o"
+	@echo "... classes/Airline.i"
+	@echo "... classes/Airline.s"
+	@echo "... classes/Airport.o"
+	@echo "... classes/Airport.i"
+	@echo "... classes/Airport.s"
+	@echo "... classes/City.o"
+	@echo "... classes/City.i"
+	@echo "... classes/City.s"
+	@echo "... database/dbairport.o"
+	@echo "... database/dbairport.i"
+	@echo "... database/dbairport.s"
+	@echo "... database/read.o"
+	@echo "... database/read.i"
+	@echo "... database/read.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
