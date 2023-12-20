@@ -64,7 +64,7 @@ Graph<Airport> readFlights()
         Airport src = Airport(source);
         Airport tgt = Airport(target);
 
-        airports.addEdge(src, tgt, 0);
+        airports.addEdge(src, tgt, 0, airline);
     }
 
     return airports;

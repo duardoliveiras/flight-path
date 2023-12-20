@@ -7,5 +7,6 @@
 
 void Menu();
 void quantity();
+void menuFlights();
 
 #endif

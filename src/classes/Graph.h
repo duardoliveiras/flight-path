@@ -9,6 +9,7 @@
 #include <queue>
 #include <stack>
 #include <list>
+#include <string>
 
 using namespace std;
 
@@ -32,7 +33,7 @@ class Vertex
     int num;             // auxiliary field
     int low;             // auxiliary field
 
-    void addEdge(Vertex<T> *dest, double w);
+    void addEdge(Vertex<T> *dest, double w, std::string route);
     bool removeEdgeTo(Vertex<T> *d);
 
 public:
@@ -66,8 +67,10 @@ class Edge
 {
     Vertex<T> *dest; // destination vertex
     double weight;   // edge weight
+    std::string route;
+
 public:
-    Edge(Vertex<T> *d, double w);
+    Edge(Vertex<T> *d, double w, std::string route);
     Vertex<T> *getDest() const;
     void setDest(Vertex<T> *dest);
     double getWeight() const;
@@ -92,7 +95,7 @@ public:
     int getNumVertex() const;
     bool addVertex(const T &in);
     bool removeVertex(const T &in);
-    bool addEdge(const T &sourc, const T &dest, double w);
+    bool addEdge(const T &sourc, const T &dest, double w, std::string route);
     bool removeEdge(const T &sourc, const T &dest);
     vector<Vertex<T> *> getVertexSet() const;
     vector<T> dfs() const;
@@ -108,7 +111,7 @@ template <class T>
 Vertex<T>::Vertex(T in) : info(in) {}
 
 template <class T>
-Edge<T>::Edge(Vertex<T> *d, double w) : dest(d), weight(w) {}
+Edge<T>::Edge(Vertex<T> *d, double w, std::string r) : dest(d), weight(w), route(r) {}
 
 template <class T>
 int Graph<T>::getNumVertex() const
@@ -261,13 +264,13 @@ bool Graph<T>::addVertex(const T &in)
  * Returns true if successful, and false if the source or destination vertex does not exist.
  */
 template <class T>
-bool Graph<T>::addEdge(const T &sourc, const T &dest, double w)
+bool Graph<T>::addEdge(const T &sourc, const T &dest, double w, std::string route)
 {
     auto v1 = findVertex(sourc);
     auto v2 = findVertex(dest);
     if (v1 == NULL || v2 == NULL)
         return false;
-    v1->addEdge(v2, w);
+    v1->addEdge(v2, w, route);
     return true;
 }
 
@@ -276,9 +279,9 @@ bool Graph<T>::addEdge(const T &sourc, const T &dest, double w)
  * with a given destination vertex (d) and edge weight (w).
  */
 template <class T>
-void Vertex<T>::addEdge(Vertex<T> *d, double w)
+void Vertex<T>::addEdge(Vertex<T> *d, double w, std::string route)
 {
-    adj.push_back(Edge<T>(d, w));
+    adj.push_back(Edge<T>(d, w, route));
 }
 
 /*
