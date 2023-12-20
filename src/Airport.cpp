@@ -10,6 +10,16 @@ Airport::Airport(std::string code, std::string name, std::string country, std::s
     this->longitude = longitude;
 }
 
+void Airport::display()
+{
+    std::cout << "Code: " << this->code << " / ";
+    std::cout << "Name: " << this->name << " / ";
+    std::cout << "Country: " << this->country << " / ";
+    std::cout << "City: " << this->city << " / ";
+    std::cout << "Latitude: " << this->latitude << " / ";
+    std::cout << "Longitude: " << this->longitude << std::endl;
+}
+
 void Airport::setCode(std::string code)
 {
     this->code = code;

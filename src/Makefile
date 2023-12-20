@@ -249,6 +249,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/AEDP2.dir/build.make CMakeFiles/AEDP2.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+read.o: read.cpp.o
+.PHONY : read.o
+
+# target to build an object file
+read.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AEDP2.dir/build.make CMakeFiles/AEDP2.dir/read.cpp.o
+.PHONY : read.cpp.o
+
+read.i: read.cpp.i
+.PHONY : read.i
+
+# target to preprocess a source file
+read.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AEDP2.dir/build.make CMakeFiles/AEDP2.dir/read.cpp.i
+.PHONY : read.cpp.i
+
+read.s: read.cpp.s
+.PHONY : read.s
+
+# target to generate assembly for a file
+read.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AEDP2.dir/build.make CMakeFiles/AEDP2.dir/read.cpp.s
+.PHONY : read.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -273,6 +297,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... read.o"
+	@echo "... read.i"
+	@echo "... read.s"
 .PHONY : help
 
 

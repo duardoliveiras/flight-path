@@ -2,7 +2,7 @@
 #define AIRPORT_H
 
 #include <string>
-
+#include <iostream>
 class Airport
 {
 public:
@@ -19,6 +19,7 @@ public:
     void setCity(std::string city);
     void setLatitude(double latitude);
     void setLongitude(double longitude);
+    void display();
 
 private:
     std::string code;
