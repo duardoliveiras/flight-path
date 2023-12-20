@@ -3,7 +3,7 @@ project(AEDP2)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(AEDP2
+add_executable(a
         main.cpp
         City.cpp
         City.h

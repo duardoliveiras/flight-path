@@ -1,12 +1,10 @@
 #ifndef MENU_H
 #define MENU_H
 
+#include "Airport.h"
+#include "read.h"
 
-class Menu {
-    public:
-    // add functions
-};
-
-
+void Menu();
+void quantity();
 
 #endif

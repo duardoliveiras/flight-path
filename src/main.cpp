@@ -1,8 +1,4 @@
 #include "Menu.h"
-#include <stdio.h>
-#include "Airport.h"
-#include "read.h"
-#include <iostream>
 
 int main()
 {
