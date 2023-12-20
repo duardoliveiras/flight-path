@@ -37,3 +37,35 @@ Graph<Airport> readAirports()
 
     return airports;
 }
+
+Graph<Airport> readFlights()
+{
+    Graph<Airport> airports = readAirports();
+    std::ifstream file("../dataset/flights.csv", ios::in);
+
+    if (!file.is_open())
+    {
+        std::cout << "Error opening file" << std::endl;
+        return airports;
+    }
+
+    std::string line;
+    std::getline(file, line);
+
+    while (std::getline(file, line))
+    {
+        std::istringstream iss(line);
+        std::string source, target, airline;
+
+        std::getline(iss, source, ',');
+        std::getline(iss, target, ',');
+        std::getline(iss, airline, ',');
+
+        Airport src = Airport(source);
+        Airport tgt = Airport(target);
+
+        airports.addEdge(src, tgt, 0);
+    }
+
+    return airports;
+}

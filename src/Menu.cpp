@@ -1,7 +1,7 @@
 #include "Menu.h"
 #include <iostream>
 
-Graph<Airport> airports = readAirports();
+Graph<Airport> airports = readFlights();
 
 void Menu()
 {
@@ -56,7 +56,13 @@ void quantity()
         quantity();
         break;
     case 2:
-        std::cout << "Quantity of routes" << std::endl;
+        system("clear");
+        std::cout << "Quantity of routes: " << quantityFlights(airports) << std::endl;
+        std::cout << "-------------------------------" << std::endl;
+        std::cout << "Press any key to continue..." << std::endl;
+        std::cin.ignore();
+        std::cin.get();
+        quantity();
         break;
     case 0:
         exit(0);

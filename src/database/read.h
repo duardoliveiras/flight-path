@@ -10,5 +10,6 @@
 #include "../classes/Airport.h"
 
 Graph<Airport> readAirports();
+Graph<Airport> readFlights();
 
 #endif // READ_H
