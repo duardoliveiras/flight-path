@@ -8,5 +8,6 @@
 void Menu();
 void quantity();
 void menuFlights();
+void menuDestination();
 
 #endif

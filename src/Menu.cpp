@@ -40,6 +40,7 @@ void quantity()
     std::cout << "-------------------------------" << std::endl;
     std::cout << "1. Number of airports" << std::endl;
     std::cout << "2. Number of flights" << std::endl;
+    std::cout << "3. Number of destinations" << std::endl;
     std::cout << "0. Exit" << std::endl;
     std::cout << "-------------------------------" << std::endl;
     std::cin >> flag;
@@ -58,6 +59,10 @@ void quantity()
     case 2:
         system("clear");
         menuFlights();
+        break;
+    case 3:
+        system("clear");
+        menuDestination();
         break;
     case 0:
         exit(0);
@@ -131,6 +136,39 @@ void menuFlights()
         break;
     case 0:
         exit(0);
+        break;
+    }
+}
+
+void menuDestination()
+{
+    int flag;
+    std::string arg;
+    system("clear");
+    std::cout << "Number of Destinations:" << std::endl;
+    std::cout << "-------------------------------" << std::endl;
+    std::cout << "1. Unlimited Stops (Countries)" << std::endl;
+    std::cout << "2. Limited Stops" << std::endl;
+    std::cout << "-------------------------------" << std::endl;
+
+    std::cin >> flag;
+
+    switch (flag)
+    {
+    case (1):
+        std::cout << "Type Airport code: " << std::endl;
+        std::cin >> arg;
+
+        system("clear");
+        std::cout << "Number of Countries " << quantityCountry(airports, arg) << std::endl;
+        std::cout << "-------------------------------" << std::endl;
+        std::cout << "Press any key to continue..." << std::endl;
+        std::cin.ignore();
+        std::cin.get();
+        menuDestination();
+        break;
+
+    default:
         break;
     }
 }
