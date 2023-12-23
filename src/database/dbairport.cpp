@@ -96,7 +96,7 @@ int quantityCountryStop(Graph<Airport> airports, std::string airport, int stop)
     if (s == nullptr)
         return 0;
 
-    res = dfsVisit(s, res, stop);
+    res = dfsVisit(s, res, (stop + 1));
 
     for (auto c : res)
     {
