@@ -24,7 +24,7 @@ Pronto - [✔]
 
 - [✔] Número de destinos (aeroportos, cidades ou paises) a partir de um determinado aeroporto (com número máximo de paradas).
 
-- [✖] Viagem máxima e o correspondente par de aeroportos (origem-destino). Viagem aéreas com o maior número de escalas entre elas.
+- [✔] Viagem máxima e o correspondente par de aeroportos (origem-destino). Viagem aéreas com o maior número de escalas entre elas.
 
 - [✖] Ranking de aeroportos com maiores capacidades de tráfego aéreo (maior número de vôos).
 
