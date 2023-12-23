@@ -144,6 +144,8 @@ void menuDestination()
 {
     int flag;
     std::string arg;
+    int stop;
+
     system("clear");
     std::cout << "Number of Destinations:" << std::endl;
     std::cout << "-------------------------------" << std::endl;
@@ -152,13 +154,12 @@ void menuDestination()
     std::cout << "-------------------------------" << std::endl;
 
     std::cin >> flag;
+    std::cout << "Type Airport code: " << std::endl;
+    std::cin >> arg;
 
     switch (flag)
     {
     case (1):
-        std::cout << "Type Airport code: " << std::endl;
-        std::cin >> arg;
-
         system("clear");
         std::cout << "Number of Countries " << quantityCountry(airports, arg) << std::endl;
         std::cout << "-------------------------------" << std::endl;
@@ -167,7 +168,16 @@ void menuDestination()
         std::cin.get();
         menuDestination();
         break;
-
+    case (2):
+        system("clear");
+        std::cout << "Type the number of stops: " << std::endl;
+        std::cin >> stop;
+        std::cout << "Number of Countries " << quantityCountryStop(airports, arg, stop) << std::endl;
+        std::cout << "-------------------------------" << std::endl;
+        std::cout << "Press any key to continue..." << std::endl;
+        std::cin.ignore();
+        std::cin.get();
+        menuDestination();
     default:
         break;
     }

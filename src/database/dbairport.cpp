@@ -67,17 +67,90 @@ int quantityFlightsAirline(Graph<Airport> airports, std::string airline)
 int quantityCountry(Graph<Airport> airports, std::string airport)
 {
     std::set<std::string> countries;
+    std::vector<std::string> res;
+    resetVisited(airports);
 
-    for (auto v : airports.getVertexSet())
+    auto s = airports.findVertex(Airport(airport));
+
+    if (s == nullptr)
+        return 0;
+
+    res = dfsVisit(s, res);
+
+    for (auto c : res)
     {
-        if (v->getInfo().getCode() == airport)
-        {
-            for (auto e : v->getAdj())
-            {
-                countries.insert(e.getDest()->getInfo().getCountry());
-            }
-        }
+        countries.insert(c);
     }
 
     return countries.size();
+}
+
+int quantityCountryStop(Graph<Airport> airports, std::string airport, int stop)
+{
+    std::set<std::string> countries;
+    std::vector<std::string> res;
+    resetVisited(airports);
+
+    auto s = airports.findVertex(Airport(airport));
+
+    if (s == nullptr)
+        return 0;
+
+    res = dfsVisit(s, res, stop);
+
+    for (auto c : res)
+    {
+        countries.insert(c);
+    }
+
+    return countries.size();
+}
+
+std::vector<std::string> dfsVisit(Vertex<Airport> *v, std::vector<std::string> &res)
+{
+    v->setVisited(true);
+    res.push_back(v->getInfo().getCountry());
+    auto adjs = v->getAdj();
+
+    for (auto &e : adjs)
+    {
+        auto w = e.getDest();
+
+        if (!w->isVisited())
+        {
+            dfsVisit(w, res);
+        }
+    }
+
+    return res;
+}
+
+std::vector<std::string> dfsVisit(Vertex<Airport> *v, std::vector<std::string> &res, int stop)
+{
+    if (stop == 0)
+        return res;
+
+    v->setVisited(true);
+    res.push_back(v->getInfo().getCountry());
+    auto adjs = v->getAdj();
+
+    for (auto &e : adjs)
+    {
+        auto w = e.getDest();
+
+        if (!w->isVisited())
+        {
+            dfsVisit(w, res, (stop - 1));
+        }
+    }
+
+    return res;
+}
+
+void resetVisited(Graph<Airport> airports)
+{
+    for (auto v : airports.getVertexSet())
+    {
+        v->setVisited(false);
+    }
 }
