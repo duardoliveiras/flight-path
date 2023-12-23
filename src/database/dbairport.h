@@ -4,6 +4,7 @@
 #include "../classes/Graph.h"
 #include "../classes/Airport.h"
 #include <set>
+#include <fstream>
 
 int quantityAirports(Graph<Airport> airports);
 int quantityFlights(Graph<Airport> airports);
@@ -14,6 +15,8 @@ int quantityCountry(Graph<Airport> airports, std::string airport);
 int quantityCountryStop(Graph<Airport> airports, std::string airport, int stop);
 std::vector<std::string> dfsVisit(Vertex<Airport> *v, std::vector<std::string> &res);
 std::vector<std::string> dfsVisit(Vertex<Airport> *v, std::vector<std::string> &res, int stop);
+int dfsCount(Vertex<Airport> *v, std::string &tgt);
 void resetVisited(Graph<Airport> airports);
+int maxFlight(Graph<Airport> airports);
 
 #endif // DBAIRPORT_H
