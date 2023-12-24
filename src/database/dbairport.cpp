@@ -165,23 +165,29 @@ int maxFlight(Graph<Airport> airports)
     {
         if (!v->isVisited())
         {
-            int count = dfsCount(v, tgt);
+            vector<std::string> path;
+            std::cout << "Visitando " << v->getInfo().getCode() << std::endl;
+            int count = dfsCount(v, tgt, path);
+            std::cout << "Count: " << count - 1 << std::endl;
+            std::cout << "Target: " << tgt << std::endl;
             if (count > max)
             {
                 src = v->getInfo().getCode();
                 max = count;
             }
         }
-        std::cout << "Src: " << v->getInfo().getCode() << "Connections: " << max << " Tgt: " << tgt << std::endl;
     }
 
-    return max;
+    return max - 1;
 }
 
-int dfsCount(Vertex<Airport> *v, std::string &tgt)
+int dfsCount(Vertex<Airport> *v, std::string &tgt, vector<std::string> &path)
 {
-    int count = 1;
+    int pathLen = 0;
+    path.push_back(v->getInfo().getCode());
     v->setVisited(true);
+    std::string lastNode;
+
     auto adjs = v->getAdj();
 
     for (auto &e : adjs)
@@ -190,12 +196,25 @@ int dfsCount(Vertex<Airport> *v, std::string &tgt)
 
         if (!w->isVisited())
         {
-            tgt = w->getInfo().getCode();
-            count += dfsCount(w, tgt);
+            int childPathLen = dfsCount(w, tgt, path);
+            if (childPathLen > pathLen)
+            {
+                pathLen = childPathLen;
+            }
         }
     }
 
-    return count;
+    path.pop_back();
+    v->setVisited(false);
+
+    if (path.size() > pathLen)
+    {
+        tgt = v->getInfo().getCode();
+        return path.size();
+    }
+
+    else
+        return pathLen;
 }
 
 void resetVisited(Graph<Airport> airports)

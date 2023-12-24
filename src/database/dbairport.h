@@ -15,7 +15,7 @@ int quantityCountry(Graph<Airport> airports, std::string airport);
 int quantityCountryStop(Graph<Airport> airports, std::string airport, int stop);
 std::vector<std::string> dfsVisit(Vertex<Airport> *v, std::vector<std::string> &res);
 std::vector<std::string> dfsVisit(Vertex<Airport> *v, std::vector<std::string> &res, int stop);
-int dfsCount(Vertex<Airport> *v, std::string &tgt);
+int dfsCount(Vertex<Airport> *v, std::string &tgt, vector<std::string> &path);
 void resetVisited(Graph<Airport> airports);
 int maxFlight(Graph<Airport> airports);
 
