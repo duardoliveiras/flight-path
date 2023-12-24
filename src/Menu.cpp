@@ -1,10 +1,11 @@
 #include "Menu.h"
 #include <iostream>
 
-Graph<Airport> airports = readFlights();
+Graph<Airport> airports;
 
-void Menu()
+void Menu(std::string folder)
 {
+    airports = readFlights(folder);
     int flag;
     std::cout << "Welcome to Travel Management" << std::endl;
     std::cout << "-------------------------------" << std::endl;

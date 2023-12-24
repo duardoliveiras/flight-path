@@ -1,7 +1,7 @@
 #include "Menu.h"
 
-int main()
+int main(int argc, char const *argv[])
 {
-    Menu();
+    Menu(argv[1]);
     return 0;
 }
