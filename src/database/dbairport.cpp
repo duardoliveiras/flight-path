@@ -172,9 +172,8 @@ int maxFlight(Graph<Airport> airports)
                 max = count;
             }
         }
+        std::cout << "Src: " << v->getInfo().getCode() << "Connections: " << max << " Tgt: " << tgt << std::endl;
     }
-    std::cout << "The airport with the most flights is: " << src << std::endl;
-    std::cout << "The destination is: " << tgt << std::endl;
 
     return max;
 }
