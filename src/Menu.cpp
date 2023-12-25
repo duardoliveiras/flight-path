@@ -184,7 +184,7 @@ void menuDestination()
         menuDestination();
     case (3):
         system("clear");
-        std::cout << "The maximum number of flights is: " << maxFlight(airports) << std::endl;
+        std::cout << "The maximum number of flights is: " << maxFlight(airports) << " stops" << std::endl;
         std::cout << "-------------------------------" << std::endl;
         std::cout << "Press any key to continue..." << std::endl;
         std::cin.ignore();

@@ -161,22 +161,24 @@ int maxFlight(Graph<Airport> airports)
     std::string tgt;
 
     resetVisited(airports);
+    std::cout << "Consultando... " << std::endl;
     for (auto v : airports.getVertexSet())
     {
         if (!v->isVisited())
         {
             vector<std::string> path;
-            std::cout << "Visitando " << v->getInfo().getCode() << std::endl;
+
             int count = dfsCount(v, tgt, path);
-            std::cout << "Count: " << count - 1 << std::endl;
-            std::cout << "Target: " << tgt << std::endl;
             if (count > max)
             {
                 src = v->getInfo().getCode();
                 max = count;
             }
+            resetVisited(airports);
         }
     }
+    std::cout << "\nLeaving from:" << src << std::endl;
+    std::cout << "To: " << tgt << std::endl;
 
     return max - 1;
 }
@@ -205,7 +207,7 @@ int dfsCount(Vertex<Airport> *v, std::string &tgt, vector<std::string> &path)
     }
 
     path.pop_back();
-    v->setVisited(false);
+    // v->setVisited(false);
 
     if (path.size() > pathLen)
     {
