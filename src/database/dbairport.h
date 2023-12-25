@@ -4,7 +4,9 @@
 #include "../classes/Graph.h"
 #include "../classes/Airport.h"
 #include <set>
+#include <map>
 #include <fstream>
+#include <algorithm>
 
 int quantityAirports(Graph<Airport> airports);
 int quantityFlights(Graph<Airport> airports);
@@ -18,5 +20,6 @@ std::vector<std::string> dfsVisit(Vertex<Airport> *v, std::vector<std::string> &
 int dfsCount(Vertex<Airport> *v, std::string &tgt, vector<std::string> &path);
 void resetVisited(Graph<Airport> airports);
 int maxFlight(Graph<Airport> airports);
+void rankingAirports(Graph<Airport> airports, int arg);
 
 #endif // DBAIRPORT_H

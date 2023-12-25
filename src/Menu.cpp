@@ -22,7 +22,7 @@ void Menu(std::string folder)
         quantity();
         break;
     case 2:
-        std::cout << "Listing" << std::endl;
+        listing();
         break;
     case 3:
         std::cout << "Bests flights" << std::endl;
@@ -66,6 +66,41 @@ void quantity()
         menuDestination();
         break;
     case 0:
+        exit(0);
+        break;
+    }
+}
+
+void listing()
+{
+    system("clear");
+    int flag;
+    int arg;
+    std::cout << "Listing: " << std::endl;
+    std::cout << "-------------------------------" << std::endl;
+    std::cout << "1. Ranking Airports (more landings and takeoffs)" << std::endl;
+    std::cout << "0. Exit" << std::endl;
+    std::cout << "-------------------------------" << std::endl;
+
+    std::cin >> flag;
+
+    switch (flag)
+    {
+    case (1):
+        system("clear");
+        std::cout << "Type the number of airports: " << std::endl;
+        std::cin >> arg;
+        std::cout << "-------------------------------" << std::endl;
+        std::cout << "Ranking Airports: " << std::endl;
+        std::cout << "-------------------------------" << std::endl;
+        rankingAirports(airports, arg);
+        std::cout << "-------------------------------" << std::endl;
+        std::cout << "Press any key to continue..." << std::endl;
+        std::cin.ignore();
+        std::cin.get();
+        listing();
+        break;
+    case (0):
         exit(0);
         break;
     }

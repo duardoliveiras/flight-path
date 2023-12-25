@@ -15,6 +15,14 @@ Airport::Airport(std::string code)
     this->code = code;
 }
 
+bool comparator(const Ranking a, const Ranking b)
+{
+    if (b.count != a.count)
+        return a.count > b.count;
+    else
+        return a.code < b.code;
+}
+
 bool Airport::operator==(const Airport &other) const
 {
     return this->code == other.code;

@@ -226,3 +226,42 @@ void resetVisited(Graph<Airport> airports)
         v->setVisited(false);
     }
 }
+
+void rankingAirports(Graph<Airport> airports, int arg)
+{
+    std::vector<Ranking> vec;
+
+    for (auto v : airports.getVertexSet())
+    {
+        v->setIndegree(0);
+    }
+    for (auto v : airports.getVertexSet())
+    {
+        for (auto e : v->getAdj())
+        {
+            e.getDest()->setIndegree(e.getDest()->getIndegree() + 1);
+        }
+    }
+
+    for (auto v : airports.getVertexSet())
+    {
+        int total = v->getIndegree() + v->getAdj().size();
+        Ranking rank = {v->getInfo().getCode(), total};
+        vec.push_back(rank);
+    }
+
+    std::sort(vec.begin(), vec.end(), comparator);
+
+    int i = 0;
+
+    for (auto v : vec)
+    {
+
+        if (i < arg)
+        {
+            std::cout << "Code: " << v.code << " / ";
+            std::cout << "Total: " << v.count << std::endl;
+            i++;
+        }
+    }
+}
