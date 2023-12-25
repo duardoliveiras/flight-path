@@ -28,7 +28,7 @@ Pronto - [✔]
 
 - [✔] Ranking de aeroportos com maiores capacidades de tráfego aéreo (maior número de vôos).
 
-- [✖] Identificar aeroportos que são essenciais para manter a conexão entre destinos. Aqueles que se removidos, areas de conexão se tornam inacessíveis (Articulation Points - DFS).
+- [✔] Identificar aeroportos que são essenciais para manter a conexão entre destinos. Aqueles que se removidos, areas de conexão se tornam inacessíveis (Articulation Points - DFS).
 
 ##### Melhores opções de vôos:
 
