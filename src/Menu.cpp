@@ -1,10 +1,11 @@
 #include "Menu.h"
 #include <iostream>
 
-Graph<Airport> airports = readFlights();
+Graph<Airport> airports;
 
-void Menu()
+void Menu(std::string folder)
 {
+    airports = readFlights(folder);
     int flag;
     std::cout << "Welcome to Travel Management" << std::endl;
     std::cout << "-------------------------------" << std::endl;
@@ -21,7 +22,7 @@ void Menu()
         quantity();
         break;
     case 2:
-        std::cout << "Listing" << std::endl;
+        listing();
         break;
     case 3:
         std::cout << "Bests flights" << std::endl;
@@ -65,6 +66,53 @@ void quantity()
         menuDestination();
         break;
     case 0:
+        exit(0);
+        break;
+    }
+}
+
+void listing()
+{
+    system("clear");
+    int flag;
+    int arg;
+    std::cout << "Listing: " << std::endl;
+    std::cout << "-------------------------------" << std::endl;
+    std::cout << "1. Ranking Airports (more landings and takeoffs)" << std::endl;
+    std::cout << "2. Connecting airports" << std::endl;
+    std::cout << "0. Exit" << std::endl;
+    std::cout << "-------------------------------" << std::endl;
+
+    std::cin >> flag;
+
+    switch (flag)
+    {
+    case (1):
+        system("clear");
+        std::cout << "Type the number of airports: " << std::endl;
+        std::cin >> arg;
+        std::cout << "-------------------------------" << std::endl;
+        std::cout << "Ranking Airports: " << std::endl;
+        std::cout << "-------------------------------" << std::endl;
+        rankingAirports(airports, arg);
+        std::cout << "-------------------------------" << std::endl;
+        std::cout << "Press any key to continue..." << std::endl;
+        std::cin.ignore();
+        std::cin.get();
+        listing();
+        break;
+    case (2):
+        system("clear");
+        std::cout << "Connecting airports: " << std::endl;
+        std::cout << "-------------------------------" << std::endl;
+        getArticulations(airports);
+        std::cout << "-------------------------------" << std::endl;
+        std::cout << "Press any key to continue..." << std::endl;
+        std::cin.ignore();
+        std::cin.get();
+        listing();
+        break;
+    case (0):
         exit(0);
         break;
     }
@@ -144,11 +192,14 @@ void menuDestination()
 {
     int flag;
     std::string arg;
+    int stop;
+
     system("clear");
     std::cout << "Number of Destinations:" << std::endl;
     std::cout << "-------------------------------" << std::endl;
     std::cout << "1. Unlimited Stops (Countries)" << std::endl;
     std::cout << "2. Limited Stops" << std::endl;
+    std::cout << "3. Max destinations" << std::endl;
     std::cout << "-------------------------------" << std::endl;
 
     std::cin >> flag;
@@ -156,10 +207,9 @@ void menuDestination()
     switch (flag)
     {
     case (1):
+        system("clear");
         std::cout << "Type Airport code: " << std::endl;
         std::cin >> arg;
-
-        system("clear");
         std::cout << "Number of Countries " << quantityCountry(airports, arg) << std::endl;
         std::cout << "-------------------------------" << std::endl;
         std::cout << "Press any key to continue..." << std::endl;
@@ -167,6 +217,26 @@ void menuDestination()
         std::cin.get();
         menuDestination();
         break;
+    case (2):
+        system("clear");
+        std::cout << "Type Airport code: " << std::endl;
+        std::cin >> arg;
+        std::cout << "Type the number of stops: " << std::endl;
+        std::cin >> stop;
+        std::cout << "Number of Countries " << quantityCountryStop(airports, arg, stop) << std::endl;
+        std::cout << "-------------------------------" << std::endl;
+        std::cout << "Press any key to continue..." << std::endl;
+        std::cin.ignore();
+        std::cin.get();
+        menuDestination();
+    case (3):
+        system("clear");
+        std::cout << "The maximum number of flights is: " << maxFlight(airports) << " stops" << std::endl;
+        std::cout << "-------------------------------" << std::endl;
+        std::cout << "Press any key to continue..." << std::endl;
+        std::cin.ignore();
+        std::cin.get();
+        menuDestination();
 
     default:
         break;

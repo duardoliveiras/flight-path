@@ -1,7 +1,11 @@
 #include "Menu.h"
 
-int main()
+int main(int argc, char const *argv[])
 {
-    Menu();
+    if (argc < 2)
+    {
+        argv[1] = "original";
+    }
+    Menu(argv[1]);
     return 0;
 }

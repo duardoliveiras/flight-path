@@ -4,6 +4,10 @@
 #include "../classes/Graph.h"
 #include "../classes/Airport.h"
 #include <set>
+#include <map>
+#include <fstream>
+#include <algorithm>
+#include <unordered_set>
 
 int quantityAirports(Graph<Airport> airports);
 int quantityFlights(Graph<Airport> airports);
@@ -11,5 +15,15 @@ std::pair<int, int> quantityFlights(Graph<Airport> airports, std::string code);
 int quantityFlightsCity(Graph<Airport> airports, std::string city);
 int quantityFlightsAirline(Graph<Airport> airports, std::string airline);
 int quantityCountry(Graph<Airport> airports, std::string airport);
+int quantityCountryStop(Graph<Airport> airports, std::string airport, int stop);
+std::vector<std::string> dfsVisit(Vertex<Airport> *v, std::vector<std::string> &res);
+std::vector<std::string> dfsVisit(Vertex<Airport> *v, std::vector<std::string> &res, int stop);
+int dfsCount(Vertex<Airport> *v, std::string &tgt, vector<std::string> &path);
+void resetVisited(Graph<Airport> &airports);
+int maxFlight(Graph<Airport> airports);
+void rankingAirports(Graph<Airport> airports, int arg);
+void getArticulations(Graph<Airport> airports);
+void dfsArticulations(Graph<Airport> &airports, Vertex<Airport> *v, unordered_set<string> &res, std::stack<string> &s, int i);
+void calculateIndegree(Graph<Airport> &airports);
 
 #endif // DBAIRPORT_H

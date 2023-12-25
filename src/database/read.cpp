@@ -2,11 +2,11 @@
 #include "../classes/Airport.h"
 #include <filesystem>
 
-Graph<Airport> readAirports()
+Graph<Airport> readAirports(std::string folder)
 {
     Graph<Airport> airports = Graph<Airport>();
     // std::cout << "PWD " << std::filesystem::current_path() << std::endl;
-    std::ifstream file("../dataset/airports.csv", ios::in);
+    std::ifstream file("../dataset/" + folder + "/airports.csv", ios::in);
 
     if (!file.is_open())
     {
@@ -39,10 +39,10 @@ Graph<Airport> readAirports()
     return airports;
 }
 
-Graph<Airport> readFlights()
+Graph<Airport> readFlights(std::string folder)
 {
-    Graph<Airport> airports = readAirports();
-    std::ifstream file("../dataset/flights.csv", ios::in);
+    Graph<Airport> airports = readAirports(folder);
+    std::ifstream file("../dataset/" + folder + "/flights.csv", ios::in);
 
     if (!file.is_open())
     {

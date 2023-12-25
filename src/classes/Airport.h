@@ -3,8 +3,17 @@
 
 #include <string>
 #include <iostream>
+
+struct Ranking
+{
+    std::string code;
+    int count;
+};
+
+bool comparator(const Ranking a, const Ranking b);
 class Airport
 {
+
 public:
     Airport(std::string code, std::string name, std::string country, std::string city, double latitude, double longitude);
     Airport(std::string code);

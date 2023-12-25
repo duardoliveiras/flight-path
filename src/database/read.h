@@ -9,7 +9,7 @@
 #include "../classes/Graph.h"
 #include "../classes/Airport.h"
 
-Graph<Airport> readAirports();
-Graph<Airport> readFlights();
+Graph<Airport> readAirports(std::string folder);
+Graph<Airport> readFlights(std::string folder);
 
 #endif // READ_H

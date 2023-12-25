@@ -5,8 +5,9 @@
 #include "database/read.h"
 #include "database/dbairport.h"
 
-void Menu();
+void Menu(std::string folder);
 void quantity();
+void listing();
 void menuFlights();
 void menuDestination();
 
