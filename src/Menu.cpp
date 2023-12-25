@@ -79,6 +79,7 @@ void listing()
     std::cout << "Listing: " << std::endl;
     std::cout << "-------------------------------" << std::endl;
     std::cout << "1. Ranking Airports (more landings and takeoffs)" << std::endl;
+    std::cout << "2. Connecting airports" << std::endl;
     std::cout << "0. Exit" << std::endl;
     std::cout << "-------------------------------" << std::endl;
 
@@ -94,6 +95,17 @@ void listing()
         std::cout << "Ranking Airports: " << std::endl;
         std::cout << "-------------------------------" << std::endl;
         rankingAirports(airports, arg);
+        std::cout << "-------------------------------" << std::endl;
+        std::cout << "Press any key to continue..." << std::endl;
+        std::cin.ignore();
+        std::cin.get();
+        listing();
+        break;
+    case (2):
+        system("clear");
+        std::cout << "Connecting airports: " << std::endl;
+        std::cout << "-------------------------------" << std::endl;
+        getArticulations(airports);
         std::cout << "-------------------------------" << std::endl;
         std::cout << "Press any key to continue..." << std::endl;
         std::cin.ignore();

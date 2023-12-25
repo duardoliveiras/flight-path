@@ -219,7 +219,7 @@ int dfsCount(Vertex<Airport> *v, std::string &tgt, vector<std::string> &path)
         return pathLen;
 }
 
-void resetVisited(Graph<Airport> airports)
+void resetVisited(Graph<Airport> &airports)
 {
     for (auto v : airports.getVertexSet())
     {
@@ -227,10 +227,8 @@ void resetVisited(Graph<Airport> airports)
     }
 }
 
-void rankingAirports(Graph<Airport> airports, int arg)
+void calculateIndegree(Graph<Airport> &airports)
 {
-    std::vector<Ranking> vec;
-
     for (auto v : airports.getVertexSet())
     {
         v->setIndegree(0);
@@ -242,6 +240,13 @@ void rankingAirports(Graph<Airport> airports, int arg)
             e.getDest()->setIndegree(e.getDest()->getIndegree() + 1);
         }
     }
+}
+
+void rankingAirports(Graph<Airport> airports, int arg)
+{
+    std::vector<Ranking> vec;
+
+    calculateIndegree(airports);
 
     for (auto v : airports.getVertexSet())
     {
@@ -263,5 +268,71 @@ void rankingAirports(Graph<Airport> airports, int arg)
             std::cout << "Total: " << v.count << std::endl;
             i++;
         }
+    }
+}
+
+void getArticulations(Graph<Airport> airports)
+{
+    unordered_set<string> res;
+    unordered_set<string> visited;
+    std::stack<string> s;
+    int i = 1;
+
+    resetVisited(airports);
+
+    for (auto v : airports.getVertexSet())
+    {
+        dfsArticulations(airports, v, res, s, i);
+    }
+
+    for (auto &e : res)
+    {
+        std::cout << e << std::endl;
+    }
+}
+
+void dfsArticulations(Graph<Airport> &airports, Vertex<Airport> *v, unordered_set<string> &res, std::stack<string> &s, int i)
+{
+
+    v->setLow(i);
+    v->setNum(i);
+    v->setVisited(true);
+    v->setProcessing(true);
+    s.push(v->getInfo().getCode());
+    std::cout << "Visiting vertex: " << v->getInfo().getCode() << " Low: " << v->getLow() << " Num: " << v->getNum() << std::endl;
+    i++;
+
+    auto adjs = v->getAdj();
+    int component = 0;
+    for (auto &e : adjs)
+    {
+        component++;
+        auto w = e.getDest();
+        if (!w->isVisited())
+        {
+            dfsArticulations(airports, w, res, s, i);
+            v->setLow(min(v->getLow(), w->getLow()));
+            if (w->getLow() >= v->getNum() && component > 1)
+            {
+                std::cout << "Inserting articulation point: " << v->getInfo().getCode() << " Component: " << component << " - " << v->getAdj().size() << std::endl;
+                res.insert(v->getInfo().getCode());
+            }
+        }
+        else if (w->isProcessing())
+        {
+            v->setLow(min(v->getLow(), w->getNum()));
+        }
+    }
+
+    if (v->getLow() == v->getNum())
+    {
+        while (s.top() != v->getInfo().getCode())
+        {
+            auto vertex = airports.findVertex(Airport(s.top()));
+            vertex->setProcessing(false);
+            s.pop();
+        }
+        v->setProcessing(false);
+        s.pop();
     }
 }
