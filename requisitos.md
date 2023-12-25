@@ -26,7 +26,7 @@ Pronto - [✔]
 
 - [✔] Viagem máxima e o correspondente par de aeroportos (origem-destino). Viagem aéreas com o maior número de escalas entre elas.
 
-- [✖] Ranking de aeroportos com maiores capacidades de tráfego aéreo (maior número de vôos).
+- [✔] Ranking de aeroportos com maiores capacidades de tráfego aéreo (maior número de vôos).
 
 - [✖] Identificar aeroportos que são essenciais para manter a conexão entre destinos. Aqueles que se removidos, areas de conexão se tornam inacessíveis (Articulation Points - DFS).
 
