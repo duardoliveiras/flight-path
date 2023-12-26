@@ -347,49 +347,147 @@ void findBestFlights(Graph<Airport> &airports, string src, string dest)
     if (s == nullptr || d == nullptr)
         return;
 
-    vector<string> path;
-    path = bfsMinPath(s, dest);
-    for (auto &e : path)
+    vector<vector<string>> paths;
+    paths = bfsPath(s, dest);
+
+    for (auto path : paths)
     {
-        std::cout << e << " -> ";
+        for (auto p : path)
+        {
+            std::cout << p << " ";
+        }
+        std::cout << std::endl;
     }
 }
 
-vector<string> bfsMinPath(Vertex<Airport> *v, string &tgt)
+vector<vector<string>> bfsPath(Vertex<Airport> *v, string &tgt)
 {
-    vector<string> path;
-    unordered_map<string, string> prev;
-    queue<Vertex<Airport> *> q;
+    queue<pair<Vertex<Airport> *, vector<string>>> q;
 
-    q.push(v);
-    v->setVisited(true);
+    q.push({v, {v->getInfo().getCode()}});
+
+    vector<vector<string>> paths;
 
     while (!q.empty())
     {
-        auto vertex = q.front();
+        auto curr = q.front();
         q.pop();
-        auto adjs = vertex->getAdj();
 
-        for (auto &e : adjs)
+        std::cout << "Visiting: " << curr.first->getInfo().getCode() << " Tgt: " << tgt << std::endl;
+
+        if (curr.first->getInfo().getCode() == tgt)
         {
-            auto w = e.getDest();
-            if (!w->isVisited())
+            paths.push_back(curr.second);
+        }
+        else
+        {
+            for (const auto &e : curr.first->getAdj())
             {
-                w->setVisited(true);
-                q.push(w);
-                prev[w->getInfo().getCode()] = vertex->getInfo().getCode();
+                if (std::find(curr.second.begin(), curr.second.end(), e.getDest()->getInfo().getCode()) == curr.second.end())
+                {
+                    auto newPair = curr.second;
+                    newPair.push_back(e.getDest()->getInfo().getCode());
+                    q.push({e.getDest(), newPair});
+                }
             }
         }
     }
 
-    std::string current = tgt;
+    return paths;
+}
 
-    while (current != v->getInfo().getCode())
-    {
-        path.push_back(current);
-        current = prev[current];
-    }
+// vector<vector<string>> bfsPath(Vertex<Airport> *v, string &tgt)
+// {
+//     vector<vector<string>> paths;
+//     unordered_map<string, vector<string>> prev;
+//     queue<Vertex<Airport> *> q;
+
+//     q.push(v);
+//     v->setVisited(true);
+
+//     while (!q.empty())
+//     {
+//         auto vertex = q.front();
+//         q.pop();
+//         auto adjs = vertex->getAdj();
+
+//         for (auto &e : adjs)
+//         {
+//             auto w = e.getDest();
+//             if (!w->isVisited())
+//             {
+//                 w->setVisited(true);
+//                 q.push(w);
+//                 prev[w->getInfo().getCode()].push_back(vertex->getInfo().getCode());
+//             }
+//         }
+//         // vertex->setVisited(false);
+//     }
+
+//     for (const auto &pair : prev)
+//     {
+//         const string &current = pair.first;
+//         const vector<string> &predecessors = pair.second;
+
+//         for (const auto predecessor : predecessors)
+//         {
+//             vector<string> path;
+//             string temp = current;
+
+//             while (temp != v->getInfo().getCode())
+//             {
+//                 path.push_back(temp);
+//                 temp = prev[temp].front();
+//             }
+//             path.push_back(v->getInfo().getCode());
+//             reverse(path.begin(), path.end());
+//             paths.push_back(path);
+//         }
+//     }
+
+//     return paths;
+// }
+
+void dfsPath(Vertex<Airport> *v, string tgt, vector<string> &path, vector<vector<string>> &paths)
+{
+    std::cout << "Visiting: " << v->getInfo().getCode() << std::endl;
+    v->setVisited(true);
     path.push_back(v->getInfo().getCode());
-    std::reverse(path.begin(), path.end());
-    return path;
+
+    if (v->getInfo().getCode() == tgt)
+    {
+        paths.push_back(path);
+    }
+    else
+    {
+        for (auto &e : v->getAdj())
+        {
+            auto w = e.getDest();
+            if (!w->isVisited())
+            {
+                dfsPath(w, tgt, path, paths);
+            }
+        }
+    }
+
+    path.pop_back();
+    v->setVisited(false);
+}
+
+void findAllPaths(Vertex<Airport> *v, string tgt)
+{
+
+    vector<vector<string>> paths;
+    vector<string> path;
+
+    dfsPath(v, tgt, path, paths);
+
+    for (auto path : paths)
+    {
+        for (auto p : path)
+        {
+            std::cout << p << " ";
+        }
+        std::cout << std::endl;
+    }
 }

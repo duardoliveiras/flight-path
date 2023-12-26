@@ -8,6 +8,7 @@
 #include <fstream>
 #include <algorithm>
 #include <unordered_set>
+#include <limits.h>
 
 int quantityAirports(Graph<Airport> airports);
 int quantityFlights(Graph<Airport> airports);
@@ -26,6 +27,9 @@ void getArticulations(Graph<Airport> airports);
 void dfsArticulations(Graph<Airport> &airports, Vertex<Airport> *v, unordered_set<string> &res, std::stack<string> &s, int i);
 void calculateIndegree(Graph<Airport> &airports);
 void findBestFlights(Graph<Airport> &airports, string src, string dest);
-vector<string> bfsMinPath(Vertex<Airport> *v, string &tgt);
+vector<vector<string>> bfsPath(Vertex<Airport> *v, string &tgt);
+
+void dfsPath(Vertex<Airport> *v, string tgt, vector<string> &path, vector<vector<string>> &paths);
+void findAllPaths(Vertex<Airport> *v, string tgt);
 
 #endif // DBAIRPORT_H

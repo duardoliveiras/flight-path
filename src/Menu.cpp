@@ -140,6 +140,9 @@ void bestFlights()
         std::cin >> arg2;
         system("clear");
         std::cout << "Bests flights: " << std::endl;
+        std::cout << "-------------------------------" << std::endl;
+        auto s = airports.findVertex(arg1);
+        // findAllPaths(s, arg2);
         findBestFlights(airports, arg1, arg2);
     }
 }
