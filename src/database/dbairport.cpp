@@ -352,49 +352,119 @@ void findBestFlights(Graph<Airport> &airports, string src, string dest)
 
     for (auto path : paths)
     {
+
         for (auto p : path)
         {
-            std::cout << p << " ";
+            std::cout << p << " -> ";
         }
         std::cout << std::endl;
     }
 }
 
+void getPath(string current, vector<string> &path, unordered_map<string, vector<string>> &prev, vector<vector<string>> &paths, string startCode)
+{
+    path.push_back(current);
+    if (current == startCode)
+    {
+        vector<string> validPath = path;
+        reverse(validPath.begin(), validPath.end());
+        paths.push_back(validPath);
+    }
+    else
+    {
+        for (auto &prevVertex : prev[current])
+        {
+            getPath(prevVertex, path, prev, paths, startCode);
+        }
+    }
+    path.pop_back();
+}
+
 vector<vector<string>> bfsPath(Vertex<Airport> *v, string &tgt)
 {
-    queue<pair<Vertex<Airport> *, vector<string>>> q;
-
-    q.push({v, {v->getInfo().getCode()}});
-
     vector<vector<string>> paths;
+    unordered_map<string, vector<string>> prev;
+    unordered_map<string, int> dist;
+    queue<Vertex<Airport> *> q;
+
+    q.push(v);
+    v->setVisited(true);
+    dist[v->getInfo().getCode()] = 0;
 
     while (!q.empty())
     {
-        auto curr = q.front();
+        auto vertex = q.front();
         q.pop();
+        auto adjs = vertex->getAdj();
 
-        std::cout << "Visiting: " << curr.first->getInfo().getCode() << " Tgt: " << tgt << std::endl;
-
-        if (curr.first->getInfo().getCode() == tgt)
+        for (auto &e : adjs)
         {
-            paths.push_back(curr.second);
-        }
-        else
-        {
-            for (const auto &e : curr.first->getAdj())
+            auto w = e.getDest();
+            if (!w->isVisited())
             {
-                if (std::find(curr.second.begin(), curr.second.end(), e.getDest()->getInfo().getCode()) == curr.second.end())
-                {
-                    auto newPair = curr.second;
-                    newPair.push_back(e.getDest()->getInfo().getCode());
-                    q.push({e.getDest(), newPair});
-                }
+                q.push(w);
+                w->setVisited(true);
+                prev[w->getInfo().getCode()].push_back(vertex->getInfo().getCode());
+                dist[w->getInfo().getCode()] = dist[vertex->getInfo().getCode()] + 1;
+            }
+            else if (dist[w->getInfo().getCode()] == dist[vertex->getInfo().getCode()] + 1)
+            {
+                prev[w->getInfo().getCode()].push_back(vertex->getInfo().getCode());
             }
         }
     }
 
+    vector<string> path;
+    getPath(tgt, path, prev, paths, v->getInfo().getCode());
+
     return paths;
 }
+
+// vector<vector<string>> bfsPath(Vertex<Airport> *v, string &tgt)
+// {
+//     vector<vector<string>> paths;
+//     unordered_map<string, string> prev;
+//     queue<Vertex<Airport> *> q;
+
+//     q.push(v);
+//     v->setVisited(true);
+
+//     while (!q.empty())
+//     {
+//         auto vertex = q.front();
+//         q.pop();
+//         auto adjs = vertex->getAdj();
+
+//         for (auto &e : adjs)
+//         {
+//             auto w = e.getDest();
+//             if (!w->isVisited())
+//             {
+//                 q.push(w);
+//                 w->setVisited(true);
+//                 prev[w->getInfo().getCode()] = vertex->getInfo().getCode();
+//             }
+//             else
+//             {
+//                 break;
+//             }
+//         }
+//     }
+
+//     vector<string> path;
+//     string current = tgt;
+
+//     while (current != v->getInfo().getCode())
+//     {
+//         path.push_back(current);
+//         current = prev[current];
+//     }
+//     path.push_back(v->getInfo().getCode());
+
+//     reverse(path.begin(), path.end());
+//     paths.push_back(path);
+//     return paths;
+// }
 
 // vector<vector<string>> bfsPath(Vertex<Airport> *v, string &tgt)
 // {
