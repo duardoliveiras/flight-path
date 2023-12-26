@@ -25,7 +25,7 @@ void Menu(std::string folder)
         listing();
         break;
     case 3:
-        std::cout << "Bests flights" << std::endl;
+        bestFlights();
         break;
     case 0:
         exit(0);
@@ -115,6 +115,32 @@ void listing()
     case (0):
         exit(0);
         break;
+    }
+}
+
+void bestFlights()
+{
+    std::string arg1;
+    std::string arg2;
+    int flag;
+
+    system("clear");
+    std::cout << "Bests flights: " << std::endl;
+    std::cout << "-------------------------------" << std::endl;
+    std::cout << "1. Without filters" << std::endl;
+    std::cout << "-------------------------------" << std::endl;
+    std::cin >> flag;
+
+    switch (flag)
+    {
+    case (1):
+        std::cout << "Type the code of Airport of origin: " << std::endl;
+        std::cin >> arg1;
+        std::cout << "Type the code of Airport of destination: " << std::endl;
+        std::cin >> arg2;
+        system("clear");
+        std::cout << "Bests flights: " << std::endl;
+        findBestFlights(airports, arg1, arg2);
     }
 }
 

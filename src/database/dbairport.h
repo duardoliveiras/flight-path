@@ -25,5 +25,7 @@ void rankingAirports(Graph<Airport> airports, int arg);
 void getArticulations(Graph<Airport> airports);
 void dfsArticulations(Graph<Airport> &airports, Vertex<Airport> *v, unordered_set<string> &res, std::stack<string> &s, int i);
 void calculateIndegree(Graph<Airport> &airports);
+void findBestFlights(Graph<Airport> &airports, string src, string dest);
+vector<string> bfsMinPath(Vertex<Airport> *v, string &tgt);
 
 #endif // DBAIRPORT_H

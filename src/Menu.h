@@ -8,6 +8,7 @@
 void Menu(std::string folder);
 void quantity();
 void listing();
+void bestFlights();
 void menuFlights();
 void menuDestination();
 

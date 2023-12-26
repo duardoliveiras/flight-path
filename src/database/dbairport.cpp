@@ -336,3 +336,60 @@ void dfsArticulations(Graph<Airport> &airports, Vertex<Airport> *v, unordered_se
         s.pop();
     }
 }
+
+void findBestFlights(Graph<Airport> &airports, string src, string dest)
+{
+    resetVisited(airports);
+
+    auto s = airports.findVertex(Airport(src));
+    auto d = airports.findVertex(Airport(dest));
+
+    if (s == nullptr || d == nullptr)
+        return;
+
+    vector<string> path;
+    path = bfsMinPath(s, dest);
+    for (auto &e : path)
+    {
+        std::cout << e << " -> ";
+    }
+}
+
+vector<string> bfsMinPath(Vertex<Airport> *v, string &tgt)
+{
+    vector<string> path;
+    unordered_map<string, string> prev;
+    queue<Vertex<Airport> *> q;
+
+    q.push(v);
+    v->setVisited(true);
+
+    while (!q.empty())
+    {
+        auto vertex = q.front();
+        q.pop();
+        auto adjs = vertex->getAdj();
+
+        for (auto &e : adjs)
+        {
+            auto w = e.getDest();
+            if (!w->isVisited())
+            {
+                w->setVisited(true);
+                q.push(w);
+                prev[w->getInfo().getCode()] = vertex->getInfo().getCode();
+            }
+        }
+    }
+
+    std::string current = tgt;
+
+    while (current != v->getInfo().getCode())
+    {
+        path.push_back(current);
+        current = prev[current];
+    }
+    path.push_back(v->getInfo().getCode());
+    std::reverse(path.begin(), path.end());
+    return path;
+}
