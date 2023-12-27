@@ -118,23 +118,13 @@ void listing()
     }
 }
 
-void bestFlights()
+int selectType(std::string arg)
 {
-    std::string arg1;
-    std::string arg2;
-    std::string arg3;
-    std::string arg4;
-
-    double latOrigin;
-    double longOrigin;
-    double latDest;
-    double longDest;
-    int distMax;
-
     int flag;
 
     system("clear");
     std::cout << "Bests flights: " << std::endl;
+    std::cout << "Select your " << arg << " option:" << std::endl;
     std::cout << "-------------------------------" << std::endl;
     std::cout << "1. By airports" << std::endl;
     std::cout << "2. By cities" << std::endl;
@@ -142,55 +132,122 @@ void bestFlights()
     std::cout << "-------------------------------" << std::endl;
     std::cin >> flag;
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // ignore \n
+    return flag;
+}
+
+std::string typeAirport(std::string type, int flag)
+{
+    std::string arg;
     switch (flag)
     {
     case (1):
     {
-        std::cout << "Type the code of Airport of origin: " << std::endl;
-        std::cin >> arg1;
-        std::cout << "Type the code of Airport of destination: " << std::endl;
-        std::cin >> arg2;
-        system("clear");
-        std::cout << "Bests flights: " << std::endl;
-        std::cout << "-------------------------------" << std::endl;
-        auto s = airports.findVertex(arg1);
-        // findAllPaths(s, arg2);
-        findBestFlights(airports, arg1, arg2);
+        std::cout << "Type the code of Airport of " << type << ": " << std::endl;
+        std::cin >> arg;
         break;
     }
+    default:
+    {
+        exit(0);
+        break;
+    }
+    }
+    return arg;
+}
+
+pair<std::string, std::string> typeCity(std::string type, int flag)
+{
+    std::string arg1;
+    std::string arg2;
+    switch (flag)
+    {
     case (2):
     {
-        std::cout << "Type the name of country of origin: " << std::endl;
-        std::getline(std::cin, arg1);
-        std::cout << "Type the name of city of origin: " << std::endl;
-        std::getline(std::cin, arg2);
-        std::cout << "Type the name of country of destination: " << std::endl;
-        std::getline(std::cin, arg3);
-        std::cout << "Type the name of city of destination: " << std::endl;
-        std::getline(std::cin, arg4);
-
-        system("clear");
-        std::cout << "Bests flights: " << std::endl;
-        std::cout << "-------------------------------" << std::endl;
-        findBestFlights(airports, arg1, arg2, arg3, arg4);
+        std::cout << "Type the name of City of " << type << ": " << std::endl;
+        std::cin >> arg1;
+        std::cout << "Type the name of Country of " << type << ": " << std::endl;
+        std::cin >> arg2;
         break;
     }
+    default:
+    {
+        exit(0);
+        break;
+    }
+    }
+    return make_pair(arg1, arg2);
+}
+
+pair<double, double> typeCoordinates(std::string type, int flag)
+{
+    double arg1;
+    double arg2;
+    switch (flag)
+    {
     case (3):
     {
-        std::cout << "Type the latitude of origin: " << std::endl;
-        std::cin >> latOrigin;
-        std::cout << "Type the longitude of origin: " << std::endl;
-        std::cin >> longOrigin;
-        std::cout << "Type the latitude of destination: " << std::endl;
-        std::cin >> latDest;
-        std::cout << "Type the longitude of destination: " << std::endl;
-        std::cin >> longDest;
-        std::cout << "Type the distance max: " << std::endl;
-        std::cin >> distMax;
-        system("clear");
-        findBestFlights(airports, latOrigin, longOrigin, latDest, longDest, distMax);
+        std::cout << "Type the latitude of " << type << ": " << std::endl;
+        std::cin >> arg1;
+        std::cout << "Type the longitude of " << type << ": " << std::endl;
+        std::cin >> arg2;
         break;
     }
+    default:
+    {
+        exit(0);
+        break;
+    }
+    }
+    return make_pair(arg1, arg2);
+}
+
+void bestFlights()
+{
+    std::string airportOrig;
+    std::string airportDest;
+
+    std::pair<std::string, std::string> cityOrig;
+    std::pair<std::string, std::string> cityDest;
+
+    std::pair<double, double> cordOrig;
+    std::pair<double, double> cordDest;
+
+    int maxDist;
+
+    int flagOrigin = selectType("origin");
+
+    switch (flagOrigin)
+    {
+    case (1):
+        airportOrig = typeAirport("origin", flagOrigin);
+        break;
+    case (2):
+        cityOrig = typeCity("origin", flagOrigin);
+        break;
+    case (3):
+        cordOrig = typeCoordinates("origin", flagOrigin);
+        break;
+    default:
+        exit(0);
+        break;
+    }
+
+    int flagDest = selectType("destination");
+    switch (flagOrigin)
+    {
+    case (1):
+        airportDest = typeAirport("destination", flagDest);
+        break;
+    case (2):
+        cityDest = typeCity("destination", flagDest);
+        break;
+    case (3):
+        cordDest = typeCoordinates("destination", flagDest);
+        break;
+
+    default:
+        exit(0);
+        break;
     }
 }
 
