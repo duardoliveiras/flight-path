@@ -353,7 +353,7 @@ void findBestFlights(Graph<Airport> &airports, string src, string dest)
     showPath(paths);
 }
 
-// City to Airport
+// City - Airport
 // type = 0. City to Airport
 // type = 1. Airport to City
 void findBestFlights(Graph<Airport> &airports, string country, string city, string airport, int type)
@@ -385,6 +385,7 @@ void findBestFlights(Graph<Airport> &airports, string country, string city, stri
     }
 }
 
+// Show a multi-path
 void showPath(Graph<Airport> &airports, vector<Vertex<Airport> *> source, vector<Vertex<Airport> *> dest, vector<vector<string>> paths)
 {
     for (auto s : source)
@@ -409,6 +410,7 @@ void showPath(Graph<Airport> &airports, vector<Vertex<Airport> *> source, vector
     }
 }
 
+// Show a set of paths
 void showPath(vector<vector<string>> paths)
 {
     for (auto path : paths)
@@ -422,6 +424,7 @@ void showPath(vector<vector<string>> paths)
     }
 }
 
+// Find all airports in a city
 vector<Vertex<Airport> *> findAirports(Graph<Airport> &airports, string country, string city)
 {
     vector<Vertex<Airport> *> vec;
@@ -480,54 +483,32 @@ double distanceEarth(double latOrigin, double longOrigin, double latDest, double
     return ans;
 }
 
-void findBestFlights(Graph<Airport> &airports, double latOrigin, double longOrigin, double latDest, double longDest, int distMax)
+// Find all airports around a point
+vector<Vertex<Airport> *> findAirports(Graph<Airport> &airports, double lat, double lon, int distMax)
 {
-    vector<Vertex<Airport> *> src;
-    vector<Vertex<Airport> *> dest;
-    vector<vector<string>> paths;
-
+    vector<Vertex<Airport> *> vec;
     for (auto v : airports.getVertexSet())
     {
-        double lat = v->getInfo().getLatitude();
-        double lon = v->getInfo().getLongitude();
+        double lat2 = v->getInfo().getLatitude();
+        double lon2 = v->getInfo().getLongitude();
 
-        double distSrc = distanceEarth(latOrigin, longOrigin, lat, lon);
-        double distDest = distanceEarth(latDest, longDest, lat, lon);
+        double dist = distanceEarth(lat, lon, lat2, lon2);
 
-        if (distSrc <= distMax)
+        if (dist <= distMax)
         {
-            std::cout << "Source: " << v->getInfo().getCode() << " Distance: " << distSrc << " km" << std::endl;
-            src.push_back(v);
-        }
-        if (distDest <= distMax)
-        {
-            std::cout << "Destination: " << v->getInfo().getCode() << " Distance: " << distDest << " km" << std::endl;
-            dest.push_back(v);
+            vec.push_back(v);
         }
     }
-    std::cout << "\n"
-              << std::endl;
-    for (auto s : src)
-    {
-        std::cout << "Source: " << s->getInfo().getCode() << std::endl;
-        vector<vector<string>> paths;
-        for (auto d : dest)
-        {
-            std::cout << "Destination: " << d->getInfo().getCode() << std::endl;
-            std::string tgt = d->getInfo().getCode();
-            resetVisited(airports);
-            paths = bfsPath(s, tgt);
-            for (auto path : paths)
-            {
+    return vec;
+}
 
-                for (auto p : path)
-                {
-                    std::cout << p << " -> ";
-                }
-                std::cout << std::endl;
-            }
-        }
-    }
+void findBestFlights(Graph<Airport> &airports, double latOrigin, double longOrigin, double latDest, double longDest, int distMax)
+{
+    vector<Vertex<Airport> *> src = findAirports(airports, latOrigin, longOrigin, distMax);
+    vector<Vertex<Airport> *> dest = findAirports(airports, latDest, longDest, distMax);
+    vector<vector<string>> paths;
+
+    showPath(airports, src, dest, paths);
 }
 
 void getPath(string current, vector<string> &path, unordered_map<string, vector<string>> &prev, vector<vector<string>> &paths, string startCode)

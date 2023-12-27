@@ -37,6 +37,7 @@ void showPath(vector<vector<string>> paths);
 void showPath(Graph<Airport> &airports, vector<Vertex<Airport> *> source, vector<Vertex<Airport> *> dest, vector<vector<string>> paths);
 //------------------------------------------------------------
 vector<Vertex<Airport> *> findAirports(Graph<Airport> &airports, string country, string city);
+vector<Vertex<Airport> *> findAirports(Graph<Airport> &airports, double lat, double lon, int distMax);
 //------------------------------------------------------------
 vector<vector<string>> bfsPath(Vertex<Airport> *v, string &tgt);
 

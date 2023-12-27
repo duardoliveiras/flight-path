@@ -244,6 +244,8 @@ void bestFlights()
         break;
     case (3):
         cordDest = typeCoordinates("destination", flagDest);
+        std::cout << "Type the maximum distance in (km): " << std::endl;
+        std::cin >> maxDist;
         break;
 
     default:
@@ -298,7 +300,7 @@ void bestFlights()
                 /* code */
                 break;
             case (3): // coordinates to coordinates
-                /* code */
+                findBestFlights(airports, cordOrig.first, cordOrig.second, cordDest.first, cordDest.second, maxDist);
                 break;
             default:
                 break;
