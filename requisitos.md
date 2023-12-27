@@ -38,7 +38,7 @@ Pronto - [✔]
 
 - [✔] A partir da cidade, analisando todos aeroportos das cidade escolhidas.
 
-- [✖] A partir das coordenadas geográficas, dada uma coordenada devemos realizar o cálculo a partir dos aeroportos mais próximos.
+- [✔] A partir das coordenadas geográficas, dada uma coordenada devemos realizar o cálculo a partir dos aeroportos mais próximos.
 
 - [✖] O usuário pode realizar combinações dos itens anterior. Exemplo: solicitar um vôo a partir de um aeroporto para um local, ou de um local para uma cidade. (SE quisermos usar distâncias no programa, podemos utilizar a função `Haversina Distance`.
 

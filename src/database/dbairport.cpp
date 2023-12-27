@@ -407,6 +407,12 @@ double toRadians(const double degree)
     return (degree * M_PI / 180);
 }
 
+//-23.477461, -46.548338 Anywhere in Sao Paulo
+//-23.432075, -46.469511 Garulhos GRU 10km
+
+// 28.160090, -17.240129 Anywhere in La Gomera
+// 28.029600, -17.214600 GMZ 30km
+
 double distanceEarth(double latOrigin, double longOrigin, double latDest, double longDest)
 {
     latOrigin = toRadians(latOrigin);
@@ -430,15 +436,52 @@ double distanceEarth(double latOrigin, double longOrigin, double latDest, double
 
 void findBestFlights(Graph<Airport> &airports, double latOrigin, double longOrigin, double latDest, double longDest, int distMax)
 {
-    std::cout << "Lat Origin: " << latOrigin << std::endl;
-    std::cout << "Long Origin: " << longOrigin << std::endl;
-    std::cout << "Lat Dest: " << latDest << std::endl;
-    std::cout << "Long Dest: " << longDest << std::endl;
-    std::cout << "Dist Max: " << distMax << std::endl;
-    //-23.477461, -46.548338
-    //-23.432075, -46.469511 10km
-    double distance = distanceEarth(latOrigin, longOrigin, latDest, longDest);
-    std::cout << "Distance: " << distance << " Km" << std::endl;
+    vector<Vertex<Airport> *> src;
+    vector<Vertex<Airport> *> dest;
+    vector<vector<string>> paths;
+
+    for (auto v : airports.getVertexSet())
+    {
+        double lat = v->getInfo().getLatitude();
+        double lon = v->getInfo().getLongitude();
+
+        double distSrc = distanceEarth(latOrigin, longOrigin, lat, lon);
+        double distDest = distanceEarth(latDest, longDest, lat, lon);
+
+        if (distSrc <= distMax)
+        {
+            std::cout << "Source: " << v->getInfo().getCode() << " Distance: " << distSrc << " km" << std::endl;
+            src.push_back(v);
+        }
+        if (distDest <= distMax)
+        {
+            std::cout << "Destination: " << v->getInfo().getCode() << " Distance: " << distDest << " km" << std::endl;
+            dest.push_back(v);
+        }
+    }
+    std::cout << "\n"
+              << std::endl;
+    for (auto s : src)
+    {
+        std::cout << "Source: " << s->getInfo().getCode() << std::endl;
+        vector<vector<string>> paths;
+        for (auto d : dest)
+        {
+            std::cout << "Destination: " << d->getInfo().getCode() << std::endl;
+            std::string tgt = d->getInfo().getCode();
+            resetVisited(airports);
+            paths = bfsPath(s, tgt);
+            for (auto path : paths)
+            {
+
+                for (auto p : path)
+                {
+                    std::cout << p << " -> ";
+                }
+                std::cout << std::endl;
+            }
+        }
+    }
 }
 
 void getPath(string current, vector<string> &path, unordered_map<string, vector<string>> &prev, vector<vector<string>> &paths, string startCode)

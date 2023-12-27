@@ -187,6 +187,7 @@ void bestFlights()
         std::cin >> longDest;
         std::cout << "Type the distance max: " << std::endl;
         std::cin >> distMax;
+        system("clear");
         findBestFlights(airports, latOrigin, longOrigin, latDest, longDest, distMax);
         break;
     }
