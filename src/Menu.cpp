@@ -5,7 +5,9 @@ Graph<Airport> airports;
 
 void Menu(std::string folder)
 {
+
     airports = readFlights(folder);
+    system("clear");
     int flag;
     std::cout << "Welcome to Travel Management" << std::endl;
     std::cout << "-------------------------------" << std::endl;
@@ -129,6 +131,7 @@ int selectType(std::string arg)
     std::cout << "1. By airports" << std::endl;
     std::cout << "2. By cities" << std::endl;
     std::cout << "3. By coordinates" << std::endl;
+    std::cout << "0. Exit" << std::endl;
     std::cout << "-------------------------------" << std::endl;
     std::cin >> flag;
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // ignore \n
@@ -227,6 +230,11 @@ void bestFlights()
         break;
     case (3):
         cordOrig = typeCoordinates("origin", flagOrigin);
+        std::cout << "Type the maximum distance in (km): " << std::endl;
+        std::cin >> maxDist;
+        break;
+    case (0):
+        exit(0);
         break;
     default:
         exit(0);
@@ -266,12 +274,13 @@ void bestFlights()
                 findBestFlights(airports, cityDest.second, cityDest.first, airportOrig, 1);
                 break;
             case (3): // airport to coordinates
-                /* code */
+                findBestFlights(airports, airportOrig, cordDest.first, cordDest.second, maxDist, 1);
                 break;
             default:
                 break;
             }
         }
+        break;
     case (2):
         switch (flagDest)
         {
@@ -283,21 +292,22 @@ void bestFlights()
                 findBestFlights(airports, cityOrig.second, cityOrig.first, cityDest.second, cityDest.first);
                 break;
             case (3): // city to coordinates
-                /* code */
+                findBestFlights(airports, cityOrig.second, cityOrig.first, cordDest.first, cordDest.second, maxDist, 0);
                 break;
             default:
                 break;
             }
         }
+        break;
     case (3):
         switch (flagDest)
         {
             {
             case (1): // coordinates to airport
-                /* code */
+                findBestFlights(airports, airportDest, cordOrig.first, cordOrig.second, maxDist, 0);
                 break;
             case (2): // coordinates to city
-                /* code */
+                findBestFlights(airports, cityDest.second, cityDest.first, cordOrig.first, cordOrig.second, maxDist, 1);
                 break;
             case (3): // coordinates to coordinates
                 findBestFlights(airports, cordOrig.first, cordOrig.second, cordDest.first, cordDest.second, maxDist);
@@ -306,7 +316,14 @@ void bestFlights()
                 break;
             }
         }
+        break;
     }
+
+    std::cout << "-------------------------------" << std::endl;
+    std::cout << "Press any key to continue..." << std::endl;
+    std::cin.ignore();
+    std::cin.get();
+    bestFlights();
 }
 
 void menuFlights()

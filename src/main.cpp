@@ -6,6 +6,7 @@ int main(int argc, char const *argv[])
     {
         argv[1] = "original";
     }
+    std::cout << "Loading database..." << std::endl;
     Menu(argv[1]);
     return 0;
 }

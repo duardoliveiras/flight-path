@@ -502,6 +502,7 @@ vector<Vertex<Airport> *> findAirports(Graph<Airport> &airports, double lat, dou
     return vec;
 }
 
+// Point to Point
 void findBestFlights(Graph<Airport> &airports, double latOrigin, double longOrigin, double latDest, double longDest, int distMax)
 {
     vector<Vertex<Airport> *> src = findAirports(airports, latOrigin, longOrigin, distMax);
@@ -509,6 +510,82 @@ void findBestFlights(Graph<Airport> &airports, double latOrigin, double longOrig
     vector<vector<string>> paths;
 
     showPath(airports, src, dest, paths);
+}
+
+// Airport - Point
+// type = 0. Point to Airport
+// type = 1. Airport to Point
+void findBestFlights(Graph<Airport> &airports, string airport, double lat, double lon, int distMax, int type)
+{
+    vector<Vertex<Airport> *> vec;
+    vector<vector<string>> paths;
+    vec = findAirports(airports, lat, lon, distMax);
+
+    if (type == 0)
+    {
+        for (auto v : vec)
+        {
+            std::cout << "Source: " << v->getInfo().getCode() << std::endl;
+            resetVisited(airports);
+            paths = bfsPath(v, airport);
+            showPath(paths);
+        }
+    }
+    else if (type == 1)
+    {
+        for (auto v : vec)
+        {
+            std::cout << "Source: " << airport << std::endl;
+            std::string tgt = v->getInfo().getCode();
+            resetVisited(airports);
+            paths = bfsPath(airports.findVertex(Airport(airport)), tgt);
+            showPath(paths);
+        }
+    }
+}
+
+// City - Point
+// type = 0. City to Point
+// type = 1. Point to City
+void findBestFlights(Graph<Airport> &airports, string country, string city, double lat, double lon, int distMax, int type)
+{
+    vector<Vertex<Airport> *> vec_point;
+    vector<Vertex<Airport> *> vec_city;
+    vector<vector<string>> paths;
+
+    vec_point = findAirports(airports, lat, lon, distMax);
+    vec_city = findAirports(airports, country, city);
+
+    if (type == 0)
+    {
+        for (auto c : vec_city)
+        {
+            std::cout << "Source: " << c->getInfo().getCode() << std::endl;
+            for (auto p : vec_point)
+            {
+                std::cout << "Destination: " << p->getInfo().getCode() << std::endl;
+                resetVisited(airports);
+                std::string tgt = p->getInfo().getCode();
+                paths = bfsPath(c, tgt);
+                showPath(paths);
+            }
+        }
+    }
+    else if (type == 1)
+    {
+        for (auto p : vec_point)
+        {
+            std::cout << "Source: " << p->getInfo().getCode() << std::endl;
+            for (auto c : vec_city)
+            {
+                std::cout << "Destination: " << c->getInfo().getCode() << std::endl;
+                resetVisited(airports);
+                std::string tgt = c->getInfo().getCode();
+                paths = bfsPath(p, tgt);
+                showPath(paths);
+            }
+        }
+    }
 }
 
 void getPath(string current, vector<string> &path, unordered_map<string, vector<string>> &prev, vector<vector<string>> &paths, string startCode)

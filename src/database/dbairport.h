@@ -32,6 +32,8 @@ void findBestFlights(Graph<Airport> &airports, string src, string dest);
 void findBestFlights(Graph<Airport> &airports, string countrySrc, string citySrc, string countryDest, string cityDest);
 void findBestFlights(Graph<Airport> &airports, double latOrigin, double longOrigin, double latDest, double longDest, int distMax);
 void findBestFlights(Graph<Airport> &airports, string country, string city, string airport, int type);
+void findBestFlights(Graph<Airport> &airports, string country, string city, double lat, double lon, int distMax, int type);
+void findBestFlights(Graph<Airport> &airports, string airport, double lat, double lon, int distMax, int type);
 //------------------------------------------------------------
 void showPath(vector<vector<string>> paths);
 void showPath(Graph<Airport> &airports, vector<Vertex<Airport> *> source, vector<Vertex<Airport> *> dest, vector<vector<string>> paths);
