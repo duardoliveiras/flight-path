@@ -8,6 +8,8 @@
 #include <fstream>
 #include <algorithm>
 #include <unordered_set>
+#include <limits.h>
+#include <cmath>
 
 int quantityAirports(Graph<Airport> airports);
 int quantityFlights(Graph<Airport> airports);
@@ -25,5 +27,23 @@ void rankingAirports(Graph<Airport> airports, int arg);
 void getArticulations(Graph<Airport> airports);
 void dfsArticulations(Graph<Airport> &airports, Vertex<Airport> *v, unordered_set<string> &res, std::stack<string> &s, int i);
 void calculateIndegree(Graph<Airport> &airports);
+//------------------------------------------------------------
+void findBestFlights(Graph<Airport> &airports, string src, string dest);
+void findBestFlights(Graph<Airport> &airports, string countrySrc, string citySrc, string countryDest, string cityDest);
+void findBestFlights(Graph<Airport> &airports, double latOrigin, double longOrigin, double latDest, double longDest, int distMax);
+void findBestFlights(Graph<Airport> &airports, string country, string city, string airport, int type);
+void findBestFlights(Graph<Airport> &airports, string country, string city, double lat, double lon, int distMax, int type);
+void findBestFlights(Graph<Airport> &airports, string airport, double lat, double lon, int distMax, int type);
+//------------------------------------------------------------
+void showPath(vector<vector<string>> paths);
+void showPath(Graph<Airport> &airports, vector<Vertex<Airport> *> source, vector<Vertex<Airport> *> dest, vector<vector<string>> paths);
+//------------------------------------------------------------
+vector<Vertex<Airport> *> findAirports(Graph<Airport> &airports, string country, string city);
+vector<Vertex<Airport> *> findAirports(Graph<Airport> &airports, double lat, double lon, int distMax);
+//------------------------------------------------------------
+vector<vector<string>> bfsPath(Vertex<Airport> *v, string &tgt);
+
+void dfsPath(Vertex<Airport> *v, string tgt, vector<string> &path, vector<vector<string>> &paths);
+void findAllPaths(Vertex<Airport> *v, string tgt);
 
 #endif // DBAIRPORT_H

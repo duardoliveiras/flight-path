@@ -28,19 +28,19 @@ Pronto - [✔]
 
 - [✔] Ranking de aeroportos com maiores capacidades de tráfego aéreo (maior número de vôos).
 
-- [✖] Identificar aeroportos que são essenciais para manter a conexão entre destinos. Aqueles que se removidos, areas de conexão se tornam inacessíveis (Articulation Points - DFS).
+- [✔] Identificar aeroportos que são essenciais para manter a conexão entre destinos. Aqueles que se removidos, areas de conexão se tornam inacessíveis (Articulation Points - DFS).
 
 ##### Melhores opções de vôos:
 
-- [✖] Uma única opção ou conjunto de opções que a partir de uma origem e destino, a melhor opção é o vôo com menor quantidade de paradas. As localizações devem ser lidas pela entrada do usuário.
+- [✔] Uma única opção ou conjunto de opções que a partir de uma origem e destino, a melhor opção é o vôo com menor quantidade de paradas. As localizações devem ser lidas pela entrada do usuário.
 
-- [✖] Deve ser possível calcular a melhor opção a partir de aeroportos (código ou nome).
+- [✔] Deve ser possível calcular a melhor opção a partir de aeroportos (código ou nome).
 
-- [✖] A partir da cidade, analisando todos aeroportos das cidade escolhidas.
+- [✔] A partir da cidade, analisando todos aeroportos das cidade escolhidas.
 
-- [✖] A partir das coordenadas geográficas, dada uma coordenada devemos realizar o cálculo a partir dos aeroportos mais próximos.
+- [✔] A partir das coordenadas geográficas, dada uma coordenada devemos realizar o cálculo a partir dos aeroportos mais próximos.
 
-- [✖] O usuário pode realizar combinações dos itens anterior. Exemplo: solicitar um vôo a partir de um aeroporto para um local, ou de um local para uma cidade. (SE quisermos usar distâncias no programa, podemos utilizar a função `Haversina Distance`.
+- [✔] O usuário pode realizar combinações dos itens anterior. Exemplo: solicitar um vôo a partir de um aeroporto para um local, ou de um local para uma cidade. (SE quisermos usar distâncias no programa, podemos utilizar a função `Haversina Distance`.
 
 ##### Filtros:
 

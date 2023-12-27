@@ -29,6 +29,7 @@ Graph<Airport> readAirports(std::string folder)
         std::getline(iss, country, ',');
 
         iss >> latitude;
+        iss.ignore();
         iss >> longitude;
 
         Airport airport(code, name, country, city, latitude, longitude);

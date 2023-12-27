@@ -5,7 +5,9 @@ Graph<Airport> airports;
 
 void Menu(std::string folder)
 {
+
     airports = readFlights(folder);
+    system("clear");
     int flag;
     std::cout << "Welcome to Travel Management" << std::endl;
     std::cout << "-------------------------------" << std::endl;
@@ -25,7 +27,7 @@ void Menu(std::string folder)
         listing();
         break;
     case 3:
-        std::cout << "Bests flights" << std::endl;
+        bestFlights();
         break;
     case 0:
         exit(0);
@@ -116,6 +118,212 @@ void listing()
         exit(0);
         break;
     }
+}
+
+int selectType(std::string arg)
+{
+    int flag;
+
+    system("clear");
+    std::cout << "Bests flights: " << std::endl;
+    std::cout << "Select your " << arg << " option:" << std::endl;
+    std::cout << "-------------------------------" << std::endl;
+    std::cout << "1. By airports" << std::endl;
+    std::cout << "2. By cities" << std::endl;
+    std::cout << "3. By coordinates" << std::endl;
+    std::cout << "0. Exit" << std::endl;
+    std::cout << "-------------------------------" << std::endl;
+    std::cin >> flag;
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // ignore \n
+    return flag;
+}
+
+std::string typeAirport(std::string type, int flag)
+{
+    std::string arg;
+    switch (flag)
+    {
+    case (1):
+    {
+        std::cout << "Type the code of Airport of " << type << ": " << std::endl;
+        std::cin >> arg;
+        break;
+    }
+    default:
+    {
+        std::cout << "oi" << std::endl;
+        exit(0);
+        break;
+    }
+    }
+    return arg;
+}
+
+pair<std::string, std::string> typeCity(std::string type, int flag)
+{
+    std::string arg1;
+    std::string arg2;
+    switch (flag)
+    {
+    case (2):
+    {
+        std::cout << "Type the name of City of " << type << ": " << std::endl;
+        std::getline(std::cin, arg1);
+        std::cout << "Type the name of Country of " << type << ": " << std::endl;
+        std::getline(std::cin, arg2);
+        break;
+    }
+    default:
+    {
+        exit(0);
+        break;
+    }
+    }
+    return make_pair(arg1, arg2);
+}
+
+pair<double, double> typeCoordinates(std::string type, int flag)
+{
+    double arg1;
+    double arg2;
+    switch (flag)
+    {
+    case (3):
+    {
+        std::cout << "Type the latitude of " << type << ": " << std::endl;
+        std::cin >> arg1;
+        std::cout << "Type the longitude of " << type << ": " << std::endl;
+        std::cin >> arg2;
+        break;
+    }
+    default:
+    {
+        exit(0);
+        break;
+    }
+    }
+    return make_pair(arg1, arg2);
+}
+
+void bestFlights()
+{
+    std::string airportOrig;
+    std::string airportDest;
+
+    std::pair<std::string, std::string> cityOrig;
+    std::pair<std::string, std::string> cityDest;
+
+    std::pair<double, double> cordOrig;
+    std::pair<double, double> cordDest;
+
+    int maxDist;
+
+    int flagOrigin = selectType("origin");
+
+    switch (flagOrigin)
+    {
+    case (1):
+        airportOrig = typeAirport("origin", flagOrigin);
+        break;
+    case (2):
+        cityOrig = typeCity("origin", flagOrigin);
+        break;
+    case (3):
+        cordOrig = typeCoordinates("origin", flagOrigin);
+        std::cout << "Type the maximum distance in (km): " << std::endl;
+        std::cin >> maxDist;
+        break;
+    case (0):
+        exit(0);
+        break;
+    default:
+        exit(0);
+        break;
+    }
+
+    int flagDest = selectType("destination");
+    switch (flagDest)
+    {
+    case (1):
+        airportDest = typeAirport("destination", flagDest);
+        break;
+    case (2):
+        cityDest = typeCity("destination", flagDest);
+        break;
+    case (3):
+        cordDest = typeCoordinates("destination", flagDest);
+        std::cout << "Type the maximum distance in (km): " << std::endl;
+        std::cin >> maxDist;
+        break;
+
+    default:
+        exit(0);
+        break;
+    }
+
+    switch (flagOrigin)
+    {
+    case (1):
+        switch (flagDest)
+        {
+            {
+            case (1): // airport to airport
+                findBestFlights(airports, airportOrig, airportDest);
+                break;
+            case (2): // airport to city
+                findBestFlights(airports, cityDest.second, cityDest.first, airportOrig, 1);
+                break;
+            case (3): // airport to coordinates
+                findBestFlights(airports, airportOrig, cordDest.first, cordDest.second, maxDist, 1);
+                break;
+            default:
+                break;
+            }
+        }
+        break;
+    case (2):
+        switch (flagDest)
+        {
+            {
+            case (1): // city to airport
+                findBestFlights(airports, cityOrig.second, cityOrig.first, airportDest, 0);
+                break;
+            case (2): // city to city
+                findBestFlights(airports, cityOrig.second, cityOrig.first, cityDest.second, cityDest.first);
+                break;
+            case (3): // city to coordinates
+                findBestFlights(airports, cityOrig.second, cityOrig.first, cordDest.first, cordDest.second, maxDist, 0);
+                break;
+            default:
+                break;
+            }
+        }
+        break;
+    case (3):
+        switch (flagDest)
+        {
+            {
+            case (1): // coordinates to airport
+                findBestFlights(airports, airportDest, cordOrig.first, cordOrig.second, maxDist, 0);
+                break;
+            case (2): // coordinates to city
+                findBestFlights(airports, cityDest.second, cityDest.first, cordOrig.first, cordOrig.second, maxDist, 1);
+                break;
+            case (3): // coordinates to coordinates
+                findBestFlights(airports, cordOrig.first, cordOrig.second, cordDest.first, cordDest.second, maxDist);
+                break;
+            default:
+                break;
+            }
+        }
+        break;
+    }
+
+    std::cout << "-------------------------------" << std::endl;
+    std::cout << "Press any key to continue..." << std::endl;
+    std::cin.ignore();
+    std::cin.get();
+    bestFlights();
 }
 
 void menuFlights()
