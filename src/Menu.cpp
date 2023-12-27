@@ -125,6 +125,12 @@ void bestFlights()
     std::string arg3;
     std::string arg4;
 
+    double latOrigin;
+    double longOrigin;
+    double latDest;
+    double longDest;
+    int distMax;
+
     int flag;
 
     system("clear");
@@ -132,6 +138,7 @@ void bestFlights()
     std::cout << "-------------------------------" << std::endl;
     std::cout << "1. By airports" << std::endl;
     std::cout << "2. By cities" << std::endl;
+    std::cout << "3. By coordinates" << std::endl;
     std::cout << "-------------------------------" << std::endl;
     std::cin >> flag;
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // ignore \n
@@ -166,6 +173,21 @@ void bestFlights()
         std::cout << "Bests flights: " << std::endl;
         std::cout << "-------------------------------" << std::endl;
         findBestFlights(airports, arg1, arg2, arg3, arg4);
+        break;
+    }
+    case (3):
+    {
+        std::cout << "Type the latitude of origin: " << std::endl;
+        std::cin >> latOrigin;
+        std::cout << "Type the longitude of origin: " << std::endl;
+        std::cin >> longOrigin;
+        std::cout << "Type the latitude of destination: " << std::endl;
+        std::cin >> latDest;
+        std::cout << "Type the longitude of destination: " << std::endl;
+        std::cin >> longDest;
+        std::cout << "Type the distance max: " << std::endl;
+        std::cin >> distMax;
+        findBestFlights(airports, latOrigin, longOrigin, latDest, longDest, distMax);
         break;
     }
     }

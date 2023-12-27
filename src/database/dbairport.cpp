@@ -402,6 +402,45 @@ void findBestFlights(Graph<Airport> &airports, string countrySrc, string citySrc
     }
 }
 
+double toRadians(const double degree)
+{
+    return (degree * M_PI / 180);
+}
+
+double distanceEarth(double latOrigin, double longOrigin, double latDest, double longDest)
+{
+    latOrigin = toRadians(latOrigin);
+    longOrigin = toRadians(longOrigin);
+    latDest = toRadians(latDest);
+    longDest = toRadians(longDest);
+
+    double dlong = longDest - longOrigin;
+    double dlat = latDest - latOrigin;
+
+    double ans = pow(sin(dlat / 2), 2) + cos(latOrigin) * cos(latDest) * pow(sin(dlong / 2), 2);
+
+    ans = 2 * asin(sqrt(ans));
+
+    double R = 6371;
+
+    ans = ans * R;
+
+    return ans;
+}
+
+void findBestFlights(Graph<Airport> &airports, double latOrigin, double longOrigin, double latDest, double longDest, int distMax)
+{
+    std::cout << "Lat Origin: " << latOrigin << std::endl;
+    std::cout << "Long Origin: " << longOrigin << std::endl;
+    std::cout << "Lat Dest: " << latDest << std::endl;
+    std::cout << "Long Dest: " << longDest << std::endl;
+    std::cout << "Dist Max: " << distMax << std::endl;
+    //-23.477461, -46.548338
+    //-23.432075, -46.469511 10km
+    double distance = distanceEarth(latOrigin, longOrigin, latDest, longDest);
+    std::cout << "Distance: " << distance << " Km" << std::endl;
+}
+
 void getPath(string current, vector<string> &path, unordered_map<string, vector<string>> &prev, vector<vector<string>> &paths, string startCode)
 {
     path.push_back(current);
