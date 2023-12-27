@@ -36,7 +36,7 @@ Pronto - [✔]
 
 - [✔] Deve ser possível calcular a melhor opção a partir de aeroportos (código ou nome).
 
-- [✖] A partir da cidade, analisando todos aeroportos das cidade escolhidas.
+- [✔] A partir da cidade, analisando todos aeroportos das cidade escolhidas.
 
 - [✖] A partir das coordenadas geográficas, dada uma coordenada devemos realizar o cálculo a partir dos aeroportos mais próximos.
 
