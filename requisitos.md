@@ -34,7 +34,7 @@ Pronto - [✔]
 
 - [✔] Uma única opção ou conjunto de opções que a partir de uma origem e destino, a melhor opção é o vôo com menor quantidade de paradas. As localizações devem ser lidas pela entrada do usuário.
 
-- [✖] Deve ser possível calcular a melhor opção a partir de aeroportos (código ou nome).
+- [✔] Deve ser possível calcular a melhor opção a partir de aeroportos (código ou nome).
 
 - [✖] A partir da cidade, analisando todos aeroportos das cidade escolhidas.
 

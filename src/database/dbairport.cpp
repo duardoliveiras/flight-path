@@ -361,6 +361,47 @@ void findBestFlights(Graph<Airport> &airports, string src, string dest)
     }
 }
 
+void findBestFlights(Graph<Airport> &airports, string countrySrc, string citySrc, string countryDest, string cityDest)
+{
+    vector<Vertex<Airport> *> src;
+    vector<Vertex<Airport> *> dest;
+    vector<vector<string>> paths;
+
+    for (auto v : airports.getVertexSet())
+    {
+        if (v->getInfo().getCountry() == countrySrc && v->getInfo().getCity() == citySrc)
+        {
+            src.push_back(v);
+        }
+        if (v->getInfo().getCountry() == countryDest && v->getInfo().getCity() == cityDest)
+        {
+            dest.push_back(v);
+        }
+    }
+
+    for (auto s : src)
+    {
+        std::cout << "Source: " << s->getInfo().getCode() << std::endl;
+        vector<vector<string>> paths;
+        for (auto d : dest)
+        {
+            std::cout << "Destination: " << d->getInfo().getCode() << std::endl;
+            std::string tgt = d->getInfo().getCode();
+            resetVisited(airports);
+            paths = bfsPath(s, tgt);
+            for (auto path : paths)
+            {
+
+                for (auto p : path)
+                {
+                    std::cout << p << " -> ";
+                }
+                std::cout << std::endl;
+            }
+        }
+    }
+}
+
 void getPath(string current, vector<string> &path, unordered_map<string, vector<string>> &prev, vector<vector<string>> &paths, string startCode)
 {
     path.push_back(current);

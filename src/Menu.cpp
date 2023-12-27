@@ -122,18 +122,23 @@ void bestFlights()
 {
     std::string arg1;
     std::string arg2;
+    std::string arg3;
+    std::string arg4;
+
     int flag;
 
     system("clear");
     std::cout << "Bests flights: " << std::endl;
     std::cout << "-------------------------------" << std::endl;
-    std::cout << "1. Without filters" << std::endl;
+    std::cout << "1. By airports" << std::endl;
+    std::cout << "2. By cities" << std::endl;
     std::cout << "-------------------------------" << std::endl;
     std::cin >> flag;
-
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // ignore \n
     switch (flag)
     {
     case (1):
+    {
         std::cout << "Type the code of Airport of origin: " << std::endl;
         std::cin >> arg1;
         std::cout << "Type the code of Airport of destination: " << std::endl;
@@ -144,6 +149,25 @@ void bestFlights()
         auto s = airports.findVertex(arg1);
         // findAllPaths(s, arg2);
         findBestFlights(airports, arg1, arg2);
+        break;
+    }
+    case (2):
+    {
+        std::cout << "Type the name of country of origin: " << std::endl;
+        std::getline(std::cin, arg1);
+        std::cout << "Type the name of city of origin: " << std::endl;
+        std::getline(std::cin, arg2);
+        std::cout << "Type the name of country of destination: " << std::endl;
+        std::getline(std::cin, arg3);
+        std::cout << "Type the name of city of destination: " << std::endl;
+        std::getline(std::cin, arg4);
+
+        system("clear");
+        std::cout << "Bests flights: " << std::endl;
+        std::cout << "-------------------------------" << std::endl;
+        findBestFlights(airports, arg1, arg2, arg3, arg4);
+        break;
+    }
     }
 }
 
