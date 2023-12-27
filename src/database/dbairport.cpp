@@ -397,6 +397,19 @@ void showPath(vector<vector<string>> paths)
     }
 }
 
+vector<Vertex<Airport> *> findAirports(Graph<Airport> &airports, string country, string city)
+{
+    vector<Vertex<Airport> *> vec;
+    for (auto v : airports.getVertexSet())
+    {
+        if (v->getInfo().getCountry() == country && v->getInfo().getCity() == city)
+        {
+            vec.push_back(v);
+        }
+    }
+    return vec;
+}
+
 // City to City
 void findBestFlights(Graph<Airport> &airports, string countrySrc, string citySrc, string countryDest, string cityDest)
 {
@@ -404,17 +417,8 @@ void findBestFlights(Graph<Airport> &airports, string countrySrc, string citySrc
     vector<Vertex<Airport> *> dest;
     vector<vector<string>> paths;
 
-    for (auto v : airports.getVertexSet())
-    {
-        if (v->getInfo().getCountry() == countrySrc && v->getInfo().getCity() == citySrc)
-        {
-            src.push_back(v);
-        }
-        if (v->getInfo().getCountry() == countryDest && v->getInfo().getCity() == cityDest)
-        {
-            dest.push_back(v);
-        }
-    }
+    src = findAirports(airports, countrySrc, citySrc);
+    dest = findAirports(airports, countryDest, cityDest);
 
     showPath(airports, src, dest, paths);
 }

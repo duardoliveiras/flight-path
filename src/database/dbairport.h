@@ -36,6 +36,8 @@ void findBestFlights(Graph<Airport> &airports, string country, string city, stri
 void showPath(vector<vector<string>> paths);
 void showPath(Graph<Airport> &airports, vector<Vertex<Airport> *> source, vector<Vertex<Airport> *> dest, vector<vector<string>> paths);
 //------------------------------------------------------------
+vector<Vertex<Airport> *> findAirports(Graph<Airport> &airports, string country, string city);
+//------------------------------------------------------------
 vector<vector<string>> bfsPath(Vertex<Airport> *v, string &tgt);
 
 void dfsPath(Vertex<Airport> *v, string tgt, vector<string> &path, vector<vector<string>> &paths);
