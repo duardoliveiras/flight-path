@@ -337,6 +337,7 @@ void dfsArticulations(Graph<Airport> &airports, Vertex<Airport> *v, unordered_se
     }
 }
 
+// Airport to Airport
 void findBestFlights(Graph<Airport> &airports, string src, string dest)
 {
     resetVisited(airports);
@@ -349,7 +350,42 @@ void findBestFlights(Graph<Airport> &airports, string src, string dest)
 
     vector<vector<string>> paths;
     paths = bfsPath(s, dest);
+    showPath(paths);
+}
 
+// City to Airport
+// type = 0. City to Airport
+// type = 1. Airport to City
+void findBestFlights(Graph<Airport> &airports, string country, string city, string airport, int type)
+{
+}
+
+void showPath(Graph<Airport> &airports, vector<Vertex<Airport> *> source, vector<Vertex<Airport> *> dest, vector<vector<string>> paths)
+{
+    for (auto s : source)
+    {
+        std::cout << "Source: " << s->getInfo().getCode() << std::endl;
+        for (auto d : dest)
+        {
+            std::cout << "Destination: " << d->getInfo().getCode() << std::endl;
+            std::string tgt = d->getInfo().getCode();
+            resetVisited(airports);
+            paths = bfsPath(s, tgt);
+            for (auto path : paths)
+            {
+
+                for (auto p : path)
+                {
+                    std::cout << p << " -> ";
+                }
+                std::cout << std::endl;
+            }
+        }
+    }
+}
+
+void showPath(vector<vector<string>> paths)
+{
     for (auto path : paths)
     {
 
@@ -361,6 +397,7 @@ void findBestFlights(Graph<Airport> &airports, string src, string dest)
     }
 }
 
+// City to City
 void findBestFlights(Graph<Airport> &airports, string countrySrc, string citySrc, string countryDest, string cityDest)
 {
     vector<Vertex<Airport> *> src;
@@ -379,27 +416,7 @@ void findBestFlights(Graph<Airport> &airports, string countrySrc, string citySrc
         }
     }
 
-    for (auto s : src)
-    {
-        std::cout << "Source: " << s->getInfo().getCode() << std::endl;
-        vector<vector<string>> paths;
-        for (auto d : dest)
-        {
-            std::cout << "Destination: " << d->getInfo().getCode() << std::endl;
-            std::string tgt = d->getInfo().getCode();
-            resetVisited(airports);
-            paths = bfsPath(s, tgt);
-            for (auto path : paths)
-            {
-
-                for (auto p : path)
-                {
-                    std::cout << p << " -> ";
-                }
-                std::cout << std::endl;
-            }
-        }
-    }
+    showPath(airports, src, dest, paths);
 }
 
 double toRadians(const double degree)

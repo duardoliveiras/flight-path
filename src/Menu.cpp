@@ -249,6 +249,61 @@ void bestFlights()
         exit(0);
         break;
     }
+
+    switch (flagOrigin)
+    {
+    case (1):
+        switch (flagDest)
+        {
+            {
+            case (1): // airport to airport
+                findBestFlights(airports, airportOrig, airportDest);
+                break;
+            case (2): // airport to city
+                /* code */
+                break;
+            case (3): // airport to coordinates
+                /* code */
+                break;
+            default:
+                break;
+            }
+        }
+    case (2):
+        switch (flagDest)
+        {
+            {
+            case (1): // city to airport
+                /* code */
+                break;
+            case (2): // city to city
+                /* code */
+                break;
+            case (3): // city to coordinates
+                /* code */
+                break;
+            default:
+                break;
+            }
+        }
+    case (3):
+        switch (flagDest)
+        {
+            {
+            case (1): // coordinates to airport
+                /* code */
+                break;
+            case (2): // coordinates to city
+                /* code */
+                break;
+            case (3): // coordinates to coordinates
+                /* code */
+                break;
+            default:
+                break;
+            }
+        }
+    }
 }
 
 void menuFlights()
