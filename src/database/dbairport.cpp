@@ -358,6 +358,31 @@ void findBestFlights(Graph<Airport> &airports, string src, string dest)
 // type = 1. Airport to City
 void findBestFlights(Graph<Airport> &airports, string country, string city, string airport, int type)
 {
+    vector<Vertex<Airport> *> vec;
+    vector<vector<string>> paths;
+    vec = findAirports(airports, country, city);
+
+    if (type == 0)
+    {
+        for (auto v : vec)
+        {
+            std::cout << "Source: " << v->getInfo().getCode() << std::endl;
+            resetVisited(airports);
+            paths = bfsPath(v, airport);
+            showPath(paths);
+        }
+    }
+    else if (type == 1)
+    {
+        for (auto v : vec)
+        {
+            std::cout << "Source: " << airport << std::endl;
+            std::string tgt = v->getInfo().getCode();
+            resetVisited(airports);
+            paths = bfsPath(airports.findVertex(Airport(airport)), tgt);
+            showPath(paths);
+        }
+    }
 }
 
 void showPath(Graph<Airport> &airports, vector<Vertex<Airport> *> source, vector<Vertex<Airport> *> dest, vector<vector<string>> paths)

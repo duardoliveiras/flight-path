@@ -148,6 +148,7 @@ std::string typeAirport(std::string type, int flag)
     }
     default:
     {
+        std::cout << "oi" << std::endl;
         exit(0);
         break;
     }
@@ -233,7 +234,7 @@ void bestFlights()
     }
 
     int flagDest = selectType("destination");
-    switch (flagOrigin)
+    switch (flagDest)
     {
     case (1):
         airportDest = typeAirport("destination", flagDest);
@@ -260,7 +261,7 @@ void bestFlights()
                 findBestFlights(airports, airportOrig, airportDest);
                 break;
             case (2): // airport to city
-                /* code */
+                findBestFlights(airports, cityDest.second, cityDest.first, airportOrig, 1);
                 break;
             case (3): // airport to coordinates
                 /* code */
@@ -274,10 +275,10 @@ void bestFlights()
         {
             {
             case (1): // city to airport
-                /* code */
+                findBestFlights(airports, cityOrig.second, cityOrig.first, airportDest, 0);
                 break;
             case (2): // city to city
-                /* code */
+                findBestFlights(airports, cityOrig.second, cityOrig.first, cityDest.second, cityDest.first);
                 break;
             case (3): // city to coordinates
                 /* code */
