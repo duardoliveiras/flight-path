@@ -164,9 +164,9 @@ pair<std::string, std::string> typeCity(std::string type, int flag)
     case (2):
     {
         std::cout << "Type the name of City of " << type << ": " << std::endl;
-        std::cin >> arg1;
+        std::getline(std::cin, arg1);
         std::cout << "Type the name of Country of " << type << ": " << std::endl;
-        std::cin >> arg2;
+        std::getline(std::cin, arg2);
         break;
     }
     default:
