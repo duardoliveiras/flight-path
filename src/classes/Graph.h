@@ -28,47 +28,55 @@ template <class T> class Vertex {
   int num;             // auxiliary field
   int low;             // auxiliary field
 
+  // Auxiliar Functions: edge operations
   void addEdge(Vertex<T> *dest, double w, std::string route);
   bool removeEdgeTo(Vertex<T> *d);
 
 public:
+  // Constructor
   Vertex(T in);
+
+  // Getters
+  int getIndegree() const;
+  int getNum() const;
+  int getLow() const;
   T getInfo() const;
-  void setInfo(T in);
   bool isVisited() const;
-  void setVisited(bool v);
   bool isProcessing() const;
-  void setProcessing(bool p);
   const vector<Edge<T>> &getAdj() const;
+
+  // Setters
+  void setIndegree(int indegree);
+  void setNum(int num);
+  void setLow(int low);
+  void setInfo(T in);
+  void setVisited(bool v);
+  void setProcessing(bool p);
   void setAdj(const vector<Edge<T>> &adj);
 
-  int getIndegree() const;
-
-  void setIndegree(int indegree);
-
-  int getNum() const;
-
-  void setNum(int num);
-
-  int getLow() const;
-
-  void setLow(int low);
-
+  // Friend class declaration
   friend class Graph<T>;
 };
 
 template <class T> class Edge {
-  Vertex<T> *dest; // destination vertex
-  double weight;   // edge weight
-  std::string route;
+  Vertex<T> *dest;   // destination vertex
+  double weight;     // auxiliary field
+  std::string route; // auxiliary field
 
 public:
+  // Constructor
   Edge(Vertex<T> *d, double w, std::string route);
+
+  // Getters
   Vertex<T> *getDest() const;
-  void setDest(Vertex<T> *dest);
   double getWeight() const;
   std::string getRoute() const;
+
+  // Setters
+  void setDest(Vertex<T> *dest);
   void setWeight(double weight);
+
+  // Friend class declaration
   friend class Graph<T>;
   friend class Vertex<T>;
 };
@@ -79,65 +87,90 @@ template <class T> class Graph {
   stack<Vertex<T>> _stack_;      // auxiliary field
   list<list<T>> _list_sccs_;     // auxiliary field
 
+  // Auxiliar Functions: Search depth-first traversal
   void dfsVisit(Vertex<T> *v, vector<T> &res) const;
+
+  // Auxiliar Functions: Check if graph is DAG
   bool dfsIsDAG(Vertex<T> *v) const;
 
 public:
+  // Vertex operations
   Vertex<T> *findVertex(const T &in) const;
   int getNumVertex() const;
   bool addVertex(const T &in);
   bool removeVertex(const T &in);
+
+  // Edge operations
   bool addEdge(const T &sourc, const T &dest, double w, std::string route);
   bool removeEdge(const T &sourc, const T &dest);
+
+  // Graph Information
   vector<Vertex<T> *> getVertexSet() const;
+
+  // Traversal Operations
   vector<T> dfs() const;
   vector<T> dfs(const T &source) const;
   vector<T> bfs(const T &source) const;
+
+  // Topological Sort
   vector<T> topsort() const;
+
+  // Graph Properties
   bool isDAG() const;
 };
 
 /****************** Provided constructors and functions ********************/
 
+// Constructor for Vertex Class
 template <class T> Vertex<T>::Vertex(T in) : info(in) {}
 
+// Constructor for Edge Class
 template <class T>
 Edge<T>::Edge(Vertex<T> *d, double w, std::string r)
     : dest(d), weight(w), route(r) {}
 
+// Get number of vertices in the graph
 template <class T> int Graph<T>::getNumVertex() const {
   return vertexSet.size();
 }
 
+// Get vector of vertices in the graph
 template <class T> vector<Vertex<T> *> Graph<T>::getVertexSet() const {
   return vertexSet;
 }
 
+// Get info of a vertex
 template <class T> T Vertex<T>::getInfo() const { return info; }
 
+// Set info of a vertex
 template <class T> void Vertex<T>::setInfo(T in) { Vertex::info = in; }
 
+// Check if vertex is in processing state
 template <class T> bool Vertex<T>::isProcessing() const { return processing; }
 
+// Set the processing state in vertex
 template <class T> void Vertex<T>::setProcessing(bool p) {
   Vertex::processing = p;
 }
 
+// Get the destination vertex of an edge
 template <class T> Vertex<T> *Edge<T>::getDest() const { return dest; }
 
+// Set the destination vertex of an edge
 template <class T> void Edge<T>::setDest(Vertex<T> *d) { Edge::dest = d; }
 
+// Get the weight of an edge
 template <class T> double Edge<T>::getWeight() const { return weight; }
 
-template <class T> std::string Edge<T>::getRoute() const { return route; }
-
+// Set the weight of an edge
 template <class T> void Edge<T>::setWeight(double weight) {
   Edge::weight = weight;
 }
 
-/*
- * Auxiliary function to find a vertex with a given content.
- */
+// Get the route information of an edge
+template <class T> std::string Edge<T>::getRoute() const { return route; }
+
+// Auxiliary function to find a vertex with a given content.
 template <class T> Vertex<T> *Graph<T>::findVertex(const T &in) const {
   for (auto v : vertexSet)
     if (v->info == in)
@@ -145,28 +178,38 @@ template <class T> Vertex<T> *Graph<T>::findVertex(const T &in) const {
   return NULL;
 }
 
+// Check if a vertex has been visited during traversal
 template <class T> bool Vertex<T>::isVisited() const { return visited; }
 
+// Get the indegree of a vertex
 template <class T> int Vertex<T>::getIndegree() const { return indegree; }
 
+// Set the indegree of a vertex
 template <class T> void Vertex<T>::setIndegree(int indegree) {
   Vertex::indegree = indegree;
 }
 
+// Get the numerical identifier of a vertex
 template <class T> int Vertex<T>::getNum() const { return num; }
 
+// Set the numerical identifier of a vertex
 template <class T> void Vertex<T>::setNum(int num) { Vertex::num = num; }
 
+// Get the low value of a vertex
 template <class T> int Vertex<T>::getLow() const { return low; }
 
+// Set the low value of a vertex
 template <class T> void Vertex<T>::setLow(int low) { Vertex::low = low; }
 
+// Get the low value of a vertex
 template <class T> void Vertex<T>::setVisited(bool v) { Vertex::visited = v; }
 
+// Get the vector of adjacent edges of a vertex
 template <class T> const vector<Edge<T>> &Vertex<T>::getAdj() const {
   return adj;
 }
 
+// Set the vector of adjacent edges of a vertex
 template <class T> void Vertex<T>::setAdj(const vector<Edge<T>> &adj) {
   Vertex::adj = adj;
 }
