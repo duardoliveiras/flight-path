@@ -3,6 +3,7 @@ resources/
 build/
 cmake-build-debug/
 cmake-build-debug-coverage/
+.vscode
 
 #source
 CMakeCache.txt

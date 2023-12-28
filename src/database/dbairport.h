@@ -11,6 +11,12 @@
 #include <limits.h>
 #include <cmath>
 
+struct Flight
+{
+    std::string code;
+    std::string airline;
+};
+
 int quantityAirports(Graph<Airport> airports);
 int quantityFlights(Graph<Airport> airports);
 std::pair<int, int> quantityFlights(Graph<Airport> airports, std::string code);
@@ -36,12 +42,15 @@ void findBestFlights(Graph<Airport> &airports, string country, string city, doub
 void findBestFlights(Graph<Airport> &airports, string airport, double lat, double lon, int distMax, int type);
 //------------------------------------------------------------
 void showPath(vector<vector<string>> paths);
+void showPath(vector<vector<Flight>> paths);
 void showPath(Graph<Airport> &airports, vector<Vertex<Airport> *> source, vector<Vertex<Airport> *> dest, vector<vector<string>> paths);
 //------------------------------------------------------------
 vector<Vertex<Airport> *> findAirports(Graph<Airport> &airports, string country, string city);
 vector<Vertex<Airport> *> findAirports(Graph<Airport> &airports, double lat, double lon, int distMax);
 //------------------------------------------------------------
-vector<vector<string>> bfsPath(Vertex<Airport> *v, string &tgt);
+// vector<vector<string>> bfsPath(Vertex<Airport> *v, string &tgt);
+vector<vector<Flight>> bfsPath(Vertex<Airport> *v, string &tgt);
+void getPath(string current, vector<Flight> &path, unordered_map<string, vector<Flight>> &prev, vector<vector<Flight>> &paths, string startCode, string airline);
 
 void dfsPath(Vertex<Airport> *v, string tgt, vector<string> &path, vector<vector<string>> &paths);
 void findAllPaths(Vertex<Airport> *v, string tgt);

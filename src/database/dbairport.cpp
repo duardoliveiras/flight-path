@@ -348,7 +348,7 @@ void findBestFlights(Graph<Airport> &airports, string src, string dest)
     if (s == nullptr || d == nullptr)
         return;
 
-    vector<vector<string>> paths;
+    vector<vector<Flight>> paths;
     paths = bfsPath(s, dest);
     showPath(paths);
 }
@@ -368,7 +368,7 @@ void findBestFlights(Graph<Airport> &airports, string country, string city, stri
         {
             std::cout << "Source: " << v->getInfo().getCode() << std::endl;
             resetVisited(airports);
-            paths = bfsPath(v, airport);
+            // paths = bfsPath(v, airport);
             showPath(paths);
         }
     }
@@ -379,7 +379,7 @@ void findBestFlights(Graph<Airport> &airports, string country, string city, stri
             std::cout << "Source: " << airport << std::endl;
             std::string tgt = v->getInfo().getCode();
             resetVisited(airports);
-            paths = bfsPath(airports.findVertex(Airport(airport)), tgt);
+            // paths = bfsPath(airports.findVertex(Airport(airport)), tgt);
             showPath(paths);
         }
     }
@@ -396,7 +396,7 @@ void showPath(Graph<Airport> &airports, vector<Vertex<Airport> *> source, vector
             std::cout << "Destination: " << d->getInfo().getCode() << std::endl;
             std::string tgt = d->getInfo().getCode();
             resetVisited(airports);
-            paths = bfsPath(s, tgt);
+            // paths = bfsPath(s, tgt);
             for (auto path : paths)
             {
 
@@ -419,6 +419,20 @@ void showPath(vector<vector<string>> paths)
         for (auto p : path)
         {
             std::cout << p << " -> ";
+        }
+        std::cout << std::endl;
+    }
+}
+
+void showPath(vector<vector<Flight>> paths)
+{
+    for (auto path : paths)
+    {
+
+        for (auto p : path)
+        {
+            std::cout << p.code << "(" << p.airline << ")"
+                      << " -> ";
         }
         std::cout << std::endl;
     }
@@ -527,7 +541,7 @@ void findBestFlights(Graph<Airport> &airports, string airport, double lat, doubl
         {
             std::cout << "Source: " << v->getInfo().getCode() << std::endl;
             resetVisited(airports);
-            paths = bfsPath(v, airport);
+            // paths = bfsPath(v, airport);
             showPath(paths);
         }
     }
@@ -538,7 +552,7 @@ void findBestFlights(Graph<Airport> &airports, string airport, double lat, doubl
             std::cout << "Source: " << airport << std::endl;
             std::string tgt = v->getInfo().getCode();
             resetVisited(airports);
-            paths = bfsPath(airports.findVertex(Airport(airport)), tgt);
+            // paths = bfsPath(airports.findVertex(Airport(airport)), tgt);
             showPath(paths);
         }
     }
@@ -566,7 +580,7 @@ void findBestFlights(Graph<Airport> &airports, string country, string city, doub
                 std::cout << "Destination: " << p->getInfo().getCode() << std::endl;
                 resetVisited(airports);
                 std::string tgt = p->getInfo().getCode();
-                paths = bfsPath(c, tgt);
+                // paths = bfsPath(c, tgt);
                 showPath(paths);
             }
         }
@@ -581,19 +595,19 @@ void findBestFlights(Graph<Airport> &airports, string country, string city, doub
                 std::cout << "Destination: " << c->getInfo().getCode() << std::endl;
                 resetVisited(airports);
                 std::string tgt = c->getInfo().getCode();
-                paths = bfsPath(p, tgt);
+                // paths = bfsPath(p, tgt);
                 showPath(paths);
             }
         }
     }
 }
 
-void getPath(string current, vector<string> &path, unordered_map<string, vector<string>> &prev, vector<vector<string>> &paths, string startCode)
+void getPath(string current, vector<Flight> &path, unordered_map<string, vector<Flight>> &prev, vector<vector<Flight>> &paths, string startCode, string airline)
 {
-    path.push_back(current);
+    path.push_back({current, airline});
     if (current == startCode)
     {
-        vector<string> validPath = path;
+        vector<Flight> validPath = path;
         reverse(validPath.begin(), validPath.end());
         paths.push_back(validPath);
     }
@@ -601,16 +615,16 @@ void getPath(string current, vector<string> &path, unordered_map<string, vector<
     {
         for (auto &prevVertex : prev[current])
         {
-            getPath(prevVertex, path, prev, paths, startCode);
+            getPath(prevVertex.code, path, prev, paths, startCode, prevVertex.airline);
         }
     }
     path.pop_back();
 }
 
-vector<vector<string>> bfsPath(Vertex<Airport> *v, string &tgt)
+vector<vector<Flight>> bfsPath(Vertex<Airport> *v, string &tgt)
 {
-    vector<vector<string>> paths;
-    unordered_map<string, vector<string>> prev;
+    vector<vector<Flight>> paths;
+    unordered_map<string, vector<Flight>> prev;
     unordered_map<string, int> dist;
     queue<Vertex<Airport> *> q;
 
@@ -631,18 +645,18 @@ vector<vector<string>> bfsPath(Vertex<Airport> *v, string &tgt)
             {
                 q.push(w);
                 w->setVisited(true);
-                prev[w->getInfo().getCode()].push_back(vertex->getInfo().getCode());
+                prev[w->getInfo().getCode()].push_back({vertex->getInfo().getCode(), e.getRoute()});
                 dist[w->getInfo().getCode()] = dist[vertex->getInfo().getCode()] + 1;
             }
             else if (dist[w->getInfo().getCode()] == dist[vertex->getInfo().getCode()] + 1)
             {
-                prev[w->getInfo().getCode()].push_back(vertex->getInfo().getCode());
+                prev[w->getInfo().getCode()].push_back({vertex->getInfo().getCode(), e.getRoute()});
             }
         }
     }
 
-    vector<string> path;
-    getPath(tgt, path, prev, paths, v->getInfo().getCode());
+    vector<Flight> path;
+    getPath(tgt, path, prev, paths, v->getInfo().getCode(), "");
 
     return paths;
 }
