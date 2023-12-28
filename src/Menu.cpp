@@ -310,13 +310,13 @@ void bestFlights()
         {
             {
             case (1): // airport to airport
-                findBestFlights(airports, airportOrig, airportDest);
+                findBestFlights(airports, airportOrig, airportDest, airplanes);
                 break;
             case (2): // airport to city
-                findBestFlights(airports, cityDest.second, cityDest.first, airportOrig, 1);
+                findBestFlights(airports, cityDest.second, cityDest.first, airportOrig, 1, airplanes);
                 break;
             case (3): // airport to coordinates
-                findBestFlights(airports, airportOrig, cordDest.first, cordDest.second, maxDist, 1);
+                findBestFlights(airports, airportOrig, cordDest.first, cordDest.second, maxDist, 1, airplanes);
                 break;
             default:
                 break;
@@ -328,13 +328,13 @@ void bestFlights()
         {
             {
             case (1): // city to airport
-                findBestFlights(airports, cityOrig.second, cityOrig.first, airportDest, 0);
+                findBestFlights(airports, cityOrig.second, cityOrig.first, airportDest, 0, airplanes);
                 break;
             case (2): // city to city
-                findBestFlights(airports, cityOrig.second, cityOrig.first, cityDest.second, cityDest.first);
+                findBestFlights(airports, cityOrig.second, cityOrig.first, cityDest.second, cityDest.first, airplanes);
                 break;
             case (3): // city to coordinates
-                findBestFlights(airports, cityOrig.second, cityOrig.first, cordDest.first, cordDest.second, maxDist, 0);
+                findBestFlights(airports, cityOrig.second, cityOrig.first, cordDest.first, cordDest.second, maxDist, 0, airplanes);
                 break;
             default:
                 break;
@@ -346,13 +346,13 @@ void bestFlights()
         {
             {
             case (1): // coordinates to airport
-                findBestFlights(airports, airportDest, cordOrig.first, cordOrig.second, maxDist, 0);
+                findBestFlights(airports, airportDest, cordOrig.first, cordOrig.second, maxDist, 0, airplanes);
                 break;
             case (2): // coordinates to city
-                findBestFlights(airports, cityDest.second, cityDest.first, cordOrig.first, cordOrig.second, maxDist, 1);
+                findBestFlights(airports, cityDest.second, cityDest.first, cordOrig.first, cordOrig.second, maxDist, 1, airplanes);
                 break;
             case (3): // coordinates to coordinates
-                findBestFlights(airports, cordOrig.first, cordOrig.second, cordDest.first, cordDest.second, maxDist);
+                findBestFlights(airports, cordOrig.first, cordOrig.second, cordDest.first, cordDest.second, maxDist, airplanes);
                 break;
             default:
                 break;
