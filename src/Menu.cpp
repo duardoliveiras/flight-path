@@ -6,12 +6,12 @@ Graph<Airport> airports;
 
 // Function Menu Main
 void Menu(std::string folder) {
+  int flag;
 
   if (!folder.empty())
     airports = readFlights(folder);
 
   system("clear");
-  int flag;
   std::cout << "Welcome to Travel Management:" << std::endl;
   std::cout << "-------------------------------" << std::endl;
   std::cout << "1. Quantity calculation" << std::endl;
@@ -34,12 +34,17 @@ void Menu(std::string folder) {
   case 0:
     exit(0);
     break;
+  default:
+    std::cout << "Invalid option. Please enter a valid option (0, 1, 2, or 3)."
+              << std::endl;
+    break;
   }
 }
 
 // Function to handle quantity-related menu options
 void quantity() {
   int flag;
+
   system("clear");
   std::cout << "Quantity calculation" << std::endl;
   std::cout << "-------------------------------" << std::endl;
@@ -77,9 +82,10 @@ void quantity() {
 
 // Function to handle listing-related menu options
 void listing() {
-  system("clear");
   int flag;
   int arg;
+
+  system("clear");
   std::cout << "Listing: " << std::endl;
   std::cout << "-------------------------------" << std::endl;
   std::cout << "1. Ranking Airports (more landings and takeoffs)" << std::endl;
@@ -206,7 +212,6 @@ vector<string> filterAirplanes() {
   int flag;
 
   system("clear");
-
   std::cout << "Bests flights: " << std::endl;
   std::cout << "-------------------------------" << std::endl;
   std::cout << "1. Filter by airplanes" << std::endl;
@@ -257,7 +262,6 @@ void bestFlights() {
   std::pair<double, double> cordDest;
 
   int maxDist;
-
   int flagOrigin = selectType("origin");
 
   switch (flagOrigin) {
@@ -373,6 +377,7 @@ void menuFlights() {
   int flag;
   std::string arg;
 
+  system("clear");
   std::cout << "Number of flights:" << std::endl;
   std::cout << "-------------------------------" << std::endl;
   std::cout << "1. All flights" << std::endl;
@@ -398,7 +403,6 @@ void menuFlights() {
     std::cin >> arg;
 
     system("clear");
-
     std::cout << "Flights by Airport: " << quantityFlights(airports, arg).first
               << std::endl;
     std::cout << "Airlines : " << quantityFlights(airports, arg).second
