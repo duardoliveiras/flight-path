@@ -35,8 +35,8 @@ void Menu(std::string folder) {
     exit(0);
     break;
   default:
-    std::cout << "Invalid option. Please enter a valid option (0, 1, 2, or 3)."
-              << std::endl;
+    std::cout << "Invalid option. Please enter a valid option (0, 1, 2, or 3).";
+    Menu("");
     break;
   }
 }
@@ -46,12 +46,12 @@ void quantity() {
   int flag;
 
   system("clear");
-  std::cout << "Quantity calculation" << std::endl;
+  std::cout << "Quantity Calculation Menu" << std::endl;
   std::cout << "-------------------------------" << std::endl;
   std::cout << "1. Number of airports" << std::endl;
   std::cout << "2. Number of flights" << std::endl;
   std::cout << "3. Number of destinations" << std::endl;
-  std::cout << "0. Back" << std::endl;
+  std::cout << "0. Back to Main Menu" << std::endl;
   std::cout << "-------------------------------" << std::endl;
   std::cin >> flag;
 
@@ -77,6 +77,11 @@ void quantity() {
   case 0:
     Menu("");
     break;
+  default:
+    std::cout << "Invalid option. Please enter a valid option (0, 1, 2, or 3).";
+
+    quantity();
+    break;
   }
 }
 
@@ -86,11 +91,11 @@ void listing() {
   int arg;
 
   system("clear");
-  std::cout << "Listing: " << std::endl;
+  std::cout << "Listing Menu: " << std::endl;
   std::cout << "-------------------------------" << std::endl;
   std::cout << "1. Ranking Airports (more landings and takeoffs)" << std::endl;
   std::cout << "2. Connecting airports" << std::endl;
-  std::cout << "0. Back" << std::endl;
+  std::cout << "0. Back to Main Menu" << std::endl;
   std::cout << "-------------------------------" << std::endl;
 
   std::cin >> flag;
@@ -125,6 +130,11 @@ void listing() {
   case (0):
     Menu("");
     break;
+  default:
+    std::cout << "Invalid option. Please enter a valid option (0, 1, or 2).";
+
+    listing();
+    break;
   }
 }
 
@@ -133,13 +143,13 @@ int selectType(std::string arg) {
   int flag;
 
   system("clear");
-  std::cout << "Bests flights: " << std::endl;
+  std::cout << "Bests Flights: " << std::endl;
   std::cout << "Select your " << arg << " option:" << std::endl;
   std::cout << "-------------------------------" << std::endl;
   std::cout << "1. By airports" << std::endl;
   std::cout << "2. By cities" << std::endl;
   std::cout << "3. By coordinates" << std::endl;
-  std::cout << "0. Exit" << std::endl;
+  std::cout << "0. Back to Best Flights" << std::endl;
   std::cout << "-------------------------------" << std::endl;
   std::cin >> flag;
   std::cin.ignore(std::numeric_limits<std::streamsize>::max(),
@@ -151,16 +161,10 @@ int selectType(std::string arg) {
 std::string typeAirport(std::string type, int flag) {
   std::string arg;
   switch (flag) {
-  case (1): {
+  case (1):
     std::cout << "Type the code of Airport of " << type << ": " << std::endl;
     std::cin >> arg;
     break;
-  }
-  default: {
-    std::cout << "oi" << std::endl;
-    exit(0);
-    break;
-  }
   }
   return arg;
 }
@@ -170,17 +174,12 @@ pair<std::string, std::string> typeCity(std::string type, int flag) {
   std::string arg1;
   std::string arg2;
   switch (flag) {
-  case (2): {
+  case (2):
     std::cout << "Type the name of City of " << type << ": " << std::endl;
     std::getline(std::cin, arg1);
     std::cout << "Type the name of Country of " << type << ": " << std::endl;
     std::getline(std::cin, arg2);
     break;
-  }
-  default: {
-    exit(0);
-    break;
-  }
   }
   return make_pair(arg1, arg2);
 }
@@ -190,17 +189,12 @@ pair<double, double> typeCoordinates(std::string type, int flag) {
   double arg1;
   double arg2;
   switch (flag) {
-  case (3): {
+  case (3):
     std::cout << "Type the latitude of " << type << ": " << std::endl;
     std::cin >> arg1;
     std::cout << "Type the longitude of " << type << ": " << std::endl;
     std::cin >> arg2;
     break;
-  }
-  default: {
-    exit(0);
-    break;
-  }
   }
   return make_pair(arg1, arg2);
 }
@@ -216,7 +210,7 @@ vector<string> filterAirplanes() {
   std::cout << "-------------------------------" << std::endl;
   std::cout << "1. Filter by airplanes" << std::endl;
   std::cout << "2. Without filter" << std::endl;
-  std::cout << "0. Back" << std::endl;
+  std::cout << "0. Back to Main Menu" << std::endl;
   std::cout << "-------------------------------" << std::endl;
   std::cin >> flag;
   std::cin.ignore(std::numeric_limits<std::streamsize>::max(),
@@ -234,16 +228,18 @@ vector<string> filterAirplanes() {
     while (iss >> airplane) {
       airplanes.push_back(airplane);
     }
-
     break;
   }
-  case (0): {
+  case (2):
+    break;
+  case (0):
     Menu("");
     break;
-  }
-  default: {
+  default:
+    std::cout << "Invalid option. Please enter a valid option (0, 1, or 2).";
+
+    filterAirplanes();
     break;
-  }
   }
   return airplanes;
 }
@@ -277,10 +273,11 @@ void bestFlights() {
     std::cin >> maxDist;
     break;
   case (0):
-    exit(0);
+    bestFlights();
     break;
   default:
-    exit(0);
+    std::cout << "Invalid option. Please enter a valid option (0, 1, 2, or 3).";
+    bestFlights();
     break;
   }
 
@@ -297,9 +294,12 @@ void bestFlights() {
     std::cout << "Type the maximum distance in (km): " << std::endl;
     std::cin >> maxDist;
     break;
-
+  case (0):
+    bestFlights();
+    break;
   default:
-    exit(0);
+    std::cout << "Invalid option. Please enter a valid option (0, 1, 2, or 3).";
+    bestFlights();
     break;
   }
 
@@ -317,8 +317,6 @@ void bestFlights() {
       case (3): // airport to coordinates
         findBestFlights(airports, airportOrig, cordDest.first, cordDest.second,
                         maxDist, 1, airplanes);
-        break;
-      default:
         break;
       }
     }
@@ -338,8 +336,6 @@ void bestFlights() {
         findBestFlights(airports, cityOrig.second, cityOrig.first,
                         cordDest.first, cordDest.second, maxDist, 0, airplanes);
         break;
-      default:
-        break;
       }
     }
     break;
@@ -357,8 +353,6 @@ void bestFlights() {
       case (3): // coordinates to coordinates
         findBestFlights(airports, cordOrig.first, cordOrig.second,
                         cordDest.first, cordDest.second, maxDist, airplanes);
-        break;
-      default:
         break;
       }
     }
@@ -384,7 +378,7 @@ void menuFlights() {
   std::cout << "2. Flights by Airport" << std::endl;
   std::cout << "3. Flights by City" << std::endl;
   std::cout << "4. Flights by Airline" << std::endl;
-  std::cout << "0. Back" << std::endl;
+  std::cout << "0. Back to Main Menu" << std::endl;
   std::cout << "-------------------------------" << std::endl;
   std::cin >> flag;
 
@@ -442,6 +436,10 @@ void menuFlights() {
   case 0:
     quantity();
     break;
+  default:
+    std::cout << "Invalid option. Please enter a valid option (0, 1, 2, or 3).";
+    menuFlights();
+    break;
   }
 }
 
@@ -457,7 +455,7 @@ void menuDestination() {
   std::cout << "1. Unlimited Stops (Countries)" << std::endl;
   std::cout << "2. Limited Stops" << std::endl;
   std::cout << "3. Max destinations" << std::endl;
-  std::cout << "0. Back" << std::endl;
+  std::cout << "0. Back to Main Menu" << std::endl;
   std::cout << "-------------------------------" << std::endl;
 
   std::cin >> flag;
@@ -501,6 +499,8 @@ void menuDestination() {
     Menu("");
     break;
   default:
+    std::cout << "Invalid option. Please enter a valid option (0, 1, 2, or 3).";
+    menuDestination();
     break;
   }
 }

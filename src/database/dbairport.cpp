@@ -389,6 +389,13 @@ void findBestFlights(Graph<Airport> &airports, string country, string city,
 void showPath(Graph<Airport> &airports, vector<Vertex<Airport> *> source,
               vector<Vertex<Airport> *> dest, vector<vector<Flight>> paths,
               vector<string> &airplanes) {
+
+  if (paths.empty()) {
+    std::cout << "Sorry, but there is no result with those inputs."
+              << std::endl;
+    return;
+  }
+
   for (auto s : source) {
     std::cout << "Source: " << s->getInfo().getCode() << std::endl;
     for (auto d : dest) {
@@ -415,6 +422,12 @@ void showPath(Graph<Airport> &airports, vector<Vertex<Airport> *> source,
 // Function to show a set of paths
 // Complexity: O(n), where n is the total number of flights in all paths
 void showPath(vector<vector<Flight>> paths) {
+  if (paths.empty()) {
+    std::cout << "Sorry, but there is no result with those inputs."
+              << std::endl;
+    return;
+  }
+
   std::cout << std::endl;
   for (auto path : paths) {
 
