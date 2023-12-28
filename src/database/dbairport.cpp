@@ -402,8 +402,15 @@ void showPath(Graph<Airport> &airports, vector<Vertex<Airport> *> source, vector
 
                 for (auto p : path)
                 {
-                    std::cout << p.code << "(" << p.airline << ")"
-                              << " -> ";
+                    if (!p.airline.empty())
+                    {
+                        std::cout << p.code << " -(" << p.airline << ")"
+                                  << "-> ";
+                    }
+                    else
+                    {
+                        std::cout << p.code;
+                    }
                 }
                 std::cout << std::endl;
             }
@@ -414,13 +421,21 @@ void showPath(Graph<Airport> &airports, vector<Vertex<Airport> *> source, vector
 // Show a set of paths
 void showPath(vector<vector<Flight>> paths)
 {
+    std::cout << std::endl;
     for (auto path : paths)
     {
 
         for (auto p : path)
         {
-            std::cout << p.code << "(" << p.airline << ")"
-                      << " -> ";
+            if (!p.airline.empty())
+            {
+                std::cout << p.code << " -(" << p.airline << ")"
+                          << "-> ";
+            }
+            else
+            {
+                std::cout << p.code;
+            }
         }
         std::cout << std::endl;
     }

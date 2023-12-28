@@ -6,10 +6,12 @@ Graph<Airport> airports;
 void Menu(std::string folder)
 {
 
-    airports = readFlights(folder);
+    if (!folder.empty())
+        airports = readFlights(folder);
+
     system("clear");
     int flag;
-    std::cout << "Welcome to Travel Management" << std::endl;
+    std::cout << "Welcome to Travel Management:" << std::endl;
     std::cout << "-------------------------------" << std::endl;
     std::cout << "1. Quantity calculation" << std::endl;
     std::cout << "2. Listing" << std::endl;
@@ -44,7 +46,7 @@ void quantity()
     std::cout << "1. Number of airports" << std::endl;
     std::cout << "2. Number of flights" << std::endl;
     std::cout << "3. Number of destinations" << std::endl;
-    std::cout << "0. Exit" << std::endl;
+    std::cout << "0. Back" << std::endl;
     std::cout << "-------------------------------" << std::endl;
     std::cin >> flag;
 
@@ -68,7 +70,7 @@ void quantity()
         menuDestination();
         break;
     case 0:
-        exit(0);
+        Menu("");
         break;
     }
 }
@@ -82,7 +84,7 @@ void listing()
     std::cout << "-------------------------------" << std::endl;
     std::cout << "1. Ranking Airports (more landings and takeoffs)" << std::endl;
     std::cout << "2. Connecting airports" << std::endl;
-    std::cout << "0. Exit" << std::endl;
+    std::cout << "0. Back" << std::endl;
     std::cout << "-------------------------------" << std::endl;
 
     std::cin >> flag;
@@ -115,7 +117,7 @@ void listing()
         listing();
         break;
     case (0):
-        exit(0);
+        Menu("");
         break;
     }
 }
@@ -214,8 +216,11 @@ vector<string> filterAirplanes()
     system("clear");
 
     std::cout << "Bests flights: " << std::endl;
+    std::cout << "-------------------------------" << std::endl;
     std::cout << "1. Filter by airplanes" << std::endl;
     std::cout << "2. Without filter" << std::endl;
+    std::cout << "0. Back" << std::endl;
+    std::cout << "-------------------------------" << std::endl;
     std::cin >> flag;
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // ignore \n
 
@@ -235,6 +240,11 @@ vector<string> filterAirplanes()
             airplanes.push_back(airplane);
         }
 
+        break;
+    }
+    case (0):
+    {
+        Menu("");
         break;
     }
     default:
@@ -379,7 +389,7 @@ void menuFlights()
     std::cout << "2. Flights by Airport" << std::endl;
     std::cout << "3. Flights by City" << std::endl;
     std::cout << "4. Flights by Airline" << std::endl;
-    std::cout << "0. Exit" << std::endl;
+    std::cout << "0. Back" << std::endl;
     std::cout << "-------------------------------" << std::endl;
     std::cin >> flag;
 
@@ -433,7 +443,7 @@ void menuFlights()
         quantity();
         break;
     case 0:
-        exit(0);
+        quantity();
         break;
     }
 }
@@ -450,6 +460,7 @@ void menuDestination()
     std::cout << "1. Unlimited Stops (Countries)" << std::endl;
     std::cout << "2. Limited Stops" << std::endl;
     std::cout << "3. Max destinations" << std::endl;
+    std::cout << "0. Back" << std::endl;
     std::cout << "-------------------------------" << std::endl;
 
     std::cin >> flag;
@@ -487,7 +498,9 @@ void menuDestination()
         std::cin.ignore();
         std::cin.get();
         menuDestination();
-
+    case (0):
+        Menu("");
+        break;
     default:
         break;
     }
