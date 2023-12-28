@@ -6,10 +6,12 @@ Graph<Airport> airports;
 void Menu(std::string folder)
 {
 
-    airports = readFlights(folder);
+    if (!folder.empty())
+        airports = readFlights(folder);
+
     system("clear");
     int flag;
-    std::cout << "Welcome to Travel Management" << std::endl;
+    std::cout << "Welcome to Travel Management:" << std::endl;
     std::cout << "-------------------------------" << std::endl;
     std::cout << "1. Quantity calculation" << std::endl;
     std::cout << "2. Listing" << std::endl;
@@ -44,7 +46,7 @@ void quantity()
     std::cout << "1. Number of airports" << std::endl;
     std::cout << "2. Number of flights" << std::endl;
     std::cout << "3. Number of destinations" << std::endl;
-    std::cout << "0. Exit" << std::endl;
+    std::cout << "0. Back" << std::endl;
     std::cout << "-------------------------------" << std::endl;
     std::cin >> flag;
 
@@ -68,7 +70,7 @@ void quantity()
         menuDestination();
         break;
     case 0:
-        exit(0);
+        Menu("");
         break;
     }
 }
@@ -82,7 +84,7 @@ void listing()
     std::cout << "-------------------------------" << std::endl;
     std::cout << "1. Ranking Airports (more landings and takeoffs)" << std::endl;
     std::cout << "2. Connecting airports" << std::endl;
-    std::cout << "0. Exit" << std::endl;
+    std::cout << "0. Back" << std::endl;
     std::cout << "-------------------------------" << std::endl;
 
     std::cin >> flag;
@@ -107,7 +109,8 @@ void listing()
         system("clear");
         std::cout << "Connecting airports: " << std::endl;
         std::cout << "-------------------------------" << std::endl;
-        getArticulations(airports);
+        // getArticulations(airports);
+        findArticulationPoints(airports);
         std::cout << "-------------------------------" << std::endl;
         std::cout << "Press any key to continue..." << std::endl;
         std::cin.ignore();
@@ -115,7 +118,7 @@ void listing()
         listing();
         break;
     case (0):
-        exit(0);
+        Menu("");
         break;
     }
 }
@@ -205,8 +208,58 @@ pair<double, double> typeCoordinates(std::string type, int flag)
     return make_pair(arg1, arg2);
 }
 
+vector<string> filterAirplanes()
+{
+    vector<string> airplanes;
+    string line;
+    int flag;
+
+    system("clear");
+
+    std::cout << "Bests flights: " << std::endl;
+    std::cout << "-------------------------------" << std::endl;
+    std::cout << "1. Filter by airplanes" << std::endl;
+    std::cout << "2. Without filter" << std::endl;
+    std::cout << "0. Back" << std::endl;
+    std::cout << "-------------------------------" << std::endl;
+    std::cin >> flag;
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // ignore \n
+
+    switch (flag)
+    {
+    case (1):
+    {
+        std::cout << "Type the name of airplane: " << std::endl;
+        std::getline(std::cin, line);
+
+        std::istringstream iss(line);
+
+        string airplane;
+
+        while (iss >> airplane)
+        {
+            airplanes.push_back(airplane);
+        }
+
+        break;
+    }
+    case (0):
+    {
+        Menu("");
+        break;
+    }
+    default:
+    {
+        break;
+    }
+    }
+    return airplanes;
+}
+
 void bestFlights()
 {
+    vector<string> airplanes = filterAirplanes();
+
     std::string airportOrig;
     std::string airportDest;
 
@@ -268,13 +321,13 @@ void bestFlights()
         {
             {
             case (1): // airport to airport
-                findBestFlights(airports, airportOrig, airportDest);
+                findBestFlights(airports, airportOrig, airportDest, airplanes);
                 break;
             case (2): // airport to city
-                findBestFlights(airports, cityDest.second, cityDest.first, airportOrig, 1);
+                findBestFlights(airports, cityDest.second, cityDest.first, airportOrig, 1, airplanes);
                 break;
             case (3): // airport to coordinates
-                findBestFlights(airports, airportOrig, cordDest.first, cordDest.second, maxDist, 1);
+                findBestFlights(airports, airportOrig, cordDest.first, cordDest.second, maxDist, 1, airplanes);
                 break;
             default:
                 break;
@@ -286,13 +339,13 @@ void bestFlights()
         {
             {
             case (1): // city to airport
-                findBestFlights(airports, cityOrig.second, cityOrig.first, airportDest, 0);
+                findBestFlights(airports, cityOrig.second, cityOrig.first, airportDest, 0, airplanes);
                 break;
             case (2): // city to city
-                findBestFlights(airports, cityOrig.second, cityOrig.first, cityDest.second, cityDest.first);
+                findBestFlights(airports, cityOrig.second, cityOrig.first, cityDest.second, cityDest.first, airplanes);
                 break;
             case (3): // city to coordinates
-                findBestFlights(airports, cityOrig.second, cityOrig.first, cordDest.first, cordDest.second, maxDist, 0);
+                findBestFlights(airports, cityOrig.second, cityOrig.first, cordDest.first, cordDest.second, maxDist, 0, airplanes);
                 break;
             default:
                 break;
@@ -304,13 +357,13 @@ void bestFlights()
         {
             {
             case (1): // coordinates to airport
-                findBestFlights(airports, airportDest, cordOrig.first, cordOrig.second, maxDist, 0);
+                findBestFlights(airports, airportDest, cordOrig.first, cordOrig.second, maxDist, 0, airplanes);
                 break;
             case (2): // coordinates to city
-                findBestFlights(airports, cityDest.second, cityDest.first, cordOrig.first, cordOrig.second, maxDist, 1);
+                findBestFlights(airports, cityDest.second, cityDest.first, cordOrig.first, cordOrig.second, maxDist, 1, airplanes);
                 break;
             case (3): // coordinates to coordinates
-                findBestFlights(airports, cordOrig.first, cordOrig.second, cordDest.first, cordDest.second, maxDist);
+                findBestFlights(airports, cordOrig.first, cordOrig.second, cordDest.first, cordDest.second, maxDist, airplanes);
                 break;
             default:
                 break;
@@ -337,7 +390,7 @@ void menuFlights()
     std::cout << "2. Flights by Airport" << std::endl;
     std::cout << "3. Flights by City" << std::endl;
     std::cout << "4. Flights by Airline" << std::endl;
-    std::cout << "0. Exit" << std::endl;
+    std::cout << "0. Back" << std::endl;
     std::cout << "-------------------------------" << std::endl;
     std::cin >> flag;
 
@@ -391,7 +444,7 @@ void menuFlights()
         quantity();
         break;
     case 0:
-        exit(0);
+        quantity();
         break;
     }
 }
@@ -408,6 +461,7 @@ void menuDestination()
     std::cout << "1. Unlimited Stops (Countries)" << std::endl;
     std::cout << "2. Limited Stops" << std::endl;
     std::cout << "3. Max destinations" << std::endl;
+    std::cout << "0. Back" << std::endl;
     std::cout << "-------------------------------" << std::endl;
 
     std::cin >> flag;
@@ -445,7 +499,9 @@ void menuDestination()
         std::cin.ignore();
         std::cin.get();
         menuDestination();
-
+    case (0):
+        Menu("");
+        break;
     default:
         break;
     }

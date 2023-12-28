@@ -44,7 +44,7 @@ Pronto - [✔]
 
 ##### Filtros:
 
-- [✖] Alguns usuários podem querer filtrar somente determinado conjunto de companhias aéreas. O sistema deve apresentar a melhor opção de voo, ou o conjunto de opções (se forem equivalentes) respeitando o critério do utilizador.
+- [✔] Alguns usuários podem querer filtrar somente determinado conjunto de companhias aéreas. O sistema deve apresentar a melhor opção de voo, ou o conjunto de opções (se forem equivalentes) respeitando o critério do utilizador.
 
 ##### Documentação Doxygen
 

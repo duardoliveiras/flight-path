@@ -338,7 +338,7 @@ void dfsArticulations(Graph<Airport> &airports, Vertex<Airport> *v, unordered_se
 }
 
 // Airport to Airport
-void findBestFlights(Graph<Airport> &airports, string src, string dest)
+void findBestFlights(Graph<Airport> &airports, string src, string dest, vector<string> &airplanes)
 {
     resetVisited(airports);
 
@@ -348,18 +348,18 @@ void findBestFlights(Graph<Airport> &airports, string src, string dest)
     if (s == nullptr || d == nullptr)
         return;
 
-    vector<vector<string>> paths;
-    paths = bfsPath(s, dest);
+    vector<vector<Flight>> paths;
+    paths = bfsPath(s, dest, airplanes);
     showPath(paths);
 }
 
 // City - Airport
 // type = 0. City to Airport
 // type = 1. Airport to City
-void findBestFlights(Graph<Airport> &airports, string country, string city, string airport, int type)
+void findBestFlights(Graph<Airport> &airports, string country, string city, string airport, int type, vector<string> &airplanes)
 {
     vector<Vertex<Airport> *> vec;
-    vector<vector<string>> paths;
+    vector<vector<Flight>> paths;
     vec = findAirports(airports, country, city);
 
     if (type == 0)
@@ -368,7 +368,7 @@ void findBestFlights(Graph<Airport> &airports, string country, string city, stri
         {
             std::cout << "Source: " << v->getInfo().getCode() << std::endl;
             resetVisited(airports);
-            paths = bfsPath(v, airport);
+            paths = bfsPath(v, airport, airplanes);
             showPath(paths);
         }
     }
@@ -379,14 +379,14 @@ void findBestFlights(Graph<Airport> &airports, string country, string city, stri
             std::cout << "Source: " << airport << std::endl;
             std::string tgt = v->getInfo().getCode();
             resetVisited(airports);
-            paths = bfsPath(airports.findVertex(Airport(airport)), tgt);
+            paths = bfsPath(airports.findVertex(Airport(airport)), tgt, airplanes);
             showPath(paths);
         }
     }
 }
 
 // Show a multi-path
-void showPath(Graph<Airport> &airports, vector<Vertex<Airport> *> source, vector<Vertex<Airport> *> dest, vector<vector<string>> paths)
+void showPath(Graph<Airport> &airports, vector<Vertex<Airport> *> source, vector<Vertex<Airport> *> dest, vector<vector<Flight>> paths, vector<string> &airplanes)
 {
     for (auto s : source)
     {
@@ -396,13 +396,21 @@ void showPath(Graph<Airport> &airports, vector<Vertex<Airport> *> source, vector
             std::cout << "Destination: " << d->getInfo().getCode() << std::endl;
             std::string tgt = d->getInfo().getCode();
             resetVisited(airports);
-            paths = bfsPath(s, tgt);
+            paths = bfsPath(s, tgt, airplanes);
             for (auto path : paths)
             {
 
                 for (auto p : path)
                 {
-                    std::cout << p << " -> ";
+                    if (!p.airline.empty())
+                    {
+                        std::cout << p.code << " -(" << p.airline << ")"
+                                  << "-> ";
+                    }
+                    else
+                    {
+                        std::cout << p.code;
+                    }
                 }
                 std::cout << std::endl;
             }
@@ -411,14 +419,23 @@ void showPath(Graph<Airport> &airports, vector<Vertex<Airport> *> source, vector
 }
 
 // Show a set of paths
-void showPath(vector<vector<string>> paths)
+void showPath(vector<vector<Flight>> paths)
 {
+    std::cout << std::endl;
     for (auto path : paths)
     {
 
         for (auto p : path)
         {
-            std::cout << p << " -> ";
+            if (!p.airline.empty())
+            {
+                std::cout << p.code << " -(" << p.airline << ")"
+                          << "-> ";
+            }
+            else
+            {
+                std::cout << p.code;
+            }
         }
         std::cout << std::endl;
     }
@@ -439,16 +456,16 @@ vector<Vertex<Airport> *> findAirports(Graph<Airport> &airports, string country,
 }
 
 // City to City
-void findBestFlights(Graph<Airport> &airports, string countrySrc, string citySrc, string countryDest, string cityDest)
+void findBestFlights(Graph<Airport> &airports, string countrySrc, string citySrc, string countryDest, string cityDest, vector<string> &airplanes)
 {
     vector<Vertex<Airport> *> src;
     vector<Vertex<Airport> *> dest;
-    vector<vector<string>> paths;
+    vector<vector<Flight>> paths;
 
     src = findAirports(airports, countrySrc, citySrc);
     dest = findAirports(airports, countryDest, cityDest);
 
-    showPath(airports, src, dest, paths);
+    showPath(airports, src, dest, paths, airplanes);
 }
 
 double toRadians(const double degree)
@@ -503,22 +520,22 @@ vector<Vertex<Airport> *> findAirports(Graph<Airport> &airports, double lat, dou
 }
 
 // Point to Point
-void findBestFlights(Graph<Airport> &airports, double latOrigin, double longOrigin, double latDest, double longDest, int distMax)
+void findBestFlights(Graph<Airport> &airports, double latOrigin, double longOrigin, double latDest, double longDest, int distMax, vector<string> &airplanes)
 {
     vector<Vertex<Airport> *> src = findAirports(airports, latOrigin, longOrigin, distMax);
     vector<Vertex<Airport> *> dest = findAirports(airports, latDest, longDest, distMax);
-    vector<vector<string>> paths;
+    vector<vector<Flight>> paths;
 
-    showPath(airports, src, dest, paths);
+    showPath(airports, src, dest, paths, airplanes);
 }
 
 // Airport - Point
 // type = 0. Point to Airport
 // type = 1. Airport to Point
-void findBestFlights(Graph<Airport> &airports, string airport, double lat, double lon, int distMax, int type)
+void findBestFlights(Graph<Airport> &airports, string airport, double lat, double lon, int distMax, int type, vector<string> &airplanes)
 {
     vector<Vertex<Airport> *> vec;
-    vector<vector<string>> paths;
+    vector<vector<Flight>> paths;
     vec = findAirports(airports, lat, lon, distMax);
 
     if (type == 0)
@@ -527,7 +544,7 @@ void findBestFlights(Graph<Airport> &airports, string airport, double lat, doubl
         {
             std::cout << "Source: " << v->getInfo().getCode() << std::endl;
             resetVisited(airports);
-            paths = bfsPath(v, airport);
+            paths = bfsPath(v, airport, airplanes);
             showPath(paths);
         }
     }
@@ -538,7 +555,7 @@ void findBestFlights(Graph<Airport> &airports, string airport, double lat, doubl
             std::cout << "Source: " << airport << std::endl;
             std::string tgt = v->getInfo().getCode();
             resetVisited(airports);
-            paths = bfsPath(airports.findVertex(Airport(airport)), tgt);
+            paths = bfsPath(airports.findVertex(Airport(airport)), tgt, airplanes);
             showPath(paths);
         }
     }
@@ -547,11 +564,11 @@ void findBestFlights(Graph<Airport> &airports, string airport, double lat, doubl
 // City - Point
 // type = 0. City to Point
 // type = 1. Point to City
-void findBestFlights(Graph<Airport> &airports, string country, string city, double lat, double lon, int distMax, int type)
+void findBestFlights(Graph<Airport> &airports, string country, string city, double lat, double lon, int distMax, int type, vector<string> &airplanes)
 {
     vector<Vertex<Airport> *> vec_point;
     vector<Vertex<Airport> *> vec_city;
-    vector<vector<string>> paths;
+    vector<vector<Flight>> paths;
 
     vec_point = findAirports(airports, lat, lon, distMax);
     vec_city = findAirports(airports, country, city);
@@ -566,7 +583,7 @@ void findBestFlights(Graph<Airport> &airports, string country, string city, doub
                 std::cout << "Destination: " << p->getInfo().getCode() << std::endl;
                 resetVisited(airports);
                 std::string tgt = p->getInfo().getCode();
-                paths = bfsPath(c, tgt);
+                paths = bfsPath(c, tgt, airplanes);
                 showPath(paths);
             }
         }
@@ -581,19 +598,19 @@ void findBestFlights(Graph<Airport> &airports, string country, string city, doub
                 std::cout << "Destination: " << c->getInfo().getCode() << std::endl;
                 resetVisited(airports);
                 std::string tgt = c->getInfo().getCode();
-                paths = bfsPath(p, tgt);
+                paths = bfsPath(p, tgt, airplanes);
                 showPath(paths);
             }
         }
     }
 }
 
-void getPath(string current, vector<string> &path, unordered_map<string, vector<string>> &prev, vector<vector<string>> &paths, string startCode)
+void getPath(string current, vector<Flight> &path, unordered_map<string, vector<Flight>> &prev, vector<vector<Flight>> &paths, string startCode, string airline)
 {
-    path.push_back(current);
+    path.push_back({current, airline});
     if (current == startCode)
     {
-        vector<string> validPath = path;
+        vector<Flight> validPath = path;
         reverse(validPath.begin(), validPath.end());
         paths.push_back(validPath);
     }
@@ -601,16 +618,16 @@ void getPath(string current, vector<string> &path, unordered_map<string, vector<
     {
         for (auto &prevVertex : prev[current])
         {
-            getPath(prevVertex, path, prev, paths, startCode);
+            getPath(prevVertex.code, path, prev, paths, startCode, prevVertex.airline);
         }
     }
     path.pop_back();
 }
 
-vector<vector<string>> bfsPath(Vertex<Airport> *v, string &tgt)
+vector<vector<Flight>> bfsPath(Vertex<Airport> *v, string &tgt, vector<string> &airplanes)
 {
-    vector<vector<string>> paths;
-    unordered_map<string, vector<string>> prev;
+    vector<vector<Flight>> paths;
+    unordered_map<string, vector<Flight>> prev;
     unordered_map<string, int> dist;
     queue<Vertex<Airport> *> q;
 
@@ -627,24 +644,66 @@ vector<vector<string>> bfsPath(Vertex<Airport> *v, string &tgt)
         for (auto &e : adjs)
         {
             auto w = e.getDest();
-            if (!w->isVisited())
+            if (!w->isVisited() && (find(airplanes.begin(), airplanes.end(), e.getRoute()) != airplanes.end() || airplanes.size() == 0))
             {
                 q.push(w);
                 w->setVisited(true);
-                prev[w->getInfo().getCode()].push_back(vertex->getInfo().getCode());
+                prev[w->getInfo().getCode()].push_back({vertex->getInfo().getCode(), e.getRoute()});
                 dist[w->getInfo().getCode()] = dist[vertex->getInfo().getCode()] + 1;
             }
-            else if (dist[w->getInfo().getCode()] == dist[vertex->getInfo().getCode()] + 1)
+            else if (dist[w->getInfo().getCode()] == dist[vertex->getInfo().getCode()] + 1 && (find(airplanes.begin(), airplanes.end(), e.getRoute()) != airplanes.end() || airplanes.size() == 0))
             {
-                prev[w->getInfo().getCode()].push_back(vertex->getInfo().getCode());
+                prev[w->getInfo().getCode()].push_back({vertex->getInfo().getCode(), e.getRoute()});
             }
         }
     }
 
-    vector<string> path;
-    getPath(tgt, path, prev, paths, v->getInfo().getCode());
+    vector<Flight> path;
+    getPath(tgt, path, prev, paths, v->getInfo().getCode(), "");
 
     return paths;
+}
+
+void findArticulationPoints(Graph<Airport> &airports)
+{
+
+    for (auto v : airports.getVertexSet())
+    {
+        std::cout << " Analisando o vertice: " << v->getInfo().getCode() << std::endl;
+        resetVisited(airports);
+        int component = 0;
+        for (auto w : airports.getVertexSet())
+        {
+            std::cout << "\tAnalisando o vertice: " << w->getInfo().getCode() << std::endl;
+            if (!w->isVisited() && w->getInfo().getCode() != v->getInfo().getCode())
+            {
+                std::cout << "\t\tChamando o DFS component++" << std::endl;
+                dfsArtc(v, w);
+                component++;
+            }
+        }
+        if (component > 2)
+        {
+            std::cout << "\n"
+                      << v->getInfo().getCode() << "\n"
+                      << std::endl;
+        }
+    }
+}
+
+void dfsArtc(Vertex<Airport> *v, Vertex<Airport> *w)
+{
+    w->setVisited(true);
+    auto adjs = w->getAdj();
+
+    for (auto &e : adjs)
+    {
+        auto t = e.getDest();
+        if (!t->isVisited() && t->getInfo().getCode() != v->getInfo().getCode())
+        {
+            dfsArtc(v, t);
+        }
+    }
 }
 
 // vector<vector<string>> bfsPath(Vertex<Airport> *v, string &tgt)
