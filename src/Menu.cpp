@@ -205,8 +205,50 @@ pair<double, double> typeCoordinates(std::string type, int flag)
     return make_pair(arg1, arg2);
 }
 
+vector<string> filterAirplanes()
+{
+    vector<string> airplanes;
+    string line;
+    int flag;
+
+    system("clear");
+
+    std::cout << "Bests flights: " << std::endl;
+    std::cout << "1. Filter by airplanes" << std::endl;
+    std::cout << "2. Without filter" << std::endl;
+    std::cin >> flag;
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // ignore \n
+
+    switch (flag)
+    {
+    case (1):
+    {
+        std::cout << "Type the name of airplane: " << std::endl;
+        std::getline(std::cin, line);
+
+        std::istringstream iss(line);
+
+        string airplane;
+
+        while (iss >> airplane)
+        {
+            airplanes.push_back(airplane);
+        }
+
+        break;
+    }
+    default:
+    {
+        break;
+    }
+    }
+    return airplanes;
+}
+
 void bestFlights()
 {
+    vector<string> airplanes = filterAirplanes();
+
     std::string airportOrig;
     std::string airportDest;
 

@@ -13,6 +13,7 @@ void bestFlights();
 void menuFlights();
 void menuDestination();
 
+vector<string> filterAirplanes();
 int selectType(std::string arg);
 std::string typeAirport(std::string type, int flag);
 pair<std::string, std::string> typeCity(std::string type, int flag);
