@@ -109,7 +109,8 @@ void listing()
         system("clear");
         std::cout << "Connecting airports: " << std::endl;
         std::cout << "-------------------------------" << std::endl;
-        getArticulations(airports);
+        // getArticulations(airports);
+        findArticulationPoints(airports);
         std::cout << "-------------------------------" << std::endl;
         std::cout << "Press any key to continue..." << std::endl;
         std::cin.ignore();

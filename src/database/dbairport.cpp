@@ -664,6 +664,48 @@ vector<vector<Flight>> bfsPath(Vertex<Airport> *v, string &tgt, vector<string> &
     return paths;
 }
 
+void findArticulationPoints(Graph<Airport> &airports)
+{
+
+    for (auto v : airports.getVertexSet())
+    {
+        std::cout << " Analisando o vertice: " << v->getInfo().getCode() << std::endl;
+        resetVisited(airports);
+        int component = 0;
+        for (auto w : airports.getVertexSet())
+        {
+            std::cout << "\tAnalisando o vertice: " << w->getInfo().getCode() << std::endl;
+            if (!w->isVisited() && w->getInfo().getCode() != v->getInfo().getCode())
+            {
+                std::cout << "\t\tChamando o DFS component++" << std::endl;
+                dfsArtc(v, w);
+                component++;
+            }
+        }
+        if (component > 2)
+        {
+            std::cout << "\n"
+                      << v->getInfo().getCode() << "\n"
+                      << std::endl;
+        }
+    }
+}
+
+void dfsArtc(Vertex<Airport> *v, Vertex<Airport> *w)
+{
+    w->setVisited(true);
+    auto adjs = w->getAdj();
+
+    for (auto &e : adjs)
+    {
+        auto t = e.getDest();
+        if (!t->isVisited() && t->getInfo().getCode() != v->getInfo().getCode())
+        {
+            dfsArtc(v, t);
+        }
+    }
+}
+
 // vector<vector<string>> bfsPath(Vertex<Airport> *v, string &tgt)
 // {
 //     vector<vector<string>> paths;

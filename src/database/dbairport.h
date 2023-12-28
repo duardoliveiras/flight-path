@@ -55,4 +55,7 @@ void dfsPath(Vertex<Airport> *v, string tgt, vector<string> &path, vector<vector
 
 void findAllPaths(Vertex<Airport> *v, string tgt);
 
+void dfsArtc(Vertex<Airport> *v, Vertex<Airport> *w);
+void findArticulationPoints(Graph<Airport> &airports);
+
 #endif // DBAIRPORT_H
