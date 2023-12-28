@@ -391,6 +391,8 @@ void showPath(Graph<Airport> &airports, vector<Vertex<Airport> *> source,
               vector<string> &airplanes) {
 
   if (paths.empty()) {
+    std::cout << "--------------------------------------------------"
+              << std::endl;
     std::cout << "Sorry, but there is no result with those inputs."
               << std::endl;
     return;
@@ -423,6 +425,8 @@ void showPath(Graph<Airport> &airports, vector<Vertex<Airport> *> source,
 // Complexity: O(n), where n is the total number of flights in all paths
 void showPath(vector<vector<Flight>> paths) {
   if (paths.empty()) {
+    std::cout << "--------------------------------------------------"
+              << std::endl;
     std::cout << "Sorry, but there is no result with those inputs."
               << std::endl;
     return;
