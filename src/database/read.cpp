@@ -77,8 +77,6 @@ Graph<Airport> readFlights(std::string folder)
     return airports;
   }
 
-  std::getline(file, line);
-
   // Read each line and add edges to graph
   while (std::getline(file, line))
   {
