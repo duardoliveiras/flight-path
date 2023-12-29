@@ -12,7 +12,7 @@ void Menu(std::string folder)
   if (!folder.empty())
     airports = readFlights(folder);
 
-  // system("clear");
+  system("clear");
   std::cout << "Welcome to Travel Management:" << std::endl;
   std::cout << "-------------------------------------------------" << std::endl;
   std::cout << "1. Quantity calculation" << std::endl;
@@ -193,10 +193,10 @@ int selectType(std::string arg)
   while (std::cin.fail())
   {
     std::cin.clear();
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     std::cout << "Invalid input. Please enter a valid number: " << std::endl;
     Menu("");
   }
+  std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
   return flag;
 }
@@ -266,9 +266,11 @@ vector<string> filterAirplanes()
   std::cout << "-------------------------------------------------" << std::endl;
 
   std::cin >> flag;
+  std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
   while (std::cin.fail())
   {
+    std::cout << "Erro na leitura" << std::endl;
     std::cin.clear();
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     std::cout << "Invalid input. Please enter a valid number: " << std::endl;
@@ -295,7 +297,7 @@ vector<string> filterAirplanes()
   case (2):
     break;
   case (0):
-    // Menu("");
+    Menu("");
     break;
   default:
     std::cout << "Invalid input. Please enter a valid number: " << std::endl;

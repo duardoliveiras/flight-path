@@ -451,14 +451,14 @@ void showPath(Graph<Airport> &airports, vector<Vertex<Airport> *> source,
               vector<string> &airplanes)
 {
 
-    if (paths.empty())
-    {
-        std::cout << "--------------------------------------------------"
-                  << std::endl;
-        std::cout << "Sorry, but there is no result with those inputs."
-                  << std::endl;
-        return;
-    }
+    // if (paths.empty())
+    // {
+    //     std::cout << "--------------------------------------------------"
+    //               << std::endl;
+    //     std::cout << "Sorry, but there is no result with those inputs."
+    //               << std::endl;
+    //     return;
+    // }
 
     for (auto s : source)
     {
