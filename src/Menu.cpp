@@ -67,7 +67,7 @@ void quantity() {
     std::cin.clear();
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     std::cout << "Invalid input. Please enter a valid number: " << std::endl;
-    Menu("");
+    quantity();
   }
 
   switch (flag) {
@@ -119,7 +119,7 @@ void listing() {
     std::cin.clear();
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     std::cout << "Invalid input. Please enter a valid number: " << std::endl;
-    Menu("");
+    listing();
   }
 
   switch (flag) {
@@ -184,7 +184,7 @@ int selectType(std::string arg) {
     std::cin.clear();
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     std::cout << "Invalid input. Please enter a valid number: " << std::endl;
-    Menu("");
+    selectType(arg);
   }
 
   return flag;
@@ -252,7 +252,7 @@ vector<string> filterAirplanes() {
     std::cin.clear();
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     std::cout << "Invalid input. Please enter a valid number: " << std::endl;
-    Menu("");
+    filterAirplanes();
   }
 
   switch (flag) {
@@ -438,7 +438,7 @@ void menuFlights() {
     std::cin.clear();
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     std::cout << "Invalid input. Please enter a valid number: " << std::endl;
-    Menu("");
+    menuFlights();
   }
 
   switch (flag) {
@@ -527,7 +527,7 @@ void menuDestination() {
     std::cin.clear();
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     std::cout << "Invalid input. Please enter a valid number: " << std::endl;
-    Menu("");
+    menuDestination();
   }
 
   switch (flag) {

@@ -260,7 +260,6 @@ void rankingAirports(Graph<Airport> airports, int arg) {
   int i = 0;
 
   for (auto v : vec) {
-
     if (i < arg) {
       std::cout << "Code: " << v.code << " / ";
       std::cout << "Total: " << v.count << std::endl;
