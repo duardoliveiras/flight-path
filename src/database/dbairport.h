@@ -12,7 +12,8 @@
 #include <unordered_map>
 #include <unordered_set>
 
-struct Flight {
+struct Flight
+{
   std::string code;
   std::string airline;
 };
@@ -20,7 +21,7 @@ struct Flight {
 int quantityAirports(Graph<Airport> airports);
 int quantityFlights(Graph<Airport> airports);
 std::pair<int, int> quantityFlights(Graph<Airport> airports, std::string code);
-int quantityFlightsCity(Graph<Airport> airports, std::string city);
+int quantityFlightsCity(Graph<Airport> airports, std::string city, std::string country);
 int quantityFlightsAirline(Graph<Airport> airports, std::string airline);
 int quantityCountry(Graph<Airport> airports, std::string airport);
 int quantityCountryStop(Graph<Airport> airports, std::string airport, int stop);

@@ -266,6 +266,7 @@ vector<string> filterAirplanes()
   std::cout << "-------------------------------------------------" << std::endl;
 
   std::cin >> flag;
+
   while (std::cin.fail())
   {
     std::cin.clear();
@@ -294,7 +295,7 @@ vector<string> filterAirplanes()
   case (2):
     break;
   case (0):
-    Menu("");
+    // Menu("");
     break;
   default:
     std::cout << "Invalid input. Please enter a valid number: " << std::endl;
@@ -453,6 +454,7 @@ void menuFlights()
 {
   int flag;
   std::string arg;
+  std::string arg2;
 
   system("clear");
   std::cout << "Number of flights:" << std::endl;
@@ -466,6 +468,8 @@ void menuFlights()
   std::cout << "-------------------------------------------------" << std::endl;
 
   std::cin >> flag;
+  std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
   while (std::cin.fail())
   {
     std::cin.clear();
@@ -504,10 +508,12 @@ void menuFlights()
     break;
   case 3:
     std::cout << "Type the name of city: " << std::endl;
-    std::cin >> arg;
+    std::getline(std::cin, arg);
+    std::cout << "Type the name of country: " << std::endl;
+    std::getline(std::cin, arg2);
 
     system("clear");
-    std::cout << "Flights by City: " << quantityFlightsCity(airports, arg)
+    std::cout << "Flights by City: " << quantityFlightsCity(airports, arg, arg2)
               << std::endl;
     std::cout << "--------------------------------------------------"
               << std::endl;

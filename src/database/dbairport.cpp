@@ -43,12 +43,12 @@ std::pair<int, int> quantityFlights(Graph<Airport> airports, std::string code)
 // Function to get quantity of flights for a city
 // Complexity: O(n + e), where n is the number of airports and e is the number
 // of flights in the graph
-int quantityFlightsCity(Graph<Airport> airports, std::string city)
+int quantityFlightsCity(Graph<Airport> airports, std::string city, std::string country)
 {
     int count = 0;
     for (auto v : airports.getVertexSet())
     {
-        if (v->getInfo().getCity() == city)
+        if (v->getInfo().getCity() == city && v->getInfo().getCountry() == country)
         {
             count += v->getAdj().size();
         }
