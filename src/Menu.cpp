@@ -1,15 +1,17 @@
 #include "Menu.h"
-#include <iostream>
 
 // Global graph to store airport data
 Graph<Airport> airports;
+Graph<Airline> airlines;
 
 // Function Menu Main
 void Menu(std::string folder) {
   int flag;
 
-  if (!folder.empty())
+  if (!folder.empty()) {
     airports = readFlights(folder);
+    airlines = readAirlines(folder);
+  }
 
   system("clear");
   std::cout << "Welcome to Travel Management:" << std::endl;
