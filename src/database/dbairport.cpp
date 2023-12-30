@@ -809,33 +809,63 @@ vector<vector<Flight>> bfsPath(Vertex<Airport> *v, string &tgt,
     return paths;
 }
 
+int connectedComponents(Graph<Airport> &airports)
+{
+    int component = 0;
+    resetVisited(airports);
+    Graph<Airport> g = airports;
+
+    for (auto v : g.getVertexSet())
+    {
+        if (!v->isVisited())
+        {
+            dfsConnectedComponents(g, v);
+            component++;
+        }
+    }
+    // std::cout << "Number of connected components: " << component << std::endl;
+    return component;
+}
+
+void dfsConnectedComponents(Graph<Airport> &airports, Vertex<Airport> *v)
+{
+    v->setVisited(true);
+    auto adjs = v->getAdj();
+
+    for (auto &e : adjs)
+    {
+        auto w = e.getDest();
+        if (!w->isVisited())
+        {
+            dfsConnectedComponents(airports, w);
+        }
+    }
+}
+
 // Function to find articulation points in the graph
 // Complexity: O(n^2), where n is the number of airports in the graph
 void findArticulationPoints(Graph<Airport> &airports)
 {
 
+    int connected = connectedComponents(airports);
     for (auto v : airports.getVertexSet())
     {
-        std::cout << " Analisando o vertice: " << v->getInfo().getCode()
-                  << std::endl;
+        // std::cout << " Analisando o vertice: " << v->getInfo().getCode() << std::endl;
         resetVisited(airports);
         int component = 0;
         for (auto w : airports.getVertexSet())
         {
-            std::cout << "\tAnalisando o vertice: " << w->getInfo().getCode()
-                      << std::endl;
+            // std::cout << "\tAnalisando o vertice: " << w->getInfo().getCode()<< std::endl;
             if (!w->isVisited() && w->getInfo().getCode() != v->getInfo().getCode())
             {
-                std::cout << "\t\tChamando o DFS component++" << std::endl;
+                // std::cout << "\t\tChamando o DFS component++" << std::endl;
                 dfsArtc(v, w);
                 component++;
             }
         }
-        if (component > 2)
+        if (component > connected)
         {
-            std::cout << "\n"
-                      << v->getInfo().getCode() << "\n"
-                      << std::endl;
+            std::cout << v->getInfo().getCode() << std::endl;
         }
     }
 }
