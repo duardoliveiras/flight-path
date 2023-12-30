@@ -7,6 +7,11 @@ int quantityAirports(Graph<Airport> airports)
     return airports.getVertexSet().size();
 }
 
+bool comparatorPath(const vector<Flight> a, const vector<Flight> b)
+{
+    return a.size() < b.size();
+}
+
 // Function to get quantity of flights in the graph
 // Complexity: O(n + ne), where n is the number of airports and e is the average
 // number of flights per airport
@@ -423,7 +428,7 @@ void findBestFlights(Graph<Airport> &airports, string country, string city,
     {
         for (auto v : vec)
         {
-            std::cout << "Source: " << v->getInfo().getCode() << std::endl;
+            // std::cout << "Source: " << v->getInfo().getCode() << std::endl;
             resetVisited(airports);
             paths = bfsPath(v, airport, airplanes);
             showPath(paths);
@@ -433,7 +438,7 @@ void findBestFlights(Graph<Airport> &airports, string country, string city,
     {
         for (auto v : vec)
         {
-            std::cout << "Source: " << airport << std::endl;
+            // std::cout << "Source: " << airport << std::endl;
             std::string tgt = v->getInfo().getCode();
             resetVisited(airports);
             paths = bfsPath(airports.findVertex(Airport(airport)), tgt, airplanes);
@@ -451,41 +456,56 @@ void showPath(Graph<Airport> &airports, vector<Vertex<Airport> *> source,
               vector<string> &airplanes)
 {
 
-    // if (paths.empty())
-    // {
-    //     std::cout << "--------------------------------------------------"
-    //               << std::endl;
-    //     std::cout << "Sorry, but there is no result with those inputs."
-    //               << std::endl;
-    //     return;
-    // }
+    vector<vector<Flight>> flights;
 
     for (auto s : source)
     {
-        std::cout << "Source: " << s->getInfo().getCode() << std::endl;
+        // std::cout << "Source: " << s->getInfo().getCode() << std::endl;
         for (auto d : dest)
         {
-            std::cout << "Destination: " << d->getInfo().getCode() << std::endl;
+            // std::cout << "Destination: " << d->getInfo().getCode() << std::endl;
             std::string tgt = d->getInfo().getCode();
             resetVisited(airports);
-            paths = bfsPath(s, tgt, airplanes);
-            for (auto path : paths)
-            {
+            flights = bfsPath(s, tgt, airplanes);
+            paths.insert(paths.end(), flights.begin(), flights.end());
+        }
+    }
 
-                for (auto p : path)
-                {
-                    if (!p.airline.empty())
-                    {
-                        std::cout << p.code << " -(" << p.airline << ")"
-                                  << "-> ";
-                    }
-                    else
-                    {
-                        std::cout << p.code;
-                    }
-                }
-                std::cout << std::endl;
+    if (paths.empty())
+    {
+        std::cout << "--------------------------------------------------"
+                  << std::endl;
+        std::cout << "Sorry, but there is no result with those inputs."
+                  << std::endl;
+        return;
+    }
+    else
+    {
+
+        std::sort(paths.begin(), paths.end(), comparatorPath);
+        const int min = paths[0].size();
+
+        for (auto &p : paths)
+        {
+            if (p.size() > min)
+            {
+                continue;
             }
+            std::cout << "-------------------------------------------------"
+                      << std::endl;
+            for (auto &f : p)
+            {
+                if (!f.airline.empty())
+                {
+                    std::cout << f.code << " -(" << f.airline << ")"
+                              << "-> ";
+                }
+                else
+                {
+                    std::cout << f.code;
+                }
+            }
+            std::cout << std::endl;
         }
     }
 }
@@ -503,10 +523,10 @@ void showPath(vector<vector<Flight>> paths)
         return;
     }
 
-    std::cout << std::endl;
     for (auto path : paths)
     {
-
+        std::cout << "-------------------------------------------------"
+                  << std::endl;
         for (auto p : path)
         {
             if (!p.airline.empty())

@@ -80,4 +80,6 @@ void findAllPaths(Vertex<Airport> *v, string tgt);
 void dfsArtc(Vertex<Airport> *v, Vertex<Airport> *w);
 void findArticulationPoints(Graph<Airport> &airports);
 
+bool comparatorPath(const vector<Flight> a, const vector<Flight> b);
+
 #endif // DBAIRPORT_H
