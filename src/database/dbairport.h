@@ -18,36 +18,35 @@ struct Flight {
   std::string airline;
 };
 
-/*done*/ // Quantity Airports Functions
+// Quantity Airports Functions
 int quantityAirports(Graph<Airport> airports);
 int quantityAirportsCountry(Graph<Airport> airports, std::string country);
 int quantityAirportsCity(Graph<Airport> airports, std::string city);
 
-/*done*/ // Quantity Countries Functions
+// Quantity Countries Functions
 int quantityCountries(Graph<Airport> airports, Graph<Airline> airlines);
 
-/*done*/ // Quantity Cities Functions
+// Quantity Cities Functions
 int quantityCities(Graph<Airport> airports);
 int quantityCitiesCountry(Graph<Airport> airports, std::string country);
 
-/*done*/ // Quantity Airlines Functions
+// Quantity Airlines Functions
 int quantityAirlines(Graph<Airline> airlines);
 int quantityAirlinesCountry(Graph<Airline> airlines, std::string country);
 
-/*done*/ // Quantity Flights Functions
+// Quantity Flights Functions
 int quantityFlights(Graph<Airport> airports);
 int quantityFlightsAirport(Graph<Airport> airports, std::string airport);
 int quantityFlightsCountry(Graph<Airport> airports, std::string country);
 int quantityFlightsCity(Graph<Airport> airports, std::string city);
 int quantityFlightsAirline(Graph<Airport> airports, std::string airline);
 
-// Quantity Destination Functions (almost-done)
-int quantityDestinationsCountry(Graph<Airport> airports, std::string country);
-int quantityDestinationsCity(Graph<Airport> airports, std::string city);
+// Quantity Destination Functions 
+int quantityDestinationsCountry(Graph<Airport> airports,
+                                         std::string country);
 int quantityDestinationsAirport(Graph<Airport> airports, std::string airport);
-int quantityDestinationsAirline(Graph<Airport> airports, std::string airline);
-int quantityDestinationLimitedStop(Graph<Airport> airports, std::string airport,
-                                   int stop);
+int quantityDestinationLimitedStop(Graph<Airport> airports,
+                                            std::string airport, int stop);
 int quantityDestinationMax(Graph<Airport> airports);
 
 // Other functions

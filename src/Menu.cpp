@@ -135,7 +135,7 @@ void listing() {
   switch (flag) {
   case (1):
     system("clear");
-    std::cout << "Type the number of airports: " << std::endl;
+    std::cout << "Type Airports Number: " << std::endl;
     std::cin >> arg;
     std::cout << "--------------------------------------------------"
               << std::endl;
@@ -206,7 +206,7 @@ std::string typeAirport(std::string type, int flag) {
   std::string arg;
   switch (flag) {
   case (1):
-    std::cout << "Type the code of Airport of " << type << ": " << std::endl;
+    std::cout << "Type Code Aiport of " << type << ": " << std::endl;
     std::cin >> arg;
     break;
   }
@@ -219,9 +219,9 @@ pair<std::string, std::string> typeCity(std::string type, int flag) {
   std::string arg2;
   switch (flag) {
   case (2):
-    std::cout << "Type the name of City of " << type << ": " << std::endl;
+    std::cout << "Type City Name " << type << ": " << std::endl;
     std::getline(std::cin, arg1);
-    std::cout << "Type the name of Country of " << type << ": " << std::endl;
+    std::cout << "Type Country Name " << type << ": " << std::endl;
     std::getline(std::cin, arg2);
     break;
   }
@@ -234,9 +234,9 @@ pair<double, double> typeCoordinates(std::string type, int flag) {
   double arg2;
   switch (flag) {
   case (3):
-    std::cout << "Type the latitude of " << type << ": " << std::endl;
+    std::cout << "Type Latitude of " << type << ": " << std::endl;
     std::cin >> arg1;
-    std::cout << "Type the longitude of " << type << ": " << std::endl;
+    std::cout << "Type Longitude of " << type << ": " << std::endl;
     std::cin >> arg2;
     break;
   }
@@ -271,7 +271,7 @@ vector<string> filterAirplanes() {
 
   switch (flag) {
   case (1): {
-    std::cout << "Type the name of airplane: " << std::endl;
+    std::cout << "Type Airplane Name: " << std::endl;
     std::getline(std::cin, line);
 
     std::istringstream iss(line);
@@ -321,7 +321,7 @@ void bestFlights() {
     break;
   case (3):
     cordOrig = typeCoordinates("origin", flagOrigin);
-    std::cout << "Type the maximum distance in (km): " << std::endl;
+    std::cout << "Type Max Distance in (km): " << std::endl;
     std::cin >> maxDist;
     while (std::cin.fail()) {
       std::cin.clear();
@@ -349,7 +349,7 @@ void bestFlights() {
     break;
   case (3):
     cordDest = typeCoordinates("destination", flagDest);
-    std::cout << "Type the maximum distance in (km): " << std::endl;
+    std::cout << "Type Max Distance in (km): " << std::endl;
     std::cin >> maxDist;
     while (std::cin.fail()) {
       std::cin.clear();
@@ -465,7 +465,7 @@ void menuAirports() {
     quantity();
     break;
   case 2:
-    std::cout << "Type the name of country: " << std::endl;
+    std::cout << "Type Country Name: " << std::endl;
     std::cin >> arg;
     std::cout << "Airports in " << arg << ": "
               << quantityAirportsCountry(airports, arg) << std::endl;
@@ -477,7 +477,7 @@ void menuAirports() {
     quantity();
     break;
   case 3:
-    std::cout << "Type the name of city: " << std::endl;
+    std::cout << "Type City Name: " << std::endl;
     std::cin >> arg;
     std::cout << "Airports in " << arg << ": "
               << quantityAirportsCity(airports, arg) << std::endl;
@@ -573,7 +573,7 @@ void menuCities() {
     quantity();
     break;
   case 2:
-    std::cout << "Type the name of country: " << std::endl;
+    std::cout << "Type Country Name: " << std::endl;
     std::cin >> arg;
     std::cout << "Cities in " << arg << ": "
               << quantityCitiesCountry(airports, arg) << std::endl;
@@ -627,7 +627,7 @@ void menuAirlines() {
     quantity();
     break;
   case 2:
-    std::cout << "Type the name of country: " << std::endl;
+    std::cout << "Type Country Name: " << std::endl;
     std::cin >> arg;
     std::cout << "Airlines in " << arg << ": "
               << quantityAirlinesCountry(airlines, arg) << std::endl;
@@ -687,7 +687,7 @@ void menuFlights() {
     quantity();
     break;
   case 2:
-    std::cout << "Type the name of origin airport: " << std::endl;
+    std::cout << "Type Origin Airport Code: " << std::endl;
     std::cin >> arg;
     std::cout << "Flights in " << arg << ": "
               << quantityFlightsAirport(airports, arg) << std::endl;
@@ -699,7 +699,7 @@ void menuFlights() {
     quantity();
     break;
   case 3:
-    std::cout << "Type the name of origin country: " << std::endl;
+    std::cout << "Type Origin Country Code: " << std::endl;
     std::cin >> arg;
     std::cout << "Flights in " << arg << ": "
               << quantityFlightsCountry(airports, arg) << std::endl;
@@ -711,7 +711,7 @@ void menuFlights() {
     quantity();
     break;
   case 4:
-    std::cout << "Type the name of city: " << std::endl;
+    std::cout << "Type City Name: " << std::endl;
     std::cin >> arg;
     std::cout << "Flights in " << arg << ": "
               << quantityFlightsCity(airports, arg) << std::endl;
@@ -723,7 +723,7 @@ void menuFlights() {
     quantity();
     break;
   case 5:
-    std::cout << "Type the code of Airline: " << std::endl;
+    std::cout << "Type Airline Code: " << std::endl;
     std::cin >> arg;
     std::cout << "Flights in " << arg << ": "
               << quantityFlightsAirline(airports, arg) << std::endl;
@@ -755,9 +755,7 @@ void menuDestination() {
   std::cout << "-------------------------------------------------" << std::endl;
 
   std::cout << "1. Unlimited Stops (by country)" << std::endl;
-  std::cout << "2. Unlimited Stops (by city)" << std::endl;
   std::cout << "3. Unlimited Stops (by airport)" << std::endl;
-  std::cout << "4. Unlimited Stops (by airline)" << std::endl;
   std::cout << "5. Limited Stops" << std::endl;
   std::cout << "6. Max destinations" << std::endl;
   std::cout << "0. Back to Main Menu" << std::endl;
@@ -773,19 +771,7 @@ void menuDestination() {
 
   switch (flag) {
   case 1:
-    // std::cout << "Type Airport code: " << std::endl;
-    // std::cin >> arg;
-    // std::cout << "Number of Countries " << quantityCountry(airports,
-    // arg)
-    //           << std::endl;
-    // std::cout << "--------------------------------------------------"
-    //           << std::endl;
-    // std::cout << "Press any key to continue..." << std::endl;
-    // std::cin.ignore();
-    // std::cin.get();
-    // menuDestination();
-    // break;
-    std::cout << "Type the name of country: " << std::endl;
+    std::cout << "Type Country Name: " << std::endl;
     std::cin >> arg;
     std::cout << "Destinations in " << arg << ": "
               << quantityDestinationsCountry(airports, arg) << std::endl;
@@ -797,19 +783,7 @@ void menuDestination() {
     quantity();
     break;
   case 2:
-    std::cout << "Type the name of city: " << std::endl;
-    std::cin >> arg;
-    std::cout << "Destinations in " << arg << ": "
-              << quantityDestinationsCity(airports, arg) << std::endl;
-    std::cout << "--------------------------------------------------"
-              << std::endl;
-    std::cout << "Press any key to continue..." << std::endl;
-    std::cin.ignore();
-    std::cin.get();
-    quantity();
-    break;
-  case 3:
-    std::cout << "Type the name of airport: " << std::endl;
+    std::cout << "Type Airport Code: " << std::endl;
     std::cin >> arg;
     std::cout << "Destination in " << arg << ": "
               << quantityDestinationsAirport(airports, arg) << std::endl;
@@ -820,22 +794,10 @@ void menuDestination() {
     std::cin.get();
     quantity();
     break;
-  case 4:
-    std::cout << "Type the code of Airline: " << std::endl;
+  case 3:
+    std::cout << "Type Airport Code: " << std::endl;
     std::cin >> arg;
-    std::cout << "Destinations in " << arg << ": "
-              << quantityDestinationsAirline(airports, arg) << std::endl;
-    std::cout << "--------------------------------------------------"
-              << std::endl;
-    std::cout << "Press any key to continue..." << std::endl;
-    std::cin.ignore();
-    std::cin.get();
-    quantity();
-    break;
-  case 5:
-    std::cout << "Type Airport code: " << std::endl;
-    std::cin >> arg;
-    std::cout << "Type the number of stops: " << std::endl;
+    std::cout << "Type Stops Number: " << std::endl;
     std::cin >> stop;
     while (std::cin.fail()) {
       std::cin.clear();
@@ -843,7 +805,7 @@ void menuDestination() {
       std::cout << "Invalid input. Please enter a valid number: " << std::endl;
       Menu("");
     }
-    std::cout << "Number of Countries "
+    std::cout << "Number of Countries: "
               << quantityDestinationLimitedStop(airports, arg, stop)
               << std::endl;
     std::cout << "--------------------------------------------------"
@@ -852,9 +814,9 @@ void menuDestination() {
     std::cin.ignore();
     std::cin.get();
     menuDestination();
-  case 6:
-    std::cout << "The maximum number of flights is: "
-              << quantityDestinationMax(airports) << " stops" << std::endl;
+  case 4:
+    std::cout << "Max number of flights: " << quantityDestinationMax(airports)
+              << " stops" << std::endl;
     std::cout << "--------------------------------------------------"
               << std::endl;
     std::cout << "Press any key to continue..." << std::endl;
