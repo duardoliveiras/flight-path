@@ -9,6 +9,7 @@
 #include <iostream>
 #include <sstream>
 
+Graph<Airport> readAirlines(std::string folder);
 Graph<Airport> readAirports(std::string folder);
 Graph<Airport> readFlights(std::string folder);
 
