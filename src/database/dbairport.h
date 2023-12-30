@@ -109,4 +109,11 @@ void findAllPaths(Vertex<Airport> *v, string tgt);
 void dfsArtc(Vertex<Airport> *v, Vertex<Airport> *w);
 void findArticulationPoints(Graph<Airport> &airports);
 
+bool comparatorPath(const vector<Flight> a, const vector<Flight> b);
+
+//---
+
+void dfsConnectedComponents(Graph<Airport> &airports, Vertex<Airport> *v);
+int connectedComponents(Graph<Airport> &airports);
+
 #endif // DBAIRPORT_H

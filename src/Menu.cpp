@@ -155,6 +155,7 @@ void listing() {
               << std::endl;
     // getArticulations(airports);
     findArticulationPoints(airports);
+    connectedComponents(airports);
     std::cout << "--------------------------------------------------"
               << std::endl;
     std::cout << "Press any key to continue..." << std::endl;
@@ -190,10 +191,10 @@ int selectType(std::string arg) {
   std::cin >> flag;
   while (std::cin.fail()) {
     std::cin.clear();
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     std::cout << "Invalid input. Please enter a valid number: " << std::endl;
     selectType(arg);
   }
+  std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
   return flag;
 }
@@ -256,7 +257,10 @@ vector<string> filterAirplanes() {
   std::cout << "-------------------------------------------------" << std::endl;
 
   std::cin >> flag;
+  std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
   while (std::cin.fail()) {
+    std::cout << "Erro na leitura" << std::endl;
     std::cin.clear();
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     std::cout << "Invalid input. Please enter a valid number: " << std::endl;
@@ -671,6 +675,7 @@ void menuAirlines() {
 void menuFlights() {
   int flag;
   std::string arg;
+  std::string arg2;
 
   system("clear");
   std::cout << "Number of flights:" << std::endl;
@@ -685,6 +690,8 @@ void menuFlights() {
   std::cout << "-------------------------------------------------" << std::endl;
 
   std::cin >> flag;
+  std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
   while (std::cin.fail()) {
     std::cin.clear();
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
