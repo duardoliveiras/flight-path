@@ -9,6 +9,10 @@
 void Menu(std::string folder);
 void quantity();
 void listing();
+void menuAirports();
+void menuCountries();
+void menuCities();
+void menuAirlines();
 void menuFlights();
 void menuDestination();
 

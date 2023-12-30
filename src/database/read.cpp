@@ -23,8 +23,6 @@ Graph<Airport> readAirports(std::string folder) {
     return airports;
   }
 
-  std::getline(file, line);
-
   // Read each line and create an Airport object
   while (std::getline(file, line)) {
     std::istringstream iss(line);
@@ -71,8 +69,6 @@ Graph<Airport> readFlights(std::string folder) {
     file.close();
     return airports;
   }
-  
-  std::getline(file, line);
 
   // Read each line and add edges to graph
   while (std::getline(file, line)) {
