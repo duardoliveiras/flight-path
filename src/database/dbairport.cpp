@@ -37,14 +37,22 @@ int quantityAirportsCity(Graph<Airport> airports, std::string city) {
 //------------------------------------------------------------
 
 // Function to get quantity of unique countries in the graph
-// Complexity: O(n), where n is the number of airports in the graph
-
-int quantityCountries(Graph<Airport> airports) {
+// Complexity: O(n + m), where n is the number of airports, m is the number of
+// airlines
+int quantityCountries(Graph<Airport> airports, Graph<Airline> airlines) {
   std::unordered_set<std::string> uniqueCountries;
 
+  // Iterate over airports
   for (auto v : airports.getVertexSet()) {
-    Airport airport = v->getInfo();
-    std::string country = airport.getCountry();
+    Airport a = v->getInfo();
+    std::string country = a.getCountry();
+    uniqueCountries.insert(country);
+  }
+
+  // Iterate over airlines
+  for (auto v : airlines.getVertexSet()) {
+    Airline a = v->getInfo();
+    std::string country = a.getCountry();
     uniqueCountries.insert(country);
   }
 
@@ -54,37 +62,63 @@ int quantityCountries(Graph<Airport> airports) {
 
 //------------------------------------------------------------
 
-// Function to
-// Complexity: O()
-int quantityCities(Graph<Airport> airports) { return 0; }
+// Function to count the number of unique cities in the graph
+// Complexity: O(n), where n is the number of airports in the graph
+int quantityCities(Graph<Airport> airports) {
+  std::unordered_set<std::string> uniqueCities;
+  for (auto v : airports.getVertexSet()) {
+    Airport a = v->getInfo();
+    std::string city = a.getCity();
+    uniqueCities.insert(city);
+  }
+  return uniqueCities.size();
+}
 
-// Function to
-// Complexity: O()
+// Function to count the number of unique cities in the graph for a given
+// country
+// Complexity: O(n), where n is the number of airports in the graph
 int quantityCitiesCountry(Graph<Airport> airports, std::string country) {
-  return 0;
+  std::unordered_set<std::string> uniqueCities;
+  for (auto v : airports.getVertexSet()) {
+    Airport a = v->getInfo();
+    if (a.getCountry() == country) {
+      std::string city = a.getCity();
+      uniqueCities.insert(city);
+    }
+  }
+  return uniqueCities.size();
 }
 
 //------------------------------------------------------------
 
-// Function to
-// Complexity: O()
-int quantityAirlines(Graph<Airport> airports) { return 0; }
+// Function to calculate the quantity of airlines in the graph
+// Complexity: O(n), where n is the number of vertices (airlines) in the graph
+int quantityAirlines(Graph<Airline> airlines) {
+  return airlines.getNumVertex();
+}
+
+// Function to calculate the quantity of airlines for a given country
+// Complexity: O(n), where n is the number of airlines in the graph
+int quantityAirlinesCountry(Graph<Airline> airlines, std::string country) {
+  int count = 0;
+  for (auto v : airlines.getVertexSet()) {
+    Airline a = v->getInfo();
+    if (a.getCountry() == country) {
+      count++;
+    }
+  }
+  return count;
+}
 
 // Function to
 // Complexity: O()
-int quantityAirlinesCountry(Graph<Airport> airports, std::string country) {
+int quantityAirlinesCity(Graph<Airline> airlines, std::string city) {
   return 0;
 }
 
 // Function to
 // Complexity: O()
-int quantityAirlinesCity(Graph<Airport> airports, std::string city) {
-  return 0;
-}
-
-// Function to
-// Complexity: O()
-int quantityAirlinesAirport(Graph<Airport> airports, std::string airport) {
+int quantityAirlinesAirport(Graph<Airline> airlines, std::string airport) {
   return 0;
 }
 
@@ -126,14 +160,10 @@ int quantityFlightsCountry(Graph<Airport> airports, std::string country) {
 
 // Function to
 // Complexity: O()
-int quantityFlightsCity(Graph<Airport> airports, std::string city) { return 0; }
-
-int quantityFlightsCity(Graph<Airport> airports, std::string city,
-                        std::string country) {
+int quantityFlightsCity(Graph<Airport> airports, std::string city) {
   int count = 0;
   for (auto v : airports.getVertexSet()) {
-    if (v->getInfo().getCity() == city &&
-        v->getInfo().getCountry() == country) {
+    if (v->getInfo().getCity() == city) {
       count += v->getAdj().size();
     }
   }

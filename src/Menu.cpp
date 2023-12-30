@@ -441,8 +441,8 @@ void menuAirports() {
   std::cout << "-------------------------------------------------" << std::endl;
 
   std::cout << "1. All Airports" << std::endl;
-  std::cout << "2. Aiports by Country" << std::endl;
-  std::cout << "3. Aiports by City" << std::endl;
+  std::cout << "2. Airports by Country" << std::endl;
+  std::cout << "3. Airports by City" << std::endl;
   std::cout << "0. Back to Main Menu" << std::endl;
   std::cout << "-------------------------------------------------" << std::endl;
 
@@ -521,7 +521,8 @@ void menuCountries() {
 
   switch (flag) {
   case 1:
-    std::cout << "All Countries: " << quantityCountries(airports) << std::endl;
+    std::cout << "All Countries: " << quantityCountries(airports, airlines)
+              << std::endl;
     std::cout << "--------------------------------------------------"
               << std::endl;
     std::cout << "Press any key to continue..." << std::endl;
@@ -604,8 +605,6 @@ void menuAirlines() {
 
   std::cout << "1. All Airlines" << std::endl;
   std::cout << "2. Airlines by Country" << std::endl;
-  std::cout << "3. Airlines by City" << std::endl;
-  std::cout << "4. Airlines by Airport" << std::endl;
   std::cout << "0. Back to Main Menu" << std::endl;
   std::cout << "-------------------------------------------------" << std::endl;
 
@@ -619,7 +618,7 @@ void menuAirlines() {
 
   switch (flag) {
   case 1:
-    std::cout << "All Airliens: " << quantityAirlines(airports) << std::endl;
+    std::cout << "All Airlines: " << quantityAirlines(airlines) << std::endl;
     std::cout << "--------------------------------------------------"
               << std::endl;
     std::cout << "Press any key to continue..." << std::endl;
@@ -631,31 +630,7 @@ void menuAirlines() {
     std::cout << "Type the name of country: " << std::endl;
     std::cin >> arg;
     std::cout << "Airlines in " << arg << ": "
-              << quantityAirlinesCountry(airports, arg) << std::endl;
-    std::cout << "--------------------------------------------------"
-              << std::endl;
-    std::cout << "Press any key to continue..." << std::endl;
-    std::cin.ignore();
-    std::cin.get();
-    quantity();
-    break;
-  case 3:
-    std::cout << "Type the name of city: " << std::endl;
-    std::cin >> arg;
-    std::cout << "Airlines in " << arg << ": "
-              << quantityAirlinesCity(airports, arg) << std::endl;
-    std::cout << "--------------------------------------------------"
-              << std::endl;
-    std::cout << "Press any key to continue..." << std::endl;
-    std::cin.ignore();
-    std::cin.get();
-    quantity();
-    break;
-  case 4:
-    std::cout << "Type the name of airport: " << std::endl;
-    std::cin >> arg;
-    std::cout << "Airlines in " << arg << ": "
-              << quantityAirlinesAirport(airports, arg) << std::endl;
+              << quantityAirlinesCountry(airlines, arg) << std::endl;
     std::cout << "--------------------------------------------------"
               << std::endl;
     std::cout << "Press any key to continue..." << std::endl;
@@ -684,8 +659,8 @@ void menuFlights() {
   std::cout << "-------------------------------------------------" << std::endl;
 
   std::cout << "1. All flights" << std::endl;
-  std::cout << "2. Flights by Airport" << std::endl;
-  std::cout << "3. Flights by Country" << std::endl;
+  std::cout << "2. Flights by Origin Airport" << std::endl;
+  std::cout << "3. Flights by Origin Country" << std::endl;
   std::cout << "4. Flights by City" << std::endl;
   std::cout << "5. Flights by Airline" << std::endl;
   std::cout << "0. Back to Main Menu" << std::endl;
@@ -712,7 +687,7 @@ void menuFlights() {
     quantity();
     break;
   case 2:
-    std::cout << "Type the name of airport: " << std::endl;
+    std::cout << "Type the name of origin airport: " << std::endl;
     std::cin >> arg;
     std::cout << "Flights in " << arg << ": "
               << quantityFlightsAirport(airports, arg) << std::endl;
@@ -724,7 +699,7 @@ void menuFlights() {
     quantity();
     break;
   case 3:
-    std::cout << "Type the name of country: " << std::endl;
+    std::cout << "Type the name of origin country: " << std::endl;
     std::cin >> arg;
     std::cout << "Flights in " << arg << ": "
               << quantityFlightsCountry(airports, arg) << std::endl;
