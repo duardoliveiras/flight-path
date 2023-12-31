@@ -1,5 +1,6 @@
 #include "read.h"
 
+unordered_map<string, Airport> airportsHash;
 /**
  * @brief Function to read Airport data from CSV file and create graph of airports
  * Complexity: O(n), where n is the number of airports in the csv file
@@ -45,6 +46,7 @@ Graph<Airport> readAirports(std::string folder)
     iss >> longitude;
 
     Airport airport(code, name, country, city, latitude, longitude);
+    airportsHash.insert({code, airport});
     // airport.display();
     airports.addVertex(airport);
   }

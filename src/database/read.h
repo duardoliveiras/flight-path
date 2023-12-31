@@ -10,6 +10,9 @@
 #include <fstream>
 #include <iostream>
 #include <sstream>
+#include <unordered_map>
+
+extern unordered_map<string, Airport> airportsHash;
 
 Graph<Airline> readAirlines(std::string folder);
 Graph<Airport> readAirports(std::string folder);

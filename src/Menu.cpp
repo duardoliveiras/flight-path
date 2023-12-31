@@ -240,8 +240,14 @@ std::string typeAirport(std::string type, int flag)
   switch (flag)
   {
   case (1):
-    std::cout << "Type Code Aiport of " << type << ": " << std::endl;
+    std::cout << "Type Code Airport of " << type << ": " << std::endl;
     std::cin >> arg;
+    while (airportsHash.find(arg) == airportsHash.end())
+    {
+      std::cout << "Airport not found" << std::endl;
+      std::cout << "Type Code Airport of " << type << ": " << std::endl;
+      std::cin >> arg;
+    }
     break;
   }
   return arg;
@@ -897,6 +903,18 @@ void menuDestination()
   case 2:
     std::cout << "Type Airport Code: " << std::endl;
     std::cin >> arg;
+
+    if (airportsHash.find(arg) == airportsHash.end())
+    {
+      std::cout << "Airport not found" << std::endl;
+      std::cout << "--------------------------------------------------"
+                << std::endl;
+      std::cout << "Press any key to continue..." << std::endl;
+      std::cin.ignore();
+      std::cin.get();
+      menuDestination();
+    }
+
     std::cout << "Destination in " << arg << ": "
               << quantityDestinationsAirport(airports, arg) << std::endl;
     std::cout << "--------------------------------------------------"
@@ -909,6 +927,18 @@ void menuDestination()
   case 3:
     std::cout << "Type Airport Code: " << std::endl;
     std::cin >> arg;
+
+    if (airportsHash.find(arg) == airportsHash.end())
+    {
+      std::cout << "Airport not found" << std::endl;
+      std::cout << "--------------------------------------------------"
+                << std::endl;
+      std::cout << "Press any key to continue..." << std::endl;
+      std::cin.ignore();
+      std::cin.get();
+      menuDestination();
+    }
+
     std::cout << "Type Stops Number: " << std::endl;
     std::cin >> stop;
     while (std::cin.fail())
