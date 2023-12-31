@@ -4,7 +4,12 @@
 Graph<Airport> airports;
 Graph<Airline> airlines;
 
-// Function Menu Main
+/**
+ * @brief Menu function to display the main menu.
+ * @param folder The folder name to read the data from.
+ * @return void
+ */
+// Complexity: O(1)
 void Menu(std::string folder)
 {
   int flag;
@@ -54,7 +59,10 @@ void Menu(std::string folder)
   }
 }
 
-// Function to handle quantity-related menu options
+/**
+ * @brief Function to handle quantity-related menu options
+ * @return void
+ */
 void quantity()
 {
   int flag;
@@ -117,7 +125,10 @@ void quantity()
   }
 }
 
-// Function to handle listing-related menu options
+/**
+ * @brief Function to handle listing-related menu options
+ * @return void
+ */
 void listing()
 {
   int flag;
@@ -185,7 +196,11 @@ void listing()
   }
 }
 
-// Function to handle best flights menu options
+/**
+ * @brief Function to handle best flights menu options
+ * @param arg The type of the airport (origin or destination)
+ * @return void
+ */
 int selectType(std::string arg)
 {
   int flag;
@@ -213,7 +228,12 @@ int selectType(std::string arg)
   return flag;
 }
 
-// Function to input airport code based on the type and flag
+/**
+ * @brief Function to input airport code based on the type and flag
+ * @param type The type of the airport (origin or destination)
+ * @param flag The flag to select the type of filter (airport, city or coordinates)
+ * @return string The airport code
+ */
 std::string typeAirport(std::string type, int flag)
 {
   std::string arg;
@@ -227,7 +247,12 @@ std::string typeAirport(std::string type, int flag)
   return arg;
 }
 
-// Function to input city details based on the type and flag
+/**
+ * @brief Function to input city details based on the type and flag
+ * @param type The type of the airport (origin or destination)
+ * @param flag The flag to select the type of filter (airport, city or coordinates)
+ * @return pair<string, string> The city name and country name
+ */
 pair<std::string, std::string> typeCity(std::string type, int flag)
 {
   std::string arg1;
@@ -244,7 +269,12 @@ pair<std::string, std::string> typeCity(std::string type, int flag)
   return make_pair(arg1, arg2);
 }
 
-// Function to input coordinates based on the type and flag
+/**
+ * @brief Function to input coordinates based on the type and flag
+ * @param type The type of the airport (origin or destination)
+ * @param flag The flag to select the type of filter (airport, city or coordinates)
+ * @return pair<double, double> The latitude and longitude
+ */
 pair<double, double> typeCoordinates(std::string type, int flag)
 {
   double arg1;
@@ -262,6 +292,11 @@ pair<double, double> typeCoordinates(std::string type, int flag)
 }
 
 // Function to filter airplanes on the user input
+
+/**
+ * @brief Function to filter airplanes on the user input
+ * @return vector<string> The vector of airplanes to filter
+ */
 vector<string> filterAirplanes()
 {
   vector<string> airplanes;
@@ -319,7 +354,10 @@ vector<string> filterAirplanes()
   return airplanes;
 }
 
-// Function to find best flights based on the user input
+/**
+ * @brief Function to find best flights based on the user input
+ * @return void
+ */
 void bestFlights()
 {
   vector<string> airplanes = filterAirplanes();
@@ -463,7 +501,10 @@ void bestFlights()
   bestFlights();
 }
 
-// Function Menu Airports
+/**
+ * @brief Function Menu Airports
+ * @return void
+ */
 void menuAirports()
 {
   int flag;
@@ -535,7 +576,10 @@ void menuAirports()
   }
 }
 
-// Function Menu Countries
+/**
+ * @brief Function Menu Countries
+ * @return void
+ */
 void menuCountries()
 {
   int flag;
@@ -580,7 +624,10 @@ void menuCountries()
   }
 }
 
-// Function Menu Cities
+/**
+ * @brief Function Menu Cities
+ * @return void
+ */
 void menuCities()
 {
   int flag;
@@ -639,7 +686,10 @@ void menuCities()
   }
 }
 
-// Function Menu Airlines
+/**
+ * @brief Function Menu Airlines
+ * @return void
+ */
 void menuAirlines()
 {
   int flag;
@@ -698,7 +748,10 @@ void menuAirlines()
   }
 }
 
-// Function Menu Flights
+/**
+ * @brief Function Menu Flights
+ * @return void
+ */
 void menuFlights()
 {
   int flag;
@@ -797,7 +850,10 @@ void menuFlights()
   }
 }
 
-// Function Menu Destination
+/**
+ * @brief Function Menu Destination
+ * @return void
+ */
 void menuDestination()
 {
   int flag;
