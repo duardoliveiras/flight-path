@@ -48,7 +48,11 @@ Graph<Airport> readAirports(std::string folder)
     iss >> longitude;
 
     Airport airport(code, name, country, city, latitude, longitude);
+
     airportsHash.insert({code, airport});
+    citiesHash.insert(city);
+    countriesHash.insert(country);
+
     // airport.display();
     airports.addVertex(airport);
   }

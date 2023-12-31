@@ -268,8 +268,24 @@ pair<std::string, std::string> typeCity(std::string type, int flag)
   case (2):
     std::cout << "Type City Name " << type << ": " << std::endl;
     std::getline(std::cin, arg1);
+
+    while (citiesHash.find(arg1) == citiesHash.end())
+    {
+      std::cout << "City not found" << std::endl;
+      std::cout << "Type City Name " << type << ": " << std::endl;
+      std::getline(std::cin, arg1);
+    }
+
     std::cout << "Type Country Name " << type << ": " << std::endl;
     std::getline(std::cin, arg2);
+
+    while (countriesHash.find(arg2) == countriesHash.end())
+    {
+      std::cout << "Country not found" << std::endl;
+      std::cout << "Type Country Name " << type << ": " << std::endl;
+      std::getline(std::cin, arg2);
+    }
+
     break;
   }
   return make_pair(arg1, arg2);
@@ -515,6 +531,7 @@ void menuAirports()
 {
   int flag;
   std::string arg;
+  std::string arg2;
 
   system("clear");
   std::cout << "Number of Airports:" << std::endl;
@@ -563,7 +580,25 @@ void menuAirports()
   case 3:
     std::cout << "Type City Name: " << std::endl;
     std::getline(std::cin, arg);
-    std::cout << "Airports in " << arg << ": "
+
+    while (citiesHash.find(arg) == citiesHash.end())
+    {
+      std::cout << "City not found" << std::endl;
+      std::cout << "Type City Name: " << std::endl;
+      std::getline(std::cin, arg);
+    }
+
+    std::cout << "Type Country Name: " << std::endl;
+    std::getline(std::cin, arg2);
+
+    while (countriesHash.find(arg2) == countriesHash.end())
+    {
+      std::cout << "Country not found" << std::endl;
+      std::cout << "Type Country Name: " << std::endl;
+      std::getline(std::cin, arg2);
+    }
+
+    std::cout << "Airports in " << arg << ", " << arg2 << ": "
               << quantityAirportsCity(airports, arg) << std::endl;
     std::cout << "--------------------------------------------------"
               << std::endl;
