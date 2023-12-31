@@ -2,7 +2,7 @@
 
 // Global graph to store airport data
 Graph<Airport> airports;
-Graph<Airline> airlines;
+unordered_map<string, Airline> airlines;
 
 /**
  * @brief Menu function to display the main menu.
@@ -654,8 +654,7 @@ void menuCountries()
   switch (flag)
   {
   case 1:
-    std::cout << "All Countries: " << quantityCountries(airports, airlines)
-              << std::endl;
+    std::cout << "All Countries: " << quantityCountries() << std::endl;
     std::cout << "--------------------------------------------------"
               << std::endl;
     std::cout << "Press any key to continue..." << std::endl;
@@ -775,7 +774,8 @@ void menuAirlines()
   switch (flag)
   {
   case 1:
-    std::cout << "All Airlines: " << quantityAirlines(airlines) << std::endl;
+    std::cout << "All Airlines: " << airlines.size()
+              << std::endl;
     std::cout << "--------------------------------------------------"
               << std::endl;
     std::cout << "Press any key to continue..." << std::endl;
@@ -794,8 +794,8 @@ void menuAirlines()
       std::getline(std::cin, arg);
     }
 
-    std::cout << "Airlines in " << arg << ": "
-              << quantityAirlinesCountry(airlines, arg) << std::endl;
+    std::cout << "Airlines in " << arg << ": " << quantityAirlinesCountry(airlines, arg)
+              << std::endl;
     std::cout << "--------------------------------------------------"
               << std::endl;
     std::cout << "Press any key to continue..." << std::endl;

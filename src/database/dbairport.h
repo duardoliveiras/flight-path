@@ -26,15 +26,14 @@ int quantityAirportsCountry(Graph<Airport> airports, std::string country);
 int quantityAirportsCity(Graph<Airport> airports, std::string city);
 
 // Quantity Countries Functions
-int quantityCountries(Graph<Airport> airports, Graph<Airline> airlines);
+int quantityCountries();
 
 // Quantity Cities Functions
 int quantityCities(Graph<Airport> airports);
 int quantityCitiesCountry(Graph<Airport> airports, std::string country);
 
 // Quantity Airlines Functions
-int quantityAirlines(Graph<Airline> airlines);
-int quantityAirlinesCountry(Graph<Airline> airlines, std::string country);
+int quantityAirlinesCountry(unordered_map<string, Airline> airlines, std::string country);
 
 // Quantity Flights Functions
 int quantityFlights(Graph<Airport> airports);

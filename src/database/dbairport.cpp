@@ -58,29 +58,12 @@ int quantityAirportsCity(Graph<Airport> airports, std::string city)
 //------------------------------------------------------------
 
 /**
- * @brief Function to get quantity of unique countries in the graph
- * Complexity: O(n + m), where n is the number of airports, m is the number of
- * airlines
- * @param airports The graph of airports.
- * @param airlines The graph of airlines.
+ * @brief Function to get quantity of unique countries in the csv using a hash table
  * @return int The quantity of unique countries in the graph.
  */
-int quantityCountries(Graph<Airport> airports, Graph<Airline> airlines)
+int quantityCountries()
 {
-    std::unordered_set<std::string> uniqueCountries;
-    for (auto v : airports.getVertexSet())
-    {
-        Airport a = v->getInfo();
-        std::string country = a.getCountry();
-        uniqueCountries.insert(country);
-    }
-    for (auto v : airlines.getVertexSet())
-    {
-        Airline a = v->getInfo();
-        std::string country = a.getCountry();
-        uniqueCountries.insert(country);
-    }
-    return uniqueCountries.size();
+    return countriesHash.size();
 }
 
 //------------------------------------------------------------
@@ -127,32 +110,20 @@ int quantityCitiesCountry(Graph<Airport> airports, std::string country)
 
 //------------------------------------------------------------
 
-// Update later to tree hashtable
-/**
- * @brief Function to calculate the quantity of airlines in the graph
- * Complexity: O(1)
- * @param airlines The graph of airlines.
- * @return int The quantity of airlines in the graph.
- */
-int quantityAirlines(Graph<Airline> airlines)
-{
-    return airlines.getNumVertex();
-}
-
 /**
  * @brief Function to calculate the quantity of airlines for a given country
  * Complexity: O(n), where n is the number of airlines in the graph
- * @param airlines The graph of airlines.
+ * @param airlines The airlines hashtable.
  * @param country The country to be searched.
  * @return int The quantity of airlines in the country.
  */
-int quantityAirlinesCountry(Graph<Airline> airlines, std::string country)
+
+int quantityAirlinesCountry(unordered_map<string, Airline> airlines, std::string country)
 {
     int count = 0;
-    for (auto v : airlines.getVertexSet())
+    for (auto v : airlines)
     {
-        Airline a = v->getInfo();
-        if (a.getCountry() == country)
+        if (v.second.getCountry() == country)
         {
             count++;
         }

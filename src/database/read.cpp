@@ -119,10 +119,10 @@ Graph<Airport> readFlights(std::string folder)
  * @param folder The folder where the CSV file is located.
  * @return
  */
-Graph<Airline> readAirlines(std::string folder)
+unordered_map<string, Airline> readAirlines(std::string folder)
 {
   // Initialize Graph
-  Graph<Airline> airlines = Graph<Airline>();
+  unordered_map<string, Airline> airlines;
 
   // Open csv file
   std::ifstream file("../dataset/" + folder + "/airlines.csv", ios::in);
@@ -154,7 +154,7 @@ Graph<Airline> readAirlines(std::string folder)
 
     Airline airline(code, name, callsign, country);
     // airline.display();
-    airlines.addVertex(airline);
+    airlines.insert({code, airline});
   }
 
   // Close file and return the graph of airlines
