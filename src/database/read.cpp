@@ -1,7 +1,11 @@
 #include "read.h"
 
-// Function to read Airport data from CSV file and create graph of airports
-// Complexity: O(n), where n is the number of airports in the csv file
+/**
+ * @brief Function to read Airport data from CSV file and create graph of airports
+ * Complexity: O(n), where n is the number of airports in the csv file
+ * @param folder The folder where the CSV file is located.
+ * @return Graph<Airport> The graph of airports.
+ */
 Graph<Airport> readAirports(std::string folder)
 {
   // Inicialiate Graph
@@ -50,9 +54,13 @@ Graph<Airport> readAirports(std::string folder)
   return airports;
 }
 
-// Function to read Flight data from CSV file and add edges to graph of airports
-// Complexity: O(n + v), where n is the number of airports and v is the number
-// of flights in the csv file
+/**
+ * @brief Function to read Flight data from CSV file and add edges to graph of airports
+ * Complexity: O(n + v), where n is the number of airports and v is the number
+ * of flights in the csv file
+ * @param folder The folder where the CSV file is located.
+ * @return Graph<Airport> The graph of airports with flights.
+ */
 Graph<Airport> readFlights(std::string folder)
 {
   // Read airports
@@ -96,8 +104,13 @@ Graph<Airport> readFlights(std::string folder)
   return airports;
 }
 
-// Function to read Airline data from CSV file and create a graph of airlines
-// Complexity: O(n), where n is the number of airlines in the CSV file
+// Update later to tree hashtable
+/**
+ * @brief Function to read Airline data from CSV file and create a graph of airlines
+ * Complexity: O(n), where n is the number of airlines in the CSV file.
+ * @param folder The folder where the CSV file is located.
+ * @return
+ */
 Graph<Airline> readAirlines(std::string folder)
 {
   // Initialize Graph
