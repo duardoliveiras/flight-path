@@ -917,7 +917,7 @@ void dfsConnectedComponents(Graph<Airport> &airports, Vertex<Airport> *v) {
 // Function to find articulation points in the graph
 // Complexity: O(n^2), where n is the number of airports in the graph
 void findArticulationPoints(Graph<Airport> &airports) {
-
+  
   int connected = connectedComponents(airports);
   for (auto v : airports.getVertexSet()) {
     // std::cout << " Analisando o vertice: " << v->getInfo().getCode() <<
