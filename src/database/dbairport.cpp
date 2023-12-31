@@ -468,36 +468,13 @@ std::vector<std::string> dfsVisit(Vertex<Airport> *v,
 }
 
 /**
- * @brief Function to get quantity of countries withing number of stop from an airport
+ * @brief Search (depth-first) to visit vertices and collect connected countries
+ * withing a number of stops
  * @param airports The graph of airports.
- * @param airport The airport to be searched.
- * @return int The quantity of countries.
+ * @param v The vertex to start the search
+ * @param stop The number of stops.
+ * @return vector<string> The vector with the countries.
  */
-int quantityCountryStop(Graph<Airport> airports, std::string airport,
-                        int stop)
-{
-    std::set<std::string> countries;
-    std::vector<std::string> res;
-    resetVisited(airports);
-
-    auto s = airports.findVertex(Airport(airport));
-
-    if (s == nullptr)
-        return 0;
-
-    res = dfsVisit(s, res, (stop + 1));
-
-    for (auto c : res)
-    {
-        countries.insert(c);
-    }
-
-    return countries.size();
-}
-
-// Search (depth-first) to visit vertices and collect connected countries
-// withing a number of stops
-// Complexity: O(2e), where e is the number of flights in the graph
 std::vector<std::string> dfsVisit(Vertex<Airport> *v,
                                   std::vector<std::string> &res, int stop)
 {
@@ -521,79 +498,15 @@ std::vector<std::string> dfsVisit(Vertex<Airport> *v,
             dfsVisit(w, res, (stop - 1));
         }
     }
-
     return res;
 }
 
-// Funnction to find the Aiport with max number of flights
-// Complexity: O(n * e), where n is the number of airports and e is the number
-// of flights in the graph
-// int maxFlight(Graph<Airport> airports) {
-//   int max = 0;
-
-//   std::string src;
-//   std::string tgt;
-
-//   resetVisited(airports);
-//   std::cout << "Consultando... " << std::endl;
-//   for (auto v : airports.getVertexSet()) {
-//     if (!v->isVisited()) {
-//       vector<std::string> path;
-
-//       int count = dfsCount(v, tgt, path);
-//       if (count > max) {
-//         src = v->getInfo().getCode();
-//         max = count;
-//       }
-//       resetVisited(airports);
-//     }
-//   }
-//   std::cout << "\nLeaving from:" << src << std::endl;
-//   std::cout << "To: " << tgt << std::endl;
-
-//   return max - 1;
-// }
-
-// Search (depth-first) to find the max numbeer of flights form a vertex
-// Complexity: O(e), where e is the number of flights in the graph
-// int dfsCount(Vertex<Airport> *v, std::string &tgt, vector<std::string> &path)
-// {
-//     int pathLen = 0;
-//     path.push_back(v->getInfo().getCode());
-//     v->setVisited(true);
-//     std::string lastNode;
-
-//     auto adjs = v->getAdj();
-
-//     for (auto &e : adjs)
-//     {
-//         auto w = e.getDest();
-
-//         if (!w->isVisited())
-//         {
-//             int childPathLen = dfsCount(w, tgt, path);
-//             if (childPathLen > pathLen)
-//             {
-//                 pathLen = childPathLen;
-//             }
-//         }
-//     }
-
-//     path.pop_back();
-//     // v->setVisited(false);
-
-//     if (path.size() > pathLen)
-//     {
-//         tgt = v->getInfo().getCode();
-//         return path.size();
-//     }
-
-//     else
-//         return pathLen;
-// }
-
-// Function to reset the visited status of all vertices in the graph
-// Complexity: O(n), where n is the number of airports in the graph
+/**
+ * @brief Function to reset the visited status of all vertices in the graph
+ * Complexity: O(n), where n is the number of airports in the graph
+ * @param airports The graph of airports.
+ * @return void
+ */
 void resetVisited(Graph<Airport> &airports)
 {
     for (auto v : airports.getVertexSet())
@@ -602,9 +515,13 @@ void resetVisited(Graph<Airport> &airports)
     }
 }
 
-// Function to calculate the in-degreee of each vertex in the graph
-// Complexity: O(n + e), where n is the number of airports and e is the number
-// of flights in the graph
+/**
+ * @brief Function to calculate the in-degreee of each vertex in the graph
+ * Complexity: O(n + e), where n is the number of airports and e is the number
+ * of flights in the graph
+ * @param airports The graph of airports.
+ * @return void
+ */
 void calculateIndegree(Graph<Airport> &airports)
 {
     for (auto v : airports.getVertexSet())
@@ -620,15 +537,18 @@ void calculateIndegree(Graph<Airport> &airports)
     }
 }
 
-// Function to rank airport based of the sum of in-degrees and out-degrees
-// Complexity: O(n * log(n) + n * e), where n is the number of airports and e
-// is the number of flights in the graph (assuming sorting has a time
-// complexity of O(n * log(n)))
-// !!!
+/**
+ * @brief Function to rank airport based of the sum of in-degrees and out-degrees
+ * Complexity: O(n * log(n) + n * e), where n is the number of airports and e
+ * is the number of flights in the graph (assuming sorting has a time
+ * complexity of O(n * log(n)))
+ * @param airports The graph of airports.
+ * @param arg The number of airports to be shown.
+ * @return void
+ */
 void rankingAirports(Graph<Airport> airports, int arg)
 {
     std::vector<Ranking> vec;
-
     calculateIndegree(airports);
 
     for (auto v : airports.getVertexSet())
@@ -637,97 +557,16 @@ void rankingAirports(Graph<Airport> airports, int arg)
         Ranking rank = {v->getInfo().getCode(), total};
         vec.push_back(rank);
     }
-
     std::sort(vec.begin(), vec.end(), comparator);
-
     int i = 0;
-
     for (auto v : vec)
     {
-
         if (i < arg)
         {
             std::cout << "Code: " << v.code << " / ";
             std::cout << "Total: " << v.count << std::endl;
             i++;
         }
-    }
-}
-
-// Function to find articulation points in the graph
-// Complexity: O(n * e), where n is the number of airports and e is the
-// number of flights in the graph
-void getArticulations(Graph<Airport> airports)
-{
-    unordered_set<string> res;
-    unordered_set<string> visited;
-    std::stack<string> s;
-    int i = 1;
-
-    resetVisited(airports);
-
-    for (auto v : airports.getVertexSet())
-    {
-        dfsArticulations(airports, v, res, s, i);
-    }
-
-    for (auto &e : res)
-    {
-        std::cout << e << std::endl;
-    }
-}
-
-// Function (recursive) to find articulation points in the graph using DFS
-// Complexity: O(n * e), where n is the number of airports and e is the
-// number of flights in the graph
-void dfsArticulations(Graph<Airport> &airports, Vertex<Airport> *v,
-                      unordered_set<string> &res, std::stack<string> &s,
-                      int i)
-{
-
-    v->setLow(i);
-    v->setNum(i);
-    v->setVisited(true);
-    v->setProcessing(true);
-    s.push(v->getInfo().getCode());
-    std::cout << "Visiting vertex: " << v->getInfo().getCode()
-              << " Low: " << v->getLow() << " Num: " << v->getNum() << std::endl;
-    i++;
-
-    auto adjs = v->getAdj();
-    int component = 0;
-    for (auto &e : adjs)
-    {
-        component++;
-        auto w = e.getDest();
-        if (!w->isVisited())
-        {
-            dfsArticulations(airports, w, res, s, i);
-            v->setLow(min(v->getLow(), w->getLow()));
-            if (w->getLow() >= v->getNum() && component > 1)
-            {
-                std::cout << "Inserting articulation point: " << v->getInfo().getCode()
-                          << " Component: " << component << " - " << v->getAdj().size()
-                          << std::endl;
-                res.insert(v->getInfo().getCode());
-            }
-        }
-        else if (w->isProcessing())
-        {
-            v->setLow(min(v->getLow(), w->getNum()));
-        }
-    }
-
-    if (v->getLow() == v->getNum())
-    {
-        while (s.top() != v->getInfo().getCode())
-        {
-            auto vertex = airports.findVertex(Airport(s.top()));
-            vertex->setProcessing(false);
-            s.pop();
-        }
-        v->setProcessing(false);
-        s.pop();
     }
 }
 
@@ -751,10 +590,18 @@ void findBestFlights(Graph<Airport> &airports, string src, string dest,
     showPath(paths);
 }
 
-// Function to find best flights between a city and an aiport (vice-verse)
-// type = 0: City to Airport, type = 1: Airport to City
-// Complexity: O(n + e), where n is the number of airports and e is the
-// number of flights in the graph
+/**
+ * @brief Finds the best flights between a city and an aiport (vice-verse)
+ * This function uses breadth-first search (BFS) to find paths between a source and destination airport
+ * Complexity: O(n + e), where n is the number of airports and e is the number of flights in the graph
+ * @param airports The graph representing airports and available flights.
+ * @param country The country of the source airport.
+ * @param city The city of the source airport.
+ * @param airport The destination airport.
+ * @param type The type of search (0: City to Airport, 1: Airport to City).
+ * @param airplanes A vector of strings representing allowed aircraft (can be empty to consider all).
+ * @return void
+ */
 void findBestFlights(Graph<Airport> &airports, string country, string city,
                      string airport, int type, vector<string> &airplanes)
 {
@@ -785,10 +632,17 @@ void findBestFlights(Graph<Airport> &airports, string country, string city,
     }
 }
 
-// Function to show a multi-path between multiple source and destination
-// airports
-// Complexity: O(n + e), where n is the number of airports and e is the
-// number of flights in the graph
+/**
+ * @brief Function to show a multi-path between multiple source and destination airports
+ * Complexity: O(n + e), where n is the number of airports and e is the
+ * number of flights in the graph
+ * @param airports The graph representing airports and available flights.
+ * @param source A vector of source airports.
+ * @param dest A vector of destination airports.
+ * @param paths A vector of vectors of flights representing the paths.
+ * @param airplanes A vector of strings representing allowed aircraft (can be empty to consider all).
+ * @return void
+ */
 void showPath(Graph<Airport> &airports, vector<Vertex<Airport> *> source,
               vector<Vertex<Airport> *> dest, vector<vector<Flight>> paths,
               vector<string> &airplanes)
@@ -851,6 +705,13 @@ void showPath(Graph<Airport> &airports, vector<Vertex<Airport> *> source,
 
 // Function to show a set of paths
 // Complexity: O(n), where n is the total number of flights in all paths
+
+/**
+ * @brief Function to show a set of paths
+ * Complexity: O(n), where n is the total number of flights in all paths
+ * @param paths A vector of vectors of flights representing the paths.
+ * @return void
+ */
 void showPath(vector<vector<Flight>> paths)
 {
     if (paths.empty())
@@ -882,8 +743,14 @@ void showPath(vector<vector<Flight>> paths)
     }
 }
 
-// Function to find all airports in a city
-// Complexity: O(n), where n is the number of airports in the graph
+/**
+ * @brief Function to find all airports in a city
+ * Complexity: O(n), where n is the number of airports in the graph
+ * @param airports The graph representing airports and available flights.
+ * @param country The country of the airport.
+ * @param city The city of the airport.
+ * @return vector<Vertex<Airport>*> A vector of airports.
+ */
 vector<Vertex<Airport> *> findAirports(Graph<Airport> &airports, string country,
                                        string city)
 {
@@ -899,10 +766,18 @@ vector<Vertex<Airport> *> findAirports(Graph<Airport> &airports, string country,
     return vec;
 }
 
-// Function to find best flights between two cities
-// City to City
-// Complexity: O(n + e), where n is the number of airports and e is the
-// number of flights in the graph
+/**
+ * @brief Function to find best flights between two cities
+ * This function uses breadth-first search (BFS) to find paths between a source and destination airport
+ * Complexity: O(n + e), where n is the number of airports and e is the number of flights in the graph.
+ * @param airports The graph representing airports and available flights.
+ * @param countrySrc The country of the source airport.
+ * @param citySrc The city of the source airport.
+ * @param countryDest The country of the destination airport.
+ * @param cityDest The city of the destination airport.
+ * @param airplanes A vector of strings representing allowed aircraft (can be empty to consider all).
+ * @return void
+ */
 void findBestFlights(Graph<Airport> &airports, string countrySrc,
                      string citySrc, string countryDest, string cityDest,
                      vector<string> &airplanes)
@@ -917,8 +792,12 @@ void findBestFlights(Graph<Airport> &airports, string countrySrc,
     showPath(airports, src, dest, paths, airplanes);
 }
 
-// Function to convert Degrees in radians
-// Complexity: O(1)
+/**
+ * @brief Function to convert Degrees in radians
+ * Complexity: O(1)
+ * @param degree The degree to be converted.
+ * @return double The converted degree.
+ */
 double toRadians(const double degree) { return (degree * M_PI / 180); }
 
 //-23.477461, -46.548338 Anywhere in Sao Paulo
@@ -927,8 +806,15 @@ double toRadians(const double degree) { return (degree * M_PI / 180); }
 // 28.160090, -17.240129 Anywhere in La Gomera
 // 28.029600, -17.214600 GMZ 30km
 
-// Function to calculate the distance between two points on the Earth
-// Complexity: O(1)
+/**
+ * @brief Function to calculate the distance between two points on the Earth
+ * Complexity: O(1)
+ * @param latOrigin The latitude of the origin point.
+ * @param longOrigin The longitude of the origin point.
+ * @param latDest The latitude of the destination point.
+ * @param longDest The longitude of the destination point.
+ * @return double The distance between the two points.
+ */
 double distanceEarth(double latOrigin, double longOrigin, double latDest,
                      double longDest)
 {
@@ -954,6 +840,16 @@ double distanceEarth(double latOrigin, double longOrigin, double latDest,
 
 // Function to find all airports around a point withing a distance
 // Complexity: O(n), where n is the number of airports in the graph
+
+/**
+ * @brief Function to find all airports around a point withing a distance
+ * Complexity: O(n), where n is the number of airports in the graph
+ * @param airports The graph representing airports and available flights.
+ * @param lat The latitude of the point.
+ * @param lon The longitude of the point.
+ * @param distMax The maximum distance.
+ * @return vector<Vertex<Airport>*> A vector of airports.
+ */
 vector<Vertex<Airport> *> findAirports(Graph<Airport> &airports, double lat,
                                        double lon, int distMax)
 {
@@ -973,10 +869,19 @@ vector<Vertex<Airport> *> findAirports(Graph<Airport> &airports, double lat,
     return vec;
 }
 
-// Function to find the best flights between two points on Earth
-// Point to Point
-// Complexity: O(n + e), where n is the number of airports and e is the
-// number of flights in the graph
+/**
+ * @brief Function to find the best flights between two points on Earth Point to Point
+ * This function uses breadth-first search (BFS) to find paths between a source and destination airport
+ * Complexity: O(n + e), where n is the number of airports and e is the number of flights in the graph
+ * @param airports The graph representing airports and available flights.
+ * @param latOrigin The latitude of the origin point.
+ * @param longOrigin The longitude of the origin point.
+ * @param latDest The latitude of the destination point.
+ * @param longDest The longitude of the destination point.
+ * @param distMax The maximum distance.
+ * @param airplanes A vector of strings representing allowed aircraft (can be empty to consider all).
+ * @return void
+ */
 void findBestFlights(Graph<Airport> &airports, double latOrigin,
                      double longOrigin, double latDest, double longDest,
                      int distMax, vector<string> &airplanes)
@@ -990,8 +895,19 @@ void findBestFlights(Graph<Airport> &airports, double latOrigin,
     showPath(airports, src, dest, paths, airplanes);
 }
 
-// Function to find best flights between an airport and a point on Earth
-// type = 0: Point to Airport, type = 1: Airport to Point
+/**
+ * @brief Function to find best flights between an airport and a point on Earth
+ * This function uses breadth-first search (BFS) to find paths between a source and destination airport
+ * Complexity: O(p*(n + e)), where n is the number of airports, e is the number of flights in the graph and p is the number of source and destination airports
+ * @param airports The graph representing airports and available flights.
+ * @param airport The airport.
+ * @param lat The latitude of the point.
+ * @param lon The longitude of the point.
+ * @param distMax The maximum distance.
+ * @param type The type of search (0: Point to Airport, 1: Airport to Point).
+ * @param airplanes A vector of strings representing allowed aircraft (can be empty to consider all).
+ * @return void
+ */
 void findBestFlights(Graph<Airport> &airports, string airport, double lat,
                      double lon, int distMax, int type,
                      vector<string> &airplanes)
@@ -1027,6 +943,21 @@ void findBestFlights(Graph<Airport> &airports, string airport, double lat,
 // type = 0: City to Point, type = 1: Point to City
 // Complexity: O(n^2 + n * e), where n is the number of airports and e is
 // the number of flights in the graph
+
+/**
+ * @brief Function to find best flights between a city and a point on the Earth
+ * This function uses breadth-first search (BFS) to find paths between a source and destination airport
+ * Complexity: O(p*(n + e)), where n is the number of airports, e is the number of flights in the graph and p is the number of source and destination airports
+ * @param airports The graph representing airports and available flights.
+ * @param country The country of the source airport.
+ * @param city The city of the source airport.
+ * @param lat The latitude of the point.
+ * @param lon The longitude of the point.
+ * @param distMax The maximum distance.
+ * @param type The type of search (0: City to Point, 1: Point to City).
+ * @param airplanes A vector of strings representing allowed aircraft (can be empty to consider all).
+ * @return void
+ */
 void findBestFlights(Graph<Airport> &airports, string country, string city,
                      double lat, double lon, int distMax, int type,
                      vector<string> &airplanes)
@@ -1070,8 +1001,17 @@ void findBestFlights(Graph<Airport> &airports, string country, string city,
     }
 }
 
-// Function to find a path from the current airport to start airport
-// Complexity: O(n), where n is the number of airports in the graph
+/**
+ * @brief Function to find a path from the current airport to start airport
+ * Complexity: O(n), where n is the number of airports in the graph
+ * @param current The current airport.
+ * @param path The current path.
+ * @param prev A map with the previous airports.
+ * @param paths A vector of vectors of flights representing the paths.
+ * @param startCode The code of the start airport.
+ * @param airline The airline of the flight.
+ * @return void
+ */
 void getPath(string current, vector<Flight> &path,
              unordered_map<string, vector<Flight>> &prev,
              vector<vector<Flight>> &paths, string startCode, string airline)
@@ -1096,9 +1036,14 @@ void getPath(string current, vector<Flight> &path,
     path.pop_back();
 }
 
-// Function to perfom breadth-first search to find paths between two airport
-// Complexity: O(n + e), where n is the number of airports and e is the
-// number of flights in the graph
+/**
+ * @brief Function to perfom breadth-first search to find paths between two airport
+ * Complexity: O(n + e), where n is the number of airports and e is the number of flights in the graph
+ * @param v The vertex to start the search
+ * @param tgt The target airport.
+ * @param airplanes A vector of strings representing allowed aircraft (can be empty to consider all).
+ * @return vector<vector<Flight>> A vector of vectors of flights representing the paths.
+ */
 vector<vector<Flight>> bfsPath(Vertex<Airport> *v, string &tgt,
                                vector<string> &airplanes)
 {
@@ -1148,6 +1093,12 @@ vector<vector<Flight>> bfsPath(Vertex<Airport> *v, string &tgt,
     return paths;
 }
 
+/**
+ * @brief Function that uses a depth-first search to find the number of connected components in a graph.
+ * Complexity: O(n + e), where n is the number of airports and e is the number of flights in the graph
+ * @param airports The graph representing airports and available flights.
+ * @return int The number of connected components.
+ */
 int connectedComponents(Graph<Airport> &airports)
 {
     int component = 0;
@@ -1167,6 +1118,13 @@ int connectedComponents(Graph<Airport> &airports)
     return component;
 }
 
+/**
+ * @brief Function DFS starting from a vertex to find connected components
+ * Complexity: O(n + e), where n is the number of airports and e is the number of flights in the graph
+ * @param airports The graph representing airports and available flights.
+ * @param v The vertex to start the search
+ * @return void
+ */
 void dfsConnectedComponents(Graph<Airport> &airports, Vertex<Airport> *v)
 {
     v->setVisited(true);
@@ -1182,8 +1140,12 @@ void dfsConnectedComponents(Graph<Airport> &airports, Vertex<Airport> *v)
     }
 }
 
-// Function to find articulation points in the graph
-// Complexity: O(n^2), where n is the number of airports in the graph
+/**
+ * @brief Function to find and show articulation points in the graph. Points (airports) that, if removed, make certain regions of the map inaccessible
+ * Complexity: O(n^2), where n is the number of airports in the graph
+ * @param airports The graph representing airports and available flights.
+ * @return void
+ */
 void findArticulationPoints(Graph<Airport> &airports)
 {
 
@@ -1212,8 +1174,12 @@ void findArticulationPoints(Graph<Airport> &airports)
     }
 }
 
-// Function (recursive) for DFS to find articulation points
-// Complexity: O(e), where e is the number of flights in the graph
+/**
+ * @brief Function DFS modified to find articulation points
+ * @param v The vertex to start the search
+ * @param w The vertex to be visited
+ * @return void
+ */
 void dfsArtc(Vertex<Airport> *v, Vertex<Airport> *w)
 {
     w->setVisited(true);
@@ -1226,55 +1192,5 @@ void dfsArtc(Vertex<Airport> *v, Vertex<Airport> *w)
         {
             dfsArtc(v, t);
         }
-    }
-}
-
-// Function to perform DFS to find paths between two airports
-// Complexity: O(e), where e is the number of flights in the graph
-void dfsPath(Vertex<Airport> *v, string tgt, vector<string> &path,
-             vector<vector<string>> &paths)
-{
-    std::cout << "Visiting: " << v->getInfo().getCode() << std::endl;
-    v->setVisited(true);
-    path.push_back(v->getInfo().getCode());
-
-    if (v->getInfo().getCode() == tgt)
-    {
-        paths.push_back(path);
-    }
-    else
-    {
-        for (auto &e : v->getAdj())
-        {
-            auto w = e.getDest();
-            if (!w->isVisited())
-            {
-                dfsPath(w, tgt, path, paths);
-            }
-        }
-    }
-
-    path.pop_back();
-    v->setVisited(false);
-}
-
-// Function to find all paths from a vertex to a target airport
-// Complexity:
-// Complexity: O(e), where e is the number of flights in the graph
-void findAllPaths(Vertex<Airport> *v, string tgt)
-{
-
-    vector<vector<string>> paths;
-    vector<string> path;
-
-    dfsPath(v, tgt, path, paths);
-
-    for (auto path : paths)
-    {
-        for (auto p : path)
-        {
-            std::cout << p << " ";
-        }
-        std::cout << std::endl;
     }
 }

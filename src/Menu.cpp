@@ -178,7 +178,7 @@ void listing()
               << std::endl;
     // getArticulations(airports);
     findArticulationPoints(airports);
-    connectedComponents(airports);
+    // connectedComponents(airports);
     std::cout << "--------------------------------------------------"
               << std::endl;
     std::cout << "Press any key to continue..." << std::endl;
