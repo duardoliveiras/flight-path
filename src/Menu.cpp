@@ -568,6 +568,14 @@ void menuAirports()
   case 2:
     std::cout << "Type Country Name: " << std::endl;
     std::getline(std::cin, arg);
+
+    while (countriesHash.find(arg) == countriesHash.end())
+    {
+      std::cout << "Country not found" << std::endl;
+      std::cout << "Type Country Name: " << std::endl;
+      std::getline(std::cin, arg);
+    }
+
     std::cout << "Airports in " << arg << ": "
               << quantityAirportsCountry(airports, arg) << std::endl;
     std::cout << "--------------------------------------------------"
@@ -708,6 +716,14 @@ void menuCities()
   case 2:
     std::cout << "Type Country Name: " << std::endl;
     std::getline(std::cin, arg);
+
+    while (countriesHash.find(arg) == countriesHash.end())
+    {
+      std::cout << "Country not found" << std::endl;
+      std::cout << "Type Country Name: " << std::endl;
+      std::getline(std::cin, arg);
+    }
+
     std::cout << "Cities in " << arg << ": "
               << quantityCitiesCountry(airports, arg) << std::endl;
     std::cout << "--------------------------------------------------"
@@ -770,6 +786,14 @@ void menuAirlines()
   case 2:
     std::cout << "Type Country Name: " << std::endl;
     std::getline(std::cin, arg);
+
+    while (countriesHash.find(arg) == countriesHash.end())
+    {
+      std::cout << "Country not found" << std::endl;
+      std::cout << "Type Country Name: " << std::endl;
+      std::getline(std::cin, arg);
+    }
+
     std::cout << "Airlines in " << arg << ": "
               << quantityAirlinesCountry(airlines, arg) << std::endl;
     std::cout << "--------------------------------------------------"
