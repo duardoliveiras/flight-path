@@ -654,7 +654,7 @@ void menuCountries()
   switch (flag)
   {
   case 1:
-    std::cout << "All Countries: " << quantityCountries() << std::endl;
+    std::cout << "All Countries: " << countriesHash.size() << std::endl;
     std::cout << "--------------------------------------------------"
               << std::endl;
     std::cout << "Press any key to continue..." << std::endl;
@@ -704,7 +704,7 @@ void menuCities()
   switch (flag)
   {
   case 1:
-    std::cout << "All Cities: " << quantityCities(airports) << std::endl;
+    std::cout << "All Cities: " << citiesHash.size() << std::endl;
     std::cout << "--------------------------------------------------"
               << std::endl;
     std::cout << "Press any key to continue..." << std::endl;

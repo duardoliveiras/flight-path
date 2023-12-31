@@ -55,37 +55,6 @@ int quantityAirportsCity(Graph<Airport> airports, std::string city)
     return count;
 }
 
-//------------------------------------------------------------
-
-/**
- * @brief Function to get quantity of unique countries in the csv using a hash table
- * @return int The quantity of unique countries in the graph.
- */
-int quantityCountries()
-{
-    return countriesHash.size();
-}
-
-//------------------------------------------------------------
-
-/**
- * @brief Function to count the number of unique cities in the graph
- * Complexity: O(n), where n is the number of airports in the graph
- * @param airports The graph of airports.
- * @return int The quantity of unique cities in the graph.
- */
-int quantityCities(Graph<Airport> airports)
-{
-    std::unordered_set<std::string> uniqueCities;
-    for (auto v : airports.getVertexSet())
-    {
-        Airport a = v->getInfo();
-        std::string city = a.getCity();
-        uniqueCities.insert(city);
-    }
-    return uniqueCities.size();
-}
-
 /**
  * @brief Function to count the number of unique cities in the graph for a given country
  * Complexity: O(n), where n is the number of airports in the graph

@@ -25,11 +25,7 @@ int quantityAirports(Graph<Airport> airports);
 int quantityAirportsCountry(Graph<Airport> airports, std::string country);
 int quantityAirportsCity(Graph<Airport> airports, std::string city);
 
-// Quantity Countries Functions
-int quantityCountries();
-
 // Quantity Cities Functions
-int quantityCities(Graph<Airport> airports);
 int quantityCitiesCountry(Graph<Airport> airports, std::string country);
 
 // Quantity Airlines Functions
@@ -51,18 +47,13 @@ int quantityDestinationLimitedStop(Graph<Airport> airports,
 int quantityDestinationMax(Graph<Airport> airports);
 
 // Other functions
-int quantityCountry(Graph<Airport> airports, std::string airport); // see later
 std::pair<int, int> quantityFlights(Graph<Airport> airports, std::string code);
 std::vector<std::string> dfsVisit(Vertex<Airport> *v,
                                   std::vector<std::string> &res);
 std::vector<std::string> dfsVisit(Vertex<Airport> *v,
                                   std::vector<std::string> &res, int stop);
-int dfsCount(Vertex<Airport> *v, std::string &tgt, vector<std::string> &path);
 void resetVisited(Graph<Airport> &airports);
 void rankingAirports(Graph<Airport> airports, int arg);
-void getArticulations(Graph<Airport> airports);
-void dfsArticulations(Graph<Airport> &airports, Vertex<Airport> *v,
-                      unordered_set<string> &res, std::stack<string> &s, int i);
 void calculateIndegree(Graph<Airport> &airports);
 
 // Best Flights Functions
@@ -95,25 +86,18 @@ vector<Vertex<Airport> *> findAirports(Graph<Airport> &airports, double lat,
 //------------------------------------------------------------
 vector<vector<Flight>> bfsPath(Vertex<Airport> *v, string &tgt,
                                vector<string> &airplanes);
-
 void getPath(string current, vector<Flight> &path,
              unordered_map<string, vector<Flight>> &prev,
              vector<vector<Flight>> &paths, string startCode, string airline);
-
-void dfsPath(Vertex<Airport> *v, string tgt, vector<string> &path,
-             vector<vector<string>> &paths);
-
-void findAllPaths(Vertex<Airport> *v, string tgt);
-
 void dfsArtc(Vertex<Airport> *v, Vertex<Airport> *w);
 void findArticulationPoints(Graph<Airport> &airports);
-
 bool comparatorPath(const vector<Flight> a, const vector<Flight> b);
-
-//---
-
+//------------------------------------------------------------
 void dfsConnectedComponents(Graph<Airport> &airports, Vertex<Airport> *v);
 int connectedComponents(Graph<Airport> &airports);
 void dfsMax(Vertex<Airport> *v, std::vector<std::string> &path, std::vector<std::string> &maxPath);
+double toRadians(const double degree);
+double distanceEarth(double latOrigin, double longOrigin, double latDest,
+                     double longDest);
 
 #endif // DBAIRPORT_H
