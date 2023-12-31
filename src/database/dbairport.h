@@ -1,6 +1,7 @@
 #ifndef DBAIRPORT_H
 #define DBAIRPORT_H
 
+#include "../classes/Airline.h"
 #include "../classes/Airport.h"
 #include "../classes/Graph.h"
 #include <algorithm>
@@ -12,32 +13,58 @@
 #include <unordered_map>
 #include <unordered_set>
 
-struct Flight
-{
+struct Flight {
   std::string code;
   std::string airline;
 };
 
+// Quantity Airports Functions
 int quantityAirports(Graph<Airport> airports);
+int quantityAirportsCountry(Graph<Airport> airports, std::string country);
+int quantityAirportsCity(Graph<Airport> airports, std::string city);
+
+// Quantity Countries Functions
+int quantityCountries(Graph<Airport> airports, Graph<Airline> airlines);
+
+// Quantity Cities Functions
+int quantityCities(Graph<Airport> airports);
+int quantityCitiesCountry(Graph<Airport> airports, std::string country);
+
+// Quantity Airlines Functions
+int quantityAirlines(Graph<Airline> airlines);
+int quantityAirlinesCountry(Graph<Airline> airlines, std::string country);
+
+// Quantity Flights Functions
 int quantityFlights(Graph<Airport> airports);
-std::pair<int, int> quantityFlights(Graph<Airport> airports, std::string code);
-int quantityFlightsCity(Graph<Airport> airports, std::string city, std::string country);
+int quantityFlightsAirport(Graph<Airport> airports, std::string airport);
+int quantityFlightsCountry(Graph<Airport> airports, std::string country);
+int quantityFlightsCity(Graph<Airport> airports, std::string city);
 int quantityFlightsAirline(Graph<Airport> airports, std::string airline);
-int quantityCountry(Graph<Airport> airports, std::string airport);
-int quantityCountryStop(Graph<Airport> airports, std::string airport, int stop);
+
+// Quantity Destination Functions 
+int quantityDestinationsCountry(Graph<Airport> airports,
+                                         std::string country);
+int quantityDestinationsAirport(Graph<Airport> airports, std::string airport);
+int quantityDestinationLimitedStop(Graph<Airport> airports,
+                                            std::string airport, int stop);
+int quantityDestinationMax(Graph<Airport> airports);
+
+// Other functions
+int quantityCountry(Graph<Airport> airports, std::string airport); // see later
+std::pair<int, int> quantityFlights(Graph<Airport> airports, std::string code);
 std::vector<std::string> dfsVisit(Vertex<Airport> *v,
                                   std::vector<std::string> &res);
 std::vector<std::string> dfsVisit(Vertex<Airport> *v,
                                   std::vector<std::string> &res, int stop);
 int dfsCount(Vertex<Airport> *v, std::string &tgt, vector<std::string> &path);
 void resetVisited(Graph<Airport> &airports);
-int maxFlight(Graph<Airport> airports);
 void rankingAirports(Graph<Airport> airports, int arg);
 void getArticulations(Graph<Airport> airports);
 void dfsArticulations(Graph<Airport> &airports, Vertex<Airport> *v,
                       unordered_set<string> &res, std::stack<string> &s, int i);
 void calculateIndegree(Graph<Airport> &airports);
-//------------------------------------------------------------
+
+// Best Flights Functions
 void findBestFlights(Graph<Airport> &airports, string src, string dest,
                      vector<string> &airplanes);
 void findBestFlights(Graph<Airport> &airports, string countrySrc,

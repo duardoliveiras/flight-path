@@ -7,6 +7,8 @@ add_executable(a
         main.cpp
         classes/Airport.cpp
         classes/Airport.h
+        classes/Airline.cpp
+        classes/Airline.h
         Menu.cpp
         Menu.h
         classes/Graph.h

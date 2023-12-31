@@ -1,15 +1,19 @@
 #ifndef MENU_H
 #define MENU_H
 
-#include "classes/Airport.h"
 #include "database/dbairport.h"
 #include "database/read.h"
+#include <iostream>
 #include <limits>
 
 // Function to display menu
 void Menu(std::string folder);
 void quantity();
 void listing();
+void menuAirports();
+void menuCountries();
+void menuCities();
+void menuAirlines();
 void menuFlights();
 void menuDestination();
 
