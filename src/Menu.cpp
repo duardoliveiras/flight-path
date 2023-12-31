@@ -594,6 +594,8 @@ void menuCities()
   std::cout << "-------------------------------------------------" << std::endl;
 
   std::cin >> flag;
+  std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
   while (std::cin.fail())
   {
     std::cin.clear();
@@ -615,7 +617,7 @@ void menuCities()
     break;
   case 2:
     std::cout << "Type Country Name: " << std::endl;
-    std::cin >> arg;
+    std::getline(std::cin, arg);
     std::cout << "Cities in " << arg << ": "
               << quantityCitiesCountry(airports, arg) << std::endl;
     std::cout << "--------------------------------------------------"
