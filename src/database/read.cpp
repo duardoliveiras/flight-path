@@ -2,27 +2,31 @@
 
 // Function to read Airport data from CSV file and create graph of airports
 // Complexity: O(n), where n is the number of airports in the csv file
-Graph<Airport> readAirports(std::string folder) {
+Graph<Airport> readAirports(std::string folder)
+{
   // Inicialiate Graph
   Graph<Airport> airports = Graph<Airport>();
 
   // Open csv file
   std::ifstream file("../dataset/" + folder + "/airports.csv", ios::in);
-  if (!file.is_open()) {
+  if (!file.is_open())
+  {
     std::cout << "Error opening file" << std::endl;
     return airports;
   }
 
   // Read and ignore header line
   std::string line;
-  if (!std::getline(file, line)) {
+  if (!std::getline(file, line))
+  {
     std::cout << "Error reading header line" << std::endl;
     file.close();
     return airports;
   }
 
   // Read each line and create an Airport object
-  while (std::getline(file, line)) {
+  while (std::getline(file, line))
+  {
     std::istringstream iss(line);
     std::string code, name, country, city;
     double latitude, longitude;
@@ -49,27 +53,31 @@ Graph<Airport> readAirports(std::string folder) {
 // Function to read Flight data from CSV file and add edges to graph of airports
 // Complexity: O(n + v), where n is the number of airports and v is the number
 // of flights in the csv file
-Graph<Airport> readFlights(std::string folder) {
+Graph<Airport> readFlights(std::string folder)
+{
   // Read airports
   Graph<Airport> airports = readAirports(folder);
 
   // Open csv file
   std::ifstream file("../dataset/" + folder + "/flights.csv", ios::in);
-  if (!file.is_open()) {
+  if (!file.is_open())
+  {
     std::cout << "Error opening flights file" << std::endl;
     return airports;
   }
 
   // Read and ignore header line
   std::string line;
-  if (!std::getline(file, line)) {
+  if (!std::getline(file, line))
+  {
     std::cout << "Error reading flights header line" << std::endl;
     file.close();
     return airports;
   }
 
   // Read each line and add edges to graph
-  while (std::getline(file, line)) {
+  while (std::getline(file, line))
+  {
     std::istringstream iss(line);
     std::string source, target, airline;
 
@@ -90,27 +98,31 @@ Graph<Airport> readFlights(std::string folder) {
 
 // Function to read Airline data from CSV file and create a graph of airlines
 // Complexity: O(n), where n is the number of airlines in the CSV file
-Graph<Airline> readAirlines(std::string folder) {
+Graph<Airline> readAirlines(std::string folder)
+{
   // Initialize Graph
   Graph<Airline> airlines = Graph<Airline>();
 
   // Open csv file
   std::ifstream file("../dataset/" + folder + "/airlines.csv", ios::in);
-  if (!file.is_open()) {
+  if (!file.is_open())
+  {
     std::cout << "Error opening file" << std::endl;
     return airlines;
   }
 
   // Read and ignore header line
   std::string line;
-  if (!std::getline(file, line)) {
+  if (!std::getline(file, line))
+  {
     std::cout << "Error reading header line" << std::endl;
     file.close();
     return airlines;
   }
 
   // Read each line and create an Airline object
-  while (std::getline(file, line)) {
+  while (std::getline(file, line))
+  {
     std::istringstream iss(line);
     std::string code, name, callsign, country;
 
