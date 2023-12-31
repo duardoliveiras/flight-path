@@ -13,7 +13,8 @@
 #include <unordered_map>
 #include <unordered_set>
 
-struct Flight {
+struct Flight
+{
   std::string code;
   std::string airline;
 };
@@ -41,12 +42,12 @@ int quantityFlightsCountry(Graph<Airport> airports, std::string country);
 int quantityFlightsCity(Graph<Airport> airports, std::string city);
 int quantityFlightsAirline(Graph<Airport> airports, std::string airline);
 
-// Quantity Destination Functions 
+// Quantity Destination Functions
 int quantityDestinationsCountry(Graph<Airport> airports,
-                                         std::string country);
+                                std::string country);
 int quantityDestinationsAirport(Graph<Airport> airports, std::string airport);
 int quantityDestinationLimitedStop(Graph<Airport> airports,
-                                            std::string airport, int stop);
+                                   std::string airport, int stop);
 int quantityDestinationMax(Graph<Airport> airports);
 
 // Other functions
@@ -113,5 +114,6 @@ bool comparatorPath(const vector<Flight> a, const vector<Flight> b);
 
 void dfsConnectedComponents(Graph<Airport> &airports, Vertex<Airport> *v);
 int connectedComponents(Graph<Airport> &airports);
+void dfsMax(Vertex<Airport> *v, std::vector<std::string> &path, std::vector<std::string> &maxPath);
 
 #endif // DBAIRPORT_H
