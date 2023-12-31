@@ -564,6 +564,7 @@ void rankingAirports(Graph<Airport> airports, int arg)
         if (i < arg)
         {
             std::cout << "Code: " << v.code << " / ";
+            std::cout << "Name: " << airportsHash.find(v.code)->second.getName() << " / ";
             std::cout << "Total: " << v.count << std::endl;
             i++;
         }
