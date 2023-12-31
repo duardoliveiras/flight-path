@@ -571,10 +571,15 @@ void rankingAirports(Graph<Airport> airports, int arg)
     }
 }
 
-// Function to find the best flights from a source airport to a destination
-// airport Airport to Airport
-// Complexity: O(n + e), where n is the number of airports and e is the
-// number of flights in the graph
+/**
+ * @brief Function to find the best flights from a source airport to a destination airport
+ * Complexity: O(n + e), where n is the number of airports and e is the number of flights in the graph
+ * @param airports The graph representing airports and available flights.
+ * @param src The source airport.
+ * @param dest The destination airport.
+ * @param airplanes A vector of strings representing allowed aircraft (can be empty to consider all).
+ * @return void
+ */
 void findBestFlights(Graph<Airport> &airports, string src, string dest,
                      vector<string> &airplanes)
 {
