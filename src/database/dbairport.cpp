@@ -2,15 +2,24 @@
 
 //------------------------------------------------------------
 
-// Function to get quantity of airports in the graph
-// Complexity: O(1)
+/**
+ * @brief Function to get quantity of airports in the graph
+ * Complexity: O(1)
+ * @param airports The graph of airports.
+ * @return int The quantity of airports in the graph.
+ */
 int quantityAirports(Graph<Airport> airports)
 {
     return airports.getNumVertex();
 }
 
-// Function to get quantity of airports in the graph by country
-// Complexity: O(n), where n is the number of airports in the graph
+/**
+ * @brief Function to get quantity of airports in the graph by country
+ * Complexity: O(n), where n is the number of airports in the graph
+ * @param airports The graph of airports.
+ * @param country The country to be searched.
+ * @return int The quantity of airports in the country.
+ */
 int quantityAirportsCountry(Graph<Airport> airports, std::string country)
 {
     int count = 0;
@@ -25,8 +34,13 @@ int quantityAirportsCountry(Graph<Airport> airports, std::string country)
     return count;
 }
 
-// Function to get quantity of airports in the graph by city
-// Complexity: O(n), where n is the number of airports in the graph
+/**
+ * @brief Function to get quantity of airports in the graph by city
+ * Complexity: O(n), where n is the number of airports in the graph
+ * @param airports The graph of airports.
+ * @param city The city to be searched.
+ * @return int The quantity of airports in the city.
+ */
 int quantityAirportsCity(Graph<Airport> airports, std::string city)
 {
     int count = 0;
@@ -43,9 +57,14 @@ int quantityAirportsCity(Graph<Airport> airports, std::string city)
 
 //------------------------------------------------------------
 
-// Function to get quantity of unique countries in the graph
-// Complexity: O(n + m), where n is the number of airports, m is the number of
-// airlines
+/**
+ * @brief Function to get quantity of unique countries in the graph
+ * Complexity: O(n + m), where n is the number of airports, m is the number of
+ * airlines
+ * @param airports The graph of airports.
+ * @param airlines The graph of airlines.
+ * @return int The quantity of unique countries in the graph.
+ */
 int quantityCountries(Graph<Airport> airports, Graph<Airline> airlines)
 {
     std::unordered_set<std::string> uniqueCountries;
@@ -66,8 +85,12 @@ int quantityCountries(Graph<Airport> airports, Graph<Airline> airlines)
 
 //------------------------------------------------------------
 
-// Function to count the number of unique cities in the graph
-// Complexity: O(n), where n is the number of airports in the graph
+/**
+ * @brief Function to count the number of unique cities in the graph
+ * Complexity: O(n), where n is the number of airports in the graph
+ * @param airports The graph of airports.
+ * @return int The quantity of unique cities in the graph.
+ */
 int quantityCities(Graph<Airport> airports)
 {
     std::unordered_set<std::string> uniqueCities;
@@ -80,9 +103,13 @@ int quantityCities(Graph<Airport> airports)
     return uniqueCities.size();
 }
 
-// Function to count the number of unique cities in the graph for a given
-// country
-// Complexity: O(n), where n is the number of airports in the graph
+/**
+ * @brief Function to count the number of unique cities in the graph for a given country
+ * Complexity: O(n), where n is the number of airports in the graph
+ * @param airports The graph of airports.
+ * @param country The country to be searched.
+ * @return int The quantity of unique cities in the country.
+ */
 int quantityCitiesCountry(Graph<Airport> airports, std::string country)
 {
     std::unordered_set<std::string> uniqueCities;
@@ -100,15 +127,25 @@ int quantityCitiesCountry(Graph<Airport> airports, std::string country)
 
 //------------------------------------------------------------
 
-// Function to calculate the quantity of airlines in the graph
-// Complexity: O(1)
+// Update later to tree hashtable
+/**
+ * @brief Function to calculate the quantity of airlines in the graph
+ * Complexity: O(1)
+ * @param airlines The graph of airlines.
+ * @return int The quantity of airlines in the graph.
+ */
 int quantityAirlines(Graph<Airline> airlines)
 {
     return airlines.getNumVertex();
 }
 
-// Function to calculate the quantity of airlines for a given country
-// Complexity: O(n), where n is the number of airlines in the graph
+/**
+ * @brief Function to calculate the quantity of airlines for a given country
+ * Complexity: O(n), where n is the number of airlines in the graph
+ * @param airlines The graph of airlines.
+ * @param country The country to be searched.
+ * @return int The quantity of airlines in the country.
+ */
 int quantityAirlinesCountry(Graph<Airline> airlines, std::string country)
 {
     int count = 0;
@@ -125,9 +162,12 @@ int quantityAirlinesCountry(Graph<Airline> airlines, std::string country)
 
 //------------------------------------------------------------
 
-// Function to calculate the quatity of flights in the graph
-// Complexity: O(n + e),  where n is the number of airports in the graph and e
-// is the number of flights
+/**
+ * @brief Function to calculate the quatity of flights in the graph
+ * Complexity: O(n),  where n is the number of airports in the graph
+ * @param airports The graph of airports.
+ * @return int The quantity of flights (edges) in the graph.
+ */
 int quantityFlights(Graph<Airport> airports)
 {
     int count = 0;
@@ -138,9 +178,13 @@ int quantityFlights(Graph<Airport> airports)
     return count;
 }
 
-// Function to calculate the quatity of flights in a given airport
-// Complexity: O(n + e),  where n is the number of airports in the graph and e
-// is the number of flights
+/**
+ * @brief Function to calculate the quatity of flights in a given airport
+ * Complexity: O(n),  where n is the number of airports in the graph
+ * @param airports The graph of airports.
+ * @param airport The airport to be searched.
+ * @return int The quantity of flights (edges) in the airport.
+ */
 int quantityFlightsAirport(Graph<Airport> airports, std::string airport)
 {
     int count = 0;
@@ -154,9 +198,13 @@ int quantityFlightsAirport(Graph<Airport> airports, std::string airport)
     return count;
 }
 
-// Function to calculate the quatity of flights in a given country
-// Complexity: O(n + e),  where n is the number of airports in the graph and e
-// is the number of flights
+/**
+ * @brief Function to calculate the quatity of flights in a given country
+ * Complexity: O(n),  where n is the number of airports in the graph
+ * @param airports The graph of airports.
+ * @param country The country to be searched.
+ * @return int The quantity of flights (edges) in the country.
+ */
 int quantityFlightsCountry(Graph<Airport> airports, std::string country)
 {
     int count = 0;
@@ -170,9 +218,14 @@ int quantityFlightsCountry(Graph<Airport> airports, std::string country)
     return count;
 }
 
-// Function to calculate the quatity of flights in a given city
-// Complexity: O(n + e),  where n is the number of airports in the graph and e
-// is the number of flights
+// Update later need country too cause have cities with same name
+/**
+ * @brief Function to calculate the quatity of flights in a given city
+ * Complexity: O(n),  where n is the number of airports in the graph
+ * @param airports The graph of airports.
+ * @param city The city to be searched.
+ * @return int The quantity of flights (edges) in the city.
+ */
 int quantityFlightsCity(Graph<Airport> airports, std::string city)
 {
     int count = 0;
@@ -186,9 +239,14 @@ int quantityFlightsCity(Graph<Airport> airports, std::string city)
     return count;
 }
 
-// Function to calculate the quatity of flights in a given airline
-// Complexity: O(n + e),  where n is the number of airports in the graph and e
-// is the number of flights
+/**
+ * @brief Function to calculate the quatity of flights in a given airline
+ * Complexity: O(n + e),  where n is the number of airports in the graph and e
+ * is the number of flights
+ * @param airports The graph of airports.
+ * @param airline The airline to be searched.
+ * @return int The quantity of flights (edges) in the airline.
+ */
 int quantityFlightsAirline(Graph<Airport> airports, std::string airline)
 {
     int count = 0;
@@ -208,9 +266,14 @@ int quantityFlightsAirline(Graph<Airport> airports, std::string airline)
 
 //------------------------------------------------------------
 
-// Function to calculate the quatity of flights in a given country
-// Complexity: O(n + e),  where n is the number of airports in the graph and e
-// is the number of flights
+// Update later the objective is to find many destinations is possible starting from a coutry
+/**
+ * @brief Function to calculate the quatity of flights in a given country
+ * Complexity: O(n + e),  where n is the number of airports in the graph and e is the number of flights
+ * @param airports The graph of airports.
+ * @param airline The airline to be searched.
+ * @return int The quantity of flights in same country.
+ */
 int quantityDestinationsCountry(Graph<Airport> airports, std::string country)
 {
     int totalFlights = 0;
@@ -232,9 +295,13 @@ int quantityDestinationsCountry(Graph<Airport> airports, std::string country)
     return totalFlights;
 }
 
-// Function to calculate the quatity of countries in a given airport
-// Complexity: O(n + e),  where n is the number of airports in the graph and e
-// is the number of flights
+/**
+ * @brief Function to calculate the number of different countries it is possible to go directly to from an airport
+ * Complexity: O(n + e),  where n is the number of airports in the graph and e is the number of flights
+ * @param airports The graph of airports.
+ * @param airport The airport to be searched.
+ * @return int The quantity of countries.
+ */
 int quantityDestinationsAirport(Graph<Airport> airports, std::string airport)
 {
     std::set<std::string> countries;
@@ -252,9 +319,14 @@ int quantityDestinationsAirport(Graph<Airport> airports, std::string airport)
     return countries.size();
 }
 
-// Function to calculate the quatity of countries in a given number of stops
-// Complexity: O(n + e),  where n is the number of airports in the graph and e
-// is the number of flights
+/**
+ * @brief Function to calculate the number of different countries it is possible to go to from an airport with a given number of stops
+ * Complexity: O(n + e),  where n is the number of airports in the graph and e is the number of flights
+ * @param airports The graph of airports.
+ * @param airport The airport to be searched.
+ * @param stop The number of stops.
+ * @return int The quantity of countries.
+ */
 int quantityDestinationLimitedStop(Graph<Airport> airports, std::string airport,
                                    int stop)
 {
@@ -272,9 +344,13 @@ int quantityDestinationLimitedStop(Graph<Airport> airports, std::string airport,
     return countries.size();
 }
 
-// Function to calculate an Airport with a given max number of flights
-// Complexity: O(n * (n + e)),  where n is the number of airports in the graph
-// and e is the number of flights
+/**
+ * @brief Function that calculates the maximum possible trip, with the greatest number of stops
+ * and print the starting airport and the destination airport
+ * Complexity: O(n * (n + e)),  where n is the number of airports in the graph and e is the number of flights
+ * @param airports The graph of airports.
+ * @return int The number of stops on the longest trip
+ */
 int quantityDestinationMax(Graph<Airport> airports)
 {
     vector<string> path, maxPath;
@@ -296,6 +372,13 @@ int quantityDestinationMax(Graph<Airport> airports)
     return maxPath.size() - 1;
 }
 
+/**
+ * @brief Function that performs a depth-first search and always updates the longest path
+ * @param v The vertex to start the search
+ * @param path The current path
+ * @param maxPath The longest path
+ * @return void
+ */
 void dfsMax(Vertex<Airport> *v, std::vector<std::string> &path, std::vector<std::string> &maxPath)
 {
     v->setVisited(true);
@@ -323,14 +406,24 @@ void dfsMax(Vertex<Airport> *v, std::vector<std::string> &path, std::vector<std:
 //------------------------------------------------------------
 //------------------------------------------------------------
 
+/**
+ * @brief Function to sort the vector with the best flights in increasing order by the number of stops.
+ * @param a The first vector.
+ * @param b The second vector.
+ * @return bool True if the first vector is smaller than the second vector.
+ */
 bool comparatorPath(const vector<Flight> a, const vector<Flight> b)
 {
     return a.size() < b.size();
 }
 
-// Function to get quantity of flights in the graph and unique airlines for an
-// Airport
-// Complexity: O(n), where n is the number of flights in the graph
+/**
+ * @brief Function to get quantity of flights in the graph and unique airlines for an Airport
+ * Complexity: O(n), where n is the number of flights in the graph
+ * @param airports The graph of airports.
+ * @param code The airport to be searched.
+ * @return pair<int, int> The quantity of flights and unique airlines.
+ */
 std::pair<int, int> quantityFlights(Graph<Airport> airports, std::string code)
 {
     int count = 0;
@@ -348,9 +441,12 @@ std::pair<int, int> quantityFlights(Graph<Airport> airports, std::string code)
     return std::pair<int, int>(count, airlines.size());
 }
 
-// Search (depth-first) to visit vertices and collect connected countries
-// Complexity: O(n + e), where n is the number of airports and e is the number
-// of flights in the graph
+/**
+ * @brief Search (depth-first) to visit vertices and collect connected countries
+ * @param airports The graph of airports.
+ * @param v The vertex to start the search
+ * @return vector<string> The vector with the countries.
+ */
 std::vector<std::string> dfsVisit(Vertex<Airport> *v,
                                   std::vector<std::string> &res)
 {
@@ -371,8 +467,12 @@ std::vector<std::string> dfsVisit(Vertex<Airport> *v,
     return res;
 }
 
-// Function to get quantity of countries withing number of stop from an
-// airport Complexity: O(2e), where e is the number of flights in the graph
+/**
+ * @brief Function to get quantity of countries withing number of stop from an airport
+ * @param airports The graph of airports.
+ * @param airport The airport to be searched.
+ * @return int The quantity of countries.
+ */
 int quantityCountryStop(Graph<Airport> airports, std::string airport,
                         int stop)
 {
