@@ -60,7 +60,9 @@
 
 ## About The Project
 
-![flightPath](imgs/flightMenu.png)
+<div align="center">
+<img src="imgs/grafo_large.png" width="600"/>
+</div>
 
 **World Air Flight Analysis Program in C++**
 
@@ -129,7 +131,7 @@ There are two databases, the original with 69 thousand connections and the fake 
 
 ![maxPath](imgs/maxFlight.gif)
 
-![maxPath](imgs/maxPath.png)
+<img src="imgs/maxPath.png" width="500"/>
 
 #### Ranking
 
@@ -149,7 +151,7 @@ Here we can see the search between a point on the map (it is calculated from all
 
 We search between a coordinate and a city, using an airline filter.
 
-![map](imgs/map.png)
+<img src="imgs/map.png" width="600"/>
 
 ## Contact
 
