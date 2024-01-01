@@ -1,47 +1,175 @@
-# Air Travel Flight Management System
+<a name="readme-top"></a>
 
-## Project Description
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+![activity](https://img.shields.io/github/commit-activity/w/duardoliveiras/flight-path.svg?style=for-the-badge)
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
-Our project revolves around developing a user-friendly Flight Management System designed to facilitate access and understanding of the global air transport network. The primary goal is to provide effective assistance to users for exploring and planning air travel. Emphasizing usability and intuitive information delivery, the system utilizes real-world data encompassing details on airports, flights, and airlines worldwide.
+<br />
+<div align="center">
+  <a href="https://github.com/duardoliveiras/flight-path">
+    <img src="imgs/flightPathIco.jpeg" alt="Logo" width="80" height="80">
+  </a>
 
-## Installation and Usage
+  <h3 align="center">FlightPath</h3>
 
-To run our application, follow these simple steps:
+  <p align="center">
+    A program made for study purposes, which uses a large database with several airports around the world and their routes.
+    <br />
+    <a href="https://github.com/duardoliveiras/flight-path/blob/main/docs/doxyfiles/latex/refman.pdf"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="#examples">View Demo</a>
+    ·
+    <a href="https://github.com/duardoliveiras/flight-path/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/duardoliveiras/flight-path/issues">Request Feature</a>
+  </p>
+</div>
 
-1. Open a terminal window.
-2. Navigate to the src folder using the cd command:
-   `cd src`
-3. `cmake .` to generate Makefile
-4. Execute the following command to compile and run the program:
-   `make && ./a`
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#examples">Examples</a></li>
+        <ul>
+            <li><a href="#max-path">Max Path</a></li>
+            <li><a href="#ranking">Raking </a></li>
+            <li><a href="#number-of-different-countries-accessible-from-an-airport">Different countries from an airport</a></li>
+            <li><a href="#best-flights-with-filter">Best Flights with filter</a></li>
+        </ul>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
 
-## Collaboration
+## About The Project
 
-- Clarisse Maria Teixeira de Carvalho, up202008444
-- Eduardo Oliveira Silva, up202301394
+![flightPath](imgs/flightMenu.png)
 
-## Features
+**World Air Flight Analysis Program in C++**
 
-#### Quantity
+We present an efficient program developed in C++, capable of reading a vast database containing information on more than 69 thousand connections between 3 thousand airports distributed across different countries.
 
-- Number of airports (All, by country, by city)
-- Number of countries
-- Number of cities (All, by country)
-- Number of airlines (All, by country)
-- Number of flights (All, by airport, by country, by city, by airline)
-- Number of destinations from airport (unlimited stops, limited stops)
-- Max Destination
+**Graph Structure:**
 
-#### Listing
+The program uses a graph structure to represent connections between airports. Each node in the graph represents an airport, and the edges between the nodes represent the direct routes between these airports. This graphical representation facilitates the application of efficient algorithms for data analysis.
 
-- Ranking airports (more landings and takeoffs)
-- Essential airports
+**Main Features:**
 
-#### Best Flights
+1. **Quantification:**
+   - The program offers several quantification functions, allowing you to obtain detailed statistics on the number of flights, airports and connections in different regions of the world.
+2. **Maximum and Minimum Path:**
+   - Specialized algorithms find the maximum and minimum path between two airports, providing the longest and shortest routes available.
+3. **Essential Points:**
+   - Identifies essential points in the graph, that is, airports whose removal would make certain regions inaccessible.
+4. **Airport Ranking:**
+   - Generates a ranking of airports based on the number of flights.
+5. **Flight Search:**
+   - Offers advanced search options, allowing users to search for flights from specific airports, entire cities (considering all airports) or geographic coordinates. The maximum distance for analysis is user configurable, providing flexibility in the search.
 
-- Filt by airplanes or whithout filter
-- By airport to airport
-- By airport to city (vice-versa)
-- By airport to point (vice-versa)
-- By city to point (vice-versa)
-- By point to point (coordinates)
+### Built With
+
+We use C++ to build the algorithms as efficiently as possible and we use Python to validate the results provided against the database.
+
+- [![cpp]](https://cplusplus.com/)
+- [![python]](https://www.python.org/)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- GETTING STARTED -->
+
+## Getting Started
+
+### Prerequisites
+
+Install cmake
+
+```
+sudo apt install cmake
+```
+
+### Installation
+
+1. ` git clone link project`
+2. `cd project`
+3. `cd src`
+4. Generating the Makefile from cmake (CMakeLists.txt)
+
+```
+$ cmake .
+$ make
+```
+
+## Usage
+
+There are two databases, the original with 69 thousand connections and the fake one which has only 23.
+
+`./a fake ` to access fake db.
+
+`./a original` or `./a` to access original db.
+
+## Examples
+
+#### Max Path:
+
+![maxPath](imgs/maxFlight.gif)
+
+![maxPath](imgs/maxPath.png)
+
+#### Ranking
+
+![ranking](imgs/ranking.gif)
+
+#### Number of different countries accessible from an airport
+
+![limited_stop](imgs/limitedStops.gif)
+
+In this example we see that it is possible to access 7 different countries from GRU. But limiting it to one stop, we were able to access 5 countries.
+
+#### Best Flights With Filter
+
+![best_flight](imgs/bestFlightPoint-City.gif)
+
+Here we can see the search between a point on the map (it is calculated from all airports close to the point based on the maximum distance defined by the user).
+
+We search between a coordinate and a city, using an airline filter.
+
+![map](imgs/map.png)
+
+## Contact
+
+[Eduardo Silva](https://github.com/duardoliveiras) - duardodev@gmail.com
+
+[Clarisse Carvalho ](https://github.com/MitsukiS16)
+
+Project Link: [https://github.com/duardoliveiras/flight-path](https://github.com/duardoliveiras/flight-path)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+[contributors-shield]: https://img.shields.io/github/contributors/duardoliveiras/flight-path.svg?style=for-the-badge
+[contributors-url]: https://github.com/duardoliveiras/flight-path/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/duardoliveiras/flight-path.svg?style=for-the-badge
+[forks-url]: https://github.com/duardoliveiras/flight-path/network/members
+[stars-shield]: https://img.shields.io/github/stars/duardoliveiras/flight-path.svg?style=for-the-badge
+[stars-url]: https://github.com/duardoliveiras/flight-path/stargazers
+[issues-shield]: https://img.shields.io/github/issues/duardoliveiras/flight-path.svg?style=for-the-badge
+[issues-url]: https://github.com/duardoliveiras/flight-path/issues
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/duardooliveiras
+[cpp]: https://img.shields.io/badge/C++-00599C?style=flat-square&logo=C%2B%2B&logoColor=white
+[python]: https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54
