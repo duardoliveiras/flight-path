@@ -41,10 +41,10 @@ void Menu(std::string folder)
   switch (flag)
   {
   case 1:
-    quantity();
+    menuQuantity();
     break;
   case 2:
-    listing();
+    menuListing();
     break;
   case 3:
     bestFlights();
@@ -63,7 +63,7 @@ void Menu(std::string folder)
  * @brief Function to handle quantity-related menu options
  * @return void
  */
-void quantity()
+void menuQuantity()
 {
   int flag;
 
@@ -86,7 +86,7 @@ void quantity()
     std::cin.clear();
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     std::cout << "Invalid input. Please enter a valid number: " << std::endl;
-    quantity();
+    menuQuantity();
   }
 
   switch (flag)
@@ -120,7 +120,7 @@ void quantity()
     break;
   default:
     std::cout << "Invalid input. Please enter a valid number: " << std::endl;
-    quantity();
+    menuQuantity();
     break;
   }
 }
@@ -129,7 +129,7 @@ void quantity()
  * @brief Function to handle listing-related menu options
  * @return void
  */
-void listing()
+void menuListing()
 {
   int flag;
   int arg;
@@ -149,7 +149,7 @@ void listing()
     std::cin.clear();
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     std::cout << "Invalid input. Please enter a valid number: " << std::endl;
-    listing();
+    menuListing();
   }
 
   switch (flag)
@@ -169,7 +169,7 @@ void listing()
     std::cout << "Press any key to continue..." << std::endl;
     std::cin.ignore();
     std::cin.get();
-    listing();
+    menuListing();
     break;
   case (2):
     system("clear");
@@ -184,14 +184,14 @@ void listing()
     std::cout << "Press any key to continue..." << std::endl;
     std::cin.ignore();
     std::cin.get();
-    listing();
+    menuListing();
     break;
   case (0):
     Menu("");
     break;
   default:
     std::cout << "Invalid input. Please enter a valid number: " << std::endl;
-    listing();
+    menuListing();
     break;
   }
 }
@@ -563,7 +563,7 @@ void menuAirports()
     std::cout << "Press any key to continue..." << std::endl;
     std::cin.ignore();
     std::cin.get();
-    quantity();
+    menuQuantity();
     break;
   case 2:
     std::cout << "Type Country Name: " << std::endl;
@@ -583,7 +583,7 @@ void menuAirports()
     std::cout << "Press any key to continue..." << std::endl;
     std::cin.ignore();
     std::cin.get();
-    quantity();
+    menuQuantity();
     break;
   case 3:
     std::cout << "Type City Name: " << std::endl;
@@ -613,10 +613,10 @@ void menuAirports()
     std::cout << "Press any key to continue..." << std::endl;
     std::cin.ignore();
     std::cin.get();
-    quantity();
+    menuQuantity();
     break;
   case 0:
-    quantity();
+    menuQuantity();
     break;
   default:
     std::cout << "Invalid input. Please enter a valid number: " << std::endl;
@@ -660,10 +660,10 @@ void menuCountries()
     std::cout << "Press any key to continue..." << std::endl;
     std::cin.ignore();
     std::cin.get();
-    quantity();
+    menuQuantity();
     break;
   case 0:
-    quantity();
+    menuQuantity();
     break;
   default:
     std::cout << "Invalid input. Please enter a valid number: " << std::endl;
@@ -710,7 +710,7 @@ void menuCities()
     std::cout << "Press any key to continue..." << std::endl;
     std::cin.ignore();
     std::cin.get();
-    quantity();
+    menuQuantity();
     break;
   case 2:
     std::cout << "Type Country Name: " << std::endl;
@@ -730,10 +730,10 @@ void menuCities()
     std::cout << "Press any key to continue..." << std::endl;
     std::cin.ignore();
     std::cin.get();
-    quantity();
+    menuQuantity();
     break;
   case 0:
-    quantity();
+    menuQuantity();
     break;
   default:
     std::cout << "Invalid input. Please enter a valid number: " << std::endl;
@@ -781,7 +781,7 @@ void menuAirlines()
     std::cout << "Press any key to continue..." << std::endl;
     std::cin.ignore();
     std::cin.get();
-    quantity();
+    menuQuantity();
     break;
   case 2:
     std::cout << "Type Country Name: " << std::endl;
@@ -801,10 +801,10 @@ void menuAirlines()
     std::cout << "Press any key to continue..." << std::endl;
     std::cin.ignore();
     std::cin.get();
-    quantity();
+    menuQuantity();
     break;
   case 0:
-    quantity();
+    menuQuantity();
     break;
   default:
     std::cout << "Invalid input. Please enter a valid number: " << std::endl;
@@ -855,7 +855,7 @@ void menuFlights()
     std::cout << "Press any key to continue..." << std::endl;
     std::cin.ignore();
     std::cin.get();
-    quantity();
+    menuQuantity();
     break;
   case 2:
     std::cout << "Type Origin Airport Code: " << std::endl;
@@ -875,7 +875,7 @@ void menuFlights()
     std::cout << "Press any key to continue..." << std::endl;
     std::cin.ignore();
     std::cin.get();
-    quantity();
+    menuQuantity();
     break;
   case 3:
     std::cout << "Type Origin Country Code: " << std::endl;
@@ -895,7 +895,7 @@ void menuFlights()
     std::cout << "Press any key to continue..." << std::endl;
     std::cin.ignore();
     std::cin.get();
-    quantity();
+    menuQuantity();
     break;
   case 4:
     std::cout << "Type City Name: " << std::endl;
@@ -925,7 +925,7 @@ void menuFlights()
     std::cout << "Press any key to continue..." << std::endl;
     std::cin.ignore();
     std::cin.get();
-    quantity();
+    menuQuantity();
     break;
   case 5:
     std::cout << "Type Airline Code: " << std::endl;
@@ -937,10 +937,10 @@ void menuFlights()
     std::cout << "Press any key to continue..." << std::endl;
     std::cin.ignore();
     std::cin.get();
-    quantity();
+    menuQuantity();
     break;
   case 0:
-    quantity();
+    menuQuantity();
     break;
   default:
     std::cout << "Invalid input. Please enter a valid number: " << std::endl;
@@ -991,7 +991,7 @@ void menuDestination()
     std::cout << "Press any key to continue..." << std::endl;
     std::cin.ignore();
     std::cin.get();
-    quantity();
+    menuQuantity();
     break;
   case 2:
     std::cout << "Type Airport Code: " << std::endl;
@@ -1015,7 +1015,7 @@ void menuDestination()
     std::cout << "Press any key to continue..." << std::endl;
     std::cin.ignore();
     std::cin.get();
-    quantity();
+    menuQuantity();
     break;
   case 3:
     std::cout << "Type Airport Code: " << std::endl;

@@ -83,7 +83,7 @@ Exemplo:
 
 - [✔] Principais dificuldades encontradas. (1 slide)
 
-- [✖] Extra: Exemplos de utilização (5 slides)
+- [✔] Extra: Exemplos de utilização (5 slides)
 
 ### Check List Final:
 

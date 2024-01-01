@@ -8,8 +8,8 @@
 
 // Function to display menu
 void Menu(std::string folder);
-void quantity();
-void listing();
+void menuQuantity();
+void menuListing();
 void menuAirports();
 void menuCountries();
 void menuCities();
