@@ -90,7 +90,7 @@ The program uses a graph structure to represent connections between airports. Ea
 We use C++ to build the algorithms as efficiently as possible and we use Python to validate the results provided against the database.
 
 - [![cpp]](https://cplusplus.com/)
-- [![python]](https://www.python.org/)
+- 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
