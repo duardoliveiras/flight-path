@@ -1,0 +1,1366 @@
+\doxysection{src/\+Menu.cpp File Reference}
+\hypertarget{Menu_8cpp}{}\label{Menu_8cpp}\index{src/Menu.cpp@{src/Menu.cpp}}
+{\ttfamily \#include "{}Menu.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGraph}{void}} \mbox{\hyperlink{Menu_8cpp_a7bef7cae2480a41f5c2625c6abeaf9d0}{Menu}} (std\+::string \mbox{\hyperlink{classGraph}{folder}})
+\begin{DoxyCompactList}\small\item\em Menu function to display the main menu. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{void}} \mbox{\hyperlink{Menu_8cpp_a3345696c4480fb2da9e4d840e4a22140}{menu\+Quantity}} ()
+\begin{DoxyCompactList}\small\item\em Function to handle quantity-\/related menu options. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{void}} \mbox{\hyperlink{Menu_8cpp_a2f9b96a2b799bbdf69ca5fd2a1e3bb9e}{menu\+Listing}} ()
+\begin{DoxyCompactList}\small\item\em Function to handle listing-\/related menu options. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{int}} \mbox{\hyperlink{Menu_8cpp_a0862ca2a47461e148f1a35571d19d32e}{select\+Type}} (std\+::string \mbox{\hyperlink{classGraph}{arg}})
+\begin{DoxyCompactList}\small\item\em Function to handle best flights menu options. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{Menu_8cpp_a1a93caf999d9da81e827f12940b8d423}{type\+Airport}} (std\+::string \mbox{\hyperlink{classGraph}{type}}, \mbox{\hyperlink{classGraph}{int}} \mbox{\hyperlink{classGraph}{flag}})
+\begin{DoxyCompactList}\small\item\em Function to input airport code based on the type and flag. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{pair}}$<$ std\+::string, std\+::string $>$ \mbox{\hyperlink{Menu_8cpp_a76f3471b5d99dc780e8bf5d41eab7b67}{type\+City}} (std\+::string \mbox{\hyperlink{classGraph}{type}}, \mbox{\hyperlink{classGraph}{int}} \mbox{\hyperlink{classGraph}{flag}})
+\begin{DoxyCompactList}\small\item\em Function to input city details based on the type and flag. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{pair}}$<$ \mbox{\hyperlink{classGraph}{double}}, \mbox{\hyperlink{classGraph}{double}} $>$ \mbox{\hyperlink{Menu_8cpp_af772cf79cf2c7f92100c551849d75607}{type\+Coordinates}} (std\+::string \mbox{\hyperlink{classGraph}{type}}, \mbox{\hyperlink{classGraph}{int}} \mbox{\hyperlink{classGraph}{flag}})
+\begin{DoxyCompactList}\small\item\em Function to input coordinates based on the type and flag. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{classGraph}{string}} $>$ \mbox{\hyperlink{Menu_8cpp_a77c1716dc5c04d453bf59596e79fd7be}{filter\+Airplanes}} ()
+\begin{DoxyCompactList}\small\item\em Function to filter airplanes on the user input. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{void}} \mbox{\hyperlink{Menu_8cpp_a824b4fd50cfd6e5fe17ce796919e946e}{best\+Flights}} ()
+\begin{DoxyCompactList}\small\item\em Function to find best flights based on the user input. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{void}} \mbox{\hyperlink{Menu_8cpp_ab92a84dfdedb4ba79bac2f88fdcc0ba1}{menu\+Airports}} ()
+\begin{DoxyCompactList}\small\item\em Function Menu Airports. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{void}} \mbox{\hyperlink{Menu_8cpp_ae9ba386c9859eb4f79d90083ccbdec0e}{menu\+Countries}} ()
+\begin{DoxyCompactList}\small\item\em Function Menu Countries. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{void}} \mbox{\hyperlink{Menu_8cpp_ac4789aede1ff0a44a6db76097f24a0a8}{menu\+Cities}} ()
+\begin{DoxyCompactList}\small\item\em Function Menu Cities. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{void}} \mbox{\hyperlink{Menu_8cpp_a48723762fe276933fc511405f1fa3c96}{menu\+Airlines}} ()
+\begin{DoxyCompactList}\small\item\em Function Menu Airlines. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{void}} \mbox{\hyperlink{Menu_8cpp_a1341b32003ca04c37360595971056ed9}{menu\+Flights}} ()
+\begin{DoxyCompactList}\small\item\em Function Menu Flights. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{void}} \mbox{\hyperlink{Menu_8cpp_abff6be4283115efc47be96182eb61aca}{menu\+Destination}} ()
+\begin{DoxyCompactList}\small\item\em Function Menu Destination. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}
+\item 
+\mbox{\hyperlink{classGraph}{unordered\+\_\+map}}$<$ \mbox{\hyperlink{classGraph}{string}}, \mbox{\hyperlink{classAirline}{Airline}} $>$ \mbox{\hyperlink{Menu_8cpp_a6dc6a799c4379ce9e053fe2e8f731a5e}{airlines}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{Menu_8cpp_a824b4fd50cfd6e5fe17ce796919e946e}\label{Menu_8cpp_a824b4fd50cfd6e5fe17ce796919e946e} 
+\index{Menu.cpp@{Menu.cpp}!bestFlights@{bestFlights}}
+\index{bestFlights@{bestFlights}!Menu.cpp@{Menu.cpp}}
+\doxysubsubsection{\texorpdfstring{bestFlights()}{bestFlights()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{void}} best\+Flights (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function to find best flights based on the user input. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Menu_8cpp_source_l00383}{383}} of file \mbox{\hyperlink{Menu_8cpp_source}{Menu.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00384\ \{}
+\DoxyCodeLine{00385\ \ \ \mbox{\hyperlink{classGraph}{vector<string>}}\ \mbox{\hyperlink{classGraph}{airplanes}}\ =\ \mbox{\hyperlink{Menu_8cpp_a77c1716dc5c04d453bf59596e79fd7be}{filterAirplanes}}();}
+\DoxyCodeLine{00386\ }
+\DoxyCodeLine{00387\ \ \ std::string\ \mbox{\hyperlink{classGraph}{airportOrig}};}
+\DoxyCodeLine{00388\ \ \ std::string\ \mbox{\hyperlink{classGraph}{airportDest}};}
+\DoxyCodeLine{00389\ }
+\DoxyCodeLine{00390\ \ \ std::pair<std::string,\ std::string>\ \mbox{\hyperlink{classGraph}{cityOrig}};}
+\DoxyCodeLine{00391\ \ \ std::pair<std::string,\ std::string>\ \mbox{\hyperlink{classGraph}{cityDest}};}
+\DoxyCodeLine{00392\ }
+\DoxyCodeLine{00393\ \ \ std::pair<double,\ double>\ \mbox{\hyperlink{classGraph}{cordOrig}};}
+\DoxyCodeLine{00394\ \ \ std::pair<double,\ double>\ \mbox{\hyperlink{classGraph}{cordDest}};}
+\DoxyCodeLine{00395\ }
+\DoxyCodeLine{00396\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classGraph}{maxDist}};}
+\DoxyCodeLine{00397\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classGraph}{flagOrigin}}\ =\ \mbox{\hyperlink{Menu_8cpp_a0862ca2a47461e148f1a35571d19d32e}{selectType}}(\textcolor{stringliteral}{"{}origin"{}});}
+\DoxyCodeLine{00398\ }
+\DoxyCodeLine{00399\ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{classGraph}{flagOrigin}})}
+\DoxyCodeLine{00400\ \ \ \{}
+\DoxyCodeLine{00401\ \ \ \textcolor{keywordflow}{case}\ (1):}
+\DoxyCodeLine{00402\ \ \ \ \ \mbox{\hyperlink{classGraph}{airportOrig}}\ =\ \mbox{\hyperlink{Menu_8cpp_a1a93caf999d9da81e827f12940b8d423}{typeAirport}}(\textcolor{stringliteral}{"{}origin"{}},\ \mbox{\hyperlink{classGraph}{flagOrigin}});}
+\DoxyCodeLine{00403\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00404\ \ \ \textcolor{keywordflow}{case}\ (2):}
+\DoxyCodeLine{00405\ \ \ \ \ \mbox{\hyperlink{classGraph}{cityOrig}}\ =\ \mbox{\hyperlink{Menu_8cpp_a76f3471b5d99dc780e8bf5d41eab7b67}{typeCity}}(\textcolor{stringliteral}{"{}origin"{}},\ \mbox{\hyperlink{classGraph}{flagOrigin}});}
+\DoxyCodeLine{00406\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00407\ \ \ \textcolor{keywordflow}{case}\ (3):}
+\DoxyCodeLine{00408\ \ \ \ \ \mbox{\hyperlink{classGraph}{cordOrig}}\ =\ \mbox{\hyperlink{Menu_8cpp_af772cf79cf2c7f92100c551849d75607}{typeCoordinates}}(\textcolor{stringliteral}{"{}origin"{}},\ \mbox{\hyperlink{classGraph}{flagOrigin}});}
+\DoxyCodeLine{00409\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Type\ Max\ Distance\ in\ (km):\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00410\ \ \ \ \ std::cin\ >>\ \mbox{\hyperlink{classGraph}{maxDist}};}
+\DoxyCodeLine{00411\ \ \ \ \ \textcolor{keywordflow}{while}\ (std::cin.\mbox{\hyperlink{classGraph}{fail}}())}
+\DoxyCodeLine{00412\ \ \ \ \ \{}
+\DoxyCodeLine{00413\ \ \ \ \ \ \ std::cin.clear();}
+\DoxyCodeLine{00414\ \ \ \ \ \ \ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{00415\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Invalid\ input.\ Please\ enter\ a\ valid\ number:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00416\ \ \ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a7bef7cae2480a41f5c2625c6abeaf9d0}{Menu}}(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00417\ \ \ \ \ \}}
+\DoxyCodeLine{00418\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00419\ \ \ \textcolor{keywordflow}{case}\ (0):}
+\DoxyCodeLine{00420\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a824b4fd50cfd6e5fe17ce796919e946e}{bestFlights}}();}
+\DoxyCodeLine{00421\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00422\ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00423\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Invalid\ input.\ Please\ enter\ a\ valid\ number:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00424\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a824b4fd50cfd6e5fe17ce796919e946e}{bestFlights}}();}
+\DoxyCodeLine{00425\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00426\ \ \ \}}
+\DoxyCodeLine{00427\ }
+\DoxyCodeLine{00428\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classGraph}{flagDest}}\ =\ \mbox{\hyperlink{Menu_8cpp_a0862ca2a47461e148f1a35571d19d32e}{selectType}}(\textcolor{stringliteral}{"{}destination"{}});}
+\DoxyCodeLine{00429\ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{classGraph}{flagDest}})}
+\DoxyCodeLine{00430\ \ \ \{}
+\DoxyCodeLine{00431\ \ \ \textcolor{keywordflow}{case}\ (1):}
+\DoxyCodeLine{00432\ \ \ \ \ \mbox{\hyperlink{classGraph}{airportDest}}\ =\ \mbox{\hyperlink{Menu_8cpp_a1a93caf999d9da81e827f12940b8d423}{typeAirport}}(\textcolor{stringliteral}{"{}destination"{}},\ \mbox{\hyperlink{classGraph}{flagDest}});}
+\DoxyCodeLine{00433\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00434\ \ \ \textcolor{keywordflow}{case}\ (2):}
+\DoxyCodeLine{00435\ \ \ \ \ \mbox{\hyperlink{classGraph}{cityDest}}\ =\ \mbox{\hyperlink{Menu_8cpp_a76f3471b5d99dc780e8bf5d41eab7b67}{typeCity}}(\textcolor{stringliteral}{"{}destination"{}},\ \mbox{\hyperlink{classGraph}{flagDest}});}
+\DoxyCodeLine{00436\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00437\ \ \ \textcolor{keywordflow}{case}\ (3):}
+\DoxyCodeLine{00438\ \ \ \ \ \mbox{\hyperlink{classGraph}{cordDest}}\ =\ \mbox{\hyperlink{Menu_8cpp_af772cf79cf2c7f92100c551849d75607}{typeCoordinates}}(\textcolor{stringliteral}{"{}destination"{}},\ \mbox{\hyperlink{classGraph}{flagDest}});}
+\DoxyCodeLine{00439\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Type\ Max\ Distance\ in\ (km):\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00440\ \ \ \ \ std::cin\ >>\ \mbox{\hyperlink{classGraph}{maxDist}};}
+\DoxyCodeLine{00441\ \ \ \ \ \textcolor{keywordflow}{while}\ (std::cin.\mbox{\hyperlink{classGraph}{fail}}())}
+\DoxyCodeLine{00442\ \ \ \ \ \{}
+\DoxyCodeLine{00443\ \ \ \ \ \ \ std::cin.clear();}
+\DoxyCodeLine{00444\ \ \ \ \ \ \ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{00445\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Invalid\ input.\ Please\ enter\ a\ valid\ number:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a7bef7cae2480a41f5c2625c6abeaf9d0}{Menu}}(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00447\ \ \ \ \ \}}
+\DoxyCodeLine{00448\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00449\ \ \ \textcolor{keywordflow}{case}\ (0):}
+\DoxyCodeLine{00450\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a824b4fd50cfd6e5fe17ce796919e946e}{bestFlights}}();}
+\DoxyCodeLine{00451\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00452\ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00453\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Invalid\ input.\ Please\ enter\ a\ valid\ number:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00454\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a824b4fd50cfd6e5fe17ce796919e946e}{bestFlights}}();}
+\DoxyCodeLine{00455\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00456\ \ \ \}}
+\DoxyCodeLine{00457\ }
+\DoxyCodeLine{00458\ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{classGraph}{flagOrigin}})}
+\DoxyCodeLine{00459\ \ \ \{}
+\DoxyCodeLine{00460\ \ \ \textcolor{keywordflow}{case}\ (1):}
+\DoxyCodeLine{00461\ \ \ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{classGraph}{flagDest}})}
+\DoxyCodeLine{00462\ \ \ \ \ \{}
+\DoxyCodeLine{00463\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00464\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ (1):\ \textcolor{comment}{//\ airport\ to\ airport}}
+\DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a6108e3a7a039ea61aab4a250b21412f8}{findBestFlights}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ \mbox{\hyperlink{classGraph}{airportOrig}},\ \mbox{\hyperlink{classGraph}{airportDest}},\ \mbox{\hyperlink{classGraph}{airplanes}});}
+\DoxyCodeLine{00466\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00467\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ (2):\ \textcolor{comment}{//\ airport\ to\ city}}
+\DoxyCodeLine{00468\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a6108e3a7a039ea61aab4a250b21412f8}{findBestFlights}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ \mbox{\hyperlink{classGraph}{cityDest}}.second,\ \mbox{\hyperlink{classGraph}{cityDest}}.first,\ \mbox{\hyperlink{classGraph}{airportOrig}},}
+\DoxyCodeLine{00469\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1,\ \mbox{\hyperlink{classGraph}{airplanes}});}
+\DoxyCodeLine{00470\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00471\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ (3):\ \textcolor{comment}{//\ airport\ to\ coordinates}}
+\DoxyCodeLine{00472\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a6108e3a7a039ea61aab4a250b21412f8}{findBestFlights}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ \mbox{\hyperlink{classGraph}{airportOrig}},\ \mbox{\hyperlink{classGraph}{cordDest}}.first,\ \mbox{\hyperlink{classGraph}{cordDest}}.second,}
+\DoxyCodeLine{00473\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{maxDist}},\ 1,\ \mbox{\hyperlink{classGraph}{airplanes}});}
+\DoxyCodeLine{00474\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00475\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00476\ \ \ \ \ \}}
+\DoxyCodeLine{00477\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00478\ \ \ \textcolor{keywordflow}{case}\ (2):}
+\DoxyCodeLine{00479\ \ \ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{classGraph}{flagDest}})}
+\DoxyCodeLine{00480\ \ \ \ \ \{}
+\DoxyCodeLine{00481\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00482\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ (1):\ \textcolor{comment}{//\ city\ to\ airport}}
+\DoxyCodeLine{00483\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a6108e3a7a039ea61aab4a250b21412f8}{findBestFlights}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ \mbox{\hyperlink{classGraph}{cityOrig}}.second,\ \mbox{\hyperlink{classGraph}{cityOrig}}.first,\ \mbox{\hyperlink{classGraph}{airportDest}},}
+\DoxyCodeLine{00484\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ \mbox{\hyperlink{classGraph}{airplanes}});}
+\DoxyCodeLine{00485\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00486\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ (2):\ \textcolor{comment}{//\ city\ to\ city}}
+\DoxyCodeLine{00487\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a6108e3a7a039ea61aab4a250b21412f8}{findBestFlights}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ \mbox{\hyperlink{classGraph}{cityOrig}}.second,\ \mbox{\hyperlink{classGraph}{cityOrig}}.first,}
+\DoxyCodeLine{00488\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{cityDest}}.second,\ \mbox{\hyperlink{classGraph}{cityDest}}.first,\ \mbox{\hyperlink{classGraph}{airplanes}});}
+\DoxyCodeLine{00489\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00490\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ (3):\ \textcolor{comment}{//\ city\ to\ coordinates}}
+\DoxyCodeLine{00491\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a6108e3a7a039ea61aab4a250b21412f8}{findBestFlights}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ \mbox{\hyperlink{classGraph}{cityOrig}}.second,\ \mbox{\hyperlink{classGraph}{cityOrig}}.first,}
+\DoxyCodeLine{00492\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{cordDest}}.first,\ \mbox{\hyperlink{classGraph}{cordDest}}.second,\ \mbox{\hyperlink{classGraph}{maxDist}},\ 0,\ \mbox{\hyperlink{classGraph}{airplanes}});}
+\DoxyCodeLine{00493\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00494\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00495\ \ \ \ \ \}}
+\DoxyCodeLine{00496\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00497\ \ \ \textcolor{keywordflow}{case}\ (3):}
+\DoxyCodeLine{00498\ \ \ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{classGraph}{flagDest}})}
+\DoxyCodeLine{00499\ \ \ \ \ \{}
+\DoxyCodeLine{00500\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00501\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ (1):\ \textcolor{comment}{//\ coordinates\ to\ airport}}
+\DoxyCodeLine{00502\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a6108e3a7a039ea61aab4a250b21412f8}{findBestFlights}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ \mbox{\hyperlink{classGraph}{airportDest}},\ \mbox{\hyperlink{classGraph}{cordOrig}}.first,\ \mbox{\hyperlink{classGraph}{cordOrig}}.second,}
+\DoxyCodeLine{00503\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{maxDist}},\ 0,\ \mbox{\hyperlink{classGraph}{airplanes}});}
+\DoxyCodeLine{00504\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00505\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ (2):\ \textcolor{comment}{//\ coordinates\ to\ city}}
+\DoxyCodeLine{00506\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a6108e3a7a039ea61aab4a250b21412f8}{findBestFlights}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ \mbox{\hyperlink{classGraph}{cityDest}}.second,\ \mbox{\hyperlink{classGraph}{cityDest}}.first,}
+\DoxyCodeLine{00507\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{cordOrig}}.first,\ \mbox{\hyperlink{classGraph}{cordOrig}}.second,\ \mbox{\hyperlink{classGraph}{maxDist}},\ 1,\ \mbox{\hyperlink{classGraph}{airplanes}});}
+\DoxyCodeLine{00508\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00509\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ (3):\ \textcolor{comment}{//\ coordinates\ to\ coordinates}}
+\DoxyCodeLine{00510\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a6108e3a7a039ea61aab4a250b21412f8}{findBestFlights}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ \mbox{\hyperlink{classGraph}{cordOrig}}.first,\ \mbox{\hyperlink{classGraph}{cordOrig}}.second,}
+\DoxyCodeLine{00511\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{cordDest}}.first,\ \mbox{\hyperlink{classGraph}{cordDest}}.second,\ \mbox{\hyperlink{classGraph}{maxDist}},\ \mbox{\hyperlink{classGraph}{airplanes}});}
+\DoxyCodeLine{00512\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00513\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00514\ \ \ \ \ \}}
+\DoxyCodeLine{00515\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00516\ \ \ \}}
+\DoxyCodeLine{00517\ }
+\DoxyCodeLine{00518\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00519\ }
+\DoxyCodeLine{00520\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Press\ any\ key\ to\ continue..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00521\ \ \ std::cin.ignore();}
+\DoxyCodeLine{00522\ \ \ std::cin.get();}
+\DoxyCodeLine{00523\ \ \ \mbox{\hyperlink{Menu_8cpp_a824b4fd50cfd6e5fe17ce796919e946e}{bestFlights}}();}
+\DoxyCodeLine{00524\ \}}
+
+\end{DoxyCode}
+\Hypertarget{Menu_8cpp_a77c1716dc5c04d453bf59596e79fd7be}\label{Menu_8cpp_a77c1716dc5c04d453bf59596e79fd7be} 
+\index{Menu.cpp@{Menu.cpp}!filterAirplanes@{filterAirplanes}}
+\index{filterAirplanes@{filterAirplanes}!Menu.cpp@{Menu.cpp}}
+\doxysubsubsection{\texorpdfstring{filterAirplanes()}{filterAirplanes()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{classGraph}{string}} $>$ filter\+Airplanes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function to filter airplanes on the user input. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$string$>$ The vector of airplanes to filter 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Menu_8cpp_source_l00322}{322}} of file \mbox{\hyperlink{Menu_8cpp_source}{Menu.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00323\ \{}
+\DoxyCodeLine{00324\ \ \ \mbox{\hyperlink{classGraph}{vector<string>}}\ \mbox{\hyperlink{classGraph}{airplanes}};}
+\DoxyCodeLine{00325\ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classGraph}{line}};}
+\DoxyCodeLine{00326\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classGraph}{flag}};}
+\DoxyCodeLine{00327\ }
+\DoxyCodeLine{00328\ \ \ \mbox{\hyperlink{classGraph}{system}}(\textcolor{stringliteral}{"{}clear"{}});}
+\DoxyCodeLine{00329\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Bests\ flights:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00330\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00331\ }
+\DoxyCodeLine{00332\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}1.\ Filter\ by\ airplanes"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00333\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}2.\ Without\ filter"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00334\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}0.\ Back\ to\ Main\ Menu"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00335\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00336\ }
+\DoxyCodeLine{00337\ \ \ std::cin\ >>\ \mbox{\hyperlink{classGraph}{flag}};}
+\DoxyCodeLine{00338\ \ \ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{00339\ }
+\DoxyCodeLine{00340\ \ \ \textcolor{keywordflow}{while}\ (std::cin.\mbox{\hyperlink{classGraph}{fail}}())}
+\DoxyCodeLine{00341\ \ \ \{}
+\DoxyCodeLine{00342\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Erro\ na\ leitura"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00343\ \ \ \ \ std::cin.clear();}
+\DoxyCodeLine{00344\ \ \ \ \ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{00345\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Invalid\ input.\ Please\ enter\ a\ valid\ number:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00346\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a77c1716dc5c04d453bf59596e79fd7be}{filterAirplanes}}();}
+\DoxyCodeLine{00347\ \ \ \}}
+\DoxyCodeLine{00348\ }
+\DoxyCodeLine{00349\ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{classGraph}{flag}})}
+\DoxyCodeLine{00350\ \ \ \{}
+\DoxyCodeLine{00351\ \ \ \textcolor{keywordflow}{case}\ (1):}
+\DoxyCodeLine{00352\ \ \ \{}
+\DoxyCodeLine{00353\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Type\ Airplane\ Name:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00354\ \ \ \ \ std::getline(std::cin,\ \mbox{\hyperlink{classGraph}{line}});}
+\DoxyCodeLine{00355\ }
+\DoxyCodeLine{00356\ \ \ \ \ std::istringstream\ \mbox{\hyperlink{classGraph}{iss}}(\mbox{\hyperlink{classGraph}{line}});}
+\DoxyCodeLine{00357\ }
+\DoxyCodeLine{00358\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classGraph}{airplane}};}
+\DoxyCodeLine{00359\ }
+\DoxyCodeLine{00360\ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{classGraph}{iss}}\ >>\ \mbox{\hyperlink{classGraph}{airplane}})}
+\DoxyCodeLine{00361\ \ \ \ \ \{}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{airplanes}}.push\_back(\mbox{\hyperlink{classGraph}{airplane}});}
+\DoxyCodeLine{00363\ \ \ \ \ \}}
+\DoxyCodeLine{00364\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00365\ \ \ \}}
+\DoxyCodeLine{00366\ \ \ \textcolor{keywordflow}{case}\ (2):}
+\DoxyCodeLine{00367\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00368\ \ \ \textcolor{keywordflow}{case}\ (0):}
+\DoxyCodeLine{00369\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a7bef7cae2480a41f5c2625c6abeaf9d0}{Menu}}(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00370\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00371\ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00372\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Invalid\ input.\ Please\ enter\ a\ valid\ number:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00373\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a77c1716dc5c04d453bf59596e79fd7be}{filterAirplanes}}();}
+\DoxyCodeLine{00374\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00375\ \ \ \}}
+\DoxyCodeLine{00376\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{airplanes}};}
+\DoxyCodeLine{00377\ \}}
+
+\end{DoxyCode}
+\Hypertarget{Menu_8cpp_a7bef7cae2480a41f5c2625c6abeaf9d0}\label{Menu_8cpp_a7bef7cae2480a41f5c2625c6abeaf9d0} 
+\index{Menu.cpp@{Menu.cpp}!Menu@{Menu}}
+\index{Menu@{Menu}!Menu.cpp@{Menu.cpp}}
+\doxysubsubsection{\texorpdfstring{Menu()}{Menu()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{void}} Menu (\begin{DoxyParamCaption}\item[{std\+::string}]{folder }\end{DoxyParamCaption})}
+
+
+
+Menu function to display the main menu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em folder} & The folder name to read the data from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Menu_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{Menu_8cpp_source}{Menu.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classGraph}{flag}};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classGraph}{folder}}.empty())}
+\DoxyCodeLine{00018\ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}\ =\ \mbox{\hyperlink{read_8cpp_a17e8e6cbf17d0c09069ba48594ab17d5}{readFlights}}(\mbox{\hyperlink{classGraph}{folder}});}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a6dc6a799c4379ce9e053fe2e8f731a5e}{airlines}}\ =\ \mbox{\hyperlink{read_8cpp_aa37827113ae35ea6c3e2a8abfb04bbd3}{readAirlines}}(\mbox{\hyperlink{classGraph}{folder}});}
+\DoxyCodeLine{00021\ \ \ \}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \mbox{\hyperlink{classGraph}{system}}(\textcolor{stringliteral}{"{}clear"{}});}
+\DoxyCodeLine{00024\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Welcome\ to\ Travel\ Management:"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00025\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00026\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}1.\ Quantity\ calculation"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00027\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}2.\ Listing"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00028\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}3.\ Bests\ flights"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00029\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}0.\ Exit"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00030\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ std::cin\ >>\ \mbox{\hyperlink{classGraph}{flag}};}
+\DoxyCodeLine{00033\ \ \ \textcolor{keywordflow}{while}\ (std::cin.\mbox{\hyperlink{classGraph}{fail}}())}
+\DoxyCodeLine{00034\ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ std::cin.clear();}
+\DoxyCodeLine{00036\ \ \ \ \ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{00037\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Invalid\ input.\ Please\ enter\ a\ valid\ number:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a7bef7cae2480a41f5c2625c6abeaf9d0}{Menu}}(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00039\ \ \ \}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{classGraph}{flag}})}
+\DoxyCodeLine{00042\ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a3345696c4480fb2da9e4d840e4a22140}{menuQuantity}}();}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00046\ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a2f9b96a2b799bbdf69ca5fd2a1e3bb9e}{menuListing}}();}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00049\ \ \ \textcolor{keywordflow}{case}\ 3:}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a824b4fd50cfd6e5fe17ce796919e946e}{bestFlights}}();}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00052\ \ \ \textcolor{keywordflow}{case}\ 0:}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{classGraph}{exit}}(0);}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00055\ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00056\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Invalid\ input.\ Please\ enter\ a\ valid\ number:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a7bef7cae2480a41f5c2625c6abeaf9d0}{Menu}}(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00059\ \ \ \}}
+\DoxyCodeLine{00060\ \}}
+
+\end{DoxyCode}
+\Hypertarget{Menu_8cpp_a48723762fe276933fc511405f1fa3c96}\label{Menu_8cpp_a48723762fe276933fc511405f1fa3c96} 
+\index{Menu.cpp@{Menu.cpp}!menuAirlines@{menuAirlines}}
+\index{menuAirlines@{menuAirlines}!Menu.cpp@{Menu.cpp}}
+\doxysubsubsection{\texorpdfstring{menuAirlines()}{menuAirlines()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{void}} menu\+Airlines (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function Menu Airlines. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Menu_8cpp_source_l00749}{749}} of file \mbox{\hyperlink{Menu_8cpp_source}{Menu.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00750\ \{}
+\DoxyCodeLine{00751\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classGraph}{flag}};}
+\DoxyCodeLine{00752\ \ \ std::string\ \mbox{\hyperlink{classGraph}{arg}};}
+\DoxyCodeLine{00753\ }
+\DoxyCodeLine{00754\ \ \ \mbox{\hyperlink{classGraph}{system}}(\textcolor{stringliteral}{"{}clear"{}});}
+\DoxyCodeLine{00755\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Number\ of\ Airlines:"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00756\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00757\ }
+\DoxyCodeLine{00758\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}1.\ All\ Airlines"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00759\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}2.\ Airlines\ by\ Country"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00760\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}0.\ Back\ to\ Main\ Menu"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00761\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00762\ }
+\DoxyCodeLine{00763\ \ \ std::cin\ >>\ \mbox{\hyperlink{classGraph}{flag}};}
+\DoxyCodeLine{00764\ \ \ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{00765\ }
+\DoxyCodeLine{00766\ \ \ \textcolor{keywordflow}{while}\ (std::cin.\mbox{\hyperlink{classGraph}{fail}}())}
+\DoxyCodeLine{00767\ \ \ \{}
+\DoxyCodeLine{00768\ \ \ \ \ std::cin.clear();}
+\DoxyCodeLine{00769\ \ \ \ \ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{00770\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Invalid\ input.\ Please\ enter\ a\ valid\ number:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00771\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a1341b32003ca04c37360595971056ed9}{menuFlights}}();}
+\DoxyCodeLine{00772\ \ \ \}}
+\DoxyCodeLine{00773\ }
+\DoxyCodeLine{00774\ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{classGraph}{flag}})}
+\DoxyCodeLine{00775\ \ \ \{}
+\DoxyCodeLine{00776\ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{00777\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}All\ Airlines:\ "{}}\ <<\ \mbox{\hyperlink{Menu_8cpp_a6dc6a799c4379ce9e053fe2e8f731a5e}{airlines}}.size()}
+\DoxyCodeLine{00778\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00779\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{00780\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00781\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Press\ any\ key\ to\ continue..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00782\ \ \ \ \ std::cin.ignore();}
+\DoxyCodeLine{00783\ \ \ \ \ std::cin.get();}
+\DoxyCodeLine{00784\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a3345696c4480fb2da9e4d840e4a22140}{menuQuantity}}();}
+\DoxyCodeLine{00785\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00786\ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{00787\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Type\ Country\ Name:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00788\ \ \ \ \ std::getline(std::cin,\ \mbox{\hyperlink{classGraph}{arg}});}
+\DoxyCodeLine{00789\ }
+\DoxyCodeLine{00790\ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{read_8cpp_a7ba3965209597c13bce357c12b1773f9}{countriesHash}}.find(\mbox{\hyperlink{classGraph}{arg}})\ ==\ \mbox{\hyperlink{read_8cpp_a7ba3965209597c13bce357c12b1773f9}{countriesHash}}.end())}
+\DoxyCodeLine{00791\ \ \ \ \ \{}
+\DoxyCodeLine{00792\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Country\ not\ found"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00793\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Type\ Country\ Name:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00794\ \ \ \ \ \ \ std::getline(std::cin,\ \mbox{\hyperlink{classGraph}{arg}});}
+\DoxyCodeLine{00795\ \ \ \ \ \}}
+\DoxyCodeLine{00796\ }
+\DoxyCodeLine{00797\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Airlines\ in\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{arg}}\ <<\ \textcolor{stringliteral}{"{}:\ "{}}\ <<\ \mbox{\hyperlink{dbairport_8cpp_a38042ded6e2c8623a1c1d303e597b2a5}{quantityAirlinesCountry}}(\mbox{\hyperlink{Menu_8cpp_a6dc6a799c4379ce9e053fe2e8f731a5e}{airlines}},\ \mbox{\hyperlink{classGraph}{arg}})}
+\DoxyCodeLine{00798\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00799\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{00800\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00801\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Press\ any\ key\ to\ continue..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00802\ \ \ \ \ std::cin.ignore();}
+\DoxyCodeLine{00803\ \ \ \ \ std::cin.get();}
+\DoxyCodeLine{00804\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a3345696c4480fb2da9e4d840e4a22140}{menuQuantity}}();}
+\DoxyCodeLine{00805\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00806\ \ \ \textcolor{keywordflow}{case}\ 0:}
+\DoxyCodeLine{00807\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a3345696c4480fb2da9e4d840e4a22140}{menuQuantity}}();}
+\DoxyCodeLine{00808\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00809\ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00810\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Invalid\ input.\ Please\ enter\ a\ valid\ number:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00811\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a48723762fe276933fc511405f1fa3c96}{menuAirlines}}();}
+\DoxyCodeLine{00812\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00813\ \ \ \}}
+\DoxyCodeLine{00814\ \}}
+
+\end{DoxyCode}
+\Hypertarget{Menu_8cpp_ab92a84dfdedb4ba79bac2f88fdcc0ba1}\label{Menu_8cpp_ab92a84dfdedb4ba79bac2f88fdcc0ba1} 
+\index{Menu.cpp@{Menu.cpp}!menuAirports@{menuAirports}}
+\index{menuAirports@{menuAirports}!Menu.cpp@{Menu.cpp}}
+\doxysubsubsection{\texorpdfstring{menuAirports()}{menuAirports()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{void}} menu\+Airports (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function Menu Airports. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Menu_8cpp_source_l00530}{530}} of file \mbox{\hyperlink{Menu_8cpp_source}{Menu.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00531\ \{}
+\DoxyCodeLine{00532\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classGraph}{flag}};}
+\DoxyCodeLine{00533\ \ \ std::string\ \mbox{\hyperlink{classGraph}{arg}};}
+\DoxyCodeLine{00534\ \ \ std::string\ \mbox{\hyperlink{classGraph}{arg2}};}
+\DoxyCodeLine{00535\ }
+\DoxyCodeLine{00536\ \ \ \mbox{\hyperlink{classGraph}{system}}(\textcolor{stringliteral}{"{}clear"{}});}
+\DoxyCodeLine{00537\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Number\ of\ Airports:"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00538\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00539\ }
+\DoxyCodeLine{00540\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}1.\ All\ Airports"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00541\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}2.\ Airports\ by\ Country"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00542\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}3.\ Airports\ by\ City"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00543\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}0.\ Back\ to\ Main\ Menu"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00544\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00545\ }
+\DoxyCodeLine{00546\ \ \ std::cin\ >>\ \mbox{\hyperlink{classGraph}{flag}};}
+\DoxyCodeLine{00547\ \ \ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{00548\ }
+\DoxyCodeLine{00549\ \ \ \textcolor{keywordflow}{while}\ (std::cin.\mbox{\hyperlink{classGraph}{fail}}())}
+\DoxyCodeLine{00550\ \ \ \{}
+\DoxyCodeLine{00551\ \ \ \ \ std::cin.clear();}
+\DoxyCodeLine{00552\ \ \ \ \ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{00553\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Invalid\ input.\ Please\ enter\ a\ valid\ number:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00554\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a1341b32003ca04c37360595971056ed9}{menuFlights}}();}
+\DoxyCodeLine{00555\ \ \ \}}
+\DoxyCodeLine{00556\ }
+\DoxyCodeLine{00557\ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{classGraph}{flag}})}
+\DoxyCodeLine{00558\ \ \ \{}
+\DoxyCodeLine{00559\ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{00560\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}All\ Airports:\ "{}}\ <<\ \mbox{\hyperlink{dbairport_8cpp_af82505fbb039e3560cfe00143f88a022}{quantityAirports}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}})\ <<\ std::endl;}
+\DoxyCodeLine{00561\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{00562\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00563\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Press\ any\ key\ to\ continue..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00564\ \ \ \ \ std::cin.ignore();}
+\DoxyCodeLine{00565\ \ \ \ \ std::cin.get();}
+\DoxyCodeLine{00566\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a3345696c4480fb2da9e4d840e4a22140}{menuQuantity}}();}
+\DoxyCodeLine{00567\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00568\ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{00569\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Type\ Country\ Name:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00570\ \ \ \ \ std::getline(std::cin,\ \mbox{\hyperlink{classGraph}{arg}});}
+\DoxyCodeLine{00571\ }
+\DoxyCodeLine{00572\ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{read_8cpp_a7ba3965209597c13bce357c12b1773f9}{countriesHash}}.find(\mbox{\hyperlink{classGraph}{arg}})\ ==\ \mbox{\hyperlink{read_8cpp_a7ba3965209597c13bce357c12b1773f9}{countriesHash}}.end())}
+\DoxyCodeLine{00573\ \ \ \ \ \{}
+\DoxyCodeLine{00574\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Country\ not\ found"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00575\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Type\ Country\ Name:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00576\ \ \ \ \ \ \ std::getline(std::cin,\ \mbox{\hyperlink{classGraph}{arg}});}
+\DoxyCodeLine{00577\ \ \ \ \ \}}
+\DoxyCodeLine{00578\ }
+\DoxyCodeLine{00579\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Airports\ in\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{arg}}\ <<\ \textcolor{stringliteral}{"{}:\ "{}}}
+\DoxyCodeLine{00580\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{dbairport_8cpp_a8ffe51bbf04f411a69e7582f3a8cd485}{quantityAirportsCountry}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ \mbox{\hyperlink{classGraph}{arg}})\ <<\ std::endl;}
+\DoxyCodeLine{00581\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{00582\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00583\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Press\ any\ key\ to\ continue..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00584\ \ \ \ \ std::cin.ignore();}
+\DoxyCodeLine{00585\ \ \ \ \ std::cin.get();}
+\DoxyCodeLine{00586\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a3345696c4480fb2da9e4d840e4a22140}{menuQuantity}}();}
+\DoxyCodeLine{00587\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00588\ \ \ \textcolor{keywordflow}{case}\ 3:}
+\DoxyCodeLine{00589\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Type\ City\ Name:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00590\ \ \ \ \ std::getline(std::cin,\ \mbox{\hyperlink{classGraph}{arg}});}
+\DoxyCodeLine{00591\ }
+\DoxyCodeLine{00592\ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{read_8cpp_a6e72efabc9915c6d3a53798b1e320635}{citiesHash}}.find(\mbox{\hyperlink{classGraph}{arg}})\ ==\ \mbox{\hyperlink{read_8cpp_a6e72efabc9915c6d3a53798b1e320635}{citiesHash}}.end())}
+\DoxyCodeLine{00593\ \ \ \ \ \{}
+\DoxyCodeLine{00594\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}City\ not\ found"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00595\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Type\ City\ Name:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00596\ \ \ \ \ \ \ std::getline(std::cin,\ \mbox{\hyperlink{classGraph}{arg}});}
+\DoxyCodeLine{00597\ \ \ \ \ \}}
+\DoxyCodeLine{00598\ }
+\DoxyCodeLine{00599\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Type\ Country\ Name:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00600\ \ \ \ \ std::getline(std::cin,\ \mbox{\hyperlink{classGraph}{arg2}});}
+\DoxyCodeLine{00601\ }
+\DoxyCodeLine{00602\ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{read_8cpp_a7ba3965209597c13bce357c12b1773f9}{countriesHash}}.find(\mbox{\hyperlink{classGraph}{arg2}})\ ==\ \mbox{\hyperlink{read_8cpp_a7ba3965209597c13bce357c12b1773f9}{countriesHash}}.end())}
+\DoxyCodeLine{00603\ \ \ \ \ \{}
+\DoxyCodeLine{00604\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Country\ not\ found"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00605\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Type\ Country\ Name:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00606\ \ \ \ \ \ \ std::getline(std::cin,\ \mbox{\hyperlink{classGraph}{arg2}});}
+\DoxyCodeLine{00607\ \ \ \ \ \}}
+\DoxyCodeLine{00608\ }
+\DoxyCodeLine{00609\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Airports\ in\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{arg}}\ <<\ \textcolor{stringliteral}{"{},\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{arg2}}\ <<\ \textcolor{stringliteral}{"{}:\ "{}}}
+\DoxyCodeLine{00610\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{dbairport_8cpp_a2ecbad0dfa52682f09bca301d6d6c484}{quantityAirportsCity}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ \mbox{\hyperlink{classGraph}{arg}})\ <<\ std::endl;}
+\DoxyCodeLine{00611\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{00612\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00613\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Press\ any\ key\ to\ continue..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00614\ \ \ \ \ std::cin.ignore();}
+\DoxyCodeLine{00615\ \ \ \ \ std::cin.get();}
+\DoxyCodeLine{00616\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a3345696c4480fb2da9e4d840e4a22140}{menuQuantity}}();}
+\DoxyCodeLine{00617\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00618\ \ \ \textcolor{keywordflow}{case}\ 0:}
+\DoxyCodeLine{00619\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a3345696c4480fb2da9e4d840e4a22140}{menuQuantity}}();}
+\DoxyCodeLine{00620\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00621\ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00622\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Invalid\ input.\ Please\ enter\ a\ valid\ number:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00623\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_ab92a84dfdedb4ba79bac2f88fdcc0ba1}{menuAirports}}();}
+\DoxyCodeLine{00624\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00625\ \ \ \}}
+\DoxyCodeLine{00626\ \}}
+
+\end{DoxyCode}
+\Hypertarget{Menu_8cpp_ac4789aede1ff0a44a6db76097f24a0a8}\label{Menu_8cpp_ac4789aede1ff0a44a6db76097f24a0a8} 
+\index{Menu.cpp@{Menu.cpp}!menuCities@{menuCities}}
+\index{menuCities@{menuCities}!Menu.cpp@{Menu.cpp}}
+\doxysubsubsection{\texorpdfstring{menuCities()}{menuCities()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{void}} menu\+Cities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function Menu Cities. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Menu_8cpp_source_l00679}{679}} of file \mbox{\hyperlink{Menu_8cpp_source}{Menu.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00680\ \{}
+\DoxyCodeLine{00681\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classGraph}{flag}};}
+\DoxyCodeLine{00682\ \ \ std::string\ \mbox{\hyperlink{classGraph}{arg}};}
+\DoxyCodeLine{00683\ }
+\DoxyCodeLine{00684\ \ \ \mbox{\hyperlink{classGraph}{system}}(\textcolor{stringliteral}{"{}clear"{}});}
+\DoxyCodeLine{00685\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Number\ of\ Cities:"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00686\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00687\ }
+\DoxyCodeLine{00688\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}1.\ All\ Cities"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00689\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}2.\ Cities\ by\ Country"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00690\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}0.\ Back\ to\ Main\ Menu"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00691\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00692\ }
+\DoxyCodeLine{00693\ \ \ std::cin\ >>\ \mbox{\hyperlink{classGraph}{flag}};}
+\DoxyCodeLine{00694\ \ \ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{00695\ }
+\DoxyCodeLine{00696\ \ \ \textcolor{keywordflow}{while}\ (std::cin.\mbox{\hyperlink{classGraph}{fail}}())}
+\DoxyCodeLine{00697\ \ \ \{}
+\DoxyCodeLine{00698\ \ \ \ \ std::cin.clear();}
+\DoxyCodeLine{00699\ \ \ \ \ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{00700\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Invalid\ input.\ Please\ enter\ a\ valid\ number:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00701\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a1341b32003ca04c37360595971056ed9}{menuFlights}}();}
+\DoxyCodeLine{00702\ \ \ \}}
+\DoxyCodeLine{00703\ }
+\DoxyCodeLine{00704\ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{classGraph}{flag}})}
+\DoxyCodeLine{00705\ \ \ \{}
+\DoxyCodeLine{00706\ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{00707\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}All\ Cities:\ "{}}\ <<\ \mbox{\hyperlink{read_8cpp_a6e72efabc9915c6d3a53798b1e320635}{citiesHash}}.size()\ <<\ std::endl;}
+\DoxyCodeLine{00708\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{00709\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00710\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Press\ any\ key\ to\ continue..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00711\ \ \ \ \ std::cin.ignore();}
+\DoxyCodeLine{00712\ \ \ \ \ std::cin.get();}
+\DoxyCodeLine{00713\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a3345696c4480fb2da9e4d840e4a22140}{menuQuantity}}();}
+\DoxyCodeLine{00714\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00715\ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{00716\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Type\ Country\ Name:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00717\ \ \ \ \ std::getline(std::cin,\ \mbox{\hyperlink{classGraph}{arg}});}
+\DoxyCodeLine{00718\ }
+\DoxyCodeLine{00719\ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{read_8cpp_a7ba3965209597c13bce357c12b1773f9}{countriesHash}}.find(\mbox{\hyperlink{classGraph}{arg}})\ ==\ \mbox{\hyperlink{read_8cpp_a7ba3965209597c13bce357c12b1773f9}{countriesHash}}.end())}
+\DoxyCodeLine{00720\ \ \ \ \ \{}
+\DoxyCodeLine{00721\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Country\ not\ found"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00722\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Type\ Country\ Name:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00723\ \ \ \ \ \ \ std::getline(std::cin,\ \mbox{\hyperlink{classGraph}{arg}});}
+\DoxyCodeLine{00724\ \ \ \ \ \}}
+\DoxyCodeLine{00725\ }
+\DoxyCodeLine{00726\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Cities\ in\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{arg}}\ <<\ \textcolor{stringliteral}{"{}:\ "{}}}
+\DoxyCodeLine{00727\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{dbairport_8cpp_a938ed92eb0aeb9f4d12599d4c24f3c56}{quantityCitiesCountry}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ \mbox{\hyperlink{classGraph}{arg}})\ <<\ std::endl;}
+\DoxyCodeLine{00728\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{00729\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00730\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Press\ any\ key\ to\ continue..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00731\ \ \ \ \ std::cin.ignore();}
+\DoxyCodeLine{00732\ \ \ \ \ std::cin.get();}
+\DoxyCodeLine{00733\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a3345696c4480fb2da9e4d840e4a22140}{menuQuantity}}();}
+\DoxyCodeLine{00734\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00735\ \ \ \textcolor{keywordflow}{case}\ 0:}
+\DoxyCodeLine{00736\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a3345696c4480fb2da9e4d840e4a22140}{menuQuantity}}();}
+\DoxyCodeLine{00737\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00738\ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00739\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Invalid\ input.\ Please\ enter\ a\ valid\ number:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00740\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_ac4789aede1ff0a44a6db76097f24a0a8}{menuCities}}();}
+\DoxyCodeLine{00741\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00742\ \ \ \}}
+\DoxyCodeLine{00743\ \}}
+
+\end{DoxyCode}
+\Hypertarget{Menu_8cpp_ae9ba386c9859eb4f79d90083ccbdec0e}\label{Menu_8cpp_ae9ba386c9859eb4f79d90083ccbdec0e} 
+\index{Menu.cpp@{Menu.cpp}!menuCountries@{menuCountries}}
+\index{menuCountries@{menuCountries}!Menu.cpp@{Menu.cpp}}
+\doxysubsubsection{\texorpdfstring{menuCountries()}{menuCountries()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{void}} menu\+Countries (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function Menu Countries. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Menu_8cpp_source_l00632}{632}} of file \mbox{\hyperlink{Menu_8cpp_source}{Menu.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00633\ \{}
+\DoxyCodeLine{00634\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classGraph}{flag}};}
+\DoxyCodeLine{00635\ \ \ std::string\ \mbox{\hyperlink{classGraph}{arg}};}
+\DoxyCodeLine{00636\ }
+\DoxyCodeLine{00637\ \ \ \mbox{\hyperlink{classGraph}{system}}(\textcolor{stringliteral}{"{}clear"{}});}
+\DoxyCodeLine{00638\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Number\ of\ Countries:"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00639\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00640\ }
+\DoxyCodeLine{00641\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}1.\ All\ Countries"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00642\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}0.\ Back\ to\ Main\ Menu"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00643\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00644\ }
+\DoxyCodeLine{00645\ \ \ std::cin\ >>\ \mbox{\hyperlink{classGraph}{flag}};}
+\DoxyCodeLine{00646\ \ \ \textcolor{keywordflow}{while}\ (std::cin.\mbox{\hyperlink{classGraph}{fail}}())}
+\DoxyCodeLine{00647\ \ \ \{}
+\DoxyCodeLine{00648\ \ \ \ \ std::cin.clear();}
+\DoxyCodeLine{00649\ \ \ \ \ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{00650\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Invalid\ input.\ Please\ enter\ a\ valid\ number:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00651\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a1341b32003ca04c37360595971056ed9}{menuFlights}}();}
+\DoxyCodeLine{00652\ \ \ \}}
+\DoxyCodeLine{00653\ }
+\DoxyCodeLine{00654\ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{classGraph}{flag}})}
+\DoxyCodeLine{00655\ \ \ \{}
+\DoxyCodeLine{00656\ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{00657\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}All\ Countries:\ "{}}\ <<\ \mbox{\hyperlink{read_8cpp_a7ba3965209597c13bce357c12b1773f9}{countriesHash}}.size()\ <<\ std::endl;}
+\DoxyCodeLine{00658\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{00659\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00660\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Press\ any\ key\ to\ continue..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00661\ \ \ \ \ std::cin.ignore();}
+\DoxyCodeLine{00662\ \ \ \ \ std::cin.get();}
+\DoxyCodeLine{00663\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a3345696c4480fb2da9e4d840e4a22140}{menuQuantity}}();}
+\DoxyCodeLine{00664\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00665\ \ \ \textcolor{keywordflow}{case}\ 0:}
+\DoxyCodeLine{00666\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a3345696c4480fb2da9e4d840e4a22140}{menuQuantity}}();}
+\DoxyCodeLine{00667\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00668\ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00669\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Invalid\ input.\ Please\ enter\ a\ valid\ number:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00670\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_ae9ba386c9859eb4f79d90083ccbdec0e}{menuCountries}}();}
+\DoxyCodeLine{00671\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00672\ \ \ \}}
+\DoxyCodeLine{00673\ \}}
+
+\end{DoxyCode}
+\Hypertarget{Menu_8cpp_abff6be4283115efc47be96182eb61aca}\label{Menu_8cpp_abff6be4283115efc47be96182eb61aca} 
+\index{Menu.cpp@{Menu.cpp}!menuDestination@{menuDestination}}
+\index{menuDestination@{menuDestination}!Menu.cpp@{Menu.cpp}}
+\doxysubsubsection{\texorpdfstring{menuDestination()}{menuDestination()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{void}} menu\+Destination (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function Menu Destination. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Menu_8cpp_source_l00956}{956}} of file \mbox{\hyperlink{Menu_8cpp_source}{Menu.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00957\ \{}
+\DoxyCodeLine{00958\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classGraph}{flag}};}
+\DoxyCodeLine{00959\ \ \ std::string\ \mbox{\hyperlink{classGraph}{arg}};}
+\DoxyCodeLine{00960\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classGraph}{stop}};}
+\DoxyCodeLine{00961\ }
+\DoxyCodeLine{00962\ \ \ \mbox{\hyperlink{classGraph}{system}}(\textcolor{stringliteral}{"{}clear"{}});}
+\DoxyCodeLine{00963\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Number\ of\ Destinations:"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00964\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00965\ }
+\DoxyCodeLine{00966\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}1.\ Unlimited\ Stops\ (by\ airport)"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00967\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}2.\ Limited\ Stops"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00968\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}3.\ Max\ destinations"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00969\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}0.\ Back\ to\ Main\ Menu"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00970\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00971\ }
+\DoxyCodeLine{00972\ \ \ std::cin\ >>\ \mbox{\hyperlink{classGraph}{flag}};}
+\DoxyCodeLine{00973\ \ \ \textcolor{keywordflow}{while}\ (std::cin.\mbox{\hyperlink{classGraph}{fail}}())}
+\DoxyCodeLine{00974\ \ \ \{}
+\DoxyCodeLine{00975\ \ \ \ \ std::cin.clear();}
+\DoxyCodeLine{00976\ \ \ \ \ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{00977\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Invalid\ input.\ Please\ enter\ a\ valid\ number:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00978\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_abff6be4283115efc47be96182eb61aca}{menuDestination}}();}
+\DoxyCodeLine{00979\ \ \ \}}
+\DoxyCodeLine{00980\ }
+\DoxyCodeLine{00981\ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{classGraph}{flag}})}
+\DoxyCodeLine{00982\ \ \ \{}
+\DoxyCodeLine{00983\ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{00984\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Type\ Airport\ Code:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00985\ \ \ \ \ std::cin\ >>\ \mbox{\hyperlink{classGraph}{arg}};}
+\DoxyCodeLine{00986\ }
+\DoxyCodeLine{00987\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{read_8cpp_a7d6197753985fd4d83f8827b8dde7ed2}{airportsHash}}.find(\mbox{\hyperlink{classGraph}{arg}})\ ==\ \mbox{\hyperlink{read_8cpp_a7d6197753985fd4d83f8827b8dde7ed2}{airportsHash}}.end())}
+\DoxyCodeLine{00988\ \ \ \ \ \{}
+\DoxyCodeLine{00989\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Airport\ not\ found"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00990\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{00991\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00992\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Press\ any\ key\ to\ continue..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00993\ \ \ \ \ \ \ std::cin.ignore();}
+\DoxyCodeLine{00994\ \ \ \ \ \ \ std::cin.get();}
+\DoxyCodeLine{00995\ \ \ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_abff6be4283115efc47be96182eb61aca}{menuDestination}}();}
+\DoxyCodeLine{00996\ \ \ \ \ \}}
+\DoxyCodeLine{00997\ }
+\DoxyCodeLine{00998\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Destination\ in\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{arg}}\ <<\ \textcolor{stringliteral}{"{}:\ "{}}}
+\DoxyCodeLine{00999\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{dbairport_8cpp_aa389005aab21de88f5a6957c46246e96}{quantityDestinationsAirport}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ \mbox{\hyperlink{classGraph}{arg}})\ <<\ std::endl;}
+\DoxyCodeLine{01000\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{01001\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{01002\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Press\ any\ key\ to\ continue..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{01003\ \ \ \ \ std::cin.ignore();}
+\DoxyCodeLine{01004\ \ \ \ \ std::cin.get();}
+\DoxyCodeLine{01005\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a3345696c4480fb2da9e4d840e4a22140}{menuQuantity}}();}
+\DoxyCodeLine{01006\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{01007\ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{01008\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Type\ Airport\ Code:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{01009\ \ \ \ \ std::cin\ >>\ \mbox{\hyperlink{classGraph}{arg}};}
+\DoxyCodeLine{01010\ }
+\DoxyCodeLine{01011\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{read_8cpp_a7d6197753985fd4d83f8827b8dde7ed2}{airportsHash}}.find(\mbox{\hyperlink{classGraph}{arg}})\ ==\ \mbox{\hyperlink{read_8cpp_a7d6197753985fd4d83f8827b8dde7ed2}{airportsHash}}.end())}
+\DoxyCodeLine{01012\ \ \ \ \ \{}
+\DoxyCodeLine{01013\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Airport\ not\ found"{}}\ <<\ std::endl;}
+\DoxyCodeLine{01014\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{01015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{01016\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Press\ any\ key\ to\ continue..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{01017\ \ \ \ \ \ \ std::cin.ignore();}
+\DoxyCodeLine{01018\ \ \ \ \ \ \ std::cin.get();}
+\DoxyCodeLine{01019\ \ \ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_abff6be4283115efc47be96182eb61aca}{menuDestination}}();}
+\DoxyCodeLine{01020\ \ \ \ \ \}}
+\DoxyCodeLine{01021\ }
+\DoxyCodeLine{01022\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Type\ Stops\ Number:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{01023\ \ \ \ \ std::cin\ >>\ \mbox{\hyperlink{classGraph}{stop}};}
+\DoxyCodeLine{01024\ \ \ \ \ \textcolor{keywordflow}{while}\ (std::cin.\mbox{\hyperlink{classGraph}{fail}}())}
+\DoxyCodeLine{01025\ \ \ \ \ \{}
+\DoxyCodeLine{01026\ \ \ \ \ \ \ std::cin.clear();}
+\DoxyCodeLine{01027\ \ \ \ \ \ \ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{01028\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Invalid\ input.\ Please\ enter\ a\ valid\ number:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{01029\ \ \ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a7bef7cae2480a41f5c2625c6abeaf9d0}{Menu}}(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{01030\ \ \ \ \ \}}
+\DoxyCodeLine{01031\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Number\ of\ Countries:\ "{}}}
+\DoxyCodeLine{01032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{dbairport_8cpp_a6a318e2669935b8a4cca35c2ab524663}{quantityDestinationLimitedStop}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ \mbox{\hyperlink{classGraph}{arg}},\ \mbox{\hyperlink{classGraph}{stop}})}
+\DoxyCodeLine{01033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{01034\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{01035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{01036\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Press\ any\ key\ to\ continue..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{01037\ \ \ \ \ std::cin.ignore();}
+\DoxyCodeLine{01038\ \ \ \ \ std::cin.get();}
+\DoxyCodeLine{01039\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_abff6be4283115efc47be96182eb61aca}{menuDestination}}();}
+\DoxyCodeLine{01040\ \ \ \textcolor{keywordflow}{case}\ 3:}
+\DoxyCodeLine{01041\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Max\ number\ of\ flights:\ "{}}\ <<\ \mbox{\hyperlink{dbairport_8cpp_a7dfe79c689755a0daafe18eec770515f}{quantityDestinationMax}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}})}
+\DoxyCodeLine{01042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ stops"{}}\ <<\ std::endl;}
+\DoxyCodeLine{01043\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{01044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{01045\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Press\ any\ key\ to\ continue..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{01046\ \ \ \ \ std::cin.ignore();}
+\DoxyCodeLine{01047\ \ \ \ \ std::cin.get();}
+\DoxyCodeLine{01048\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_abff6be4283115efc47be96182eb61aca}{menuDestination}}();}
+\DoxyCodeLine{01049\ \ \ \textcolor{keywordflow}{case}\ 0:}
+\DoxyCodeLine{01050\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a7bef7cae2480a41f5c2625c6abeaf9d0}{Menu}}(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{01051\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{01052\ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{01053\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Invalid\ input.\ Please\ enter\ a\ valid\ number:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{01054\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_abff6be4283115efc47be96182eb61aca}{menuDestination}}();}
+\DoxyCodeLine{01055\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{01056\ \ \ \}}
+\DoxyCodeLine{01057\ \}}
+
+\end{DoxyCode}
+\Hypertarget{Menu_8cpp_a1341b32003ca04c37360595971056ed9}\label{Menu_8cpp_a1341b32003ca04c37360595971056ed9} 
+\index{Menu.cpp@{Menu.cpp}!menuFlights@{menuFlights}}
+\index{menuFlights@{menuFlights}!Menu.cpp@{Menu.cpp}}
+\doxysubsubsection{\texorpdfstring{menuFlights()}{menuFlights()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{void}} menu\+Flights (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function Menu Flights. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Menu_8cpp_source_l00820}{820}} of file \mbox{\hyperlink{Menu_8cpp_source}{Menu.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00821\ \{}
+\DoxyCodeLine{00822\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classGraph}{flag}};}
+\DoxyCodeLine{00823\ \ \ std::string\ \mbox{\hyperlink{classGraph}{arg}};}
+\DoxyCodeLine{00824\ \ \ std::string\ \mbox{\hyperlink{classGraph}{arg2}};}
+\DoxyCodeLine{00825\ }
+\DoxyCodeLine{00826\ \ \ \mbox{\hyperlink{classGraph}{system}}(\textcolor{stringliteral}{"{}clear"{}});}
+\DoxyCodeLine{00827\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Number\ of\ flights:"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00828\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00829\ }
+\DoxyCodeLine{00830\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}1.\ All\ flights"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00831\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}2.\ Flights\ by\ Origin\ Airport"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00832\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}3.\ Flights\ by\ Origin\ Country"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00833\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}4.\ Flights\ by\ City"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00834\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}5.\ Flights\ by\ Airline"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00835\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}0.\ Back\ to\ Main\ Menu"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00836\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00837\ }
+\DoxyCodeLine{00838\ \ \ std::cin\ >>\ \mbox{\hyperlink{classGraph}{flag}};}
+\DoxyCodeLine{00839\ \ \ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{00840\ }
+\DoxyCodeLine{00841\ \ \ \textcolor{keywordflow}{while}\ (std::cin.\mbox{\hyperlink{classGraph}{fail}}())}
+\DoxyCodeLine{00842\ \ \ \{}
+\DoxyCodeLine{00843\ \ \ \ \ std::cin.clear();}
+\DoxyCodeLine{00844\ \ \ \ \ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{00845\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Invalid\ input.\ Please\ enter\ a\ valid\ number:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00846\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a1341b32003ca04c37360595971056ed9}{menuFlights}}();}
+\DoxyCodeLine{00847\ \ \ \}}
+\DoxyCodeLine{00848\ }
+\DoxyCodeLine{00849\ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{classGraph}{flag}})}
+\DoxyCodeLine{00850\ \ \ \{}
+\DoxyCodeLine{00851\ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{00852\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}All\ flights:\ "{}}\ <<\ \mbox{\hyperlink{dbairport_8cpp_aa0bc5f11f0adef0d78c529b0c82ee23c}{quantityFlights}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}})\ <<\ std::endl;}
+\DoxyCodeLine{00853\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{00854\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00855\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Press\ any\ key\ to\ continue..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00856\ \ \ \ \ std::cin.ignore();}
+\DoxyCodeLine{00857\ \ \ \ \ std::cin.get();}
+\DoxyCodeLine{00858\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a3345696c4480fb2da9e4d840e4a22140}{menuQuantity}}();}
+\DoxyCodeLine{00859\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00860\ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{00861\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Type\ Origin\ Airport\ Code:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00862\ \ \ \ \ std::cin\ >>\ \mbox{\hyperlink{classGraph}{arg}};}
+\DoxyCodeLine{00863\ }
+\DoxyCodeLine{00864\ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{read_8cpp_a7d6197753985fd4d83f8827b8dde7ed2}{airportsHash}}.find(\mbox{\hyperlink{classGraph}{arg}})\ ==\ \mbox{\hyperlink{read_8cpp_a7d6197753985fd4d83f8827b8dde7ed2}{airportsHash}}.end())}
+\DoxyCodeLine{00865\ \ \ \ \ \{}
+\DoxyCodeLine{00866\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Airport\ not\ found"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00867\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Type\ Origin\ Airport\ Code:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00868\ \ \ \ \ \ \ std::cin\ >>\ \mbox{\hyperlink{classGraph}{arg}};}
+\DoxyCodeLine{00869\ \ \ \ \ \}}
+\DoxyCodeLine{00870\ }
+\DoxyCodeLine{00871\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Flights\ in\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{arg}}\ <<\ \textcolor{stringliteral}{"{}:\ "{}}}
+\DoxyCodeLine{00872\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{dbairport_8cpp_a78af29d4916709c62239f1f3341b745e}{quantityFlightsAirport}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ \mbox{\hyperlink{classGraph}{arg}})\ <<\ std::endl;}
+\DoxyCodeLine{00873\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{00874\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00875\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Press\ any\ key\ to\ continue..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00876\ \ \ \ \ std::cin.ignore();}
+\DoxyCodeLine{00877\ \ \ \ \ std::cin.get();}
+\DoxyCodeLine{00878\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a3345696c4480fb2da9e4d840e4a22140}{menuQuantity}}();}
+\DoxyCodeLine{00879\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00880\ \ \ \textcolor{keywordflow}{case}\ 3:}
+\DoxyCodeLine{00881\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Type\ Origin\ Country\ Code:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00882\ \ \ \ \ std::getline(std::cin,\ \mbox{\hyperlink{classGraph}{arg}});}
+\DoxyCodeLine{00883\ }
+\DoxyCodeLine{00884\ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{read_8cpp_a7ba3965209597c13bce357c12b1773f9}{countriesHash}}.find(\mbox{\hyperlink{classGraph}{arg}})\ ==\ \mbox{\hyperlink{read_8cpp_a7ba3965209597c13bce357c12b1773f9}{countriesHash}}.end())}
+\DoxyCodeLine{00885\ \ \ \ \ \{}
+\DoxyCodeLine{00886\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Country\ not\ found"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00887\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Type\ Origin\ Country\ Code:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00888\ \ \ \ \ \ \ std::getline(std::cin,\ \mbox{\hyperlink{classGraph}{arg}});}
+\DoxyCodeLine{00889\ \ \ \ \ \}}
+\DoxyCodeLine{00890\ }
+\DoxyCodeLine{00891\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Flights\ in\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{arg}}\ <<\ \textcolor{stringliteral}{"{}:\ "{}}}
+\DoxyCodeLine{00892\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{dbairport_8cpp_ab8a1509ed60e18757f95356b86e3f621}{quantityFlightsCountry}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ \mbox{\hyperlink{classGraph}{arg}})\ <<\ std::endl;}
+\DoxyCodeLine{00893\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{00894\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00895\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Press\ any\ key\ to\ continue..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00896\ \ \ \ \ std::cin.ignore();}
+\DoxyCodeLine{00897\ \ \ \ \ std::cin.get();}
+\DoxyCodeLine{00898\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a3345696c4480fb2da9e4d840e4a22140}{menuQuantity}}();}
+\DoxyCodeLine{00899\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00900\ \ \ \textcolor{keywordflow}{case}\ 4:}
+\DoxyCodeLine{00901\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Type\ City\ Name:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00902\ \ \ \ \ std::getline(std::cin,\ \mbox{\hyperlink{classGraph}{arg}});}
+\DoxyCodeLine{00903\ }
+\DoxyCodeLine{00904\ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{read_8cpp_a6e72efabc9915c6d3a53798b1e320635}{citiesHash}}.find(\mbox{\hyperlink{classGraph}{arg}})\ ==\ \mbox{\hyperlink{read_8cpp_a6e72efabc9915c6d3a53798b1e320635}{citiesHash}}.end())}
+\DoxyCodeLine{00905\ \ \ \ \ \{}
+\DoxyCodeLine{00906\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}City\ not\ found"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00907\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Type\ City\ Name:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00908\ \ \ \ \ \ \ std::getline(std::cin,\ \mbox{\hyperlink{classGraph}{arg}});}
+\DoxyCodeLine{00909\ \ \ \ \ \}}
+\DoxyCodeLine{00910\ }
+\DoxyCodeLine{00911\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Type\ Country\ Name:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00912\ \ \ \ \ std::getline(std::cin,\ \mbox{\hyperlink{classGraph}{arg2}});}
+\DoxyCodeLine{00913\ }
+\DoxyCodeLine{00914\ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{read_8cpp_a7ba3965209597c13bce357c12b1773f9}{countriesHash}}.find(\mbox{\hyperlink{classGraph}{arg2}})\ ==\ \mbox{\hyperlink{read_8cpp_a7ba3965209597c13bce357c12b1773f9}{countriesHash}}.end())}
+\DoxyCodeLine{00915\ \ \ \ \ \{}
+\DoxyCodeLine{00916\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Country\ not\ found"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00917\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Type\ Country\ Name:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00918\ \ \ \ \ \ \ std::getline(std::cin,\ \mbox{\hyperlink{classGraph}{arg2}});}
+\DoxyCodeLine{00919\ \ \ \ \ \}}
+\DoxyCodeLine{00920\ }
+\DoxyCodeLine{00921\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Flights\ in\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{arg}}\ <<\ \textcolor{stringliteral}{"{}:\ "{}}}
+\DoxyCodeLine{00922\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{dbairport_8cpp_affaa1f20c655a6081d55f3c412bf8d69}{quantityFlightsCity}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ \mbox{\hyperlink{classGraph}{arg}})\ <<\ std::endl;}
+\DoxyCodeLine{00923\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{00924\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00925\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Press\ any\ key\ to\ continue..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00926\ \ \ \ \ std::cin.ignore();}
+\DoxyCodeLine{00927\ \ \ \ \ std::cin.get();}
+\DoxyCodeLine{00928\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a3345696c4480fb2da9e4d840e4a22140}{menuQuantity}}();}
+\DoxyCodeLine{00929\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00930\ \ \ \textcolor{keywordflow}{case}\ 5:}
+\DoxyCodeLine{00931\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Type\ Airline\ Code:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00932\ \ \ \ \ std::cin\ >>\ \mbox{\hyperlink{classGraph}{arg}};}
+\DoxyCodeLine{00933\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Flights\ in\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{arg}}\ <<\ \textcolor{stringliteral}{"{}:\ "{}}}
+\DoxyCodeLine{00934\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{dbairport_8cpp_aaf85ea355a04142cc7b72f58ba9d186e}{quantityFlightsAirline}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ \mbox{\hyperlink{classGraph}{arg}})\ <<\ std::endl;}
+\DoxyCodeLine{00935\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{00936\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00937\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Press\ any\ key\ to\ continue..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00938\ \ \ \ \ std::cin.ignore();}
+\DoxyCodeLine{00939\ \ \ \ \ std::cin.get();}
+\DoxyCodeLine{00940\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a3345696c4480fb2da9e4d840e4a22140}{menuQuantity}}();}
+\DoxyCodeLine{00941\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00942\ \ \ \textcolor{keywordflow}{case}\ 0:}
+\DoxyCodeLine{00943\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a3345696c4480fb2da9e4d840e4a22140}{menuQuantity}}();}
+\DoxyCodeLine{00944\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00945\ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00946\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Invalid\ input.\ Please\ enter\ a\ valid\ number:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00947\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a1341b32003ca04c37360595971056ed9}{menuFlights}}();}
+\DoxyCodeLine{00948\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00949\ \ \ \}}
+\DoxyCodeLine{00950\ \}}
+
+\end{DoxyCode}
+\Hypertarget{Menu_8cpp_a2f9b96a2b799bbdf69ca5fd2a1e3bb9e}\label{Menu_8cpp_a2f9b96a2b799bbdf69ca5fd2a1e3bb9e} 
+\index{Menu.cpp@{Menu.cpp}!menuListing@{menuListing}}
+\index{menuListing@{menuListing}!Menu.cpp@{Menu.cpp}}
+\doxysubsubsection{\texorpdfstring{menuListing()}{menuListing()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{void}} menu\+Listing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function to handle listing-\/related menu options. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Menu_8cpp_source_l00132}{132}} of file \mbox{\hyperlink{Menu_8cpp_source}{Menu.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00133\ \{}
+\DoxyCodeLine{00134\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classGraph}{flag}};}
+\DoxyCodeLine{00135\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classGraph}{arg}};}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \ \ \mbox{\hyperlink{classGraph}{system}}(\textcolor{stringliteral}{"{}clear"{}});}
+\DoxyCodeLine{00138\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Listing\ Menu:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00139\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}1.\ Ranking\ Airports\ (more\ landings\ and\ takeoffs)"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00142\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}2.\ Connecting\ airports"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00143\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}0.\ Back\ to\ Main\ Menu"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00144\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ std::cin\ >>\ \mbox{\hyperlink{classGraph}{flag}};}
+\DoxyCodeLine{00147\ \ \ \textcolor{keywordflow}{while}\ (std::cin.\mbox{\hyperlink{classGraph}{fail}}())}
+\DoxyCodeLine{00148\ \ \ \{}
+\DoxyCodeLine{00149\ \ \ \ \ std::cin.clear();}
+\DoxyCodeLine{00150\ \ \ \ \ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{00151\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Invalid\ input.\ Please\ enter\ a\ valid\ number:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00152\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a2f9b96a2b799bbdf69ca5fd2a1e3bb9e}{menuListing}}();}
+\DoxyCodeLine{00153\ \ \ \}}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{classGraph}{flag}})}
+\DoxyCodeLine{00156\ \ \ \{}
+\DoxyCodeLine{00157\ \ \ \textcolor{keywordflow}{case}\ (1):}
+\DoxyCodeLine{00158\ \ \ \ \ \mbox{\hyperlink{classGraph}{system}}(\textcolor{stringliteral}{"{}clear"{}});}
+\DoxyCodeLine{00159\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Type\ Airports\ Number:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00160\ \ \ \ \ std::cin\ >>\ \mbox{\hyperlink{classGraph}{arg}};}
+\DoxyCodeLine{00161\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00163\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Ranking\ Airports:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00164\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00166\ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a0d0af7f6b150c84935ae61301d3b8a95}{rankingAirports}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ \mbox{\hyperlink{classGraph}{arg}});}
+\DoxyCodeLine{00167\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00169\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Press\ any\ key\ to\ continue..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00170\ \ \ \ \ std::cin.ignore();}
+\DoxyCodeLine{00171\ \ \ \ \ std::cin.get();}
+\DoxyCodeLine{00172\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a2f9b96a2b799bbdf69ca5fd2a1e3bb9e}{menuListing}}();}
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00174\ \ \ \textcolor{keywordflow}{case}\ (2):}
+\DoxyCodeLine{00175\ \ \ \ \ \mbox{\hyperlink{classGraph}{system}}(\textcolor{stringliteral}{"{}clear"{}});}
+\DoxyCodeLine{00176\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Connecting\ airports:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00177\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{comment}{//\ getArticulations(airports);}}
+\DoxyCodeLine{00180\ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_aff562f54bfc193a204b61dac9cd850a4}{findArticulationPoints}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}});}
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{comment}{//\ connectedComponents(airports);}}
+\DoxyCodeLine{00182\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00184\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Press\ any\ key\ to\ continue..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00185\ \ \ \ \ std::cin.ignore();}
+\DoxyCodeLine{00186\ \ \ \ \ std::cin.get();}
+\DoxyCodeLine{00187\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a2f9b96a2b799bbdf69ca5fd2a1e3bb9e}{menuListing}}();}
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00189\ \ \ \textcolor{keywordflow}{case}\ (0):}
+\DoxyCodeLine{00190\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a7bef7cae2480a41f5c2625c6abeaf9d0}{Menu}}(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00192\ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00193\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Invalid\ input.\ Please\ enter\ a\ valid\ number:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00194\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a2f9b96a2b799bbdf69ca5fd2a1e3bb9e}{menuListing}}();}
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00196\ \ \ \}}
+\DoxyCodeLine{00197\ \}}
+
+\end{DoxyCode}
+\Hypertarget{Menu_8cpp_a3345696c4480fb2da9e4d840e4a22140}\label{Menu_8cpp_a3345696c4480fb2da9e4d840e4a22140} 
+\index{Menu.cpp@{Menu.cpp}!menuQuantity@{menuQuantity}}
+\index{menuQuantity@{menuQuantity}!Menu.cpp@{Menu.cpp}}
+\doxysubsubsection{\texorpdfstring{menuQuantity()}{menuQuantity()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{void}} menu\+Quantity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function to handle quantity-\/related menu options. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Menu_8cpp_source_l00066}{66}} of file \mbox{\hyperlink{Menu_8cpp_source}{Menu.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00067\ \{}
+\DoxyCodeLine{00068\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classGraph}{flag}};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \mbox{\hyperlink{classGraph}{system}}(\textcolor{stringliteral}{"{}clear"{}});}
+\DoxyCodeLine{00071\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Quantity\ Calculation\ Menu"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00072\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}1.\ Number\ of\ airports"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00075\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}2.\ Number\ of\ countries"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00076\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}3.\ Number\ of\ cities"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00077\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}4.\ Number\ of\ airlines"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00078\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}5.\ Number\ of\ flights"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00079\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}6.\ Number\ of\ destinations"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00080\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}0.\ Back\ to\ Main\ Menu"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00081\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ std::cin\ >>\ \mbox{\hyperlink{classGraph}{flag}};}
+\DoxyCodeLine{00084\ \ \ \textcolor{keywordflow}{while}\ (std::cin.\mbox{\hyperlink{classGraph}{fail}}())}
+\DoxyCodeLine{00085\ \ \ \{}
+\DoxyCodeLine{00086\ \ \ \ \ std::cin.clear();}
+\DoxyCodeLine{00087\ \ \ \ \ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{00088\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Invalid\ input.\ Please\ enter\ a\ valid\ number:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a3345696c4480fb2da9e4d840e4a22140}{menuQuantity}}();}
+\DoxyCodeLine{00090\ \ \ \}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{classGraph}{flag}})}
+\DoxyCodeLine{00093\ \ \ \{}
+\DoxyCodeLine{00094\ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{classGraph}{system}}(\textcolor{stringliteral}{"{}clear"{}});}
+\DoxyCodeLine{00096\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_ab92a84dfdedb4ba79bac2f88fdcc0ba1}{menuAirports}}();}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00098\ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{00099\ \ \ \ \ \mbox{\hyperlink{classGraph}{system}}(\textcolor{stringliteral}{"{}clear"{}});}
+\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_ae9ba386c9859eb4f79d90083ccbdec0e}{menuCountries}}();}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00102\ \ \ \textcolor{keywordflow}{case}\ 3:}
+\DoxyCodeLine{00103\ \ \ \ \ \mbox{\hyperlink{classGraph}{system}}(\textcolor{stringliteral}{"{}clear"{}});}
+\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_ac4789aede1ff0a44a6db76097f24a0a8}{menuCities}}();}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00106\ \ \ \textcolor{keywordflow}{case}\ 4:}
+\DoxyCodeLine{00107\ \ \ \ \ \mbox{\hyperlink{classGraph}{system}}(\textcolor{stringliteral}{"{}clear"{}});}
+\DoxyCodeLine{00108\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a48723762fe276933fc511405f1fa3c96}{menuAirlines}}();}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00110\ \ \ \textcolor{keywordflow}{case}\ 5:}
+\DoxyCodeLine{00111\ \ \ \ \ \mbox{\hyperlink{classGraph}{system}}(\textcolor{stringliteral}{"{}clear"{}});}
+\DoxyCodeLine{00112\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a1341b32003ca04c37360595971056ed9}{menuFlights}}();}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00114\ \ \ \textcolor{keywordflow}{case}\ 6:}
+\DoxyCodeLine{00115\ \ \ \ \ \mbox{\hyperlink{classGraph}{system}}(\textcolor{stringliteral}{"{}clear"{}});}
+\DoxyCodeLine{00116\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_abff6be4283115efc47be96182eb61aca}{menuDestination}}();}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00118\ \ \ \textcolor{keywordflow}{case}\ 0:}
+\DoxyCodeLine{00119\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a7bef7cae2480a41f5c2625c6abeaf9d0}{Menu}}(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00121\ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00122\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Invalid\ input.\ Please\ enter\ a\ valid\ number:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00123\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a3345696c4480fb2da9e4d840e4a22140}{menuQuantity}}();}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00125\ \ \ \}}
+\DoxyCodeLine{00126\ \}}
+
+\end{DoxyCode}
+\Hypertarget{Menu_8cpp_a0862ca2a47461e148f1a35571d19d32e}\label{Menu_8cpp_a0862ca2a47461e148f1a35571d19d32e} 
+\index{Menu.cpp@{Menu.cpp}!selectType@{selectType}}
+\index{selectType@{selectType}!Menu.cpp@{Menu.cpp}}
+\doxysubsubsection{\texorpdfstring{selectType()}{selectType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{int}} select\+Type (\begin{DoxyParamCaption}\item[{std\+::string}]{arg }\end{DoxyParamCaption})}
+
+
+
+Function to handle best flights menu options. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arg} & The type of the airport (origin or destination) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Menu_8cpp_source_l00204}{204}} of file \mbox{\hyperlink{Menu_8cpp_source}{Menu.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00205\ \{}
+\DoxyCodeLine{00206\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classGraph}{flag}};}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ \ \ \mbox{\hyperlink{classGraph}{system}}(\textcolor{stringliteral}{"{}clear"{}});}
+\DoxyCodeLine{00209\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Bests\ Flights:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00210\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Select\ your\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{arg}}\ <<\ \textcolor{stringliteral}{"{}\ option:"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00211\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00213\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}1.\ By\ airports"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00214\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}2.\ By\ cities"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00215\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}3.\ By\ coordinates"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00216\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}0.\ Back\ to\ Best\ Flights"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00217\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00219\ \ \ std::cin\ >>\ \mbox{\hyperlink{classGraph}{flag}};}
+\DoxyCodeLine{00220\ \ \ \textcolor{keywordflow}{while}\ (std::cin.\mbox{\hyperlink{classGraph}{fail}}())}
+\DoxyCodeLine{00221\ \ \ \{}
+\DoxyCodeLine{00222\ \ \ \ \ std::cin.clear();}
+\DoxyCodeLine{00223\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Invalid\ input.\ Please\ enter\ a\ valid\ number:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00224\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a0862ca2a47461e148f1a35571d19d32e}{selectType}}(\mbox{\hyperlink{classGraph}{arg}});}
+\DoxyCodeLine{00225\ \ \ \}}
+\DoxyCodeLine{00226\ \ \ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{flag}};}
+\DoxyCodeLine{00229\ \}}
+
+\end{DoxyCode}
+\Hypertarget{Menu_8cpp_a1a93caf999d9da81e827f12940b8d423}\label{Menu_8cpp_a1a93caf999d9da81e827f12940b8d423} 
+\index{Menu.cpp@{Menu.cpp}!typeAirport@{typeAirport}}
+\index{typeAirport@{typeAirport}!Menu.cpp@{Menu.cpp}}
+\doxysubsubsection{\texorpdfstring{typeAirport()}{typeAirport()}}
+{\footnotesize\ttfamily std\+::string type\+Airport (\begin{DoxyParamCaption}\item[{std\+::string}]{type,  }\item[{\mbox{\hyperlink{classGraph}{int}}}]{flag }\end{DoxyParamCaption})}
+
+
+
+Function to input airport code based on the type and flag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of the airport (origin or destination) \\
+\hline
+{\em flag} & The flag to select the type of filter (airport, city or coordinates) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string The airport code 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Menu_8cpp_source_l00237}{237}} of file \mbox{\hyperlink{Menu_8cpp_source}{Menu.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00238\ \{}
+\DoxyCodeLine{00239\ \ \ std::string\ \mbox{\hyperlink{classGraph}{arg}};}
+\DoxyCodeLine{00240\ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{classGraph}{flag}})}
+\DoxyCodeLine{00241\ \ \ \{}
+\DoxyCodeLine{00242\ \ \ \textcolor{keywordflow}{case}\ (1):}
+\DoxyCodeLine{00243\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Type\ Code\ Airport\ of\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{type}}\ <<\ \textcolor{stringliteral}{"{}:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00244\ \ \ \ \ std::cin\ >>\ \mbox{\hyperlink{classGraph}{arg}};}
+\DoxyCodeLine{00245\ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{read_8cpp_a7d6197753985fd4d83f8827b8dde7ed2}{airportsHash}}.find(\mbox{\hyperlink{classGraph}{arg}})\ ==\ \mbox{\hyperlink{read_8cpp_a7d6197753985fd4d83f8827b8dde7ed2}{airportsHash}}.end())}
+\DoxyCodeLine{00246\ \ \ \ \ \{}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Airport\ not\ found"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Type\ Code\ Airport\ of\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{type}}\ <<\ \textcolor{stringliteral}{"{}:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ std::cin\ >>\ \mbox{\hyperlink{classGraph}{arg}};}
+\DoxyCodeLine{00250\ \ \ \ \ \}}
+\DoxyCodeLine{00251\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00252\ \ \ \}}
+\DoxyCodeLine{00253\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{arg}};}
+\DoxyCodeLine{00254\ \}}
+
+\end{DoxyCode}
+\Hypertarget{Menu_8cpp_a76f3471b5d99dc780e8bf5d41eab7b67}\label{Menu_8cpp_a76f3471b5d99dc780e8bf5d41eab7b67} 
+\index{Menu.cpp@{Menu.cpp}!typeCity@{typeCity}}
+\index{typeCity@{typeCity}!Menu.cpp@{Menu.cpp}}
+\doxysubsubsection{\texorpdfstring{typeCity()}{typeCity()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{pair}}$<$ std\+::string, std\+::string $>$ type\+City (\begin{DoxyParamCaption}\item[{std\+::string}]{type,  }\item[{\mbox{\hyperlink{classGraph}{int}}}]{flag }\end{DoxyParamCaption})}
+
+
+
+Function to input city details based on the type and flag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of the airport (origin or destination) \\
+\hline
+{\em flag} & The flag to select the type of filter (airport, city or coordinates) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pair$<$string, string$>$ The city name and country name 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Menu_8cpp_source_l00262}{262}} of file \mbox{\hyperlink{Menu_8cpp_source}{Menu.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00263\ \{}
+\DoxyCodeLine{00264\ \ \ std::string\ \mbox{\hyperlink{classGraph}{arg1}};}
+\DoxyCodeLine{00265\ \ \ std::string\ \mbox{\hyperlink{classGraph}{arg2}};}
+\DoxyCodeLine{00266\ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{classGraph}{flag}})}
+\DoxyCodeLine{00267\ \ \ \{}
+\DoxyCodeLine{00268\ \ \ \textcolor{keywordflow}{case}\ (2):}
+\DoxyCodeLine{00269\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Type\ City\ Name\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{type}}\ <<\ \textcolor{stringliteral}{"{}:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00270\ \ \ \ \ std::getline(std::cin,\ \mbox{\hyperlink{classGraph}{arg1}});}
+\DoxyCodeLine{00271\ }
+\DoxyCodeLine{00272\ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{read_8cpp_a6e72efabc9915c6d3a53798b1e320635}{citiesHash}}.find(\mbox{\hyperlink{classGraph}{arg1}})\ ==\ \mbox{\hyperlink{read_8cpp_a6e72efabc9915c6d3a53798b1e320635}{citiesHash}}.end())}
+\DoxyCodeLine{00273\ \ \ \ \ \{}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}City\ not\ found"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Type\ City\ Name\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{type}}\ <<\ \textcolor{stringliteral}{"{}:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ std::getline(std::cin,\ \mbox{\hyperlink{classGraph}{arg1}});}
+\DoxyCodeLine{00277\ \ \ \ \ \}}
+\DoxyCodeLine{00278\ }
+\DoxyCodeLine{00279\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Type\ Country\ Name\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{type}}\ <<\ \textcolor{stringliteral}{"{}:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00280\ \ \ \ \ std::getline(std::cin,\ \mbox{\hyperlink{classGraph}{arg2}});}
+\DoxyCodeLine{00281\ }
+\DoxyCodeLine{00282\ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{read_8cpp_a7ba3965209597c13bce357c12b1773f9}{countriesHash}}.find(\mbox{\hyperlink{classGraph}{arg2}})\ ==\ \mbox{\hyperlink{read_8cpp_a7ba3965209597c13bce357c12b1773f9}{countriesHash}}.end())}
+\DoxyCodeLine{00283\ \ \ \ \ \{}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Country\ not\ found"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Type\ Country\ Name\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{type}}\ <<\ \textcolor{stringliteral}{"{}:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ std::getline(std::cin,\ \mbox{\hyperlink{classGraph}{arg2}});}
+\DoxyCodeLine{00287\ \ \ \ \ \}}
+\DoxyCodeLine{00288\ }
+\DoxyCodeLine{00289\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00290\ \ \ \}}
+\DoxyCodeLine{00291\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{make\_pair}}(\mbox{\hyperlink{classGraph}{arg1}},\ \mbox{\hyperlink{classGraph}{arg2}});}
+\DoxyCodeLine{00292\ \}}
+
+\end{DoxyCode}
+\Hypertarget{Menu_8cpp_af772cf79cf2c7f92100c551849d75607}\label{Menu_8cpp_af772cf79cf2c7f92100c551849d75607} 
+\index{Menu.cpp@{Menu.cpp}!typeCoordinates@{typeCoordinates}}
+\index{typeCoordinates@{typeCoordinates}!Menu.cpp@{Menu.cpp}}
+\doxysubsubsection{\texorpdfstring{typeCoordinates()}{typeCoordinates()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{pair}}$<$ \mbox{\hyperlink{classGraph}{double}}, \mbox{\hyperlink{classGraph}{double}} $>$ type\+Coordinates (\begin{DoxyParamCaption}\item[{std\+::string}]{type,  }\item[{\mbox{\hyperlink{classGraph}{int}}}]{flag }\end{DoxyParamCaption})}
+
+
+
+Function to input coordinates based on the type and flag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of the airport (origin or destination) \\
+\hline
+{\em flag} & The flag to select the type of filter (airport, city or coordinates) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pair$<$double, double$>$ The latitude and longitude 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Menu_8cpp_source_l00300}{300}} of file \mbox{\hyperlink{Menu_8cpp_source}{Menu.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00301\ \{}
+\DoxyCodeLine{00302\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classGraph}{arg1}};}
+\DoxyCodeLine{00303\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classGraph}{arg2}};}
+\DoxyCodeLine{00304\ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{classGraph}{flag}})}
+\DoxyCodeLine{00305\ \ \ \{}
+\DoxyCodeLine{00306\ \ \ \textcolor{keywordflow}{case}\ (3):}
+\DoxyCodeLine{00307\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Type\ Latitude\ of\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{type}}\ <<\ \textcolor{stringliteral}{"{}:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00308\ \ \ \ \ std::cin\ >>\ \mbox{\hyperlink{classGraph}{arg1}};}
+\DoxyCodeLine{00309\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Type\ Longitude\ of\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{type}}\ <<\ \textcolor{stringliteral}{"{}:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00310\ \ \ \ \ std::cin\ >>\ \mbox{\hyperlink{classGraph}{arg2}};}
+\DoxyCodeLine{00311\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00312\ \ \ \}}
+\DoxyCodeLine{00313\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{make\_pair}}(\mbox{\hyperlink{classGraph}{arg1}},\ \mbox{\hyperlink{classGraph}{arg2}});}
+\DoxyCodeLine{00314\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{Menu_8cpp_a6dc6a799c4379ce9e053fe2e8f731a5e}\label{Menu_8cpp_a6dc6a799c4379ce9e053fe2e8f731a5e} 
+\index{Menu.cpp@{Menu.cpp}!airlines@{airlines}}
+\index{airlines@{airlines}!Menu.cpp@{Menu.cpp}}
+\doxysubsubsection{\texorpdfstring{airlines}{airlines}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{unordered\+\_\+map}}$<$\mbox{\hyperlink{classGraph}{string}}, \mbox{\hyperlink{classAirline}{Airline}}$>$ airlines}
+
+
+
+Definition at line \mbox{\hyperlink{Menu_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{Menu_8cpp_source}{Menu.\+cpp}}.
+
+\Hypertarget{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}\label{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b} 
+\index{Menu.cpp@{Menu.cpp}!airports@{airports}}
+\index{airports@{airports}!Menu.cpp@{Menu.cpp}}
+\doxysubsubsection{\texorpdfstring{airports}{airports}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{Graph}}$<$\mbox{\hyperlink{classAirport}{Airport}}$>$ airports}
+
+
+
+Definition at line \mbox{\hyperlink{Menu_8cpp_source_l00004}{4}} of file \mbox{\hyperlink{Menu_8cpp_source}{Menu.\+cpp}}.
+

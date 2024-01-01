@@ -1,0 +1,36 @@
+\doxysection{Menu.\+h}
+\hypertarget{Menu_8h_source}{}\label{Menu_8h_source}\index{src/Menu.h@{src/Menu.h}}
+\mbox{\hyperlink{Menu_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Menu_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ MENU\_H}}
+\DoxyCodeLine{\Hypertarget{Menu_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ MENU\_H}}
+\DoxyCodeLine{\Hypertarget{Menu_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{Menu_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dbairport_8h}{database/dbairport.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Menu_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{read_8h}{database/read.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Menu_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{Menu_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <limits>}}
+\DoxyCodeLine{\Hypertarget{Menu_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{Menu_8h_source_l00009}00009\ \textcolor{comment}{//\ Function\ to\ display\ menu}}
+\DoxyCodeLine{\Hypertarget{Menu_8h_source_l00010}00010\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{Menu_8h_a7bef7cae2480a41f5c2625c6abeaf9d0}{Menu}}(std::string\ \mbox{\hyperlink{classGraph}{folder}});}
+\DoxyCodeLine{\Hypertarget{Menu_8h_source_l00011}00011\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{Menu_8h_a3345696c4480fb2da9e4d840e4a22140}{menuQuantity}}();}
+\DoxyCodeLine{\Hypertarget{Menu_8h_source_l00012}00012\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{Menu_8h_a2f9b96a2b799bbdf69ca5fd2a1e3bb9e}{menuListing}}();}
+\DoxyCodeLine{\Hypertarget{Menu_8h_source_l00013}00013\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{Menu_8h_ab92a84dfdedb4ba79bac2f88fdcc0ba1}{menuAirports}}();}
+\DoxyCodeLine{\Hypertarget{Menu_8h_source_l00014}00014\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{Menu_8h_ae9ba386c9859eb4f79d90083ccbdec0e}{menuCountries}}();}
+\DoxyCodeLine{\Hypertarget{Menu_8h_source_l00015}00015\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{Menu_8h_ac4789aede1ff0a44a6db76097f24a0a8}{menuCities}}();}
+\DoxyCodeLine{\Hypertarget{Menu_8h_source_l00016}00016\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{Menu_8h_a48723762fe276933fc511405f1fa3c96}{menuAirlines}}();}
+\DoxyCodeLine{\Hypertarget{Menu_8h_source_l00017}00017\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{Menu_8h_a1341b32003ca04c37360595971056ed9}{menuFlights}}();}
+\DoxyCodeLine{\Hypertarget{Menu_8h_source_l00018}00018\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{Menu_8h_abff6be4283115efc47be96182eb61aca}{menuDestination}}();}
+\DoxyCodeLine{\Hypertarget{Menu_8h_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{Menu_8h_source_l00020}00020\ \textcolor{comment}{//\ Function\ to\ handle\ the\ process\ of\ finding\ the\ best\ flight}}
+\DoxyCodeLine{\Hypertarget{Menu_8h_source_l00021}00021\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{Menu_8h_a824b4fd50cfd6e5fe17ce796919e946e}{bestFlights}}();}
+\DoxyCodeLine{\Hypertarget{Menu_8h_source_l00022}00022\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{Menu_8h_a0862ca2a47461e148f1a35571d19d32e}{selectType}}(std::string\ \mbox{\hyperlink{classGraph}{arg}});}
+\DoxyCodeLine{\Hypertarget{Menu_8h_source_l00023}00023\ std::string\ \mbox{\hyperlink{Menu_8h_a1a93caf999d9da81e827f12940b8d423}{typeAirport}}(std::string\ \mbox{\hyperlink{classGraph}{type}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classGraph}{flag}});}
+\DoxyCodeLine{\Hypertarget{Menu_8h_source_l00024}00024\ \mbox{\hyperlink{classGraph}{pair<std::string,\ std::string>}}\ \mbox{\hyperlink{Menu_8h_a76f3471b5d99dc780e8bf5d41eab7b67}{typeCity}}(std::string\ \mbox{\hyperlink{classGraph}{type}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classGraph}{flag}});}
+\DoxyCodeLine{\Hypertarget{Menu_8h_source_l00025}00025\ \mbox{\hyperlink{classGraph}{pair<double,\ double>}}\ \mbox{\hyperlink{Menu_8h_af772cf79cf2c7f92100c551849d75607}{typeCoordinates}}(std::string\ \mbox{\hyperlink{classGraph}{type}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classGraph}{flag}});}
+\DoxyCodeLine{\Hypertarget{Menu_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{Menu_8h_source_l00027}00027\ \textcolor{comment}{//\ Function\ to\ filter\ airplanes}}
+\DoxyCodeLine{\Hypertarget{Menu_8h_source_l00028}00028\ \mbox{\hyperlink{classGraph}{vector<string>}}\ \mbox{\hyperlink{Menu_8h_a77c1716dc5c04d453bf59596e79fd7be}{filterAirplanes}}();}
+\DoxyCodeLine{\Hypertarget{Menu_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{Menu_8h_source_l00030}00030\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

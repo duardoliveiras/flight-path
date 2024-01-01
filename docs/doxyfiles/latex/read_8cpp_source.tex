@@ -1,0 +1,150 @@
+\doxysection{read.\+cpp}
+\hypertarget{read_8cpp_source}{}\label{read_8cpp_source}\index{src/database/read.cpp@{src/database/read.cpp}}
+\mbox{\hyperlink{read_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{read_8h}{read.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00003}\mbox{\hyperlink{read_8cpp_a7d6197753985fd4d83f8827b8dde7ed2}{00003}}\ unordered\_map<string,\ Airport>\ \mbox{\hyperlink{read_8cpp_a7d6197753985fd4d83f8827b8dde7ed2}{airportsHash}};}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00004}\mbox{\hyperlink{read_8cpp_a6e72efabc9915c6d3a53798b1e320635}{00004}}\ unordered\_set<string>\ \mbox{\hyperlink{read_8cpp_a6e72efabc9915c6d3a53798b1e320635}{citiesHash}};}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00005}\mbox{\hyperlink{read_8cpp_a7ba3965209597c13bce357c12b1773f9}{00005}}\ unordered\_set<string>\ \mbox{\hyperlink{read_8cpp_a7ba3965209597c13bce357c12b1773f9}{countriesHash}};}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00012}\mbox{\hyperlink{read_8cpp_acde70acfce9cc0618888fedae456c4a9}{00012}}\ \mbox{\hyperlink{classGraph}{Graph<Airport>}}\ \mbox{\hyperlink{read_8cpp_acde70acfce9cc0618888fedae456c4a9}{readAirports}}(std::string\ folder)}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00013}00013\ \{}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00014}00014\ \ \ \textcolor{comment}{//\ Inicialiate\ Graph}}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00015}00015\ \ \ \mbox{\hyperlink{classGraph}{Graph<Airport>}}\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}\ =\ \mbox{\hyperlink{classGraph}{Graph<Airport>}}();}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00017}00017\ \ \ \textcolor{comment}{//\ Open\ csv\ file}}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00018}00018\ \ \ std::ifstream\ \mbox{\hyperlink{classGraph}{file}}(\textcolor{stringliteral}{"{}../dataset/"{}}\ +\ \mbox{\hyperlink{classGraph}{folder}}\ +\ \textcolor{stringliteral}{"{}/airports.csv"{}},\ ios::in);}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00019}00019\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classGraph}{file}}.is\_open())}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00020}00020\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00021}00021\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error\ opening\ file"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00022}00022\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}};}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00023}00023\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00025}00025\ \ \ \textcolor{comment}{//\ Read\ and\ ignore\ header\ line}}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00026}00026\ \ \ std::string\ \mbox{\hyperlink{classGraph}{line}};}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00027}00027\ \ \ \textcolor{keywordflow}{if}\ (!std::getline(\mbox{\hyperlink{classGraph}{file}},\ \mbox{\hyperlink{classGraph}{line}}))}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00028}00028\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00029}00029\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error\ reading\ header\ line"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00030}00030\ \ \ \ \ \mbox{\hyperlink{classGraph}{file}}.close();}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00031}00031\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}};}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00032}00032\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00034}00034\ \ \ \textcolor{comment}{//\ Read\ each\ line\ and\ create\ an\ Airport\ object}}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00035}00035\ \ \ \textcolor{keywordflow}{while}\ (std::getline(\mbox{\hyperlink{classGraph}{file}},\ \mbox{\hyperlink{classGraph}{line}}))}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00036}00036\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00037}00037\ \ \ \ \ std::istringstream\ \mbox{\hyperlink{classGraph}{iss}}(\mbox{\hyperlink{classGraph}{line}});}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00038}00038\ \ \ \ \ std::string\ code,\ name,\ country,\ city;}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00039}00039\ \ \ \ \ \textcolor{keywordtype}{double}\ latitude,\ longitude;}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00041}00041\ \ \ \ \ std::getline(\mbox{\hyperlink{classGraph}{iss}},\ code,\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00042}00042\ \ \ \ \ std::getline(\mbox{\hyperlink{classGraph}{iss}},\ name,\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00043}00043\ \ \ \ \ std::getline(\mbox{\hyperlink{classGraph}{iss}},\ city,\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00044}00044\ \ \ \ \ std::getline(\mbox{\hyperlink{classGraph}{iss}},\ country,\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00046}00046\ \ \ \ \ \mbox{\hyperlink{classGraph}{iss}}\ >>\ latitude;}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00047}00047\ \ \ \ \ \mbox{\hyperlink{classGraph}{iss}}.ignore();}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00048}00048\ \ \ \ \ \mbox{\hyperlink{classGraph}{iss}}\ >>\ longitude;}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00050}00050\ \ \ \ \ \mbox{\hyperlink{classAirport}{Airport}}\ \mbox{\hyperlink{classGraph}{airport}}(code,\ name,\ country,\ city,\ latitude,\ longitude);}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00052}00052\ \ \ \ \ \mbox{\hyperlink{read_8cpp_a7d6197753985fd4d83f8827b8dde7ed2}{airportsHash}}.insert(\{code,\ \mbox{\hyperlink{classGraph}{airport}}\});}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00053}00053\ \ \ \ \ \mbox{\hyperlink{read_8cpp_a6e72efabc9915c6d3a53798b1e320635}{citiesHash}}.insert(city);}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00054}00054\ \ \ \ \ \mbox{\hyperlink{read_8cpp_a7ba3965209597c13bce357c12b1773f9}{countriesHash}}.insert(country);}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00056}00056\ \ \ \ \ \textcolor{comment}{//\ airport.display();}}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00057}00057\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.\mbox{\hyperlink{classGraph_a00be284ea2be3b3d0f0d2e493b70245b}{addVertex}}(\mbox{\hyperlink{classGraph}{airport}});}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00058}00058\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00060}00060\ \ \ \textcolor{comment}{//\ Close\ file\ and\ return\ graph\ of\ airports}}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00061}00061\ \ \ \mbox{\hyperlink{classGraph}{file}}.close();}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00062}00062\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}};}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00063}00063\ \}}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00072}\mbox{\hyperlink{read_8cpp_a17e8e6cbf17d0c09069ba48594ab17d5}{00072}}\ \mbox{\hyperlink{classGraph}{Graph<Airport>}}\ \mbox{\hyperlink{read_8cpp_a17e8e6cbf17d0c09069ba48594ab17d5}{readFlights}}(std::string\ \mbox{\hyperlink{classGraph}{folder}})}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00073}00073\ \{}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00074}00074\ \ \ \textcolor{comment}{//\ Read\ airports}}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00075}00075\ \ \ \mbox{\hyperlink{classGraph}{Graph<Airport>}}\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}\ =\ \mbox{\hyperlink{read_8cpp_acde70acfce9cc0618888fedae456c4a9}{readAirports}}(\mbox{\hyperlink{classGraph}{folder}});}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00077}00077\ \ \ \textcolor{comment}{//\ Open\ csv\ file}}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00078}00078\ \ \ std::ifstream\ \mbox{\hyperlink{classGraph}{file}}(\textcolor{stringliteral}{"{}../dataset/"{}}\ +\ \mbox{\hyperlink{classGraph}{folder}}\ +\ \textcolor{stringliteral}{"{}/flights.csv"{}},\ ios::in);}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00079}00079\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classGraph}{file}}.is\_open())}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00080}00080\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00081}00081\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error\ opening\ flights\ file"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00082}00082\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}};}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00083}00083\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00085}00085\ \ \ \textcolor{comment}{//\ Read\ and\ ignore\ header\ line}}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00086}00086\ \ \ std::string\ \mbox{\hyperlink{classGraph}{line}};}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00087}00087\ \ \ \textcolor{keywordflow}{if}\ (!std::getline(\mbox{\hyperlink{classGraph}{file}},\ \mbox{\hyperlink{classGraph}{line}}))}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00088}00088\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00089}00089\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error\ reading\ flights\ header\ line"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00090}00090\ \ \ \ \ \mbox{\hyperlink{classGraph}{file}}.close();}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00091}00091\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}};}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00092}00092\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00094}00094\ \ \ \textcolor{comment}{//\ Read\ each\ line\ and\ add\ edges\ to\ graph}}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00095}00095\ \ \ \textcolor{keywordflow}{while}\ (std::getline(\mbox{\hyperlink{classGraph}{file}},\ \mbox{\hyperlink{classGraph}{line}}))}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00096}00096\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00097}00097\ \ \ \ \ std::istringstream\ \mbox{\hyperlink{classGraph}{iss}}(\mbox{\hyperlink{classGraph}{line}});}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00098}00098\ \ \ \ \ std::string\ \mbox{\hyperlink{classGraph}{source}},\ \mbox{\hyperlink{classGraph}{target}},\ airline;}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00100}00100\ \ \ \ \ std::getline(\mbox{\hyperlink{classGraph}{iss}},\ \mbox{\hyperlink{classGraph}{source}},\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00101}00101\ \ \ \ \ std::getline(\mbox{\hyperlink{classGraph}{iss}},\ \mbox{\hyperlink{classGraph}{target}},\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00102}00102\ \ \ \ \ std::getline(\mbox{\hyperlink{classGraph}{iss}},\ airline,\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00104}00104\ \ \ \ \ \mbox{\hyperlink{classAirport}{Airport}}\ \mbox{\hyperlink{classGraph}{src}}\ =\ \mbox{\hyperlink{classAirport}{Airport}}(\mbox{\hyperlink{classGraph}{source}});}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00105}00105\ \ \ \ \ \mbox{\hyperlink{classAirport}{Airport}}\ \mbox{\hyperlink{classGraph}{tgt}}\ =\ \mbox{\hyperlink{classAirport}{Airport}}(\mbox{\hyperlink{classGraph}{target}});}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00107}00107\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.\mbox{\hyperlink{classGraph_ac10e312cf5b9d73558b34adc0fc7e5ab}{addEdge}}(\mbox{\hyperlink{classGraph}{src}},\ \mbox{\hyperlink{classGraph}{tgt}},\ 0,\ airline);}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00108}00108\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00110}00110\ \ \ \textcolor{comment}{//\ Close\ file\ and\ return\ the\ updated\ graph\ of\ airports\ with\ flights}}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00111}00111\ \ \ \mbox{\hyperlink{classGraph}{file}}.close();}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00112}00112\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}};}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00113}00113\ \}}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00115}00115\ \textcolor{comment}{//\ Update\ later\ to\ tree\ hashtable}}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00122}\mbox{\hyperlink{read_8cpp_aa37827113ae35ea6c3e2a8abfb04bbd3}{00122}}\ \mbox{\hyperlink{classGraph}{unordered\_map<string,\ Airline>}}\ \mbox{\hyperlink{read_8cpp_aa37827113ae35ea6c3e2a8abfb04bbd3}{readAirlines}}(std::string\ \mbox{\hyperlink{classGraph}{folder}})}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00123}00123\ \{}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00124}00124\ \ \ \textcolor{comment}{//\ Initialize\ Graph}}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00125}00125\ \ \ \mbox{\hyperlink{classGraph}{unordered\_map<string,\ Airline>}}\ \mbox{\hyperlink{Menu_8cpp_a6dc6a799c4379ce9e053fe2e8f731a5e}{airlines}};}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00127}00127\ \ \ \textcolor{comment}{//\ Open\ csv\ file}}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00128}00128\ \ \ std::ifstream\ \mbox{\hyperlink{classGraph}{file}}(\textcolor{stringliteral}{"{}../dataset/"{}}\ +\ \mbox{\hyperlink{classGraph}{folder}}\ +\ \textcolor{stringliteral}{"{}/airlines.csv"{}},\ ios::in);}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00129}00129\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classGraph}{file}}.is\_open())}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00130}00130\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00131}00131\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error\ opening\ file"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00132}00132\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{Menu_8cpp_a6dc6a799c4379ce9e053fe2e8f731a5e}{airlines}};}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00133}00133\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00135}00135\ \ \ \textcolor{comment}{//\ Read\ and\ ignore\ header\ line}}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00136}00136\ \ \ std::string\ \mbox{\hyperlink{classGraph}{line}};}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00137}00137\ \ \ \textcolor{keywordflow}{if}\ (!std::getline(\mbox{\hyperlink{classGraph}{file}},\ \mbox{\hyperlink{classGraph}{line}}))}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00138}00138\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00139}00139\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error\ reading\ header\ line"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00140}00140\ \ \ \ \ \mbox{\hyperlink{classGraph}{file}}.close();}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00141}00141\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{Menu_8cpp_a6dc6a799c4379ce9e053fe2e8f731a5e}{airlines}};}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00142}00142\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00143}00143\ }
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00144}00144\ \ \ \textcolor{comment}{//\ Read\ each\ line\ and\ create\ an\ Airline\ object}}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00145}00145\ \ \ \textcolor{keywordflow}{while}\ (std::getline(\mbox{\hyperlink{classGraph}{file}},\ \mbox{\hyperlink{classGraph}{line}}))}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00146}00146\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00147}00147\ \ \ \ \ std::istringstream\ \mbox{\hyperlink{classGraph}{iss}}(\mbox{\hyperlink{classGraph}{line}});}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00148}00148\ \ \ \ \ std::string\ code,\ name,\ callsign,\ country;}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00149}00149\ }
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00150}00150\ \ \ \ \ std::getline(\mbox{\hyperlink{classGraph}{iss}},\ code,\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00151}00151\ \ \ \ \ std::getline(\mbox{\hyperlink{classGraph}{iss}},\ name,\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00152}00152\ \ \ \ \ std::getline(\mbox{\hyperlink{classGraph}{iss}},\ callsign,\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00153}00153\ \ \ \ \ std::getline(\mbox{\hyperlink{classGraph}{iss}},\ country,\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00154}00154\ }
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00155}00155\ \ \ \ \ \mbox{\hyperlink{classAirline}{Airline}}\ airline(code,\ name,\ callsign,\ country);}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00156}00156\ \ \ \ \ \textcolor{comment}{//\ airline.display();}}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00157}00157\ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a6dc6a799c4379ce9e053fe2e8f731a5e}{airlines}}.insert(\{code,\ airline\});}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00158}00158\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00159}00159\ }
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00160}00160\ \ \ \textcolor{comment}{//\ Close\ file\ and\ return\ the\ graph\ of\ airlines}}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00161}00161\ \ \ \mbox{\hyperlink{classGraph}{file}}.close();}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00162}00162\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{Menu_8cpp_a6dc6a799c4379ce9e053fe2e8f731a5e}{airlines}};}
+\DoxyCodeLine{\Hypertarget{read_8cpp_source_l00163}00163\ \}}
+
+\end{DoxyCode}

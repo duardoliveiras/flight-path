@@ -1,0 +1,1940 @@
+\doxysection{src/database/dbairport.h File Reference}
+\hypertarget{dbairport_8h}{}\label{dbairport_8h}\index{src/database/dbairport.h@{src/database/dbairport.h}}
+{\ttfamily \#include "{}../classes/\+Airline.\+h"{}}\newline
+{\ttfamily \#include "{}../classes/\+Airport.\+h"{}}\newline
+{\ttfamily \#include "{}../classes/\+Graph.\+h"{}}\newline
+{\ttfamily \#include "{}read.\+h"{}}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$limits.\+h$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$set$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+set$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structFlight}{Flight}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGraph}{int}} \mbox{\hyperlink{dbairport_8h_af82505fbb039e3560cfe00143f88a022}{quantity\+Airports}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}})
+\begin{DoxyCompactList}\small\item\em Function to get quantity of airports in the graph Complexity\+: O(1) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{int}} \mbox{\hyperlink{dbairport_8h_a8ffe51bbf04f411a69e7582f3a8cd485}{quantity\+Airports\+Country}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}, std\+::string country)
+\begin{DoxyCompactList}\small\item\em Function to get quantity of airports in the graph by country Complexity\+: O(n), where n is the number of airports in the graph. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{int}} \mbox{\hyperlink{dbairport_8h_a2ecbad0dfa52682f09bca301d6d6c484}{quantity\+Airports\+City}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}, std\+::string city)
+\begin{DoxyCompactList}\small\item\em Function to get quantity of airports in the graph by city Complexity\+: O(n), where n is the number of airports in the graph. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{int}} \mbox{\hyperlink{dbairport_8h_a938ed92eb0aeb9f4d12599d4c24f3c56}{quantity\+Cities\+Country}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}, std\+::string country)
+\begin{DoxyCompactList}\small\item\em Function to count the number of unique cities in the graph for a given country Complexity\+: O(n), where n is the number of airports in the graph. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{int}} \mbox{\hyperlink{dbairport_8h_a38042ded6e2c8623a1c1d303e597b2a5}{quantity\+Airlines\+Country}} (\mbox{\hyperlink{classGraph}{unordered\+\_\+map}}$<$ \mbox{\hyperlink{classGraph}{string}}, \mbox{\hyperlink{classAirline}{Airline}} $>$ \mbox{\hyperlink{Menu_8cpp_a6dc6a799c4379ce9e053fe2e8f731a5e}{airlines}}, std\+::string country)
+\begin{DoxyCompactList}\small\item\em Function to calculate the quantity of airlines for a given country Complexity\+: O(n), where n is the number of airlines in the graph. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{int}} \mbox{\hyperlink{dbairport_8h_aa0bc5f11f0adef0d78c529b0c82ee23c}{quantity\+Flights}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}})
+\begin{DoxyCompactList}\small\item\em Function to calculate the quatity of flights in the graph Complexity\+: O(n), where n is the number of airports in the graph. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{int}} \mbox{\hyperlink{dbairport_8h_a78af29d4916709c62239f1f3341b745e}{quantity\+Flights\+Airport}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}, std\+::string \mbox{\hyperlink{classGraph}{airport}})
+\begin{DoxyCompactList}\small\item\em Function to calculate the quatity of flights in a given airport Complexity\+: O(n), where n is the number of airports in the graph. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{int}} \mbox{\hyperlink{dbairport_8h_ab8a1509ed60e18757f95356b86e3f621}{quantity\+Flights\+Country}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}, std\+::string country)
+\begin{DoxyCompactList}\small\item\em Function to calculate the quatity of flights in a given country Complexity\+: O(n), where n is the number of airports in the graph. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{int}} \mbox{\hyperlink{dbairport_8h_affaa1f20c655a6081d55f3c412bf8d69}{quantity\+Flights\+City}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}, std\+::string city)
+\begin{DoxyCompactList}\small\item\em Function to calculate the quatity of flights in a given city Complexity\+: O(n), where n is the number of airports in the graph. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{int}} \mbox{\hyperlink{dbairport_8h_aaf85ea355a04142cc7b72f58ba9d186e}{quantity\+Flights\+Airline}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}, std\+::string airline)
+\begin{DoxyCompactList}\small\item\em Function to calculate the quatity of flights in a given airline Complexity\+: O(n + e), where n is the number of airports in the graph and e is the number of flights. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{int}} \mbox{\hyperlink{dbairport_8h_aa389005aab21de88f5a6957c46246e96}{quantity\+Destinations\+Airport}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}, std\+::string \mbox{\hyperlink{classGraph}{airport}})
+\begin{DoxyCompactList}\small\item\em Function to calculate the number of different countries it is possible to go directly to from an airport Complexity\+: O(n + e), where n is the number of airports in the graph and e is the number of flights. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{int}} \mbox{\hyperlink{dbairport_8h_a6a318e2669935b8a4cca35c2ab524663}{quantity\+Destination\+Limited\+Stop}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}, std\+::string \mbox{\hyperlink{classGraph}{airport}}, \mbox{\hyperlink{classGraph}{int}} \mbox{\hyperlink{classGraph}{stop}})
+\begin{DoxyCompactList}\small\item\em Function to calculate the number of different countries it is possible to go to from an airport with a given number of stops Complexity\+: O(n + e), where n is the number of airports in the graph and e is the number of flights. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{int}} \mbox{\hyperlink{dbairport_8h_a7dfe79c689755a0daafe18eec770515f}{quantity\+Destination\+Max}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}})
+\begin{DoxyCompactList}\small\item\em Function that calculates the maximum possible trip, with the greatest number of stops and print the starting airport and the destination airport Complexity\+: O(n \texorpdfstring{$\ast$}{*} (n + e)), where n is the number of airports in the graph and e is the number of flights. \end{DoxyCompactList}\item 
+std\+::pair$<$ \mbox{\hyperlink{classGraph}{int}}, \mbox{\hyperlink{classGraph}{int}} $>$ \mbox{\hyperlink{dbairport_8h_aa02f6fc96272ec786b53eb4e30c3be9d}{quantity\+Flights}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}, std\+::string code)
+\begin{DoxyCompactList}\small\item\em Function to get quantity of flights in the graph and unique airlines for an \doxylink{classAirport}{Airport} Complexity\+: O(n), where n is the number of flights in the graph. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{dbairport_8h_a90c3f842c8877fb0fc2c7a63a2df5ac2}{dfs\+Visit}} (\mbox{\hyperlink{classVertex}{Vertex}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classGraph}{v}}, std\+::vector$<$ std\+::string $>$ \&\mbox{\hyperlink{classGraph}{res}})
+\begin{DoxyCompactList}\small\item\em Search (depth-\/first) to visit vertices and collect connected countries. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{dbairport_8h_a17cbb53667559946ff3b47d65e2a7a68}{dfs\+Visit}} (\mbox{\hyperlink{classVertex}{Vertex}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classGraph}{v}}, std\+::vector$<$ std\+::string $>$ \&\mbox{\hyperlink{classGraph}{res}}, \mbox{\hyperlink{classGraph}{int}} \mbox{\hyperlink{classGraph}{stop}})
+\begin{DoxyCompactList}\small\item\em Search (depth-\/first) to visit vertices and collect connected countries withing a number of stops. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{void}} \mbox{\hyperlink{dbairport_8h_a91627b34536fbd704b2fb7ca6853b47a}{reset\+Visited}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \&\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}})
+\begin{DoxyCompactList}\small\item\em Function to reset the visited status of all vertices in the graph Complexity\+: O(n), where n is the number of airports in the graph. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{void}} \mbox{\hyperlink{dbairport_8h_a0d0af7f6b150c84935ae61301d3b8a95}{ranking\+Airports}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}, \mbox{\hyperlink{classGraph}{int}} \mbox{\hyperlink{classGraph}{arg}})
+\begin{DoxyCompactList}\small\item\em Function to rank airport based of the sum of in-\/degrees and out-\/degrees Complexity\+: O(n \texorpdfstring{$\ast$}{*} log(n) + n \texorpdfstring{$\ast$}{*} e), where n is the number of airports and e is the number of flights in the graph (assuming sorting has a time complexity of O(n \texorpdfstring{$\ast$}{*} log(n))) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{void}} \mbox{\hyperlink{dbairport_8h_a39f02be201dda44faae784618a5e3deb}{calculate\+Indegree}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \&\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}})
+\begin{DoxyCompactList}\small\item\em Function to calculate the in-\/degreee of each vertex in the graph Complexity\+: O(n + e), where n is the number of airports and e is the number of flights in the graph. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{void}} \mbox{\hyperlink{dbairport_8h_a6108e3a7a039ea61aab4a250b21412f8}{find\+Best\+Flights}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \&\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}, \mbox{\hyperlink{classGraph}{string}} \mbox{\hyperlink{classGraph}{src}}, \mbox{\hyperlink{classGraph}{string}} dest, \mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{classGraph}{string}} $>$ \&\mbox{\hyperlink{classGraph}{airplanes}})
+\begin{DoxyCompactList}\small\item\em Function to find the best flights from a source airport to a destination airport Complexity\+: O(n + e), where n is the number of airports and e is the number of flights in the graph. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{void}} \mbox{\hyperlink{dbairport_8h_a8a88fb88325945c6dcb83c9a2d9697bd}{find\+Best\+Flights}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \&\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}, \mbox{\hyperlink{classGraph}{string}} \mbox{\hyperlink{classGraph}{country\+Src}}, \mbox{\hyperlink{classGraph}{string}} \mbox{\hyperlink{classGraph}{city\+Src}}, \mbox{\hyperlink{classGraph}{string}} \mbox{\hyperlink{classGraph}{country\+Dest}}, \mbox{\hyperlink{classGraph}{string}} \mbox{\hyperlink{classGraph}{city\+Dest}}, \mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{classGraph}{string}} $>$ \&\mbox{\hyperlink{classGraph}{airplanes}})
+\begin{DoxyCompactList}\small\item\em Function to find best flights between two cities This function uses breadth-\/first search (BFS) to find paths between a source and destination airport Complexity\+: O(n + e), where n is the number of airports and e is the number of flights in the graph. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{void}} \mbox{\hyperlink{dbairport_8h_a6810f143c1f93bd40c549be758c3b5c0}{find\+Best\+Flights}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \&\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}, \mbox{\hyperlink{classGraph}{double}} \mbox{\hyperlink{classGraph}{lat\+Origin}}, \mbox{\hyperlink{classGraph}{double}} \mbox{\hyperlink{classGraph}{long\+Origin}}, \mbox{\hyperlink{classGraph}{double}} \mbox{\hyperlink{classGraph}{lat\+Dest}}, \mbox{\hyperlink{classGraph}{double}} \mbox{\hyperlink{classGraph}{long\+Dest}}, \mbox{\hyperlink{classGraph}{int}} \mbox{\hyperlink{classGraph}{dist\+Max}}, \mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{classGraph}{string}} $>$ \&\mbox{\hyperlink{classGraph}{airplanes}})
+\begin{DoxyCompactList}\small\item\em Function to find the best flights between two points on Earth Point to Point This function uses breadth-\/first search (BFS) to find paths between a source and destination airport Complexity\+: O(n + e), where n is the number of airports and e is the number of flights in the graph. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{void}} \mbox{\hyperlink{dbairport_8h_abc81a6e3813f6f6c5105ad0523405671}{find\+Best\+Flights}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \&\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}, \mbox{\hyperlink{classGraph}{string}} country, \mbox{\hyperlink{classGraph}{string}} city, \mbox{\hyperlink{classGraph}{string}} \mbox{\hyperlink{classGraph}{airport}}, \mbox{\hyperlink{classGraph}{int}} \mbox{\hyperlink{classGraph}{type}}, \mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{classGraph}{string}} $>$ \&\mbox{\hyperlink{classGraph}{airplanes}})
+\begin{DoxyCompactList}\small\item\em Finds the best flights between a city and an aiport (vice-\/verse) This function uses breadth-\/first search (BFS) to find paths between a source and destination airport Complexity\+: O(n + e), where n is the number of airports and e is the number of flights in the graph. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{void}} \mbox{\hyperlink{dbairport_8h_ae4772dd7051a9845f6e81b4c5a9dcfeb}{find\+Best\+Flights}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \&\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}, \mbox{\hyperlink{classGraph}{string}} country, \mbox{\hyperlink{classGraph}{string}} city, \mbox{\hyperlink{classGraph}{double}} \mbox{\hyperlink{classGraph}{lat}}, \mbox{\hyperlink{classGraph}{double}} \mbox{\hyperlink{classGraph}{lon}}, \mbox{\hyperlink{classGraph}{int}} \mbox{\hyperlink{classGraph}{dist\+Max}}, \mbox{\hyperlink{classGraph}{int}} \mbox{\hyperlink{classGraph}{type}}, \mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{classGraph}{string}} $>$ \&\mbox{\hyperlink{classGraph}{airplanes}})
+\begin{DoxyCompactList}\small\item\em Function to find best flights between a city and a point on the Earth This function uses breadth-\/first search (BFS) to find paths between a source and destination airport Complexity\+: O(p\texorpdfstring{$\ast$}{*}(n + e)), where n is the number of airports, e is the number of flights in the graph and p is the number of source and destination airports. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{void}} \mbox{\hyperlink{dbairport_8h_a4c312ce194bc762e2bca1ce2dfe38319}{find\+Best\+Flights}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \&\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}, \mbox{\hyperlink{classGraph}{string}} \mbox{\hyperlink{classGraph}{airport}}, \mbox{\hyperlink{classGraph}{double}} \mbox{\hyperlink{classGraph}{lat}}, \mbox{\hyperlink{classGraph}{double}} \mbox{\hyperlink{classGraph}{lon}}, \mbox{\hyperlink{classGraph}{int}} \mbox{\hyperlink{classGraph}{dist\+Max}}, \mbox{\hyperlink{classGraph}{int}} \mbox{\hyperlink{classGraph}{type}}, \mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{classGraph}{string}} $>$ \&\mbox{\hyperlink{classGraph}{airplanes}})
+\begin{DoxyCompactList}\small\item\em Function to find best flights between an airport and a point on Earth This function uses breadth-\/first search (BFS) to find paths between a source and destination airport Complexity\+: O(p\texorpdfstring{$\ast$}{*}(n + e)), where n is the number of airports, e is the number of flights in the graph and p is the number of source and destination airports. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{void}} \mbox{\hyperlink{dbairport_8h_a713722d082d9cd3da930466d38d2305c}{show\+Path}} (\mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{structFlight}{Flight}} $>$ $>$ \mbox{\hyperlink{classGraph}{paths}})
+\begin{DoxyCompactList}\small\item\em Function to show a set of paths Complexity\+: O(n), where n is the total number of flights in all paths. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{void}} \mbox{\hyperlink{dbairport_8h_a3ca85a500cf9c70a12ba8f2dd24b016e}{show\+Path}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \&\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}, \mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{classVertex}{Vertex}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classGraph}{source}}, \mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{classVertex}{Vertex}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \texorpdfstring{$\ast$}{*} $>$ dest, \mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{structFlight}{Flight}} $>$ $>$ \mbox{\hyperlink{classGraph}{paths}}, \mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{classGraph}{string}} $>$ \&\mbox{\hyperlink{classGraph}{airplanes}})
+\begin{DoxyCompactList}\small\item\em Function to show a multi-\/path between multiple source and destination airports Complexity\+: O(n + e), where n is the number of airports and e is the number of flights in the graph. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{classVertex}{Vertex}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{dbairport_8h_a8630a8877e9e655e680f5bbdb5da5ae1}{find\+Airports}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \&\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}, \mbox{\hyperlink{classGraph}{string}} country, \mbox{\hyperlink{classGraph}{string}} city)
+\begin{DoxyCompactList}\small\item\em Function to find all airports in a city Complexity\+: O(n), where n is the number of airports in the graph. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{classVertex}{Vertex}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{dbairport_8h_af16d621e81af427879ea63d8dce32e8d}{find\+Airports}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \&\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}, \mbox{\hyperlink{classGraph}{double}} \mbox{\hyperlink{classGraph}{lat}}, \mbox{\hyperlink{classGraph}{double}} \mbox{\hyperlink{classGraph}{lon}}, \mbox{\hyperlink{classGraph}{int}} \mbox{\hyperlink{classGraph}{dist\+Max}})
+\begin{DoxyCompactList}\small\item\em Function to find all airports around a point withing a distance Complexity\+: O(n), where n is the number of airports in the graph. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{structFlight}{Flight}} $>$ $>$ \mbox{\hyperlink{dbairport_8h_ab6dcff908aa0804d5b7a4e7cbcf3103f}{bfs\+Path}} (\mbox{\hyperlink{classVertex}{Vertex}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classGraph}{v}}, \mbox{\hyperlink{classGraph}{string}} \&\mbox{\hyperlink{classGraph}{tgt}}, \mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{classGraph}{string}} $>$ \&\mbox{\hyperlink{classGraph}{airplanes}})
+\begin{DoxyCompactList}\small\item\em Function to perfom breadth-\/first search to find paths between two airport Complexity\+: O(n + e), where n is the number of airports and e is the number of flights in the graph. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{void}} \mbox{\hyperlink{dbairport_8h_a9d6a5c56acfccf760e404fa346862107}{get\+Path}} (\mbox{\hyperlink{classGraph}{string}} \mbox{\hyperlink{classGraph}{current}}, \mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{structFlight}{Flight}} $>$ \&\mbox{\hyperlink{classGraph}{path}}, \mbox{\hyperlink{classGraph}{unordered\+\_\+map}}$<$ \mbox{\hyperlink{classGraph}{string}}, \mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{structFlight}{Flight}} $>$ $>$ \&\mbox{\hyperlink{classGraph}{prev}}, \mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{structFlight}{Flight}} $>$ $>$ \&\mbox{\hyperlink{classGraph}{paths}}, \mbox{\hyperlink{classGraph}{string}} \mbox{\hyperlink{classGraph}{start\+Code}}, \mbox{\hyperlink{classGraph}{string}} airline)
+\begin{DoxyCompactList}\small\item\em Function to find a path from the current airport to start airport Complexity\+: O(n), where n is the number of airports in the graph. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{void}} \mbox{\hyperlink{dbairport_8h_a83d1f2374fc9cb9a69c57410d6715489}{dfs\+Artc}} (\mbox{\hyperlink{classVertex}{Vertex}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classGraph}{v}}, \mbox{\hyperlink{classVertex}{Vertex}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classGraph}{w}})
+\begin{DoxyCompactList}\small\item\em Function DFS modified to find articulation points. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{void}} \mbox{\hyperlink{dbairport_8h_aff562f54bfc193a204b61dac9cd850a4}{find\+Articulation\+Points}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \&\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}})
+\begin{DoxyCompactList}\small\item\em Function to find and show articulation points in the graph. Points (airports) that, if removed, make certain regions of the map inaccessible Complexity\+: O(n\texorpdfstring{$^\wedge$}{\string^}2), where n is the number of airports in the graph. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{bool}} \mbox{\hyperlink{dbairport_8h_af365ed6716b9c0e05c725ef20edbb240}{comparator\+Path}} (\mbox{\hyperlink{classGraph}{const}} \mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{structFlight}{Flight}} $>$ \mbox{\hyperlink{classGraph}{a}}, \mbox{\hyperlink{classGraph}{const}} \mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{structFlight}{Flight}} $>$ \mbox{\hyperlink{classGraph}{b}})
+\begin{DoxyCompactList}\small\item\em Function to sort the vector with the best flights in increasing order by the number of stops. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{void}} \mbox{\hyperlink{dbairport_8h_a9e3b5b395873914809a385cfc71f4ed9}{dfs\+Connected\+Components}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \&\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}, \mbox{\hyperlink{classVertex}{Vertex}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classGraph}{v}})
+\begin{DoxyCompactList}\small\item\em Function DFS starting from a vertex to find connected components Complexity\+: O(n + e), where n is the number of airports and e is the number of flights in the graph. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{int}} \mbox{\hyperlink{dbairport_8h_a665a614f527d8aebcbc1ac43800d1e9e}{connected\+Components}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \&\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}})
+\begin{DoxyCompactList}\small\item\em Function that uses a depth-\/first search to find the number of connected components in a graph. Complexity\+: O(n + e), where n is the number of airports and e is the number of flights in the graph. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{void}} \mbox{\hyperlink{dbairport_8h_a5e6b59a373a5bf83b48a0160d67d68fd}{dfs\+Max}} (\mbox{\hyperlink{classVertex}{Vertex}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classGraph}{v}}, std\+::vector$<$ std\+::string $>$ \&\mbox{\hyperlink{classGraph}{path}}, std\+::vector$<$ std\+::string $>$ \&\mbox{\hyperlink{classGraph}{max\+Path}})
+\begin{DoxyCompactList}\small\item\em Function that performs a depth-\/first search and always updates the longest path. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{double}} \mbox{\hyperlink{dbairport_8h_aec487f2b258d2630193c6dee0c78665d}{to\+Radians}} (\mbox{\hyperlink{classGraph}{const}} \mbox{\hyperlink{classGraph}{double}} \mbox{\hyperlink{classGraph}{degree}})
+\begin{DoxyCompactList}\small\item\em Function to convert Degrees in radians Complexity\+: O(1) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{double}} \mbox{\hyperlink{dbairport_8h_a54a366c729ef7171badd198f16af649c}{distance\+Earth}} (\mbox{\hyperlink{classGraph}{double}} \mbox{\hyperlink{classGraph}{lat\+Origin}}, \mbox{\hyperlink{classGraph}{double}} \mbox{\hyperlink{classGraph}{long\+Origin}}, \mbox{\hyperlink{classGraph}{double}} \mbox{\hyperlink{classGraph}{lat\+Dest}}, \mbox{\hyperlink{classGraph}{double}} \mbox{\hyperlink{classGraph}{long\+Dest}})
+\begin{DoxyCompactList}\small\item\em Function to calculate the distance between two points on the Earth Complexity\+: O(1) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{dbairport_8h_ab6dcff908aa0804d5b7a4e7cbcf3103f}\label{dbairport_8h_ab6dcff908aa0804d5b7a4e7cbcf3103f} 
+\index{dbairport.h@{dbairport.h}!bfsPath@{bfsPath}}
+\index{bfsPath@{bfsPath}!dbairport.h@{dbairport.h}}
+\doxysubsubsection{\texorpdfstring{bfsPath()}{bfsPath()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{structFlight}{Flight}} $>$ $>$ bfs\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVertex}{Vertex}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \texorpdfstring{$\ast$}{*}}]{v,  }\item[{\mbox{\hyperlink{classGraph}{string}} \&}]{tgt,  }\item[{\mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{classGraph}{string}} $>$ \&}]{airplanes }\end{DoxyParamCaption})}
+
+
+
+Function to perfom breadth-\/first search to find paths between two airport Complexity\+: O(n + e), where n is the number of airports and e is the number of flights in the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The vertex to start the search \\
+\hline
+{\em tgt} & The target airport. \\
+\hline
+{\em airplanes} & A vector of strings representing allowed aircraft (can be empty to consider all). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector$<$vector$<$\+Flight$>$$>$ A vector of vectors of flights representing the paths. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00964}{964}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00966\ \{}
+\DoxyCodeLine{00967\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<vector<Flight>}}>\ \mbox{\hyperlink{classGraph}{paths}};}
+\DoxyCodeLine{00968\ \ \ \ \ \mbox{\hyperlink{classGraph}{unordered\_map<string,\ vector<Flight>}}>\ \mbox{\hyperlink{classGraph}{prev}};}
+\DoxyCodeLine{00969\ \ \ \ \ \mbox{\hyperlink{classGraph}{unordered\_map<string,\ int>}}\ \mbox{\hyperlink{classGraph}{dist}};}
+\DoxyCodeLine{00970\ \ \ \ \ \mbox{\hyperlink{classGraph}{queue<Vertex<Airport>}}\ *>\ \mbox{\hyperlink{classGraph}{q}};}
+\DoxyCodeLine{00971\ }
+\DoxyCodeLine{00972\ \ \ \ \ \mbox{\hyperlink{classGraph}{q}}.push(\mbox{\hyperlink{classGraph}{v}});}
+\DoxyCodeLine{00973\ \ \ \ \ \mbox{\hyperlink{classGraph}{v}}-\/>setVisited(\textcolor{keyword}{true});}
+\DoxyCodeLine{00974\ \ \ \ \ \mbox{\hyperlink{classGraph}{dist}}[\mbox{\hyperlink{classGraph}{v}}-\/>getInfo().getCode()]\ =\ 0;}
+\DoxyCodeLine{00975\ }
+\DoxyCodeLine{00976\ \ \ \ \ \textcolor{keywordflow}{while}\ (!\mbox{\hyperlink{classGraph}{q}}.empty())}
+\DoxyCodeLine{00977\ \ \ \ \ \{}
+\DoxyCodeLine{00978\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{vertex}}\ =\ \mbox{\hyperlink{classGraph}{q}}.front();}
+\DoxyCodeLine{00979\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{q}}.pop();}
+\DoxyCodeLine{00980\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{adjs}}\ =\ \mbox{\hyperlink{classGraph}{vertex}}-\/>getAdj();}
+\DoxyCodeLine{00981\ }
+\DoxyCodeLine{00982\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&\mbox{\hyperlink{classGraph}{e}}\ :\ \mbox{\hyperlink{classGraph}{adjs}})}
+\DoxyCodeLine{00983\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00984\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{w}}\ =\ \mbox{\hyperlink{classGraph}{e}}.getDest();}
+\DoxyCodeLine{00985\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classGraph}{w}}-\/>isVisited()\ \&\&\ (\mbox{\hyperlink{classGraph}{find}}(\mbox{\hyperlink{classGraph}{airplanes}}.begin(),\ \mbox{\hyperlink{classGraph}{airplanes}}.end(),}
+\DoxyCodeLine{00986\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{e}}.getRoute())\ !=\ \mbox{\hyperlink{classGraph}{airplanes}}.end()\ ||}
+\DoxyCodeLine{00987\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{airplanes}}.size()\ ==\ 0))}
+\DoxyCodeLine{00988\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00989\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{q}}.push(\mbox{\hyperlink{classGraph}{w}});}
+\DoxyCodeLine{00990\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{w}}-\/>setVisited(\textcolor{keyword}{true});}
+\DoxyCodeLine{00991\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{prev}}[\mbox{\hyperlink{classGraph}{w}}-\/>getInfo().getCode()].push\_back(}
+\DoxyCodeLine{00992\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\mbox{\hyperlink{classGraph}{vertex}}-\/>getInfo().getCode(),\ \mbox{\hyperlink{classGraph}{e}}.getRoute()\});}
+\DoxyCodeLine{00993\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{dist}}[\mbox{\hyperlink{classGraph}{w}}-\/>getInfo().getCode()]\ =\ \mbox{\hyperlink{classGraph}{dist}}[\mbox{\hyperlink{classGraph}{vertex}}-\/>getInfo().getCode()]\ +\ 1;}
+\DoxyCodeLine{00994\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00995\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{dist}}[\mbox{\hyperlink{classGraph}{w}}-\/>getInfo().getCode()]\ ==}
+\DoxyCodeLine{00996\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{dist}}[\mbox{\hyperlink{classGraph}{vertex}}-\/>getInfo().getCode()]\ +\ 1\ \&\&}
+\DoxyCodeLine{00997\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{classGraph}{find}}(\mbox{\hyperlink{classGraph}{airplanes}}.begin(),\ \mbox{\hyperlink{classGraph}{airplanes}}.end(),\ \mbox{\hyperlink{classGraph}{e}}.getRoute())\ !=}
+\DoxyCodeLine{00998\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{airplanes}}.end()\ ||}
+\DoxyCodeLine{00999\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{airplanes}}.size()\ ==\ 0))}
+\DoxyCodeLine{01000\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01001\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{prev}}[\mbox{\hyperlink{classGraph}{w}}-\/>getInfo().getCode()].push\_back(}
+\DoxyCodeLine{01002\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\mbox{\hyperlink{classGraph}{vertex}}-\/>getInfo().getCode(),\ \mbox{\hyperlink{classGraph}{e}}.getRoute()\});}
+\DoxyCodeLine{01003\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01004\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01005\ \ \ \ \ \}}
+\DoxyCodeLine{01006\ }
+\DoxyCodeLine{01007\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<Flight>}}\ \mbox{\hyperlink{classGraph}{path}};}
+\DoxyCodeLine{01008\ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a9d6a5c56acfccf760e404fa346862107}{getPath}}(\mbox{\hyperlink{classGraph}{tgt}},\ \mbox{\hyperlink{classGraph}{path}},\ \mbox{\hyperlink{classGraph}{prev}},\ \mbox{\hyperlink{classGraph}{paths}},\ \mbox{\hyperlink{classGraph}{v}}-\/>getInfo().getCode(),\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{01009\ }
+\DoxyCodeLine{01010\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{paths}};}
+\DoxyCodeLine{01011\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbairport_8h_a39f02be201dda44faae784618a5e3deb}\label{dbairport_8h_a39f02be201dda44faae784618a5e3deb} 
+\index{dbairport.h@{dbairport.h}!calculateIndegree@{calculateIndegree}}
+\index{calculateIndegree@{calculateIndegree}!dbairport.h@{dbairport.h}}
+\doxysubsubsection{\texorpdfstring{calculateIndegree()}{calculateIndegree()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{void}} calculate\+Indegree (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \&}]{airports }\end{DoxyParamCaption})}
+
+
+
+Function to calculate the in-\/degreee of each vertex in the graph Complexity\+: O(n + e), where n is the number of airports and e is the number of flights in the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em airports} & The graph of airports. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00436}{436}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00437\ \{}
+\DoxyCodeLine{00438\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.getVertexSet())}
+\DoxyCodeLine{00439\ \ \ \ \ \{}
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{v}}-\/>setIndegree(0);}
+\DoxyCodeLine{00441\ \ \ \ \ \}}
+\DoxyCodeLine{00442\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.getVertexSet())}
+\DoxyCodeLine{00443\ \ \ \ \ \{}
+\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{e}}\ :\ \mbox{\hyperlink{classGraph}{v}}-\/>getAdj())}
+\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{e}}.getDest()-\/>setIndegree(\mbox{\hyperlink{classGraph}{e}}.getDest()-\/>getIndegree()\ +\ 1);}
+\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00448\ \ \ \ \ \}}
+\DoxyCodeLine{00449\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbairport_8h_af365ed6716b9c0e05c725ef20edbb240}\label{dbairport_8h_af365ed6716b9c0e05c725ef20edbb240} 
+\index{dbairport.h@{dbairport.h}!comparatorPath@{comparatorPath}}
+\index{comparatorPath@{comparatorPath}!dbairport.h@{dbairport.h}}
+\doxysubsubsection{\texorpdfstring{comparatorPath()}{comparatorPath()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{bool}} comparator\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{const}} \mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{structFlight}{Flight}} $>$}]{a,  }\item[{\mbox{\hyperlink{classGraph}{const}} \mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{structFlight}{Flight}} $>$}]{b }\end{DoxyParamCaption})}
+
+
+
+Function to sort the vector with the best flights in increasing order by the number of stops. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & The first vector. \\
+\hline
+{\em b} & The second vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True if the first vector is smaller than the second vector. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00326}{326}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00327\ \{}
+\DoxyCodeLine{00328\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{a}}.size()\ <\ \mbox{\hyperlink{classGraph}{b}}.size();}
+\DoxyCodeLine{00329\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbairport_8h_a665a614f527d8aebcbc1ac43800d1e9e}\label{dbairport_8h_a665a614f527d8aebcbc1ac43800d1e9e} 
+\index{dbairport.h@{dbairport.h}!connectedComponents@{connectedComponents}}
+\index{connectedComponents@{connectedComponents}!dbairport.h@{dbairport.h}}
+\doxysubsubsection{\texorpdfstring{connectedComponents()}{connectedComponents()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{int}} connected\+Components (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \&}]{airports }\end{DoxyParamCaption})}
+
+
+
+Function that uses a depth-\/first search to find the number of connected components in a graph. Complexity\+: O(n + e), where n is the number of airports and e is the number of flights in the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em airports} & The graph representing airports and available flights. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int The number of connected components. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l01019}{1019}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01020\ \{}
+\DoxyCodeLine{01021\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classGraph}{component}}\ =\ 0;}
+\DoxyCodeLine{01022\ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a91627b34536fbd704b2fb7ca6853b47a}{resetVisited}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}});}
+\DoxyCodeLine{01023\ \ \ \ \ \mbox{\hyperlink{classGraph}{Graph<Airport>}}\ \mbox{\hyperlink{classGraph}{g}}\ =\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}};}
+\DoxyCodeLine{01024\ }
+\DoxyCodeLine{01025\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{classGraph}{g}}.getVertexSet())}
+\DoxyCodeLine{01026\ \ \ \ \ \{}
+\DoxyCodeLine{01027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classGraph}{v}}-\/>isVisited())}
+\DoxyCodeLine{01028\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01029\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a9e3b5b395873914809a385cfc71f4ed9}{dfsConnectedComponents}}(\mbox{\hyperlink{classGraph}{g}},\ \mbox{\hyperlink{classGraph}{v}});}
+\DoxyCodeLine{01030\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{component}}++;}
+\DoxyCodeLine{01031\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01032\ \ \ \ \ \}}
+\DoxyCodeLine{01033\ \ \ \ \ \textcolor{comment}{//\ std::cout\ <<\ "{}Number\ of\ connected\ components:\ "{}\ <<\ component\ <<}}
+\DoxyCodeLine{01034\ \ \ \ \ \textcolor{comment}{//\ std::endl;}}
+\DoxyCodeLine{01035\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{component}};}
+\DoxyCodeLine{01036\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbairport_8h_a83d1f2374fc9cb9a69c57410d6715489}\label{dbairport_8h_a83d1f2374fc9cb9a69c57410d6715489} 
+\index{dbairport.h@{dbairport.h}!dfsArtc@{dfsArtc}}
+\index{dfsArtc@{dfsArtc}!dbairport.h@{dbairport.h}}
+\doxysubsubsection{\texorpdfstring{dfsArtc()}{dfsArtc()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{void}} dfs\+Artc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVertex}{Vertex}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \texorpdfstring{$\ast$}{*}}]{v,  }\item[{\mbox{\hyperlink{classVertex}{Vertex}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \texorpdfstring{$\ast$}{*}}]{w }\end{DoxyParamCaption})}
+
+
+
+Function DFS modified to find articulation points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The vertex to start the search \\
+\hline
+{\em w} & The vertex to be visited \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l01109}{1109}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01110\ \{}
+\DoxyCodeLine{01111\ \ \ \ \ \mbox{\hyperlink{classGraph}{w}}-\/>setVisited(\textcolor{keyword}{true});}
+\DoxyCodeLine{01112\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{adjs}}\ =\ \mbox{\hyperlink{classGraph}{w}}-\/>getAdj();}
+\DoxyCodeLine{01113\ }
+\DoxyCodeLine{01114\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&\mbox{\hyperlink{classGraph}{e}}\ :\ \mbox{\hyperlink{classGraph}{adjs}})}
+\DoxyCodeLine{01115\ \ \ \ \ \{}
+\DoxyCodeLine{01116\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{t}}\ =\ \mbox{\hyperlink{classGraph}{e}}.getDest();}
+\DoxyCodeLine{01117\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classGraph}{t}}-\/>isVisited()\ \&\&\ \mbox{\hyperlink{classGraph}{t}}-\/>getInfo().getCode()\ !=\ \mbox{\hyperlink{classGraph}{v}}-\/>getInfo().getCode())}
+\DoxyCodeLine{01118\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01119\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a83d1f2374fc9cb9a69c57410d6715489}{dfsArtc}}(\mbox{\hyperlink{classGraph}{v}},\ \mbox{\hyperlink{classGraph}{t}});}
+\DoxyCodeLine{01120\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01121\ \ \ \ \ \}}
+\DoxyCodeLine{01122\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbairport_8h_a9e3b5b395873914809a385cfc71f4ed9}\label{dbairport_8h_a9e3b5b395873914809a385cfc71f4ed9} 
+\index{dbairport.h@{dbairport.h}!dfsConnectedComponents@{dfsConnectedComponents}}
+\index{dfsConnectedComponents@{dfsConnectedComponents}!dbairport.h@{dbairport.h}}
+\doxysubsubsection{\texorpdfstring{dfsConnectedComponents()}{dfsConnectedComponents()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{void}} dfs\+Connected\+Components (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \&}]{airports,  }\item[{\mbox{\hyperlink{classVertex}{Vertex}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \texorpdfstring{$\ast$}{*}}]{v }\end{DoxyParamCaption})}
+
+
+
+Function DFS starting from a vertex to find connected components Complexity\+: O(n + e), where n is the number of airports and e is the number of flights in the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em airports} & The graph representing airports and available flights. \\
+\hline
+{\em v} & The vertex to start the search \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l01045}{1045}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01046\ \{}
+\DoxyCodeLine{01047\ \ \ \ \ \mbox{\hyperlink{classGraph}{v}}-\/>setVisited(\textcolor{keyword}{true});}
+\DoxyCodeLine{01048\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{adjs}}\ =\ \mbox{\hyperlink{classGraph}{v}}-\/>getAdj();}
+\DoxyCodeLine{01049\ }
+\DoxyCodeLine{01050\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&\mbox{\hyperlink{classGraph}{e}}\ :\ \mbox{\hyperlink{classGraph}{adjs}})}
+\DoxyCodeLine{01051\ \ \ \ \ \{}
+\DoxyCodeLine{01052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{w}}\ =\ \mbox{\hyperlink{classGraph}{e}}.getDest();}
+\DoxyCodeLine{01053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classGraph}{w}}-\/>isVisited())}
+\DoxyCodeLine{01054\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01055\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a9e3b5b395873914809a385cfc71f4ed9}{dfsConnectedComponents}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ \mbox{\hyperlink{classGraph}{w}});}
+\DoxyCodeLine{01056\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01057\ \ \ \ \ \}}
+\DoxyCodeLine{01058\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbairport_8h_a5e6b59a373a5bf83b48a0160d67d68fd}\label{dbairport_8h_a5e6b59a373a5bf83b48a0160d67d68fd} 
+\index{dbairport.h@{dbairport.h}!dfsMax@{dfsMax}}
+\index{dfsMax@{dfsMax}!dbairport.h@{dbairport.h}}
+\doxysubsubsection{\texorpdfstring{dfsMax()}{dfsMax()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{void}} dfs\+Max (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVertex}{Vertex}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \texorpdfstring{$\ast$}{*}}]{v,  }\item[{std\+::vector$<$ std\+::string $>$ \&}]{path,  }\item[{std\+::vector$<$ std\+::string $>$ \&}]{max\+Path }\end{DoxyParamCaption})}
+
+
+
+Function that performs a depth-\/first search and always updates the longest path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The vertex to start the search \\
+\hline
+{\em path} & The current path \\
+\hline
+{\em max\+Path} & The longest path \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00293}{293}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00294\ \{}
+\DoxyCodeLine{00295\ \ \ \ \ \mbox{\hyperlink{classGraph}{v}}-\/>setVisited(\textcolor{keyword}{true});}
+\DoxyCodeLine{00296\ \ \ \ \ \mbox{\hyperlink{classGraph}{path}}.push\_back(\mbox{\hyperlink{classGraph}{v}}-\/>getInfo().getCode());}
+\DoxyCodeLine{00297\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{adjs}}\ =\ \mbox{\hyperlink{classGraph}{v}}-\/>getAdj();}
+\DoxyCodeLine{00298\ }
+\DoxyCodeLine{00299\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{path}}.size()\ >\ \mbox{\hyperlink{classGraph}{maxPath}}.size())}
+\DoxyCodeLine{00300\ \ \ \ \ \{}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{maxPath}}\ =\ \mbox{\hyperlink{classGraph}{path}};}
+\DoxyCodeLine{00302\ \ \ \ \ \}}
+\DoxyCodeLine{00303\ }
+\DoxyCodeLine{00304\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&\mbox{\hyperlink{classGraph}{e}}\ :\ \mbox{\hyperlink{classGraph}{adjs}})}
+\DoxyCodeLine{00305\ \ \ \ \ \{}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{w}}\ =\ \mbox{\hyperlink{classGraph}{e}}.getDest();}
+\DoxyCodeLine{00307\ }
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classGraph}{w}}-\/>isVisited())}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a5e6b59a373a5bf83b48a0160d67d68fd}{dfsMax}}(\mbox{\hyperlink{classGraph}{w}},\ \mbox{\hyperlink{classGraph}{path}},\ \mbox{\hyperlink{classGraph}{maxPath}});}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00312\ \ \ \ \ \}}
+\DoxyCodeLine{00313\ \ \ \ \ \mbox{\hyperlink{classGraph}{path}}.pop\_back();}
+\DoxyCodeLine{00314\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbairport_8h_a90c3f842c8877fb0fc2c7a63a2df5ac2}\label{dbairport_8h_a90c3f842c8877fb0fc2c7a63a2df5ac2} 
+\index{dbairport.h@{dbairport.h}!dfsVisit@{dfsVisit}}
+\index{dfsVisit@{dfsVisit}!dbairport.h@{dbairport.h}}
+\doxysubsubsection{\texorpdfstring{dfsVisit()}{dfsVisit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ dfs\+Visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVertex}{Vertex}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \texorpdfstring{$\ast$}{*}}]{v,  }\item[{std\+::vector$<$ std\+::string $>$ \&}]{res }\end{DoxyParamCaption})}
+
+
+
+Search (depth-\/first) to visit vertices and collect connected countries. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em airports} & The graph of airports. \\
+\hline
+{\em v} & The vertex to start the search \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector$<$string$>$ The vector with the countries. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00361}{361}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00363\ \{}
+\DoxyCodeLine{00364\ \ \ \ \ \mbox{\hyperlink{classGraph}{v}}-\/>setVisited(\textcolor{keyword}{true});}
+\DoxyCodeLine{00365\ \ \ \ \ \mbox{\hyperlink{classGraph}{res}}.push\_back(\mbox{\hyperlink{classGraph}{v}}-\/>getInfo().getCountry());}
+\DoxyCodeLine{00366\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{adjs}}\ =\ \mbox{\hyperlink{classGraph}{v}}-\/>getAdj();}
+\DoxyCodeLine{00367\ }
+\DoxyCodeLine{00368\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&\mbox{\hyperlink{classGraph}{e}}\ :\ \mbox{\hyperlink{classGraph}{adjs}})}
+\DoxyCodeLine{00369\ \ \ \ \ \{}
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{w}}\ =\ \mbox{\hyperlink{classGraph}{e}}.getDest();}
+\DoxyCodeLine{00371\ }
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classGraph}{w}}-\/>isVisited())}
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a90c3f842c8877fb0fc2c7a63a2df5ac2}{dfsVisit}}(\mbox{\hyperlink{classGraph}{w}},\ \mbox{\hyperlink{classGraph}{res}});}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00376\ \ \ \ \ \}}
+\DoxyCodeLine{00377\ }
+\DoxyCodeLine{00378\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{res}};}
+\DoxyCodeLine{00379\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbairport_8h_a17cbb53667559946ff3b47d65e2a7a68}\label{dbairport_8h_a17cbb53667559946ff3b47d65e2a7a68} 
+\index{dbairport.h@{dbairport.h}!dfsVisit@{dfsVisit}}
+\index{dfsVisit@{dfsVisit}!dbairport.h@{dbairport.h}}
+\doxysubsubsection{\texorpdfstring{dfsVisit()}{dfsVisit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ dfs\+Visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVertex}{Vertex}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \texorpdfstring{$\ast$}{*}}]{v,  }\item[{std\+::vector$<$ std\+::string $>$ \&}]{res,  }\item[{\mbox{\hyperlink{classGraph}{int}}}]{stop }\end{DoxyParamCaption})}
+
+
+
+Search (depth-\/first) to visit vertices and collect connected countries withing a number of stops. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em airports} & The graph of airports. \\
+\hline
+{\em v} & The vertex to start the search \\
+\hline
+{\em stop} & The number of stops. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector$<$string$>$ The vector with the countries. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00389}{389}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00391\ \{}
+\DoxyCodeLine{00392\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{stop}}\ ==\ 0)}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{res}};}
+\DoxyCodeLine{00394\ }
+\DoxyCodeLine{00395\ \ \ \ \ \textcolor{comment}{//\ std::cout\ <<\ "{}Saindo\ de\ "{}\ <<\ v-\/>getInfo().getCode()\ <<\ std::endl;}}
+\DoxyCodeLine{00396\ }
+\DoxyCodeLine{00397\ \ \ \ \ \mbox{\hyperlink{classGraph}{v}}-\/>setVisited(\textcolor{keyword}{true});}
+\DoxyCodeLine{00398\ \ \ \ \ \mbox{\hyperlink{classGraph}{res}}.push\_back(\mbox{\hyperlink{classGraph}{v}}-\/>getInfo().getCountry());}
+\DoxyCodeLine{00399\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{adjs}}\ =\ \mbox{\hyperlink{classGraph}{v}}-\/>getAdj();}
+\DoxyCodeLine{00400\ }
+\DoxyCodeLine{00401\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&\mbox{\hyperlink{classGraph}{e}}\ :\ \mbox{\hyperlink{classGraph}{adjs}})}
+\DoxyCodeLine{00402\ \ \ \ \ \{}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{w}}\ =\ \mbox{\hyperlink{classGraph}{e}}.getDest();}
+\DoxyCodeLine{00404\ }
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classGraph}{w}}-\/>isVisited())}
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::cout\ <<\ "{}\(\backslash\)t\ Eu\ vou\ para:\ "{}\ <<\ w-\/>getInfo().getCode()\ <<}}
+\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::endl;}}
+\DoxyCodeLine{00409\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a90c3f842c8877fb0fc2c7a63a2df5ac2}{dfsVisit}}(\mbox{\hyperlink{classGraph}{w}},\ \mbox{\hyperlink{classGraph}{res}},\ (\mbox{\hyperlink{classGraph}{stop}}\ -\/\ 1));}
+\DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00411\ \ \ \ \ \}}
+\DoxyCodeLine{00412\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{res}};}
+\DoxyCodeLine{00413\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbairport_8h_a54a366c729ef7171badd198f16af649c}\label{dbairport_8h_a54a366c729ef7171badd198f16af649c} 
+\index{dbairport.h@{dbairport.h}!distanceEarth@{distanceEarth}}
+\index{distanceEarth@{distanceEarth}!dbairport.h@{dbairport.h}}
+\doxysubsubsection{\texorpdfstring{distanceEarth()}{distanceEarth()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{double}} distance\+Earth (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{double}}}]{lat\+Origin,  }\item[{\mbox{\hyperlink{classGraph}{double}}}]{long\+Origin,  }\item[{\mbox{\hyperlink{classGraph}{double}}}]{lat\+Dest,  }\item[{\mbox{\hyperlink{classGraph}{double}}}]{long\+Dest }\end{DoxyParamCaption})}
+
+
+
+Function to calculate the distance between two points on the Earth Complexity\+: O(1) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lat\+Origin} & The latitude of the origin point. \\
+\hline
+{\em long\+Origin} & The longitude of the origin point. \\
+\hline
+{\em lat\+Dest} & The latitude of the destination point. \\
+\hline
+{\em long\+Dest} & The longitude of the destination point. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double The distance between the two points. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00735}{735}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00737\ \{}
+\DoxyCodeLine{00738\ \ \ \ \ \mbox{\hyperlink{classGraph}{latOrigin}}\ =\ \mbox{\hyperlink{dbairport_8cpp_aec487f2b258d2630193c6dee0c78665d}{toRadians}}(\mbox{\hyperlink{classGraph}{latOrigin}});}
+\DoxyCodeLine{00739\ \ \ \ \ \mbox{\hyperlink{classGraph}{longOrigin}}\ =\ \mbox{\hyperlink{dbairport_8cpp_aec487f2b258d2630193c6dee0c78665d}{toRadians}}(\mbox{\hyperlink{classGraph}{longOrigin}});}
+\DoxyCodeLine{00740\ \ \ \ \ \mbox{\hyperlink{classGraph}{latDest}}\ =\ \mbox{\hyperlink{dbairport_8cpp_aec487f2b258d2630193c6dee0c78665d}{toRadians}}(\mbox{\hyperlink{classGraph}{latDest}});}
+\DoxyCodeLine{00741\ \ \ \ \ \mbox{\hyperlink{classGraph}{longDest}}\ =\ \mbox{\hyperlink{dbairport_8cpp_aec487f2b258d2630193c6dee0c78665d}{toRadians}}(\mbox{\hyperlink{classGraph}{longDest}});}
+\DoxyCodeLine{00742\ }
+\DoxyCodeLine{00743\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classGraph}{dlong}}\ =\ \mbox{\hyperlink{classGraph}{longDest}}\ -\/\ \mbox{\hyperlink{classGraph}{longOrigin}};}
+\DoxyCodeLine{00744\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classGraph}{dlat}}\ =\ \mbox{\hyperlink{classGraph}{latDest}}\ -\/\ \mbox{\hyperlink{classGraph}{latOrigin}};}
+\DoxyCodeLine{00745\ }
+\DoxyCodeLine{00746\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classGraph}{ans}}\ =\ \mbox{\hyperlink{classGraph}{pow}}(\mbox{\hyperlink{classGraph}{sin}}(\mbox{\hyperlink{classGraph}{dlat}}\ /\ 2),\ 2)\ +}
+\DoxyCodeLine{00747\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{cos}}(\mbox{\hyperlink{classGraph}{latOrigin}})\ *\ \mbox{\hyperlink{classGraph}{cos}}(\mbox{\hyperlink{classGraph}{latDest}})\ *\ \mbox{\hyperlink{classGraph}{pow}}(\mbox{\hyperlink{classGraph}{sin}}(\mbox{\hyperlink{classGraph}{dlong}}\ /\ 2),\ 2);}
+\DoxyCodeLine{00748\ }
+\DoxyCodeLine{00749\ \ \ \ \ \mbox{\hyperlink{classGraph}{ans}}\ =\ 2\ *\ \mbox{\hyperlink{classGraph}{asin}}(\mbox{\hyperlink{classGraph}{sqrt}}(\mbox{\hyperlink{classGraph}{ans}}));}
+\DoxyCodeLine{00750\ }
+\DoxyCodeLine{00751\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classGraph}{R}}\ =\ 6371;}
+\DoxyCodeLine{00752\ }
+\DoxyCodeLine{00753\ \ \ \ \ \mbox{\hyperlink{classGraph}{ans}}\ =\ \mbox{\hyperlink{classGraph}{ans}}\ *\ \mbox{\hyperlink{classGraph}{R}};}
+\DoxyCodeLine{00754\ }
+\DoxyCodeLine{00755\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{ans}};}
+\DoxyCodeLine{00756\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbairport_8h_af16d621e81af427879ea63d8dce32e8d}\label{dbairport_8h_af16d621e81af427879ea63d8dce32e8d} 
+\index{dbairport.h@{dbairport.h}!findAirports@{findAirports}}
+\index{findAirports@{findAirports}!dbairport.h@{dbairport.h}}
+\doxysubsubsection{\texorpdfstring{findAirports()}{findAirports()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{classVertex}{Vertex}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \texorpdfstring{$\ast$}{*} $>$ find\+Airports (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \&}]{airports,  }\item[{\mbox{\hyperlink{classGraph}{double}}}]{lat,  }\item[{\mbox{\hyperlink{classGraph}{double}}}]{lon,  }\item[{\mbox{\hyperlink{classGraph}{int}}}]{dist\+Max }\end{DoxyParamCaption})}
+
+
+
+Function to find all airports around a point withing a distance Complexity\+: O(n), where n is the number of airports in the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em airports} & The graph representing airports and available flights. \\
+\hline
+{\em lat} & The latitude of the point. \\
+\hline
+{\em lon} & The longitude of the point. \\
+\hline
+{\em dist\+Max} & The maximum distance. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector\texorpdfstring{$<$}{<}Vertex$<$\+Airport$>$\texorpdfstring{$\ast$}{*}\texorpdfstring{$>$}{>} A vector of airports. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00770}{770}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00772\ \{}
+\DoxyCodeLine{00773\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<Vertex<Airport>}}\ *>\ \mbox{\hyperlink{classGraph}{vec}};}
+\DoxyCodeLine{00774\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.getVertexSet())}
+\DoxyCodeLine{00775\ \ \ \ \ \{}
+\DoxyCodeLine{00776\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classGraph}{lat2}}\ =\ \mbox{\hyperlink{classGraph}{v}}-\/>getInfo().getLatitude();}
+\DoxyCodeLine{00777\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classGraph}{lon2}}\ =\ \mbox{\hyperlink{classGraph}{v}}-\/>getInfo().getLongitude();}
+\DoxyCodeLine{00778\ }
+\DoxyCodeLine{00779\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classGraph}{dist}}\ =\ \mbox{\hyperlink{dbairport_8cpp_a54a366c729ef7171badd198f16af649c}{distanceEarth}}(\mbox{\hyperlink{classGraph}{lat}},\ \mbox{\hyperlink{classGraph}{lon}},\ \mbox{\hyperlink{classGraph}{lat2}},\ \mbox{\hyperlink{classGraph}{lon2}});}
+\DoxyCodeLine{00780\ }
+\DoxyCodeLine{00781\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{dist}}\ <=\ \mbox{\hyperlink{classGraph}{distMax}})}
+\DoxyCodeLine{00782\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00783\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{vec}}.push\_back(\mbox{\hyperlink{classGraph}{v}});}
+\DoxyCodeLine{00784\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00785\ \ \ \ \ \}}
+\DoxyCodeLine{00786\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{vec}};}
+\DoxyCodeLine{00787\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbairport_8h_a8630a8877e9e655e680f5bbdb5da5ae1}\label{dbairport_8h_a8630a8877e9e655e680f5bbdb5da5ae1} 
+\index{dbairport.h@{dbairport.h}!findAirports@{findAirports}}
+\index{findAirports@{findAirports}!dbairport.h@{dbairport.h}}
+\doxysubsubsection{\texorpdfstring{findAirports()}{findAirports()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{classVertex}{Vertex}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \texorpdfstring{$\ast$}{*} $>$ find\+Airports (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \&}]{airports,  }\item[{\mbox{\hyperlink{classGraph}{string}}}]{country,  }\item[{\mbox{\hyperlink{classGraph}{string}}}]{city }\end{DoxyParamCaption})}
+
+
+
+Function to find all airports in a city Complexity\+: O(n), where n is the number of airports in the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em airports} & The graph representing airports and available flights. \\
+\hline
+{\em country} & The country of the airport. \\
+\hline
+{\em city} & The city of the airport. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector\texorpdfstring{$<$}{<}Vertex$<$\+Airport$>$\texorpdfstring{$\ast$}{*}\texorpdfstring{$>$}{>} A vector of airports. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00671}{671}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00673\ \{}
+\DoxyCodeLine{00674\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<Vertex<Airport>}}\ *>\ \mbox{\hyperlink{classGraph}{vec}};}
+\DoxyCodeLine{00675\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.getVertexSet())}
+\DoxyCodeLine{00676\ \ \ \ \ \{}
+\DoxyCodeLine{00677\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{v}}-\/>getInfo().getCountry()\ ==\ country\ \&\&}
+\DoxyCodeLine{00678\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{v}}-\/>getInfo().getCity()\ ==\ city)}
+\DoxyCodeLine{00679\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00680\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{vec}}.push\_back(\mbox{\hyperlink{classGraph}{v}});}
+\DoxyCodeLine{00681\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00682\ \ \ \ \ \}}
+\DoxyCodeLine{00683\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{vec}};}
+\DoxyCodeLine{00684\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbairport_8h_aff562f54bfc193a204b61dac9cd850a4}\label{dbairport_8h_aff562f54bfc193a204b61dac9cd850a4} 
+\index{dbairport.h@{dbairport.h}!findArticulationPoints@{findArticulationPoints}}
+\index{findArticulationPoints@{findArticulationPoints}!dbairport.h@{dbairport.h}}
+\doxysubsubsection{\texorpdfstring{findArticulationPoints()}{findArticulationPoints()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{void}} find\+Articulation\+Points (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \&}]{airports }\end{DoxyParamCaption})}
+
+
+
+Function to find and show articulation points in the graph. Points (airports) that, if removed, make certain regions of the map inaccessible Complexity\+: O(n\texorpdfstring{$^\wedge$}{\string^}2), where n is the number of airports in the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em airports} & The graph representing airports and available flights. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l01066}{1066}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01067\ \{}
+\DoxyCodeLine{01068\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classGraph}{i}}\ =\ 0;}
+\DoxyCodeLine{01069\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classGraph}{total}}\ =\ 0;}
+\DoxyCodeLine{01070\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classGraph}{connected}}\ =\ \mbox{\hyperlink{dbairport_8cpp_a665a614f527d8aebcbc1ac43800d1e9e}{connectedComponents}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}});}
+\DoxyCodeLine{01071\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.getVertexSet())}
+\DoxyCodeLine{01072\ \ \ \ \ \{}
+\DoxyCodeLine{01073\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::cout\ <<\ "{}\ Analisando\ o\ vertice:\ "{}\ <<\ v-\/>getInfo().getCode()\ <<}}
+\DoxyCodeLine{01074\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::endl;}}
+\DoxyCodeLine{01075\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a91627b34536fbd704b2fb7ca6853b47a}{resetVisited}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}});}
+\DoxyCodeLine{01076\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classGraph}{component}}\ =\ 0;}
+\DoxyCodeLine{01077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{w}}\ :\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.getVertexSet())}
+\DoxyCodeLine{01078\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::cout\ <<\ "{}\(\backslash\)tAnalisando\ o\ vertice:\ "{}\ <<\ w-\/>getInfo().getCode()<<}}
+\DoxyCodeLine{01080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::endl;}}
+\DoxyCodeLine{01081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classGraph}{w}}-\/>isVisited()\ \&\&\ \mbox{\hyperlink{classGraph}{w}}-\/>getInfo().getCode()\ !=\ \mbox{\hyperlink{classGraph}{v}}-\/>getInfo().getCode())}
+\DoxyCodeLine{01082\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::cout\ <<\ "{}\(\backslash\)t\(\backslash\)tChamando\ o\ DFS\ component++"{}\ <<\ std::endl;}}
+\DoxyCodeLine{01084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a83d1f2374fc9cb9a69c57410d6715489}{dfsArtc}}(\mbox{\hyperlink{classGraph}{v}},\ \mbox{\hyperlink{classGraph}{w}});}
+\DoxyCodeLine{01085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{component}}++;}
+\DoxyCodeLine{01086\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01087\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{component}}\ >\ \mbox{\hyperlink{classGraph}{connected}})}
+\DoxyCodeLine{01089\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01090\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \mbox{\hyperlink{classGraph}{v}}-\/>getInfo().getCode()\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{01091\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{i}}++;}
+\DoxyCodeLine{01092\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{total}}++;}
+\DoxyCodeLine{01093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{i}}\ ==\ 10)}
+\DoxyCodeLine{01094\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ std::endl;}
+\DoxyCodeLine{01096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{i}}\ =\ 0;}
+\DoxyCodeLine{01097\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01098\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01099\ \ \ \ \ \}}
+\DoxyCodeLine{01100\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nTotal:\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{total}}\ <<\ std::endl;}
+\DoxyCodeLine{01101\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbairport_8h_a6810f143c1f93bd40c549be758c3b5c0}\label{dbairport_8h_a6810f143c1f93bd40c549be758c3b5c0} 
+\index{dbairport.h@{dbairport.h}!findBestFlights@{findBestFlights}}
+\index{findBestFlights@{findBestFlights}!dbairport.h@{dbairport.h}}
+\doxysubsubsection{\texorpdfstring{findBestFlights()}{findBestFlights()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{void}} find\+Best\+Flights (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \&}]{airports,  }\item[{\mbox{\hyperlink{classGraph}{double}}}]{lat\+Origin,  }\item[{\mbox{\hyperlink{classGraph}{double}}}]{long\+Origin,  }\item[{\mbox{\hyperlink{classGraph}{double}}}]{lat\+Dest,  }\item[{\mbox{\hyperlink{classGraph}{double}}}]{long\+Dest,  }\item[{\mbox{\hyperlink{classGraph}{int}}}]{dist\+Max,  }\item[{\mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{classGraph}{string}} $>$ \&}]{airplanes }\end{DoxyParamCaption})}
+
+
+
+Function to find the best flights between two points on Earth Point to Point This function uses breadth-\/first search (BFS) to find paths between a source and destination airport Complexity\+: O(n + e), where n is the number of airports and e is the number of flights in the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em airports} & The graph representing airports and available flights. \\
+\hline
+{\em lat\+Origin} & The latitude of the origin point. \\
+\hline
+{\em long\+Origin} & The longitude of the origin point. \\
+\hline
+{\em lat\+Dest} & The latitude of the destination point. \\
+\hline
+{\em long\+Dest} & The longitude of the destination point. \\
+\hline
+{\em dist\+Max} & The maximum distance. \\
+\hline
+{\em airplanes} & A vector of strings representing allowed aircraft (can be empty to consider all). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00802}{802}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00805\ \{}
+\DoxyCodeLine{00806\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<Vertex<Airport>}}\ *>\ \mbox{\hyperlink{classGraph}{src}}\ =}
+\DoxyCodeLine{00807\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a8630a8877e9e655e680f5bbdb5da5ae1}{findAirports}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ \mbox{\hyperlink{classGraph}{latOrigin}},\ \mbox{\hyperlink{classGraph}{longOrigin}},\ \mbox{\hyperlink{classGraph}{distMax}});}
+\DoxyCodeLine{00808\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<Vertex<Airport>}}\ *>\ dest\ =}
+\DoxyCodeLine{00809\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a8630a8877e9e655e680f5bbdb5da5ae1}{findAirports}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ \mbox{\hyperlink{classGraph}{latDest}},\ \mbox{\hyperlink{classGraph}{longDest}},\ \mbox{\hyperlink{classGraph}{distMax}});}
+\DoxyCodeLine{00810\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<vector<Flight>}}>\ \mbox{\hyperlink{classGraph}{paths}};}
+\DoxyCodeLine{00811\ }
+\DoxyCodeLine{00812\ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a3ca85a500cf9c70a12ba8f2dd24b016e}{showPath}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ \mbox{\hyperlink{classGraph}{src}},\ dest,\ \mbox{\hyperlink{classGraph}{paths}},\ \mbox{\hyperlink{classGraph}{airplanes}});}
+\DoxyCodeLine{00813\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbairport_8h_a4c312ce194bc762e2bca1ce2dfe38319}\label{dbairport_8h_a4c312ce194bc762e2bca1ce2dfe38319} 
+\index{dbairport.h@{dbairport.h}!findBestFlights@{findBestFlights}}
+\index{findBestFlights@{findBestFlights}!dbairport.h@{dbairport.h}}
+\doxysubsubsection{\texorpdfstring{findBestFlights()}{findBestFlights()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{void}} find\+Best\+Flights (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \&}]{airports,  }\item[{\mbox{\hyperlink{classGraph}{string}}}]{airport,  }\item[{\mbox{\hyperlink{classGraph}{double}}}]{lat,  }\item[{\mbox{\hyperlink{classGraph}{double}}}]{lon,  }\item[{\mbox{\hyperlink{classGraph}{int}}}]{dist\+Max,  }\item[{\mbox{\hyperlink{classGraph}{int}}}]{type,  }\item[{\mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{classGraph}{string}} $>$ \&}]{airplanes }\end{DoxyParamCaption})}
+
+
+
+Function to find best flights between an airport and a point on Earth This function uses breadth-\/first search (BFS) to find paths between a source and destination airport Complexity\+: O(p\texorpdfstring{$\ast$}{*}(n + e)), where n is the number of airports, e is the number of flights in the graph and p is the number of source and destination airports. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em airports} & The graph representing airports and available flights. \\
+\hline
+{\em airport} & The airport. \\
+\hline
+{\em lat} & The latitude of the point. \\
+\hline
+{\em lon} & The longitude of the point. \\
+\hline
+{\em dist\+Max} & The maximum distance. \\
+\hline
+{\em type} & The type of search (0\+: Point to \doxylink{classAirport}{Airport}, 1\+: \doxylink{classAirport}{Airport} to Point). \\
+\hline
+{\em airplanes} & A vector of strings representing allowed aircraft (can be empty to consider all). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00828}{828}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00831\ \{}
+\DoxyCodeLine{00832\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<Vertex<Airport>}}\ *>\ \mbox{\hyperlink{classGraph}{vec}};}
+\DoxyCodeLine{00833\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<vector<Flight>}}>\ \mbox{\hyperlink{classGraph}{paths}};}
+\DoxyCodeLine{00834\ \ \ \ \ \mbox{\hyperlink{classGraph}{vec}}\ =\ \mbox{\hyperlink{dbairport_8cpp_a8630a8877e9e655e680f5bbdb5da5ae1}{findAirports}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ \mbox{\hyperlink{classGraph}{lat}},\ \mbox{\hyperlink{classGraph}{lon}},\ \mbox{\hyperlink{classGraph}{distMax}});}
+\DoxyCodeLine{00835\ }
+\DoxyCodeLine{00836\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{type}}\ ==\ 0)}
+\DoxyCodeLine{00837\ \ \ \ \ \{}
+\DoxyCodeLine{00838\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{classGraph}{vec}})}
+\DoxyCodeLine{00839\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00840\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Source:\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{v}}-\/>getInfo().getCode()\ <<\ std::endl;}
+\DoxyCodeLine{00841\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a91627b34536fbd704b2fb7ca6853b47a}{resetVisited}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}});}
+\DoxyCodeLine{00842\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{paths}}\ =\ \mbox{\hyperlink{dbairport_8cpp_ab6dcff908aa0804d5b7a4e7cbcf3103f}{bfsPath}}(\mbox{\hyperlink{classGraph}{v}},\ \mbox{\hyperlink{classGraph}{airport}},\ \mbox{\hyperlink{classGraph}{airplanes}});}
+\DoxyCodeLine{00843\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a3ca85a500cf9c70a12ba8f2dd24b016e}{showPath}}(\mbox{\hyperlink{classGraph}{paths}});}
+\DoxyCodeLine{00844\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00845\ \ \ \ \ \}}
+\DoxyCodeLine{00846\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{type}}\ ==\ 1)}
+\DoxyCodeLine{00847\ \ \ \ \ \{}
+\DoxyCodeLine{00848\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{classGraph}{vec}})}
+\DoxyCodeLine{00849\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00850\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Source:\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{airport}}\ <<\ std::endl;}
+\DoxyCodeLine{00851\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classGraph}{tgt}}\ =\ \mbox{\hyperlink{classGraph}{v}}-\/>getInfo().getCode();}
+\DoxyCodeLine{00852\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a91627b34536fbd704b2fb7ca6853b47a}{resetVisited}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}});}
+\DoxyCodeLine{00853\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{paths}}\ =\ \mbox{\hyperlink{dbairport_8cpp_ab6dcff908aa0804d5b7a4e7cbcf3103f}{bfsPath}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.\mbox{\hyperlink{classGraph_a8b7b7465fbfd562e2a469f90a437ab75}{findVertex}}(\mbox{\hyperlink{classAirport}{Airport}}(\mbox{\hyperlink{classGraph}{airport}})),\ \mbox{\hyperlink{classGraph}{tgt}},\ \mbox{\hyperlink{classGraph}{airplanes}});}
+\DoxyCodeLine{00854\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a3ca85a500cf9c70a12ba8f2dd24b016e}{showPath}}(\mbox{\hyperlink{classGraph}{paths}});}
+\DoxyCodeLine{00855\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00856\ \ \ \ \ \}}
+\DoxyCodeLine{00857\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbairport_8h_ae4772dd7051a9845f6e81b4c5a9dcfeb}\label{dbairport_8h_ae4772dd7051a9845f6e81b4c5a9dcfeb} 
+\index{dbairport.h@{dbairport.h}!findBestFlights@{findBestFlights}}
+\index{findBestFlights@{findBestFlights}!dbairport.h@{dbairport.h}}
+\doxysubsubsection{\texorpdfstring{findBestFlights()}{findBestFlights()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{void}} find\+Best\+Flights (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \&}]{airports,  }\item[{\mbox{\hyperlink{classGraph}{string}}}]{country,  }\item[{\mbox{\hyperlink{classGraph}{string}}}]{city,  }\item[{\mbox{\hyperlink{classGraph}{double}}}]{lat,  }\item[{\mbox{\hyperlink{classGraph}{double}}}]{lon,  }\item[{\mbox{\hyperlink{classGraph}{int}}}]{dist\+Max,  }\item[{\mbox{\hyperlink{classGraph}{int}}}]{type,  }\item[{\mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{classGraph}{string}} $>$ \&}]{airplanes }\end{DoxyParamCaption})}
+
+
+
+Function to find best flights between a city and a point on the Earth This function uses breadth-\/first search (BFS) to find paths between a source and destination airport Complexity\+: O(p\texorpdfstring{$\ast$}{*}(n + e)), where n is the number of airports, e is the number of flights in the graph and p is the number of source and destination airports. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em airports} & The graph representing airports and available flights. \\
+\hline
+{\em country} & The country of the source airport. \\
+\hline
+{\em city} & The city of the source airport. \\
+\hline
+{\em lat} & The latitude of the point. \\
+\hline
+{\em lon} & The longitude of the point. \\
+\hline
+{\em dist\+Max} & The maximum distance. \\
+\hline
+{\em type} & The type of search (0\+: City to Point, 1\+: Point to City). \\
+\hline
+{\em airplanes} & A vector of strings representing allowed aircraft (can be empty to consider all). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00878}{878}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00881\ \{}
+\DoxyCodeLine{00882\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<Vertex<Airport>}}\ *>\ \mbox{\hyperlink{classGraph}{vec\_point}};}
+\DoxyCodeLine{00883\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<Vertex<Airport>}}\ *>\ \mbox{\hyperlink{classGraph}{vec\_city}};}
+\DoxyCodeLine{00884\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<vector<Flight>}}>\ \mbox{\hyperlink{classGraph}{paths}};}
+\DoxyCodeLine{00885\ }
+\DoxyCodeLine{00886\ \ \ \ \ \mbox{\hyperlink{classGraph}{vec\_point}}\ =\ \mbox{\hyperlink{dbairport_8cpp_a8630a8877e9e655e680f5bbdb5da5ae1}{findAirports}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ \mbox{\hyperlink{classGraph}{lat}},\ \mbox{\hyperlink{classGraph}{lon}},\ \mbox{\hyperlink{classGraph}{distMax}});}
+\DoxyCodeLine{00887\ \ \ \ \ \mbox{\hyperlink{classGraph}{vec\_city}}\ =\ \mbox{\hyperlink{dbairport_8cpp_a8630a8877e9e655e680f5bbdb5da5ae1}{findAirports}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ country,\ city);}
+\DoxyCodeLine{00888\ }
+\DoxyCodeLine{00889\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{type}}\ ==\ 0)}
+\DoxyCodeLine{00890\ \ \ \ \ \{}
+\DoxyCodeLine{00891\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{c}}\ :\ \mbox{\hyperlink{classGraph}{vec\_city}})}
+\DoxyCodeLine{00892\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00893\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Source:\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{c}}-\/>getInfo().getCode()\ <<\ std::endl;}
+\DoxyCodeLine{00894\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{p}}\ :\ \mbox{\hyperlink{classGraph}{vec\_point}})}
+\DoxyCodeLine{00895\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00896\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Destination:\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{p}}-\/>getInfo().getCode()\ <<\ std::endl;}
+\DoxyCodeLine{00897\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a91627b34536fbd704b2fb7ca6853b47a}{resetVisited}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}});}
+\DoxyCodeLine{00898\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classGraph}{tgt}}\ =\ \mbox{\hyperlink{classGraph}{p}}-\/>getInfo().getCode();}
+\DoxyCodeLine{00899\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{paths}}\ =\ \mbox{\hyperlink{dbairport_8cpp_ab6dcff908aa0804d5b7a4e7cbcf3103f}{bfsPath}}(\mbox{\hyperlink{classGraph}{c}},\ \mbox{\hyperlink{classGraph}{tgt}},\ \mbox{\hyperlink{classGraph}{airplanes}});}
+\DoxyCodeLine{00900\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a3ca85a500cf9c70a12ba8f2dd24b016e}{showPath}}(\mbox{\hyperlink{classGraph}{paths}});}
+\DoxyCodeLine{00901\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00902\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00903\ \ \ \ \ \}}
+\DoxyCodeLine{00904\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{type}}\ ==\ 1)}
+\DoxyCodeLine{00905\ \ \ \ \ \{}
+\DoxyCodeLine{00906\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{p}}\ :\ \mbox{\hyperlink{classGraph}{vec\_point}})}
+\DoxyCodeLine{00907\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00908\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Source:\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{p}}-\/>getInfo().getCode()\ <<\ std::endl;}
+\DoxyCodeLine{00909\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{c}}\ :\ \mbox{\hyperlink{classGraph}{vec\_city}})}
+\DoxyCodeLine{00910\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00911\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Destination:\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{c}}-\/>getInfo().getCode()\ <<\ std::endl;}
+\DoxyCodeLine{00912\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a91627b34536fbd704b2fb7ca6853b47a}{resetVisited}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}});}
+\DoxyCodeLine{00913\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classGraph}{tgt}}\ =\ \mbox{\hyperlink{classGraph}{c}}-\/>getInfo().getCode();}
+\DoxyCodeLine{00914\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{paths}}\ =\ \mbox{\hyperlink{dbairport_8cpp_ab6dcff908aa0804d5b7a4e7cbcf3103f}{bfsPath}}(\mbox{\hyperlink{classGraph}{p}},\ \mbox{\hyperlink{classGraph}{tgt}},\ \mbox{\hyperlink{classGraph}{airplanes}});}
+\DoxyCodeLine{00915\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a3ca85a500cf9c70a12ba8f2dd24b016e}{showPath}}(\mbox{\hyperlink{classGraph}{paths}});}
+\DoxyCodeLine{00916\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00917\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00918\ \ \ \ \ \}}
+\DoxyCodeLine{00919\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbairport_8h_abc81a6e3813f6f6c5105ad0523405671}\label{dbairport_8h_abc81a6e3813f6f6c5105ad0523405671} 
+\index{dbairport.h@{dbairport.h}!findBestFlights@{findBestFlights}}
+\index{findBestFlights@{findBestFlights}!dbairport.h@{dbairport.h}}
+\doxysubsubsection{\texorpdfstring{findBestFlights()}{findBestFlights()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{void}} find\+Best\+Flights (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \&}]{airports,  }\item[{\mbox{\hyperlink{classGraph}{string}}}]{country,  }\item[{\mbox{\hyperlink{classGraph}{string}}}]{city,  }\item[{\mbox{\hyperlink{classGraph}{string}}}]{airport,  }\item[{\mbox{\hyperlink{classGraph}{int}}}]{type,  }\item[{\mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{classGraph}{string}} $>$ \&}]{airplanes }\end{DoxyParamCaption})}
+
+
+
+Finds the best flights between a city and an aiport (vice-\/verse) This function uses breadth-\/first search (BFS) to find paths between a source and destination airport Complexity\+: O(n + e), where n is the number of airports and e is the number of flights in the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em airports} & The graph representing airports and available flights. \\
+\hline
+{\em country} & The country of the source airport. \\
+\hline
+{\em city} & The city of the source airport. \\
+\hline
+{\em airport} & The destination airport. \\
+\hline
+{\em type} & The type of search (0\+: City to \doxylink{classAirport}{Airport}, 1\+: \doxylink{classAirport}{Airport} to City). \\
+\hline
+{\em airplanes} & A vector of strings representing allowed aircraft (can be empty to consider all). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00522}{522}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00524\ \{}
+\DoxyCodeLine{00525\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<Vertex<Airport>}}\ *>\ \mbox{\hyperlink{classGraph}{vec}};}
+\DoxyCodeLine{00526\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<vector<Flight>}}>\ \mbox{\hyperlink{classGraph}{paths}};}
+\DoxyCodeLine{00527\ \ \ \ \ \mbox{\hyperlink{classGraph}{vec}}\ =\ \mbox{\hyperlink{dbairport_8cpp_a8630a8877e9e655e680f5bbdb5da5ae1}{findAirports}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ country,\ city);}
+\DoxyCodeLine{00528\ }
+\DoxyCodeLine{00529\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{type}}\ ==\ 0)}
+\DoxyCodeLine{00530\ \ \ \ \ \{}
+\DoxyCodeLine{00531\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{classGraph}{vec}})}
+\DoxyCodeLine{00532\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00533\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::cout\ <<\ "{}Source:\ "{}\ <<\ v-\/>getInfo().getCode()\ <<\ std::endl;}}
+\DoxyCodeLine{00534\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a91627b34536fbd704b2fb7ca6853b47a}{resetVisited}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}});}
+\DoxyCodeLine{00535\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{paths}}\ =\ \mbox{\hyperlink{dbairport_8cpp_ab6dcff908aa0804d5b7a4e7cbcf3103f}{bfsPath}}(\mbox{\hyperlink{classGraph}{v}},\ \mbox{\hyperlink{classGraph}{airport}},\ \mbox{\hyperlink{classGraph}{airplanes}});}
+\DoxyCodeLine{00536\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a3ca85a500cf9c70a12ba8f2dd24b016e}{showPath}}(\mbox{\hyperlink{classGraph}{paths}});}
+\DoxyCodeLine{00537\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00538\ \ \ \ \ \}}
+\DoxyCodeLine{00539\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{type}}\ ==\ 1)}
+\DoxyCodeLine{00540\ \ \ \ \ \{}
+\DoxyCodeLine{00541\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{classGraph}{vec}})}
+\DoxyCodeLine{00542\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00543\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::cout\ <<\ "{}Source:\ "{}\ <<\ airport\ <<\ std::endl;}}
+\DoxyCodeLine{00544\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classGraph}{tgt}}\ =\ \mbox{\hyperlink{classGraph}{v}}-\/>getInfo().getCode();}
+\DoxyCodeLine{00545\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a91627b34536fbd704b2fb7ca6853b47a}{resetVisited}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}});}
+\DoxyCodeLine{00546\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{paths}}\ =\ \mbox{\hyperlink{dbairport_8cpp_ab6dcff908aa0804d5b7a4e7cbcf3103f}{bfsPath}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.\mbox{\hyperlink{classGraph_a8b7b7465fbfd562e2a469f90a437ab75}{findVertex}}(\mbox{\hyperlink{classAirport}{Airport}}(\mbox{\hyperlink{classGraph}{airport}})),\ \mbox{\hyperlink{classGraph}{tgt}},\ \mbox{\hyperlink{classGraph}{airplanes}});}
+\DoxyCodeLine{00547\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a3ca85a500cf9c70a12ba8f2dd24b016e}{showPath}}(\mbox{\hyperlink{classGraph}{paths}});}
+\DoxyCodeLine{00548\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00549\ \ \ \ \ \}}
+\DoxyCodeLine{00550\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbairport_8h_a8a88fb88325945c6dcb83c9a2d9697bd}\label{dbairport_8h_a8a88fb88325945c6dcb83c9a2d9697bd} 
+\index{dbairport.h@{dbairport.h}!findBestFlights@{findBestFlights}}
+\index{findBestFlights@{findBestFlights}!dbairport.h@{dbairport.h}}
+\doxysubsubsection{\texorpdfstring{findBestFlights()}{findBestFlights()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{void}} find\+Best\+Flights (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \&}]{airports,  }\item[{\mbox{\hyperlink{classGraph}{string}}}]{country\+Src,  }\item[{\mbox{\hyperlink{classGraph}{string}}}]{city\+Src,  }\item[{\mbox{\hyperlink{classGraph}{string}}}]{country\+Dest,  }\item[{\mbox{\hyperlink{classGraph}{string}}}]{city\+Dest,  }\item[{\mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{classGraph}{string}} $>$ \&}]{airplanes }\end{DoxyParamCaption})}
+
+
+
+Function to find best flights between two cities This function uses breadth-\/first search (BFS) to find paths between a source and destination airport Complexity\+: O(n + e), where n is the number of airports and e is the number of flights in the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em airports} & The graph representing airports and available flights. \\
+\hline
+{\em country\+Src} & The country of the source airport. \\
+\hline
+{\em city\+Src} & The city of the source airport. \\
+\hline
+{\em country\+Dest} & The country of the destination airport. \\
+\hline
+{\em city\+Dest} & The city of the destination airport. \\
+\hline
+{\em airplanes} & A vector of strings representing allowed aircraft (can be empty to consider all). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00698}{698}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00701\ \{}
+\DoxyCodeLine{00702\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<Vertex<Airport>}}\ *>\ \mbox{\hyperlink{classGraph}{src}};}
+\DoxyCodeLine{00703\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<Vertex<Airport>}}\ *>\ dest;}
+\DoxyCodeLine{00704\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<vector<Flight>}}>\ \mbox{\hyperlink{classGraph}{paths}};}
+\DoxyCodeLine{00705\ }
+\DoxyCodeLine{00706\ \ \ \ \ \mbox{\hyperlink{classGraph}{src}}\ =\ \mbox{\hyperlink{dbairport_8cpp_a8630a8877e9e655e680f5bbdb5da5ae1}{findAirports}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ \mbox{\hyperlink{classGraph}{countrySrc}},\ \mbox{\hyperlink{classGraph}{citySrc}});}
+\DoxyCodeLine{00707\ \ \ \ \ dest\ =\ \mbox{\hyperlink{dbairport_8cpp_a8630a8877e9e655e680f5bbdb5da5ae1}{findAirports}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ \mbox{\hyperlink{classGraph}{countryDest}},\ \mbox{\hyperlink{classGraph}{cityDest}});}
+\DoxyCodeLine{00708\ }
+\DoxyCodeLine{00709\ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a3ca85a500cf9c70a12ba8f2dd24b016e}{showPath}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ \mbox{\hyperlink{classGraph}{src}},\ dest,\ \mbox{\hyperlink{classGraph}{paths}},\ \mbox{\hyperlink{classGraph}{airplanes}});}
+\DoxyCodeLine{00710\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbairport_8h_a6108e3a7a039ea61aab4a250b21412f8}\label{dbairport_8h_a6108e3a7a039ea61aab4a250b21412f8} 
+\index{dbairport.h@{dbairport.h}!findBestFlights@{findBestFlights}}
+\index{findBestFlights@{findBestFlights}!dbairport.h@{dbairport.h}}
+\doxysubsubsection{\texorpdfstring{findBestFlights()}{findBestFlights()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{void}} find\+Best\+Flights (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \&}]{airports,  }\item[{\mbox{\hyperlink{classGraph}{string}}}]{src,  }\item[{\mbox{\hyperlink{classGraph}{string}}}]{dest,  }\item[{\mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{classGraph}{string}} $>$ \&}]{airplanes }\end{DoxyParamCaption})}
+
+
+
+Function to find the best flights from a source airport to a destination airport Complexity\+: O(n + e), where n is the number of airports and e is the number of flights in the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em airports} & The graph representing airports and available flights. \\
+\hline
+{\em src} & The source airport. \\
+\hline
+{\em dest} & The destination airport. \\
+\hline
+{\em airplanes} & A vector of strings representing allowed aircraft (can be empty to consider all). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00494}{494}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00496\ \{}
+\DoxyCodeLine{00497\ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a91627b34536fbd704b2fb7ca6853b47a}{resetVisited}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}});}
+\DoxyCodeLine{00498\ }
+\DoxyCodeLine{00499\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{s}}\ =\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.\mbox{\hyperlink{classGraph_a8b7b7465fbfd562e2a469f90a437ab75}{findVertex}}(\mbox{\hyperlink{classAirport}{Airport}}(\mbox{\hyperlink{classGraph}{src}}));}
+\DoxyCodeLine{00500\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{d}}\ =\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.\mbox{\hyperlink{classGraph_a8b7b7465fbfd562e2a469f90a437ab75}{findVertex}}(\mbox{\hyperlink{classAirport}{Airport}}(dest));}
+\DoxyCodeLine{00501\ }
+\DoxyCodeLine{00502\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{s}}\ ==\ \textcolor{keyword}{nullptr}\ ||\ \mbox{\hyperlink{classGraph}{d}}\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00503\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00504\ }
+\DoxyCodeLine{00505\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<vector<Flight>}}>\ \mbox{\hyperlink{classGraph}{paths}};}
+\DoxyCodeLine{00506\ \ \ \ \ \mbox{\hyperlink{classGraph}{paths}}\ =\ \mbox{\hyperlink{dbairport_8cpp_ab6dcff908aa0804d5b7a4e7cbcf3103f}{bfsPath}}(\mbox{\hyperlink{classGraph}{s}},\ dest,\ \mbox{\hyperlink{classGraph}{airplanes}});}
+\DoxyCodeLine{00507\ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a3ca85a500cf9c70a12ba8f2dd24b016e}{showPath}}(\mbox{\hyperlink{classGraph}{paths}});}
+\DoxyCodeLine{00508\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbairport_8h_a9d6a5c56acfccf760e404fa346862107}\label{dbairport_8h_a9d6a5c56acfccf760e404fa346862107} 
+\index{dbairport.h@{dbairport.h}!getPath@{getPath}}
+\index{getPath@{getPath}!dbairport.h@{dbairport.h}}
+\doxysubsubsection{\texorpdfstring{getPath()}{getPath()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{void}} get\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{string}}}]{current,  }\item[{\mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{structFlight}{Flight}} $>$ \&}]{path,  }\item[{\mbox{\hyperlink{classGraph}{unordered\+\_\+map}}$<$ \mbox{\hyperlink{classGraph}{string}}, \mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{structFlight}{Flight}} $>$ $>$ \&}]{prev,  }\item[{\mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{structFlight}{Flight}} $>$ $>$ \&}]{paths,  }\item[{\mbox{\hyperlink{classGraph}{string}}}]{start\+Code,  }\item[{\mbox{\hyperlink{classGraph}{string}}}]{airline }\end{DoxyParamCaption})}
+
+
+
+Function to find a path from the current airport to start airport Complexity\+: O(n), where n is the number of airports in the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current} & The current airport. \\
+\hline
+{\em path} & The current path. \\
+\hline
+{\em prev} & A map with the previous airports. \\
+\hline
+{\em paths} & A vector of vectors of flights representing the paths. \\
+\hline
+{\em start\+Code} & The code of the start airport. \\
+\hline
+{\em airline} & The airline of the flight. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00932}{932}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00935\ \{}
+\DoxyCodeLine{00936\ \ \ \ \ \mbox{\hyperlink{classGraph}{path}}.push\_back(\{\mbox{\hyperlink{classGraph}{current}},\ airline\});}
+\DoxyCodeLine{00937\ }
+\DoxyCodeLine{00938\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{current}}\ ==\ \mbox{\hyperlink{classGraph}{startCode}})}
+\DoxyCodeLine{00939\ \ \ \ \ \{}
+\DoxyCodeLine{00940\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<Flight>}}\ \mbox{\hyperlink{classGraph}{validPath}}\ =\ \mbox{\hyperlink{classGraph}{path}};}
+\DoxyCodeLine{00941\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{reverse}}(\mbox{\hyperlink{classGraph}{validPath}}.begin(),\ \mbox{\hyperlink{classGraph}{validPath}}.end());}
+\DoxyCodeLine{00942\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{paths}}.push\_back(\mbox{\hyperlink{classGraph}{validPath}});}
+\DoxyCodeLine{00943\ \ \ \ \ \}}
+\DoxyCodeLine{00944\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00945\ \ \ \ \ \{}
+\DoxyCodeLine{00946\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&\mbox{\hyperlink{classGraph}{prevVertex}}\ :\ \mbox{\hyperlink{classGraph}{prev}}[\mbox{\hyperlink{classGraph}{current}}])}
+\DoxyCodeLine{00947\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00948\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a9d6a5c56acfccf760e404fa346862107}{getPath}}(\mbox{\hyperlink{classGraph}{prevVertex}}.code,\ \mbox{\hyperlink{classGraph}{path}},\ \mbox{\hyperlink{classGraph}{prev}},\ \mbox{\hyperlink{classGraph}{paths}},\ \mbox{\hyperlink{classGraph}{startCode}},}
+\DoxyCodeLine{00949\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{prevVertex}}.airline);}
+\DoxyCodeLine{00950\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00951\ \ \ \ \ \}}
+\DoxyCodeLine{00952\ }
+\DoxyCodeLine{00953\ \ \ \ \ \mbox{\hyperlink{classGraph}{path}}.pop\_back();}
+\DoxyCodeLine{00954\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbairport_8h_a38042ded6e2c8623a1c1d303e597b2a5}\label{dbairport_8h_a38042ded6e2c8623a1c1d303e597b2a5} 
+\index{dbairport.h@{dbairport.h}!quantityAirlinesCountry@{quantityAirlinesCountry}}
+\index{quantityAirlinesCountry@{quantityAirlinesCountry}!dbairport.h@{dbairport.h}}
+\doxysubsubsection{\texorpdfstring{quantityAirlinesCountry()}{quantityAirlinesCountry()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{int}} quantity\+Airlines\+Country (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{unordered\+\_\+map}}$<$ \mbox{\hyperlink{classGraph}{string}}, \mbox{\hyperlink{classAirline}{Airline}} $>$}]{airlines,  }\item[{std\+::string}]{country }\end{DoxyParamCaption})}
+
+
+
+Function to calculate the quantity of airlines for a given country Complexity\+: O(n), where n is the number of airlines in the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em airlines} & The airlines hashtable. \\
+\hline
+{\em country} & The country to be searched. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int The quantity of airlines in the country. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00090}{90}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00091\ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{int}\ count\ =\ 0;}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{Menu_8cpp_a6dc6a799c4379ce9e053fe2e8f731a5e}{airlines}})}
+\DoxyCodeLine{00094\ \ \ \ \ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{v}}.second.getCountry()\ ==\ country)}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ count++;}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00099\ \ \ \ \ \}}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordflow}{return}\ count;}
+\DoxyCodeLine{00101\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbairport_8h_af82505fbb039e3560cfe00143f88a022}\label{dbairport_8h_af82505fbb039e3560cfe00143f88a022} 
+\index{dbairport.h@{dbairport.h}!quantityAirports@{quantityAirports}}
+\index{quantityAirports@{quantityAirports}!dbairport.h@{dbairport.h}}
+\doxysubsubsection{\texorpdfstring{quantityAirports()}{quantityAirports()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{int}} quantity\+Airports (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$}]{airports }\end{DoxyParamCaption})}
+
+
+
+Function to get quantity of airports in the graph Complexity\+: O(1) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em airports} & The graph of airports. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int The quantity of airports in the graph. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00011}{11}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.\mbox{\hyperlink{classGraph_a0853eac15cdf0f06d63f4b8a7820ec71}{getNumVertex}}();}
+\DoxyCodeLine{00014\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbairport_8h_a2ecbad0dfa52682f09bca301d6d6c484}\label{dbairport_8h_a2ecbad0dfa52682f09bca301d6d6c484} 
+\index{dbairport.h@{dbairport.h}!quantityAirportsCity@{quantityAirportsCity}}
+\index{quantityAirportsCity@{quantityAirportsCity}!dbairport.h@{dbairport.h}}
+\doxysubsubsection{\texorpdfstring{quantityAirportsCity()}{quantityAirportsCity()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{int}} quantity\+Airports\+City (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$}]{airports,  }\item[{std\+::string}]{city }\end{DoxyParamCaption})}
+
+
+
+Function to get quantity of airports in the graph by city Complexity\+: O(n), where n is the number of airports in the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em airports} & The graph of airports. \\
+\hline
+{\em city} & The city to be searched. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int The quantity of airports in the city. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00044}{44}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00045\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{int}\ count\ =\ 0;}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.getVertexSet())}
+\DoxyCodeLine{00048\ \ \ \ \ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classAirport}{Airport}}\ \mbox{\hyperlink{classGraph}{a}}\ =\ \mbox{\hyperlink{classGraph}{v}}-\/>getInfo();}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{a}}.getCity()\ ==\ city)}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ count++;}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00054\ \ \ \ \ \}}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordflow}{return}\ count;}
+\DoxyCodeLine{00056\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbairport_8h_a8ffe51bbf04f411a69e7582f3a8cd485}\label{dbairport_8h_a8ffe51bbf04f411a69e7582f3a8cd485} 
+\index{dbairport.h@{dbairport.h}!quantityAirportsCountry@{quantityAirportsCountry}}
+\index{quantityAirportsCountry@{quantityAirportsCountry}!dbairport.h@{dbairport.h}}
+\doxysubsubsection{\texorpdfstring{quantityAirportsCountry()}{quantityAirportsCountry()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{int}} quantity\+Airports\+Country (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$}]{airports,  }\item[{std\+::string}]{country }\end{DoxyParamCaption})}
+
+
+
+Function to get quantity of airports in the graph by country Complexity\+: O(n), where n is the number of airports in the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em airports} & The graph of airports. \\
+\hline
+{\em country} & The country to be searched. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int The quantity of airports in the country. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00023}{23}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{int}\ count\ =\ 0;}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.getVertexSet())}
+\DoxyCodeLine{00027\ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classAirport}{Airport}}\ \mbox{\hyperlink{classGraph}{a}}\ =\ \mbox{\hyperlink{classGraph}{v}}-\/>getInfo();}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{a}}.getCountry()\ ==\ country)}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ count++;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00033\ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordflow}{return}\ count;}
+\DoxyCodeLine{00035\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbairport_8h_a938ed92eb0aeb9f4d12599d4c24f3c56}\label{dbairport_8h_a938ed92eb0aeb9f4d12599d4c24f3c56} 
+\index{dbairport.h@{dbairport.h}!quantityCitiesCountry@{quantityCitiesCountry}}
+\index{quantityCitiesCountry@{quantityCitiesCountry}!dbairport.h@{dbairport.h}}
+\doxysubsubsection{\texorpdfstring{quantityCitiesCountry()}{quantityCitiesCountry()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{int}} quantity\+Cities\+Country (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$}]{airports,  }\item[{std\+::string}]{country }\end{DoxyParamCaption})}
+
+
+
+Function to count the number of unique cities in the graph for a given country Complexity\+: O(n), where n is the number of airports in the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em airports} & The graph of airports. \\
+\hline
+{\em country} & The country to be searched. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int The quantity of unique cities in the country. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00065}{65}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00066\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ std::unordered\_set<std::string>\ \mbox{\hyperlink{classGraph}{uniqueCities}};}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.getVertexSet())}
+\DoxyCodeLine{00069\ \ \ \ \ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classAirport}{Airport}}\ \mbox{\hyperlink{classGraph}{a}}\ =\ \mbox{\hyperlink{classGraph}{v}}-\/>getInfo();}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{a}}.getCountry()\ ==\ country)}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ city\ =\ \mbox{\hyperlink{classGraph}{a}}.getCity();}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{uniqueCities}}.insert(city);}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00076\ \ \ \ \ \}}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{uniqueCities}}.size();}
+\DoxyCodeLine{00078\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbairport_8h_a6a318e2669935b8a4cca35c2ab524663}\label{dbairport_8h_a6a318e2669935b8a4cca35c2ab524663} 
+\index{dbairport.h@{dbairport.h}!quantityDestinationLimitedStop@{quantityDestinationLimitedStop}}
+\index{quantityDestinationLimitedStop@{quantityDestinationLimitedStop}!dbairport.h@{dbairport.h}}
+\doxysubsubsection{\texorpdfstring{quantityDestinationLimitedStop()}{quantityDestinationLimitedStop()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{int}} quantity\+Destination\+Limited\+Stop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$}]{airports,  }\item[{std\+::string}]{airport,  }\item[{\mbox{\hyperlink{classGraph}{int}}}]{stop }\end{DoxyParamCaption})}
+
+
+
+Function to calculate the number of different countries it is possible to go to from an airport with a given number of stops Complexity\+: O(n + e), where n is the number of airports in the graph and e is the number of flights. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em airports} & The graph of airports. \\
+\hline
+{\em airport} & The airport to be searched. \\
+\hline
+{\em stop} & The number of stops. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int The quantity of countries. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00241}{241}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00243\ \{}
+\DoxyCodeLine{00244\ \ \ \ \ std::set<std::string>\ \mbox{\hyperlink{classGraph}{countries}};}
+\DoxyCodeLine{00245\ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{classGraph}{res}};}
+\DoxyCodeLine{00246\ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a91627b34536fbd704b2fb7ca6853b47a}{resetVisited}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}});}
+\DoxyCodeLine{00247\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{s}}\ =\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.\mbox{\hyperlink{classGraph_a8b7b7465fbfd562e2a469f90a437ab75}{findVertex}}(\mbox{\hyperlink{classAirport}{Airport}}(\mbox{\hyperlink{classGraph}{airport}}));}
+\DoxyCodeLine{00248\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{s}}\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00250\ \ \ \ \ \mbox{\hyperlink{classGraph}{res}}\ =\ \mbox{\hyperlink{dbairport_8cpp_a90c3f842c8877fb0fc2c7a63a2df5ac2}{dfsVisit}}(\mbox{\hyperlink{classGraph}{s}},\ \mbox{\hyperlink{classGraph}{res}},\ (\mbox{\hyperlink{classGraph}{stop}}\ +\ 1));}
+\DoxyCodeLine{00251\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{c}}\ :\ \mbox{\hyperlink{classGraph}{res}})}
+\DoxyCodeLine{00252\ \ \ \ \ \{}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{countries}}.insert(\mbox{\hyperlink{classGraph}{c}});}
+\DoxyCodeLine{00254\ \ \ \ \ \}}
+\DoxyCodeLine{00255\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{countries}}.size();}
+\DoxyCodeLine{00256\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbairport_8h_a7dfe79c689755a0daafe18eec770515f}\label{dbairport_8h_a7dfe79c689755a0daafe18eec770515f} 
+\index{dbairport.h@{dbairport.h}!quantityDestinationMax@{quantityDestinationMax}}
+\index{quantityDestinationMax@{quantityDestinationMax}!dbairport.h@{dbairport.h}}
+\doxysubsubsection{\texorpdfstring{quantityDestinationMax()}{quantityDestinationMax()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{int}} quantity\+Destination\+Max (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$}]{airports }\end{DoxyParamCaption})}
+
+
+
+Function that calculates the maximum possible trip, with the greatest number of stops and print the starting airport and the destination airport Complexity\+: O(n \texorpdfstring{$\ast$}{*} (n + e)), where n is the number of airports in the graph and e is the number of flights. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em airports} & The graph of airports. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int The number of stops on the longest trip 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00265}{265}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00266\ \{}
+\DoxyCodeLine{00267\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<string>}}\ \mbox{\hyperlink{classGraph}{path}},\ \mbox{\hyperlink{classGraph}{maxPath}};}
+\DoxyCodeLine{00268\ }
+\DoxyCodeLine{00269\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.getVertexSet())}
+\DoxyCodeLine{00270\ \ \ \ \ \{}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::cout\ <<\ "{}Consultando...\ "{}\ <<\ v-\/>getInfo().getCode()\ <<\ std::endl;}}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a91627b34536fbd704b2fb7ca6853b47a}{resetVisited}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}});}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{path}}.clear();}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a5e6b59a373a5bf83b48a0160d67d68fd}{dfsMax}}(\mbox{\hyperlink{classGraph}{v}},\ \mbox{\hyperlink{classGraph}{path}},\ \mbox{\hyperlink{classGraph}{maxPath}});}
+\DoxyCodeLine{00275\ \ \ \ \ \}}
+\DoxyCodeLine{00276\ }
+\DoxyCodeLine{00277\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nStarting\ in:\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{maxPath}}[0]\ <<\ std::endl;}
+\DoxyCodeLine{00278\ \ \ \ \ \textcolor{comment}{//\ for\ (int\ i\ =\ 1;\ i\ <\ maxPath.size()\ -\/\ 1;\ i++)}}
+\DoxyCodeLine{00279\ \ \ \ \ \textcolor{comment}{//\ \{}}
+\DoxyCodeLine{00280\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ std::cout\ <<\ maxPath[i]\ <<\ "{}\ -\/>\ "{};}}
+\DoxyCodeLine{00281\ \ \ \ \ \textcolor{comment}{//\ \}}}
+\DoxyCodeLine{00282\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nEnding\ in:\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{maxPath}}[\mbox{\hyperlink{classGraph}{maxPath}}.size()\ -\/\ 1]\ <<\ std::endl;}
+\DoxyCodeLine{00283\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{maxPath}}.size()\ -\/\ 1;}
+\DoxyCodeLine{00284\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbairport_8h_aa389005aab21de88f5a6957c46246e96}\label{dbairport_8h_aa389005aab21de88f5a6957c46246e96} 
+\index{dbairport.h@{dbairport.h}!quantityDestinationsAirport@{quantityDestinationsAirport}}
+\index{quantityDestinationsAirport@{quantityDestinationsAirport}!dbairport.h@{dbairport.h}}
+\doxysubsubsection{\texorpdfstring{quantityDestinationsAirport()}{quantityDestinationsAirport()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{int}} quantity\+Destinations\+Airport (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$}]{airports,  }\item[{std\+::string}]{airport }\end{DoxyParamCaption})}
+
+
+
+Function to calculate the number of different countries it is possible to go directly to from an airport Complexity\+: O(n + e), where n is the number of airports in the graph and e is the number of flights. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em airports} & The graph of airports. \\
+\hline
+{\em airport} & The airport to be searched. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int The quantity of countries. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00216}{216}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00217\ \{}
+\DoxyCodeLine{00218\ \ \ \ \ std::set<std::string>\ \mbox{\hyperlink{classGraph}{countries}};}
+\DoxyCodeLine{00219\ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{classGraph}{res}};}
+\DoxyCodeLine{00220\ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a91627b34536fbd704b2fb7ca6853b47a}{resetVisited}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}});}
+\DoxyCodeLine{00221\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{s}}\ =\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.\mbox{\hyperlink{classGraph_a8b7b7465fbfd562e2a469f90a437ab75}{findVertex}}(\mbox{\hyperlink{classAirport}{Airport}}(\mbox{\hyperlink{classGraph}{airport}}));}
+\DoxyCodeLine{00222\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{s}}\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00224\ \ \ \ \ \mbox{\hyperlink{classGraph}{Graph<Airport>}}\ \mbox{\hyperlink{classGraph}{g}};}
+\DoxyCodeLine{00225\ \ \ \ \ \mbox{\hyperlink{classGraph}{res}}\ =\ \mbox{\hyperlink{dbairport_8cpp_a90c3f842c8877fb0fc2c7a63a2df5ac2}{dfsVisit}}(\mbox{\hyperlink{classGraph}{s}},\ \mbox{\hyperlink{classGraph}{res}});}
+\DoxyCodeLine{00226\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{c}}\ :\ \mbox{\hyperlink{classGraph}{res}})}
+\DoxyCodeLine{00227\ \ \ \ \ \{}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{countries}}.insert(\mbox{\hyperlink{classGraph}{c}});}
+\DoxyCodeLine{00229\ \ \ \ \ \}}
+\DoxyCodeLine{00230\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{countries}}.size();}
+\DoxyCodeLine{00231\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbairport_8h_aa0bc5f11f0adef0d78c529b0c82ee23c}\label{dbairport_8h_aa0bc5f11f0adef0d78c529b0c82ee23c} 
+\index{dbairport.h@{dbairport.h}!quantityFlights@{quantityFlights}}
+\index{quantityFlights@{quantityFlights}!dbairport.h@{dbairport.h}}
+\doxysubsubsection{\texorpdfstring{quantityFlights()}{quantityFlights()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{int}} quantity\+Flights (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$}]{airports }\end{DoxyParamCaption})}
+
+
+
+Function to calculate the quatity of flights in the graph Complexity\+: O(n), where n is the number of airports in the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em airports} & The graph of airports. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int The quantity of flights (edges) in the graph. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00111}{111}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00112\ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{int}\ count\ =\ 0;}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.getVertexSet())}
+\DoxyCodeLine{00115\ \ \ \ \ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ count\ +=\ \mbox{\hyperlink{classGraph}{v}}-\/>getAdj().size();}
+\DoxyCodeLine{00117\ \ \ \ \ \}}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordflow}{return}\ count;}
+\DoxyCodeLine{00119\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbairport_8h_aa02f6fc96272ec786b53eb4e30c3be9d}\label{dbairport_8h_aa02f6fc96272ec786b53eb4e30c3be9d} 
+\index{dbairport.h@{dbairport.h}!quantityFlights@{quantityFlights}}
+\index{quantityFlights@{quantityFlights}!dbairport.h@{dbairport.h}}
+\doxysubsubsection{\texorpdfstring{quantityFlights()}{quantityFlights()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::pair$<$ \mbox{\hyperlink{classGraph}{int}}, \mbox{\hyperlink{classGraph}{int}} $>$ quantity\+Flights (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$}]{airports,  }\item[{std\+::string}]{code }\end{DoxyParamCaption})}
+
+
+
+Function to get quantity of flights in the graph and unique airlines for an \doxylink{classAirport}{Airport} Complexity\+: O(n), where n is the number of flights in the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em airports} & The graph of airports. \\
+\hline
+{\em code} & The airport to be searched. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pair$<$int, int$>$ The quantity of flights and unique airlines. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00338}{338}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00339\ \{}
+\DoxyCodeLine{00340\ \ \ \ \ \textcolor{keywordtype}{int}\ count\ =\ 0;}
+\DoxyCodeLine{00341\ \ \ \ \ std::set<std::string>\ \mbox{\hyperlink{Menu_8cpp_a6dc6a799c4379ce9e053fe2e8f731a5e}{airlines}};}
+\DoxyCodeLine{00342\ }
+\DoxyCodeLine{00343\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{s}}\ =\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.\mbox{\hyperlink{classGraph_a8b7b7465fbfd562e2a469f90a437ab75}{findVertex}}(\mbox{\hyperlink{classAirport}{Airport}}(code));}
+\DoxyCodeLine{00344\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{s}}\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00345\ \ \ \ \ \{}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{classGraph}{s}}-\/>getAdj())}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \ \ \ \ count++;}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a6dc6a799c4379ce9e053fe2e8f731a5e}{airlines}}.insert(\mbox{\hyperlink{classGraph}{v}}.getRoute());}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00351\ \ \ \ \ \}}
+\DoxyCodeLine{00352\ \ \ \ \ \textcolor{keywordflow}{return}\ std::pair<int,\ int>(count,\ \mbox{\hyperlink{Menu_8cpp_a6dc6a799c4379ce9e053fe2e8f731a5e}{airlines}}.size());}
+\DoxyCodeLine{00353\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbairport_8h_aaf85ea355a04142cc7b72f58ba9d186e}\label{dbairport_8h_aaf85ea355a04142cc7b72f58ba9d186e} 
+\index{dbairport.h@{dbairport.h}!quantityFlightsAirline@{quantityFlightsAirline}}
+\index{quantityFlightsAirline@{quantityFlightsAirline}!dbairport.h@{dbairport.h}}
+\doxysubsubsection{\texorpdfstring{quantityFlightsAirline()}{quantityFlightsAirline()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{int}} quantity\+Flights\+Airline (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$}]{airports,  }\item[{std\+::string}]{airline }\end{DoxyParamCaption})}
+
+
+
+Function to calculate the quatity of flights in a given airline Complexity\+: O(n + e), where n is the number of airports in the graph and e is the number of flights. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em airports} & The graph of airports. \\
+\hline
+{\em airline} & The airline to be searched. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int The quantity of flights (edges) in the airline. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00190}{190}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00191\ \{}
+\DoxyCodeLine{00192\ \ \ \ \ \textcolor{keywordtype}{int}\ count\ =\ 0;}
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.getVertexSet())}
+\DoxyCodeLine{00194\ \ \ \ \ \{}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{e}}\ :\ \mbox{\hyperlink{classGraph}{v}}-\/>getAdj())}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{e}}.getRoute()\ ==\ airline)}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ count++;}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00202\ \ \ \ \ \}}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{keywordflow}{return}\ count;}
+\DoxyCodeLine{00205\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbairport_8h_a78af29d4916709c62239f1f3341b745e}\label{dbairport_8h_a78af29d4916709c62239f1f3341b745e} 
+\index{dbairport.h@{dbairport.h}!quantityFlightsAirport@{quantityFlightsAirport}}
+\index{quantityFlightsAirport@{quantityFlightsAirport}!dbairport.h@{dbairport.h}}
+\doxysubsubsection{\texorpdfstring{quantityFlightsAirport()}{quantityFlightsAirport()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{int}} quantity\+Flights\+Airport (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$}]{airports,  }\item[{std\+::string}]{airport }\end{DoxyParamCaption})}
+
+
+
+Function to calculate the quatity of flights in a given airport Complexity\+: O(n), where n is the number of airports in the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em airports} & The graph of airports. \\
+\hline
+{\em airport} & The airport to be searched. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int The quantity of flights (edges) in the airport. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00128}{128}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00129\ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordtype}{int}\ count\ =\ 0;}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.getVertexSet())}
+\DoxyCodeLine{00132\ \ \ \ \ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{v}}-\/>getInfo().getCode()\ ==\ \mbox{\hyperlink{classGraph}{airport}})}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ count\ +=\ \mbox{\hyperlink{classGraph}{v}}-\/>getAdj().size();}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00137\ \ \ \ \ \}}
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordflow}{return}\ count;}
+\DoxyCodeLine{00139\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbairport_8h_affaa1f20c655a6081d55f3c412bf8d69}\label{dbairport_8h_affaa1f20c655a6081d55f3c412bf8d69} 
+\index{dbairport.h@{dbairport.h}!quantityFlightsCity@{quantityFlightsCity}}
+\index{quantityFlightsCity@{quantityFlightsCity}!dbairport.h@{dbairport.h}}
+\doxysubsubsection{\texorpdfstring{quantityFlightsCity()}{quantityFlightsCity()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{int}} quantity\+Flights\+City (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$}]{airports,  }\item[{std\+::string}]{city }\end{DoxyParamCaption})}
+
+
+
+Function to calculate the quatity of flights in a given city Complexity\+: O(n), where n is the number of airports in the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em airports} & The graph of airports. \\
+\hline
+{\em city} & The city to be searched. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int The quantity of flights (edges) in the city. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00169}{169}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00170\ \{}
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keywordtype}{int}\ count\ =\ 0;}
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.getVertexSet())}
+\DoxyCodeLine{00173\ \ \ \ \ \{}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{v}}-\/>getInfo().getCity()\ ==\ city)}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ count\ +=\ \mbox{\hyperlink{classGraph}{v}}-\/>getAdj().size();}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00178\ \ \ \ \ \}}
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keywordflow}{return}\ count;}
+\DoxyCodeLine{00180\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbairport_8h_ab8a1509ed60e18757f95356b86e3f621}\label{dbairport_8h_ab8a1509ed60e18757f95356b86e3f621} 
+\index{dbairport.h@{dbairport.h}!quantityFlightsCountry@{quantityFlightsCountry}}
+\index{quantityFlightsCountry@{quantityFlightsCountry}!dbairport.h@{dbairport.h}}
+\doxysubsubsection{\texorpdfstring{quantityFlightsCountry()}{quantityFlightsCountry()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{int}} quantity\+Flights\+Country (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$}]{airports,  }\item[{std\+::string}]{country }\end{DoxyParamCaption})}
+
+
+
+Function to calculate the quatity of flights in a given country Complexity\+: O(n), where n is the number of airports in the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em airports} & The graph of airports. \\
+\hline
+{\em country} & The country to be searched. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int The quantity of flights (edges) in the country. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00148}{148}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00149\ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordtype}{int}\ count\ =\ 0;}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.getVertexSet())}
+\DoxyCodeLine{00152\ \ \ \ \ \{}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{v}}-\/>getInfo().getCountry()\ ==\ country)}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ count\ +=\ \mbox{\hyperlink{classGraph}{v}}-\/>getAdj().size();}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00157\ \ \ \ \ \}}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keywordflow}{return}\ count;}
+\DoxyCodeLine{00159\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbairport_8h_a0d0af7f6b150c84935ae61301d3b8a95}\label{dbairport_8h_a0d0af7f6b150c84935ae61301d3b8a95} 
+\index{dbairport.h@{dbairport.h}!rankingAirports@{rankingAirports}}
+\index{rankingAirports@{rankingAirports}!dbairport.h@{dbairport.h}}
+\doxysubsubsection{\texorpdfstring{rankingAirports()}{rankingAirports()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{void}} ranking\+Airports (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$}]{airports,  }\item[{\mbox{\hyperlink{classGraph}{int}}}]{arg }\end{DoxyParamCaption})}
+
+
+
+Function to rank airport based of the sum of in-\/degrees and out-\/degrees Complexity\+: O(n \texorpdfstring{$\ast$}{*} log(n) + n \texorpdfstring{$\ast$}{*} e), where n is the number of airports and e is the number of flights in the graph (assuming sorting has a time complexity of O(n \texorpdfstring{$\ast$}{*} log(n))) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em airports} & The graph of airports. \\
+\hline
+{\em arg} & The number of airports to be shown. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00460}{460}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00461\ \{}
+\DoxyCodeLine{00462\ \ \ \ \ std::vector<Ranking>\ \mbox{\hyperlink{classGraph}{vec}};}
+\DoxyCodeLine{00463\ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a39f02be201dda44faae784618a5e3deb}{calculateIndegree}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}});}
+\DoxyCodeLine{00464\ }
+\DoxyCodeLine{00465\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.getVertexSet())}
+\DoxyCodeLine{00466\ \ \ \ \ \{}
+\DoxyCodeLine{00467\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classGraph}{total}}\ =\ \mbox{\hyperlink{classGraph}{v}}-\/>getIndegree()\ +\ \mbox{\hyperlink{classGraph}{v}}-\/>getAdj().size();}
+\DoxyCodeLine{00468\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structRanking}{Ranking}}\ \mbox{\hyperlink{classGraph}{rank}}\ =\ \{\mbox{\hyperlink{classGraph}{v}}-\/>getInfo().getCode(),\ \mbox{\hyperlink{classGraph}{total}}\};}
+\DoxyCodeLine{00469\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{vec}}.push\_back(\mbox{\hyperlink{classGraph}{rank}});}
+\DoxyCodeLine{00470\ \ \ \ \ \}}
+\DoxyCodeLine{00471\ \ \ \ \ std::sort(\mbox{\hyperlink{classGraph}{vec}}.begin(),\ \mbox{\hyperlink{classGraph}{vec}}.end(),\ \mbox{\hyperlink{Airport_8cpp_ab603d483fe34cbe7743630230defeeb8}{comparator}});}
+\DoxyCodeLine{00472\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classGraph}{i}}\ =\ 0;}
+\DoxyCodeLine{00473\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{classGraph}{vec}})}
+\DoxyCodeLine{00474\ \ \ \ \ \{}
+\DoxyCodeLine{00475\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{i}}\ <\ \mbox{\hyperlink{classGraph}{arg}})}
+\DoxyCodeLine{00476\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00477\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Code:\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{v}}.code\ <<\ \textcolor{stringliteral}{"{}\ /\ "{}};}
+\DoxyCodeLine{00478\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Name:\ "{}}\ <<\ \mbox{\hyperlink{read_8cpp_a7d6197753985fd4d83f8827b8dde7ed2}{airportsHash}}.find(\mbox{\hyperlink{classGraph}{v}}.code)-\/>second.getName()\ <<\ \textcolor{stringliteral}{"{}\ /\ "{}};}
+\DoxyCodeLine{00479\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Total:\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{v}}.count\ <<\ std::endl;}
+\DoxyCodeLine{00480\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{i}}++;}
+\DoxyCodeLine{00481\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00482\ \ \ \ \ \}}
+\DoxyCodeLine{00483\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbairport_8h_a91627b34536fbd704b2fb7ca6853b47a}\label{dbairport_8h_a91627b34536fbd704b2fb7ca6853b47a} 
+\index{dbairport.h@{dbairport.h}!resetVisited@{resetVisited}}
+\index{resetVisited@{resetVisited}!dbairport.h@{dbairport.h}}
+\doxysubsubsection{\texorpdfstring{resetVisited()}{resetVisited()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{void}} reset\+Visited (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \&}]{airports }\end{DoxyParamCaption})}
+
+
+
+Function to reset the visited status of all vertices in the graph Complexity\+: O(n), where n is the number of airports in the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em airports} & The graph of airports. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00421}{421}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00422\ \{}
+\DoxyCodeLine{00423\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.getVertexSet())}
+\DoxyCodeLine{00424\ \ \ \ \ \{}
+\DoxyCodeLine{00425\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{v}}-\/>setVisited(\textcolor{keyword}{false});}
+\DoxyCodeLine{00426\ \ \ \ \ \}}
+\DoxyCodeLine{00427\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbairport_8h_a3ca85a500cf9c70a12ba8f2dd24b016e}\label{dbairport_8h_a3ca85a500cf9c70a12ba8f2dd24b016e} 
+\index{dbairport.h@{dbairport.h}!showPath@{showPath}}
+\index{showPath@{showPath}!dbairport.h@{dbairport.h}}
+\doxysubsubsection{\texorpdfstring{showPath()}{showPath()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{void}} show\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \&}]{airports,  }\item[{\mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{classVertex}{Vertex}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \texorpdfstring{$\ast$}{*} $>$}]{source,  }\item[{\mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{classVertex}{Vertex}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \texorpdfstring{$\ast$}{*} $>$}]{dest,  }\item[{\mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{structFlight}{Flight}} $>$ $>$}]{paths,  }\item[{\mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{classGraph}{string}} $>$ \&}]{airplanes }\end{DoxyParamCaption})}
+
+
+
+Function to show a multi-\/path between multiple source and destination airports Complexity\+: O(n + e), where n is the number of airports and e is the number of flights in the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em airports} & The graph representing airports and available flights. \\
+\hline
+{\em source} & A vector of source airports. \\
+\hline
+{\em dest} & A vector of destination airports. \\
+\hline
+{\em paths} & A vector of vectors of flights representing the paths. \\
+\hline
+{\em airplanes} & A vector of strings representing allowed aircraft (can be empty to consider all). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00563}{563}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00566\ \{}
+\DoxyCodeLine{00567\ }
+\DoxyCodeLine{00568\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<vector<Flight>}}>\ \mbox{\hyperlink{classGraph}{flights}};}
+\DoxyCodeLine{00569\ }
+\DoxyCodeLine{00570\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{s}}\ :\ \mbox{\hyperlink{classGraph}{source}})}
+\DoxyCodeLine{00571\ \ \ \ \ \{}
+\DoxyCodeLine{00572\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::cout\ <<\ "{}Source:\ "{}\ <<\ s-\/>getInfo().getCode()\ <<\ std::endl;}}
+\DoxyCodeLine{00573\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{d}}\ :\ dest)}
+\DoxyCodeLine{00574\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00575\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::cout\ <<\ "{}Destination:\ "{}\ <<\ d-\/>getInfo().getCode()\ <<}}
+\DoxyCodeLine{00576\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::endl;}}
+\DoxyCodeLine{00577\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classGraph}{tgt}}\ =\ \mbox{\hyperlink{classGraph}{d}}-\/>getInfo().getCode();}
+\DoxyCodeLine{00578\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a91627b34536fbd704b2fb7ca6853b47a}{resetVisited}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}});}
+\DoxyCodeLine{00579\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{flights}}\ =\ \mbox{\hyperlink{dbairport_8cpp_ab6dcff908aa0804d5b7a4e7cbcf3103f}{bfsPath}}(\mbox{\hyperlink{classGraph}{s}},\ \mbox{\hyperlink{classGraph}{tgt}},\ \mbox{\hyperlink{classGraph}{airplanes}});}
+\DoxyCodeLine{00580\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{paths}}.insert(\mbox{\hyperlink{classGraph}{paths}}.end(),\ \mbox{\hyperlink{classGraph}{flights}}.begin(),\ \mbox{\hyperlink{classGraph}{flights}}.end());}
+\DoxyCodeLine{00581\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00582\ \ \ \ \ \}}
+\DoxyCodeLine{00583\ }
+\DoxyCodeLine{00584\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{paths}}.empty())}
+\DoxyCodeLine{00585\ \ \ \ \ \{}
+\DoxyCodeLine{00586\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{00587\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00588\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Sorry,\ but\ there\ is\ no\ result\ with\ those\ inputs."{}}}
+\DoxyCodeLine{00589\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00590\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00591\ \ \ \ \ \}}
+\DoxyCodeLine{00592\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00593\ \ \ \ \ \{}
+\DoxyCodeLine{00594\ }
+\DoxyCodeLine{00595\ \ \ \ \ \ \ \ \ std::sort(\mbox{\hyperlink{classGraph}{paths}}.begin(),\ \mbox{\hyperlink{classGraph}{paths}}.end(),\ \mbox{\hyperlink{dbairport_8cpp_af365ed6716b9c0e05c725ef20edbb240}{comparatorPath}});}
+\DoxyCodeLine{00596\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classGraph}{min}}\ =\ \mbox{\hyperlink{classGraph}{paths}}[0].size();}
+\DoxyCodeLine{00597\ }
+\DoxyCodeLine{00598\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&\mbox{\hyperlink{classGraph}{p}}\ :\ \mbox{\hyperlink{classGraph}{paths}})}
+\DoxyCodeLine{00599\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00600\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{p}}.size()\ >\ \mbox{\hyperlink{classGraph}{min}})}
+\DoxyCodeLine{00601\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00602\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00603\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00604\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{00605\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00606\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&\mbox{\hyperlink{classGraph}{f}}\ :\ \mbox{\hyperlink{classGraph}{p}})}
+\DoxyCodeLine{00607\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00608\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classGraph}{f}}.airline.empty())}
+\DoxyCodeLine{00609\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00610\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \mbox{\hyperlink{classGraph}{f}}.code\ <<\ \textcolor{stringliteral}{"{}\ -\/("{}}\ <<\ \mbox{\hyperlink{classGraph}{f}}.airline\ <<\ \textcolor{stringliteral}{"{})"{}}}
+\DoxyCodeLine{00611\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}-\/>\ "{}};}
+\DoxyCodeLine{00612\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00613\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00614\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00615\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \mbox{\hyperlink{classGraph}{f}}.code;}
+\DoxyCodeLine{00616\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00617\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00618\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ std::endl;}
+\DoxyCodeLine{00619\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00620\ \ \ \ \ \}}
+\DoxyCodeLine{00621\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbairport_8h_a713722d082d9cd3da930466d38d2305c}\label{dbairport_8h_a713722d082d9cd3da930466d38d2305c} 
+\index{dbairport.h@{dbairport.h}!showPath@{showPath}}
+\index{showPath@{showPath}!dbairport.h@{dbairport.h}}
+\doxysubsubsection{\texorpdfstring{showPath()}{showPath()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{void}} show\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{structFlight}{Flight}} $>$ $>$}]{paths }\end{DoxyParamCaption})}
+
+
+
+Function to show a set of paths Complexity\+: O(n), where n is the total number of flights in all paths. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em paths} & A vector of vectors of flights representing the paths. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00632}{632}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00633\ \{}
+\DoxyCodeLine{00634\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{paths}}.empty())}
+\DoxyCodeLine{00635\ \ \ \ \ \{}
+\DoxyCodeLine{00636\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{00637\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00638\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Sorry,\ but\ there\ is\ no\ result\ with\ those\ inputs."{}}}
+\DoxyCodeLine{00639\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00640\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00641\ \ \ \ \ \}}
+\DoxyCodeLine{00642\ }
+\DoxyCodeLine{00643\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{path}}\ :\ \mbox{\hyperlink{classGraph}{paths}})}
+\DoxyCodeLine{00644\ \ \ \ \ \{}
+\DoxyCodeLine{00645\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{00646\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00647\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{p}}\ :\ \mbox{\hyperlink{classGraph}{path}})}
+\DoxyCodeLine{00648\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00649\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classGraph}{p}}.airline.empty())}
+\DoxyCodeLine{00650\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00651\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \mbox{\hyperlink{classGraph}{p}}.code\ <<\ \textcolor{stringliteral}{"{}\ -\/("{}}\ <<\ \mbox{\hyperlink{classGraph}{p}}.airline\ <<\ \textcolor{stringliteral}{"{})"{}}}
+\DoxyCodeLine{00652\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}-\/>\ "{}};}
+\DoxyCodeLine{00653\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00654\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00655\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00656\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \mbox{\hyperlink{classGraph}{p}}.code;}
+\DoxyCodeLine{00657\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00658\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00659\ \ \ \ \ \ \ \ \ std::cout\ <<\ std::endl;}
+\DoxyCodeLine{00660\ \ \ \ \ \}}
+\DoxyCodeLine{00661\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbairport_8h_aec487f2b258d2630193c6dee0c78665d}\label{dbairport_8h_aec487f2b258d2630193c6dee0c78665d} 
+\index{dbairport.h@{dbairport.h}!toRadians@{toRadians}}
+\index{toRadians@{toRadians}!dbairport.h@{dbairport.h}}
+\doxysubsubsection{\texorpdfstring{toRadians()}{toRadians()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{double}} to\+Radians (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{const}} \mbox{\hyperlink{classGraph}{double}}}]{degree }\end{DoxyParamCaption})}
+
+
+
+Function to convert Degrees in radians Complexity\+: O(1) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em degree} & The degree to be converted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double The converted degree. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00718}{718}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00718\ \{\ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{classGraph}{degree}}\ *\ \mbox{\hyperlink{classGraph}{M\_PI}}\ /\ 180);\ \}}
+
+\end{DoxyCode}

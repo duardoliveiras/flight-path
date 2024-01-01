@@ -1,0 +1,53 @@
+\doxysection{src/classes/\+Airport.h File Reference}
+\hypertarget{Airport_8h}{}\label{Airport_8h}\index{src/classes/Airport.h@{src/classes/Airport.h}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structRanking}{Ranking}}
+\item 
+class \mbox{\hyperlink{classAirport}{Airport}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGraph}{bool}} \mbox{\hyperlink{Airport_8h_ab603d483fe34cbe7743630230defeeb8}{comparator}} (\mbox{\hyperlink{classGraph}{const}} \mbox{\hyperlink{structRanking}{Ranking}} \mbox{\hyperlink{classGraph}{a}}, \mbox{\hyperlink{classGraph}{const}} \mbox{\hyperlink{structRanking}{Ranking}} \mbox{\hyperlink{classGraph}{b}})
+\begin{DoxyCompactList}\small\item\em Function for sorting \doxylink{classAirport}{Airport} ranking Complexity\+: O(1) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{Airport_8h_ab603d483fe34cbe7743630230defeeb8}\label{Airport_8h_ab603d483fe34cbe7743630230defeeb8} 
+\index{Airport.h@{Airport.h}!comparator@{comparator}}
+\index{comparator@{comparator}!Airport.h@{Airport.h}}
+\doxysubsubsection{\texorpdfstring{comparator()}{comparator()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{bool}} comparator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{const}} \mbox{\hyperlink{structRanking}{Ranking}}}]{a,  }\item[{\mbox{\hyperlink{classGraph}{const}} \mbox{\hyperlink{structRanking}{Ranking}}}]{b }\end{DoxyParamCaption})}
+
+
+
+Function for sorting \doxylink{classAirport}{Airport} ranking Complexity\+: O(1) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & The first ranking. \\
+\hline
+{\em b} & The second ranking. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True if the first ranking is greater than the second ranking. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Airport_8cpp_source_l00038}{38}} of file \mbox{\hyperlink{Airport_8cpp_source}{Airport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00039\ \{}
+\DoxyCodeLine{00040\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{b}}.count\ !=\ \mbox{\hyperlink{classGraph}{a}}.count)}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{a}}.count\ >\ \mbox{\hyperlink{classGraph}{b}}.count;}
+\DoxyCodeLine{00042\ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{a}}.code\ <\ \mbox{\hyperlink{classGraph}{b}}.code;}
+\DoxyCodeLine{00044\ \}}
+
+\end{DoxyCode}

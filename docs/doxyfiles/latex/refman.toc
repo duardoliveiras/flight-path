@@ -1,0 +1,264 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}Class Index}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Class List}{1}{section.1.1}%
+\contentsline {chapter}{\numberline {2}File Index}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}File List}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Class Documentation}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Airline Class Reference}{5}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Detailed Description}{5}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Constructor \& Destructor Documentation}{6}{subsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.2.1}Airline()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{6}{subsubsection.3.1.2.1}%
+\contentsline {subsubsection}{\numberline {3.1.2.2}Airline()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{6}{subsubsection.3.1.2.2}%
+\contentsline {subsection}{\numberline {3.1.3}Member Function Documentation}{6}{subsection.3.1.3}%
+\contentsline {subsubsection}{\numberline {3.1.3.1}display()}{6}{subsubsection.3.1.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.3.2}getCallsign()}{7}{subsubsection.3.1.3.2}%
+\contentsline {subsubsection}{\numberline {3.1.3.3}getCode()}{7}{subsubsection.3.1.3.3}%
+\contentsline {subsubsection}{\numberline {3.1.3.4}getCountry()}{7}{subsubsection.3.1.3.4}%
+\contentsline {subsubsection}{\numberline {3.1.3.5}getName()}{8}{subsubsection.3.1.3.5}%
+\contentsline {subsubsection}{\numberline {3.1.3.6}operator==()}{8}{subsubsection.3.1.3.6}%
+\contentsline {subsubsection}{\numberline {3.1.3.7}setCallsign()}{8}{subsubsection.3.1.3.7}%
+\contentsline {subsubsection}{\numberline {3.1.3.8}setCode()}{9}{subsubsection.3.1.3.8}%
+\contentsline {subsubsection}{\numberline {3.1.3.9}setCountry()}{9}{subsubsection.3.1.3.9}%
+\contentsline {subsubsection}{\numberline {3.1.3.10}setName()}{9}{subsubsection.3.1.3.10}%
+\contentsline {section}{\numberline {3.2}Airport Class Reference}{10}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Detailed Description}{11}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Constructor \& Destructor Documentation}{11}{subsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.2.1}Airport()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{11}{subsubsection.3.2.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2.2}Airport()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{11}{subsubsection.3.2.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Member Function Documentation}{12}{subsection.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.2.3.1}display()}{12}{subsubsection.3.2.3.1}%
+\contentsline {subsubsection}{\numberline {3.2.3.2}getCity()}{12}{subsubsection.3.2.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.3.3}getCode()}{12}{subsubsection.3.2.3.3}%
+\contentsline {subsubsection}{\numberline {3.2.3.4}getCountry()}{13}{subsubsection.3.2.3.4}%
+\contentsline {subsubsection}{\numberline {3.2.3.5}getLatitude()}{13}{subsubsection.3.2.3.5}%
+\contentsline {subsubsection}{\numberline {3.2.3.6}getLongitude()}{13}{subsubsection.3.2.3.6}%
+\contentsline {subsubsection}{\numberline {3.2.3.7}getName()}{13}{subsubsection.3.2.3.7}%
+\contentsline {subsubsection}{\numberline {3.2.3.8}operator==()}{13}{subsubsection.3.2.3.8}%
+\contentsline {subsubsection}{\numberline {3.2.3.9}setCity()}{14}{subsubsection.3.2.3.9}%
+\contentsline {subsubsection}{\numberline {3.2.3.10}setCode()}{14}{subsubsection.3.2.3.10}%
+\contentsline {subsubsection}{\numberline {3.2.3.11}setCountry()}{15}{subsubsection.3.2.3.11}%
+\contentsline {subsubsection}{\numberline {3.2.3.12}setLatitude()}{15}{subsubsection.3.2.3.12}%
+\contentsline {subsubsection}{\numberline {3.2.3.13}setLongitude()}{15}{subsubsection.3.2.3.13}%
+\contentsline {subsubsection}{\numberline {3.2.3.14}setName()}{16}{subsubsection.3.2.3.14}%
+\contentsline {section}{\numberline {3.3}Edge$<$ T $>$ Class Template Reference}{16}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Detailed Description}{17}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Constructor \& Destructor Documentation}{17}{subsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.2.1}Edge()}{17}{subsubsection.3.3.2.1}%
+\contentsline {subsection}{\numberline {3.3.3}Member Function Documentation}{17}{subsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.3.1}getDest()}{17}{subsubsection.3.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.3.2}getRoute()}{18}{subsubsection.3.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3.3}getWeight()}{18}{subsubsection.3.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.3.4}setDest()}{19}{subsubsection.3.3.3.4}%
+\contentsline {subsubsection}{\numberline {3.3.3.5}setWeight()}{19}{subsubsection.3.3.3.5}%
+\contentsline {subsection}{\numberline {3.3.4}Friends And Related Symbol Documentation}{20}{subsection.3.3.4}%
+\contentsline {subsubsection}{\numberline {3.3.4.1}Graph$<$ T $>$}{20}{subsubsection.3.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.3.4.2}Vertex$<$ T $>$}{20}{subsubsection.3.3.4.2}%
+\contentsline {section}{\numberline {3.4}Flight Struct Reference}{20}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Detailed Description}{20}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Member Data Documentation}{20}{subsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.2.1}airline}{20}{subsubsection.3.4.2.1}%
+\contentsline {subsubsection}{\numberline {3.4.2.2}code}{21}{subsubsection.3.4.2.2}%
+\contentsline {section}{\numberline {3.5}Graph$<$ T $>$ Class Template Reference}{21}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Detailed Description}{21}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Member Function Documentation}{22}{subsection.3.5.2}%
+\contentsline {subsubsection}{\numberline {3.5.2.1}addEdge()}{22}{subsubsection.3.5.2.1}%
+\contentsline {subsubsection}{\numberline {3.5.2.2}addVertex()}{22}{subsubsection.3.5.2.2}%
+\contentsline {subsubsection}{\numberline {3.5.2.3}bfs()}{23}{subsubsection.3.5.2.3}%
+\contentsline {subsubsection}{\numberline {3.5.2.4}dfs()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{23}{subsubsection.3.5.2.4}%
+\contentsline {subsubsection}{\numberline {3.5.2.5}dfs()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{24}{subsubsection.3.5.2.5}%
+\contentsline {subsubsection}{\numberline {3.5.2.6}findVertex()}{25}{subsubsection.3.5.2.6}%
+\contentsline {subsubsection}{\numberline {3.5.2.7}getNumVertex()}{25}{subsubsection.3.5.2.7}%
+\contentsline {subsubsection}{\numberline {3.5.2.8}getVertexSet()}{25}{subsubsection.3.5.2.8}%
+\contentsline {subsubsection}{\numberline {3.5.2.9}isDAG()}{26}{subsubsection.3.5.2.9}%
+\contentsline {subsubsection}{\numberline {3.5.2.10}removeEdge()}{26}{subsubsection.3.5.2.10}%
+\contentsline {subsubsection}{\numberline {3.5.2.11}removeVertex()}{27}{subsubsection.3.5.2.11}%
+\contentsline {subsubsection}{\numberline {3.5.2.12}topsort()}{27}{subsubsection.3.5.2.12}%
+\contentsline {section}{\numberline {3.6}Ranking Struct Reference}{28}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Detailed Description}{29}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}Member Data Documentation}{29}{subsection.3.6.2}%
+\contentsline {subsubsection}{\numberline {3.6.2.1}code}{29}{subsubsection.3.6.2.1}%
+\contentsline {subsubsection}{\numberline {3.6.2.2}count}{29}{subsubsection.3.6.2.2}%
+\contentsline {section}{\numberline {3.7}Vertex$<$ T $>$ Class Template Reference}{29}{section.3.7}%
+\contentsline {subsection}{\numberline {3.7.1}Detailed Description}{30}{subsection.3.7.1}%
+\contentsline {subsection}{\numberline {3.7.2}Constructor \& Destructor Documentation}{30}{subsection.3.7.2}%
+\contentsline {subsubsection}{\numberline {3.7.2.1}Vertex()}{30}{subsubsection.3.7.2.1}%
+\contentsline {subsection}{\numberline {3.7.3}Member Function Documentation}{31}{subsection.3.7.3}%
+\contentsline {subsubsection}{\numberline {3.7.3.1}getAdj()}{31}{subsubsection.3.7.3.1}%
+\contentsline {subsubsection}{\numberline {3.7.3.2}getIndegree()}{31}{subsubsection.3.7.3.2}%
+\contentsline {subsubsection}{\numberline {3.7.3.3}getInfo()}{31}{subsubsection.3.7.3.3}%
+\contentsline {subsubsection}{\numberline {3.7.3.4}getLow()}{32}{subsubsection.3.7.3.4}%
+\contentsline {subsubsection}{\numberline {3.7.3.5}getNum()}{32}{subsubsection.3.7.3.5}%
+\contentsline {subsubsection}{\numberline {3.7.3.6}isProcessing()}{32}{subsubsection.3.7.3.6}%
+\contentsline {subsubsection}{\numberline {3.7.3.7}isVisited()}{33}{subsubsection.3.7.3.7}%
+\contentsline {subsubsection}{\numberline {3.7.3.8}setAdj()}{33}{subsubsection.3.7.3.8}%
+\contentsline {subsubsection}{\numberline {3.7.3.9}setIndegree()}{34}{subsubsection.3.7.3.9}%
+\contentsline {subsubsection}{\numberline {3.7.3.10}setInfo()}{34}{subsubsection.3.7.3.10}%
+\contentsline {subsubsection}{\numberline {3.7.3.11}setLow()}{35}{subsubsection.3.7.3.11}%
+\contentsline {subsubsection}{\numberline {3.7.3.12}setNum()}{35}{subsubsection.3.7.3.12}%
+\contentsline {subsubsection}{\numberline {3.7.3.13}setProcessing()}{35}{subsubsection.3.7.3.13}%
+\contentsline {subsubsection}{\numberline {3.7.3.14}setVisited()}{36}{subsubsection.3.7.3.14}%
+\contentsline {subsection}{\numberline {3.7.4}Friends And Related Symbol Documentation}{36}{subsection.3.7.4}%
+\contentsline {subsubsection}{\numberline {3.7.4.1}Graph$<$ T $>$}{36}{subsubsection.3.7.4.1}%
+\contentsline {chapter}{\numberline {4}File Documentation}{37}{chapter.4}%
+\contentsline {section}{\numberline {4.1}src/classes/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Airline.cpp File Reference}{37}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Airline.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{37}{section.4.2}%
+\contentsline {section}{\numberline {4.3}src/classes/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Airline.h File Reference}{38}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Airline.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{38}{section.4.4}%
+\contentsline {section}{\numberline {4.5}src/classes/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Airport.cpp File Reference}{38}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Function Documentation}{39}{subsection.4.5.1}%
+\contentsline {subsubsection}{\numberline {4.5.1.1}comparator()}{39}{subsubsection.4.5.1.1}%
+\contentsline {section}{\numberline {4.6}Airport.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{39}{section.4.6}%
+\contentsline {section}{\numberline {4.7}src/classes/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Airport.h File Reference}{40}{section.4.7}%
+\contentsline {subsection}{\numberline {4.7.1}Function Documentation}{40}{subsection.4.7.1}%
+\contentsline {subsubsection}{\numberline {4.7.1.1}comparator()}{40}{subsubsection.4.7.1.1}%
+\contentsline {section}{\numberline {4.8}Airport.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{41}{section.4.8}%
+\contentsline {section}{\numberline {4.9}src/classes/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graph.h File Reference}{41}{section.4.9}%
+\contentsline {section}{\numberline {4.10}Graph.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{42}{section.4.10}%
+\contentsline {section}{\numberline {4.11}src/database/dbairport.cpp File Reference}{47}{section.4.11}%
+\contentsline {subsection}{\numberline {4.11.1}Function Documentation}{49}{subsection.4.11.1}%
+\contentsline {subsubsection}{\numberline {4.11.1.1}bfsPath()}{49}{subsubsection.4.11.1.1}%
+\contentsline {subsubsection}{\numberline {4.11.1.2}calculateIndegree()}{50}{subsubsection.4.11.1.2}%
+\contentsline {subsubsection}{\numberline {4.11.1.3}comparatorPath()}{51}{subsubsection.4.11.1.3}%
+\contentsline {subsubsection}{\numberline {4.11.1.4}connectedComponents()}{51}{subsubsection.4.11.1.4}%
+\contentsline {subsubsection}{\numberline {4.11.1.5}dfsArtc()}{52}{subsubsection.4.11.1.5}%
+\contentsline {subsubsection}{\numberline {4.11.1.6}dfsConnectedComponents()}{52}{subsubsection.4.11.1.6}%
+\contentsline {subsubsection}{\numberline {4.11.1.7}dfsMax()}{53}{subsubsection.4.11.1.7}%
+\contentsline {subsubsection}{\numberline {4.11.1.8}dfsVisit()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{53}{subsubsection.4.11.1.8}%
+\contentsline {subsubsection}{\numberline {4.11.1.9}dfsVisit()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{54}{subsubsection.4.11.1.9}%
+\contentsline {subsubsection}{\numberline {4.11.1.10}distanceEarth()}{55}{subsubsection.4.11.1.10}%
+\contentsline {subsubsection}{\numberline {4.11.1.11}findAirports()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{55}{subsubsection.4.11.1.11}%
+\contentsline {subsubsection}{\numberline {4.11.1.12}findAirports()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{57}{subsubsection.4.11.1.12}%
+\contentsline {subsubsection}{\numberline {4.11.1.13}findArticulationPoints()}{58}{subsubsection.4.11.1.13}%
+\contentsline {subsubsection}{\numberline {4.11.1.14}findBestFlights()\hspace {0.1cm}{\footnotesize \ttfamily [1/6]}}{58}{subsubsection.4.11.1.14}%
+\contentsline {subsubsection}{\numberline {4.11.1.15}findBestFlights()\hspace {0.1cm}{\footnotesize \ttfamily [2/6]}}{59}{subsubsection.4.11.1.15}%
+\contentsline {subsubsection}{\numberline {4.11.1.16}findBestFlights()\hspace {0.1cm}{\footnotesize \ttfamily [3/6]}}{60}{subsubsection.4.11.1.16}%
+\contentsline {subsubsection}{\numberline {4.11.1.17}findBestFlights()\hspace {0.1cm}{\footnotesize \ttfamily [4/6]}}{61}{subsubsection.4.11.1.17}%
+\contentsline {subsubsection}{\numberline {4.11.1.18}findBestFlights()\hspace {0.1cm}{\footnotesize \ttfamily [5/6]}}{62}{subsubsection.4.11.1.18}%
+\contentsline {subsubsection}{\numberline {4.11.1.19}findBestFlights()\hspace {0.1cm}{\footnotesize \ttfamily [6/6]}}{63}{subsubsection.4.11.1.19}%
+\contentsline {subsubsection}{\numberline {4.11.1.20}getPath()}{63}{subsubsection.4.11.1.20}%
+\contentsline {subsubsection}{\numberline {4.11.1.21}quantityAirlinesCountry()}{64}{subsubsection.4.11.1.21}%
+\contentsline {subsubsection}{\numberline {4.11.1.22}quantityAirports()}{64}{subsubsection.4.11.1.22}%
+\contentsline {subsubsection}{\numberline {4.11.1.23}quantityAirportsCity()}{65}{subsubsection.4.11.1.23}%
+\contentsline {subsubsection}{\numberline {4.11.1.24}quantityAirportsCountry()}{65}{subsubsection.4.11.1.24}%
+\contentsline {subsubsection}{\numberline {4.11.1.25}quantityCitiesCountry()}{66}{subsubsection.4.11.1.25}%
+\contentsline {subsubsection}{\numberline {4.11.1.26}quantityDestinationLimitedStop()}{66}{subsubsection.4.11.1.26}%
+\contentsline {subsubsection}{\numberline {4.11.1.27}quantityDestinationMax()}{67}{subsubsection.4.11.1.27}%
+\contentsline {subsubsection}{\numberline {4.11.1.28}quantityDestinationsAirport()}{68}{subsubsection.4.11.1.28}%
+\contentsline {subsubsection}{\numberline {4.11.1.29}quantityFlights()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{68}{subsubsection.4.11.1.29}%
+\contentsline {subsubsection}{\numberline {4.11.1.30}quantityFlights()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{69}{subsubsection.4.11.1.30}%
+\contentsline {subsubsection}{\numberline {4.11.1.31}quantityFlightsAirline()}{69}{subsubsection.4.11.1.31}%
+\contentsline {subsubsection}{\numberline {4.11.1.32}quantityFlightsAirport()}{70}{subsubsection.4.11.1.32}%
+\contentsline {subsubsection}{\numberline {4.11.1.33}quantityFlightsCity()}{70}{subsubsection.4.11.1.33}%
+\contentsline {subsubsection}{\numberline {4.11.1.34}quantityFlightsCountry()}{71}{subsubsection.4.11.1.34}%
+\contentsline {subsubsection}{\numberline {4.11.1.35}rankingAirports()}{71}{subsubsection.4.11.1.35}%
+\contentsline {subsubsection}{\numberline {4.11.1.36}resetVisited()}{72}{subsubsection.4.11.1.36}%
+\contentsline {subsubsection}{\numberline {4.11.1.37}showPath()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{73}{subsubsection.4.11.1.37}%
+\contentsline {subsubsection}{\numberline {4.11.1.38}showPath()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{74}{subsubsection.4.11.1.38}%
+\contentsline {subsubsection}{\numberline {4.11.1.39}toRadians()}{74}{subsubsection.4.11.1.39}%
+\contentsline {section}{\numberline {4.12}dbairport.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{75}{section.4.12}%
+\contentsline {section}{\numberline {4.13}src/database/dbairport.h File Reference}{84}{section.4.13}%
+\contentsline {subsection}{\numberline {4.13.1}Function Documentation}{87}{subsection.4.13.1}%
+\contentsline {subsubsection}{\numberline {4.13.1.1}bfsPath()}{87}{subsubsection.4.13.1.1}%
+\contentsline {subsubsection}{\numberline {4.13.1.2}calculateIndegree()}{88}{subsubsection.4.13.1.2}%
+\contentsline {subsubsection}{\numberline {4.13.1.3}comparatorPath()}{88}{subsubsection.4.13.1.3}%
+\contentsline {subsubsection}{\numberline {4.13.1.4}connectedComponents()}{89}{subsubsection.4.13.1.4}%
+\contentsline {subsubsection}{\numberline {4.13.1.5}dfsArtc()}{89}{subsubsection.4.13.1.5}%
+\contentsline {subsubsection}{\numberline {4.13.1.6}dfsConnectedComponents()}{90}{subsubsection.4.13.1.6}%
+\contentsline {subsubsection}{\numberline {4.13.1.7}dfsMax()}{90}{subsubsection.4.13.1.7}%
+\contentsline {subsubsection}{\numberline {4.13.1.8}dfsVisit()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{91}{subsubsection.4.13.1.8}%
+\contentsline {subsubsection}{\numberline {4.13.1.9}dfsVisit()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{92}{subsubsection.4.13.1.9}%
+\contentsline {subsubsection}{\numberline {4.13.1.10}distanceEarth()}{92}{subsubsection.4.13.1.10}%
+\contentsline {subsubsection}{\numberline {4.13.1.11}findAirports()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{93}{subsubsection.4.13.1.11}%
+\contentsline {subsubsection}{\numberline {4.13.1.12}findAirports()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{94}{subsubsection.4.13.1.12}%
+\contentsline {subsubsection}{\numberline {4.13.1.13}findArticulationPoints()}{94}{subsubsection.4.13.1.13}%
+\contentsline {subsubsection}{\numberline {4.13.1.14}findBestFlights()\hspace {0.1cm}{\footnotesize \ttfamily [1/6]}}{95}{subsubsection.4.13.1.14}%
+\contentsline {subsubsection}{\numberline {4.13.1.15}findBestFlights()\hspace {0.1cm}{\footnotesize \ttfamily [2/6]}}{96}{subsubsection.4.13.1.15}%
+\contentsline {subsubsection}{\numberline {4.13.1.16}findBestFlights()\hspace {0.1cm}{\footnotesize \ttfamily [3/6]}}{97}{subsubsection.4.13.1.16}%
+\contentsline {subsubsection}{\numberline {4.13.1.17}findBestFlights()\hspace {0.1cm}{\footnotesize \ttfamily [4/6]}}{98}{subsubsection.4.13.1.17}%
+\contentsline {subsubsection}{\numberline {4.13.1.18}findBestFlights()\hspace {0.1cm}{\footnotesize \ttfamily [5/6]}}{99}{subsubsection.4.13.1.18}%
+\contentsline {subsubsection}{\numberline {4.13.1.19}findBestFlights()\hspace {0.1cm}{\footnotesize \ttfamily [6/6]}}{99}{subsubsection.4.13.1.19}%
+\contentsline {subsubsection}{\numberline {4.13.1.20}getPath()}{100}{subsubsection.4.13.1.20}%
+\contentsline {subsubsection}{\numberline {4.13.1.21}quantityAirlinesCountry()}{101}{subsubsection.4.13.1.21}%
+\contentsline {subsubsection}{\numberline {4.13.1.22}quantityAirports()}{101}{subsubsection.4.13.1.22}%
+\contentsline {subsubsection}{\numberline {4.13.1.23}quantityAirportsCity()}{102}{subsubsection.4.13.1.23}%
+\contentsline {subsubsection}{\numberline {4.13.1.24}quantityAirportsCountry()}{102}{subsubsection.4.13.1.24}%
+\contentsline {subsubsection}{\numberline {4.13.1.25}quantityCitiesCountry()}{103}{subsubsection.4.13.1.25}%
+\contentsline {subsubsection}{\numberline {4.13.1.26}quantityDestinationLimitedStop()}{103}{subsubsection.4.13.1.26}%
+\contentsline {subsubsection}{\numberline {4.13.1.27}quantityDestinationMax()}{104}{subsubsection.4.13.1.27}%
+\contentsline {subsubsection}{\numberline {4.13.1.28}quantityDestinationsAirport()}{105}{subsubsection.4.13.1.28}%
+\contentsline {subsubsection}{\numberline {4.13.1.29}quantityFlights()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{105}{subsubsection.4.13.1.29}%
+\contentsline {subsubsection}{\numberline {4.13.1.30}quantityFlights()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{106}{subsubsection.4.13.1.30}%
+\contentsline {subsubsection}{\numberline {4.13.1.31}quantityFlightsAirline()}{106}{subsubsection.4.13.1.31}%
+\contentsline {subsubsection}{\numberline {4.13.1.32}quantityFlightsAirport()}{107}{subsubsection.4.13.1.32}%
+\contentsline {subsubsection}{\numberline {4.13.1.33}quantityFlightsCity()}{107}{subsubsection.4.13.1.33}%
+\contentsline {subsubsection}{\numberline {4.13.1.34}quantityFlightsCountry()}{108}{subsubsection.4.13.1.34}%
+\contentsline {subsubsection}{\numberline {4.13.1.35}rankingAirports()}{108}{subsubsection.4.13.1.35}%
+\contentsline {subsubsection}{\numberline {4.13.1.36}resetVisited()}{109}{subsubsection.4.13.1.36}%
+\contentsline {subsubsection}{\numberline {4.13.1.37}showPath()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{109}{subsubsection.4.13.1.37}%
+\contentsline {subsubsection}{\numberline {4.13.1.38}showPath()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{111}{subsubsection.4.13.1.38}%
+\contentsline {subsubsection}{\numberline {4.13.1.39}toRadians()}{111}{subsubsection.4.13.1.39}%
+\contentsline {section}{\numberline {4.14}dbairport.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{112}{section.4.14}%
+\contentsline {section}{\numberline {4.15}src/database/read.cpp File Reference}{113}{section.4.15}%
+\contentsline {subsection}{\numberline {4.15.1}Function Documentation}{113}{subsection.4.15.1}%
+\contentsline {subsubsection}{\numberline {4.15.1.1}readAirlines()}{113}{subsubsection.4.15.1.1}%
+\contentsline {subsubsection}{\numberline {4.15.1.2}readAirports()}{114}{subsubsection.4.15.1.2}%
+\contentsline {subsubsection}{\numberline {4.15.1.3}readFlights()}{115}{subsubsection.4.15.1.3}%
+\contentsline {subsection}{\numberline {4.15.2}Variable Documentation}{116}{subsection.4.15.2}%
+\contentsline {subsubsection}{\numberline {4.15.2.1}airportsHash}{116}{subsubsection.4.15.2.1}%
+\contentsline {subsubsection}{\numberline {4.15.2.2}citiesHash}{116}{subsubsection.4.15.2.2}%
+\contentsline {subsubsection}{\numberline {4.15.2.3}countriesHash}{116}{subsubsection.4.15.2.3}%
+\contentsline {section}{\numberline {4.16}read.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{117}{section.4.16}%
+\contentsline {section}{\numberline {4.17}src/database/read.h File Reference}{118}{section.4.17}%
+\contentsline {subsection}{\numberline {4.17.1}Function Documentation}{119}{subsection.4.17.1}%
+\contentsline {subsubsection}{\numberline {4.17.1.1}readAirlines()}{119}{subsubsection.4.17.1.1}%
+\contentsline {subsubsection}{\numberline {4.17.1.2}readAirports()}{120}{subsubsection.4.17.1.2}%
+\contentsline {subsubsection}{\numberline {4.17.1.3}readFlights()}{121}{subsubsection.4.17.1.3}%
+\contentsline {subsection}{\numberline {4.17.2}Variable Documentation}{122}{subsection.4.17.2}%
+\contentsline {subsubsection}{\numberline {4.17.2.1}airportsHash}{122}{subsubsection.4.17.2.1}%
+\contentsline {subsubsection}{\numberline {4.17.2.2}citiesHash}{122}{subsubsection.4.17.2.2}%
+\contentsline {subsubsection}{\numberline {4.17.2.3}countriesHash}{122}{subsubsection.4.17.2.3}%
+\contentsline {section}{\numberline {4.18}read.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{122}{section.4.18}%
+\contentsline {section}{\numberline {4.19}src/main.cpp File Reference}{122}{section.4.19}%
+\contentsline {subsection}{\numberline {4.19.1}Function Documentation}{123}{subsection.4.19.1}%
+\contentsline {subsubsection}{\numberline {4.19.1.1}main()}{123}{subsubsection.4.19.1.1}%
+\contentsline {section}{\numberline {4.20}main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{123}{section.4.20}%
+\contentsline {section}{\numberline {4.21}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Menu.cpp File Reference}{123}{section.4.21}%
+\contentsline {subsection}{\numberline {4.21.1}Function Documentation}{124}{subsection.4.21.1}%
+\contentsline {subsubsection}{\numberline {4.21.1.1}bestFlights()}{124}{subsubsection.4.21.1.1}%
+\contentsline {subsubsection}{\numberline {4.21.1.2}filterAirplanes()}{126}{subsubsection.4.21.1.2}%
+\contentsline {subsubsection}{\numberline {4.21.1.3}Menu()}{127}{subsubsection.4.21.1.3}%
+\contentsline {subsubsection}{\numberline {4.21.1.4}menuAirlines()}{128}{subsubsection.4.21.1.4}%
+\contentsline {subsubsection}{\numberline {4.21.1.5}menuAirports()}{129}{subsubsection.4.21.1.5}%
+\contentsline {subsubsection}{\numberline {4.21.1.6}menuCities()}{130}{subsubsection.4.21.1.6}%
+\contentsline {subsubsection}{\numberline {4.21.1.7}menuCountries()}{131}{subsubsection.4.21.1.7}%
+\contentsline {subsubsection}{\numberline {4.21.1.8}menuDestination()}{132}{subsubsection.4.21.1.8}%
+\contentsline {subsubsection}{\numberline {4.21.1.9}menuFlights()}{134}{subsubsection.4.21.1.9}%
+\contentsline {subsubsection}{\numberline {4.21.1.10}menuListing()}{135}{subsubsection.4.21.1.10}%
+\contentsline {subsubsection}{\numberline {4.21.1.11}menuQuantity()}{136}{subsubsection.4.21.1.11}%
+\contentsline {subsubsection}{\numberline {4.21.1.12}selectType()}{137}{subsubsection.4.21.1.12}%
+\contentsline {subsubsection}{\numberline {4.21.1.13}typeAirport()}{138}{subsubsection.4.21.1.13}%
+\contentsline {subsubsection}{\numberline {4.21.1.14}typeCity()}{138}{subsubsection.4.21.1.14}%
+\contentsline {subsubsection}{\numberline {4.21.1.15}typeCoordinates()}{139}{subsubsection.4.21.1.15}%
+\contentsline {subsection}{\numberline {4.21.2}Variable Documentation}{140}{subsection.4.21.2}%
+\contentsline {subsubsection}{\numberline {4.21.2.1}airlines}{140}{subsubsection.4.21.2.1}%
+\contentsline {subsubsection}{\numberline {4.21.2.2}airports}{140}{subsubsection.4.21.2.2}%
+\contentsline {section}{\numberline {4.22}Menu.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{140}{section.4.22}%
+\contentsline {section}{\numberline {4.23}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Menu.h File Reference}{152}{section.4.23}%
+\contentsline {subsection}{\numberline {4.23.1}Function Documentation}{152}{subsection.4.23.1}%
+\contentsline {subsubsection}{\numberline {4.23.1.1}bestFlights()}{152}{subsubsection.4.23.1.1}%
+\contentsline {subsubsection}{\numberline {4.23.1.2}filterAirplanes()}{154}{subsubsection.4.23.1.2}%
+\contentsline {subsubsection}{\numberline {4.23.1.3}Menu()}{155}{subsubsection.4.23.1.3}%
+\contentsline {subsubsection}{\numberline {4.23.1.4}menuAirlines()}{156}{subsubsection.4.23.1.4}%
+\contentsline {subsubsection}{\numberline {4.23.1.5}menuAirports()}{157}{subsubsection.4.23.1.5}%
+\contentsline {subsubsection}{\numberline {4.23.1.6}menuCities()}{158}{subsubsection.4.23.1.6}%
+\contentsline {subsubsection}{\numberline {4.23.1.7}menuCountries()}{159}{subsubsection.4.23.1.7}%
+\contentsline {subsubsection}{\numberline {4.23.1.8}menuDestination()}{160}{subsubsection.4.23.1.8}%
+\contentsline {subsubsection}{\numberline {4.23.1.9}menuFlights()}{162}{subsubsection.4.23.1.9}%
+\contentsline {subsubsection}{\numberline {4.23.1.10}menuListing()}{163}{subsubsection.4.23.1.10}%
+\contentsline {subsubsection}{\numberline {4.23.1.11}menuQuantity()}{164}{subsubsection.4.23.1.11}%
+\contentsline {subsubsection}{\numberline {4.23.1.12}selectType()}{165}{subsubsection.4.23.1.12}%
+\contentsline {subsubsection}{\numberline {4.23.1.13}typeAirport()}{166}{subsubsection.4.23.1.13}%
+\contentsline {subsubsection}{\numberline {4.23.1.14}typeCity()}{166}{subsubsection.4.23.1.14}%
+\contentsline {subsubsection}{\numberline {4.23.1.15}typeCoordinates()}{167}{subsubsection.4.23.1.15}%
+\contentsline {section}{\numberline {4.24}Menu.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{168}{section.4.24}%
+\contentsline {chapter}{Index}{169}{section*.29}%

@@ -1,0 +1,417 @@
+\indexentry{Airline@{Airline}|hyperpage}{5}
+\indexentry{Airline@{Airline}!Airline@{Airline}|hyperpage}{6}
+\indexentry{Airline@{Airline}!Airline@{Airline}|hyperpage}{6}
+\indexentry{Airline@{Airline}!Airline@{Airline}|hyperpage}{6}
+\indexentry{Airline@{Airline}!Airline@{Airline}|hyperpage}{6}
+\indexentry{Airline@{Airline}!display@{display}|hyperpage}{6}
+\indexentry{display@{display}!Airline@{Airline}|hyperpage}{6}
+\indexentry{Airline@{Airline}!getCallsign@{getCallsign}|hyperpage}{7}
+\indexentry{getCallsign@{getCallsign}!Airline@{Airline}|hyperpage}{7}
+\indexentry{Airline@{Airline}!getCode@{getCode}|hyperpage}{7}
+\indexentry{getCode@{getCode}!Airline@{Airline}|hyperpage}{7}
+\indexentry{Airline@{Airline}!getCountry@{getCountry}|hyperpage}{7}
+\indexentry{getCountry@{getCountry}!Airline@{Airline}|hyperpage}{7}
+\indexentry{Airline@{Airline}!getName@{getName}|hyperpage}{7}
+\indexentry{getName@{getName}!Airline@{Airline}|hyperpage}{7}
+\indexentry{Airline@{Airline}!operator==@{operator==}|hyperpage}{8}
+\indexentry{operator==@{operator==}!Airline@{Airline}|hyperpage}{8}
+\indexentry{Airline@{Airline}!setCallsign@{setCallsign}|hyperpage}{8}
+\indexentry{setCallsign@{setCallsign}!Airline@{Airline}|hyperpage}{8}
+\indexentry{Airline@{Airline}!setCode@{setCode}|hyperpage}{8}
+\indexentry{setCode@{setCode}!Airline@{Airline}|hyperpage}{8}
+\indexentry{Airline@{Airline}!setCountry@{setCountry}|hyperpage}{9}
+\indexentry{setCountry@{setCountry}!Airline@{Airline}|hyperpage}{9}
+\indexentry{Airline@{Airline}!setName@{setName}|hyperpage}{9}
+\indexentry{setName@{setName}!Airline@{Airline}|hyperpage}{9}
+\indexentry{Airport@{Airport}|hyperpage}{10}
+\indexentry{Airport@{Airport}!Airport@{Airport}|hyperpage}{11}
+\indexentry{Airport@{Airport}!Airport@{Airport}|hyperpage}{11}
+\indexentry{Airport@{Airport}!Airport@{Airport}|hyperpage}{11}
+\indexentry{Airport@{Airport}!Airport@{Airport}|hyperpage}{11}
+\indexentry{Airport@{Airport}!display@{display}|hyperpage}{12}
+\indexentry{display@{display}!Airport@{Airport}|hyperpage}{12}
+\indexentry{Airport@{Airport}!getCity@{getCity}|hyperpage}{12}
+\indexentry{getCity@{getCity}!Airport@{Airport}|hyperpage}{12}
+\indexentry{Airport@{Airport}!getCode@{getCode}|hyperpage}{12}
+\indexentry{getCode@{getCode}!Airport@{Airport}|hyperpage}{12}
+\indexentry{Airport@{Airport}!getCountry@{getCountry}|hyperpage}{12}
+\indexentry{getCountry@{getCountry}!Airport@{Airport}|hyperpage}{12}
+\indexentry{Airport@{Airport}!getLatitude@{getLatitude}|hyperpage}{13}
+\indexentry{getLatitude@{getLatitude}!Airport@{Airport}|hyperpage}{13}
+\indexentry{Airport@{Airport}!getLongitude@{getLongitude}|hyperpage}{13}
+\indexentry{getLongitude@{getLongitude}!Airport@{Airport}|hyperpage}{13}
+\indexentry{Airport@{Airport}!getName@{getName}|hyperpage}{13}
+\indexentry{getName@{getName}!Airport@{Airport}|hyperpage}{13}
+\indexentry{Airport@{Airport}!operator==@{operator==}|hyperpage}{13}
+\indexentry{operator==@{operator==}!Airport@{Airport}|hyperpage}{13}
+\indexentry{Airport@{Airport}!setCity@{setCity}|hyperpage}{14}
+\indexentry{setCity@{setCity}!Airport@{Airport}|hyperpage}{14}
+\indexentry{Airport@{Airport}!setCode@{setCode}|hyperpage}{14}
+\indexentry{setCode@{setCode}!Airport@{Airport}|hyperpage}{14}
+\indexentry{Airport@{Airport}!setCountry@{setCountry}|hyperpage}{14}
+\indexentry{setCountry@{setCountry}!Airport@{Airport}|hyperpage}{14}
+\indexentry{Airport@{Airport}!setLatitude@{setLatitude}|hyperpage}{15}
+\indexentry{setLatitude@{setLatitude}!Airport@{Airport}|hyperpage}{15}
+\indexentry{Airport@{Airport}!setLongitude@{setLongitude}|hyperpage}{15}
+\indexentry{setLongitude@{setLongitude}!Airport@{Airport}|hyperpage}{15}
+\indexentry{Airport@{Airport}!setName@{setName}|hyperpage}{16}
+\indexentry{setName@{setName}!Airport@{Airport}|hyperpage}{16}
+\indexentry{Edge$<$ T $>$@{Edge$<$ T $>$}|hyperpage}{16}
+\indexentry{Edge$<$ T $>$@{Edge$<$ T $>$}!Edge@{Edge}|hyperpage}{17}
+\indexentry{Edge@{Edge}!Edge$<$ T $>$@{Edge$<$ T $>$}|hyperpage}{17}
+\indexentry{Edge$<$ T $>$@{Edge$<$ T $>$}!getDest@{getDest}|hyperpage}{17}
+\indexentry{getDest@{getDest}!Edge$<$ T $>$@{Edge$<$ T $>$}|hyperpage}{17}
+\indexentry{Edge$<$ T $>$@{Edge$<$ T $>$}!getRoute@{getRoute}|hyperpage}{18}
+\indexentry{getRoute@{getRoute}!Edge$<$ T $>$@{Edge$<$ T $>$}|hyperpage}{18}
+\indexentry{Edge$<$ T $>$@{Edge$<$ T $>$}!getWeight@{getWeight}|hyperpage}{18}
+\indexentry{getWeight@{getWeight}!Edge$<$ T $>$@{Edge$<$ T $>$}|hyperpage}{18}
+\indexentry{Edge$<$ T $>$@{Edge$<$ T $>$}!setDest@{setDest}|hyperpage}{18}
+\indexentry{setDest@{setDest}!Edge$<$ T $>$@{Edge$<$ T $>$}|hyperpage}{18}
+\indexentry{Edge$<$ T $>$@{Edge$<$ T $>$}!setWeight@{setWeight}|hyperpage}{19}
+\indexentry{setWeight@{setWeight}!Edge$<$ T $>$@{Edge$<$ T $>$}|hyperpage}{19}
+\indexentry{Edge$<$ T $>$@{Edge$<$ T $>$}!Graph$<$ T $>$@{Graph$<$ T $>$}|hyperpage}{20}
+\indexentry{Graph$<$ T $>$@{Graph$<$ T $>$}!Edge$<$ T $>$@{Edge$<$ T $>$}|hyperpage}{20}
+\indexentry{Edge$<$ T $>$@{Edge$<$ T $>$}!Vertex$<$ T $>$@{Vertex$<$ T $>$}|hyperpage}{20}
+\indexentry{Vertex$<$ T $>$@{Vertex$<$ T $>$}!Edge$<$ T $>$@{Edge$<$ T $>$}|hyperpage}{20}
+\indexentry{Flight@{Flight}|hyperpage}{20}
+\indexentry{Flight@{Flight}!airline@{airline}|hyperpage}{20}
+\indexentry{airline@{airline}!Flight@{Flight}|hyperpage}{20}
+\indexentry{Flight@{Flight}!code@{code}|hyperpage}{20}
+\indexentry{code@{code}!Flight@{Flight}|hyperpage}{20}
+\indexentry{Graph$<$ T $>$@{Graph$<$ T $>$}|hyperpage}{21}
+\indexentry{Graph$<$ T $>$@{Graph$<$ T $>$}!addEdge@{addEdge}|hyperpage}{22}
+\indexentry{addEdge@{addEdge}!Graph$<$ T $>$@{Graph$<$ T $>$}|hyperpage}{22}
+\indexentry{Graph$<$ T $>$@{Graph$<$ T $>$}!addVertex@{addVertex}|hyperpage}{22}
+\indexentry{addVertex@{addVertex}!Graph$<$ T $>$@{Graph$<$ T $>$}|hyperpage}{22}
+\indexentry{Graph$<$ T $>$@{Graph$<$ T $>$}!bfs@{bfs}|hyperpage}{23}
+\indexentry{bfs@{bfs}!Graph$<$ T $>$@{Graph$<$ T $>$}|hyperpage}{23}
+\indexentry{Graph$<$ T $>$@{Graph$<$ T $>$}!dfs@{dfs}|hyperpage}{23}
+\indexentry{dfs@{dfs}!Graph$<$ T $>$@{Graph$<$ T $>$}|hyperpage}{23}
+\indexentry{Graph$<$ T $>$@{Graph$<$ T $>$}!dfs@{dfs}|hyperpage}{24}
+\indexentry{dfs@{dfs}!Graph$<$ T $>$@{Graph$<$ T $>$}|hyperpage}{24}
+\indexentry{Graph$<$ T $>$@{Graph$<$ T $>$}!findVertex@{findVertex}|hyperpage}{24}
+\indexentry{findVertex@{findVertex}!Graph$<$ T $>$@{Graph$<$ T $>$}|hyperpage}{24}
+\indexentry{Graph$<$ T $>$@{Graph$<$ T $>$}!getNumVertex@{getNumVertex}|hyperpage}{25}
+\indexentry{getNumVertex@{getNumVertex}!Graph$<$ T $>$@{Graph$<$ T $>$}|hyperpage}{25}
+\indexentry{Graph$<$ T $>$@{Graph$<$ T $>$}!getVertexSet@{getVertexSet}|hyperpage}{25}
+\indexentry{getVertexSet@{getVertexSet}!Graph$<$ T $>$@{Graph$<$ T $>$}|hyperpage}{25}
+\indexentry{Graph$<$ T $>$@{Graph$<$ T $>$}!isDAG@{isDAG}|hyperpage}{26}
+\indexentry{isDAG@{isDAG}!Graph$<$ T $>$@{Graph$<$ T $>$}|hyperpage}{26}
+\indexentry{Graph$<$ T $>$@{Graph$<$ T $>$}!removeEdge@{removeEdge}|hyperpage}{26}
+\indexentry{removeEdge@{removeEdge}!Graph$<$ T $>$@{Graph$<$ T $>$}|hyperpage}{26}
+\indexentry{Graph$<$ T $>$@{Graph$<$ T $>$}!removeVertex@{removeVertex}|hyperpage}{27}
+\indexentry{removeVertex@{removeVertex}!Graph$<$ T $>$@{Graph$<$ T $>$}|hyperpage}{27}
+\indexentry{Graph$<$ T $>$@{Graph$<$ T $>$}!topsort@{topsort}|hyperpage}{27}
+\indexentry{topsort@{topsort}!Graph$<$ T $>$@{Graph$<$ T $>$}|hyperpage}{27}
+\indexentry{Ranking@{Ranking}|hyperpage}{28}
+\indexentry{Ranking@{Ranking}!code@{code}|hyperpage}{29}
+\indexentry{code@{code}!Ranking@{Ranking}|hyperpage}{29}
+\indexentry{Ranking@{Ranking}!count@{count}|hyperpage}{29}
+\indexentry{count@{count}!Ranking@{Ranking}|hyperpage}{29}
+\indexentry{Vertex$<$ T $>$@{Vertex$<$ T $>$}|hyperpage}{29}
+\indexentry{Vertex$<$ T $>$@{Vertex$<$ T $>$}!Vertex@{Vertex}|hyperpage}{30}
+\indexentry{Vertex@{Vertex}!Vertex$<$ T $>$@{Vertex$<$ T $>$}|hyperpage}{30}
+\indexentry{Vertex$<$ T $>$@{Vertex$<$ T $>$}!getAdj@{getAdj}|hyperpage}{31}
+\indexentry{getAdj@{getAdj}!Vertex$<$ T $>$@{Vertex$<$ T $>$}|hyperpage}{31}
+\indexentry{Vertex$<$ T $>$@{Vertex$<$ T $>$}!getIndegree@{getIndegree}|hyperpage}{31}
+\indexentry{getIndegree@{getIndegree}!Vertex$<$ T $>$@{Vertex$<$ T $>$}|hyperpage}{31}
+\indexentry{Vertex$<$ T $>$@{Vertex$<$ T $>$}!getInfo@{getInfo}|hyperpage}{31}
+\indexentry{getInfo@{getInfo}!Vertex$<$ T $>$@{Vertex$<$ T $>$}|hyperpage}{31}
+\indexentry{Vertex$<$ T $>$@{Vertex$<$ T $>$}!getLow@{getLow}|hyperpage}{32}
+\indexentry{getLow@{getLow}!Vertex$<$ T $>$@{Vertex$<$ T $>$}|hyperpage}{32}
+\indexentry{Vertex$<$ T $>$@{Vertex$<$ T $>$}!getNum@{getNum}|hyperpage}{32}
+\indexentry{getNum@{getNum}!Vertex$<$ T $>$@{Vertex$<$ T $>$}|hyperpage}{32}
+\indexentry{Vertex$<$ T $>$@{Vertex$<$ T $>$}!isProcessing@{isProcessing}|hyperpage}{32}
+\indexentry{isProcessing@{isProcessing}!Vertex$<$ T $>$@{Vertex$<$ T $>$}|hyperpage}{32}
+\indexentry{Vertex$<$ T $>$@{Vertex$<$ T $>$}!isVisited@{isVisited}|hyperpage}{33}
+\indexentry{isVisited@{isVisited}!Vertex$<$ T $>$@{Vertex$<$ T $>$}|hyperpage}{33}
+\indexentry{Vertex$<$ T $>$@{Vertex$<$ T $>$}!setAdj@{setAdj}|hyperpage}{33}
+\indexentry{setAdj@{setAdj}!Vertex$<$ T $>$@{Vertex$<$ T $>$}|hyperpage}{33}
+\indexentry{Vertex$<$ T $>$@{Vertex$<$ T $>$}!setIndegree@{setIndegree}|hyperpage}{33}
+\indexentry{setIndegree@{setIndegree}!Vertex$<$ T $>$@{Vertex$<$ T $>$}|hyperpage}{33}
+\indexentry{Vertex$<$ T $>$@{Vertex$<$ T $>$}!setInfo@{setInfo}|hyperpage}{34}
+\indexentry{setInfo@{setInfo}!Vertex$<$ T $>$@{Vertex$<$ T $>$}|hyperpage}{34}
+\indexentry{Vertex$<$ T $>$@{Vertex$<$ T $>$}!setLow@{setLow}|hyperpage}{34}
+\indexentry{setLow@{setLow}!Vertex$<$ T $>$@{Vertex$<$ T $>$}|hyperpage}{34}
+\indexentry{Vertex$<$ T $>$@{Vertex$<$ T $>$}!setNum@{setNum}|hyperpage}{35}
+\indexentry{setNum@{setNum}!Vertex$<$ T $>$@{Vertex$<$ T $>$}|hyperpage}{35}
+\indexentry{Vertex$<$ T $>$@{Vertex$<$ T $>$}!setProcessing@{setProcessing}|hyperpage}{35}
+\indexentry{setProcessing@{setProcessing}!Vertex$<$ T $>$@{Vertex$<$ T $>$}|hyperpage}{35}
+\indexentry{Vertex$<$ T $>$@{Vertex$<$ T $>$}!setVisited@{setVisited}|hyperpage}{36}
+\indexentry{setVisited@{setVisited}!Vertex$<$ T $>$@{Vertex$<$ T $>$}|hyperpage}{36}
+\indexentry{Vertex$<$ T $>$@{Vertex$<$ T $>$}!Graph$<$ T $>$@{Graph$<$ T $>$}|hyperpage}{36}
+\indexentry{Graph$<$ T $>$@{Graph$<$ T $>$}!Vertex$<$ T $>$@{Vertex$<$ T $>$}|hyperpage}{36}
+\indexentry{src/classes/Airline.cpp@{src/classes/Airline.cpp}|hyperpage}{37}
+\indexentry{src/classes/Airline.cpp@{src/classes/Airline.cpp}|hyperpage}{37}
+\indexentry{src/classes/Airline.h@{src/classes/Airline.h}|hyperpage}{38}
+\indexentry{src/classes/Airline.h@{src/classes/Airline.h}|hyperpage}{38}
+\indexentry{src/classes/Airport.cpp@{src/classes/Airport.cpp}|hyperpage}{38}
+\indexentry{Airport.cpp@{Airport.cpp}!comparator@{comparator}|hyperpage}{39}
+\indexentry{comparator@{comparator}!Airport.cpp@{Airport.cpp}|hyperpage}{39}
+\indexentry{src/classes/Airport.cpp@{src/classes/Airport.cpp}|hyperpage}{39}
+\indexentry{src/classes/Airport.h@{src/classes/Airport.h}|hyperpage}{40}
+\indexentry{Airport.h@{Airport.h}!comparator@{comparator}|hyperpage}{40}
+\indexentry{comparator@{comparator}!Airport.h@{Airport.h}|hyperpage}{40}
+\indexentry{src/classes/Airport.h@{src/classes/Airport.h}|hyperpage}{41}
+\indexentry{src/classes/Graph.h@{src/classes/Graph.h}|hyperpage}{41}
+\indexentry{src/classes/Graph.h@{src/classes/Graph.h}|hyperpage}{42}
+\indexentry{src/database/dbairport.cpp@{src/database/dbairport.cpp}|hyperpage}{47}
+\indexentry{dbairport.cpp@{dbairport.cpp}!bfsPath@{bfsPath}|hyperpage}{49}
+\indexentry{bfsPath@{bfsPath}!dbairport.cpp@{dbairport.cpp}|hyperpage}{49}
+\indexentry{dbairport.cpp@{dbairport.cpp}!calculateIndegree@{calculateIndegree}|hyperpage}{50}
+\indexentry{calculateIndegree@{calculateIndegree}!dbairport.cpp@{dbairport.cpp}|hyperpage}{50}
+\indexentry{dbairport.cpp@{dbairport.cpp}!comparatorPath@{comparatorPath}|hyperpage}{51}
+\indexentry{comparatorPath@{comparatorPath}!dbairport.cpp@{dbairport.cpp}|hyperpage}{51}
+\indexentry{dbairport.cpp@{dbairport.cpp}!connectedComponents@{connectedComponents}|hyperpage}{51}
+\indexentry{connectedComponents@{connectedComponents}!dbairport.cpp@{dbairport.cpp}|hyperpage}{51}
+\indexentry{dbairport.cpp@{dbairport.cpp}!dfsArtc@{dfsArtc}|hyperpage}{52}
+\indexentry{dfsArtc@{dfsArtc}!dbairport.cpp@{dbairport.cpp}|hyperpage}{52}
+\indexentry{dbairport.cpp@{dbairport.cpp}!dfsConnectedComponents@{dfsConnectedComponents}|hyperpage}{52}
+\indexentry{dfsConnectedComponents@{dfsConnectedComponents}!dbairport.cpp@{dbairport.cpp}|hyperpage}{52}
+\indexentry{dbairport.cpp@{dbairport.cpp}!dfsMax@{dfsMax}|hyperpage}{53}
+\indexentry{dfsMax@{dfsMax}!dbairport.cpp@{dbairport.cpp}|hyperpage}{53}
+\indexentry{dbairport.cpp@{dbairport.cpp}!dfsVisit@{dfsVisit}|hyperpage}{53}
+\indexentry{dfsVisit@{dfsVisit}!dbairport.cpp@{dbairport.cpp}|hyperpage}{53}
+\indexentry{dbairport.cpp@{dbairport.cpp}!dfsVisit@{dfsVisit}|hyperpage}{54}
+\indexentry{dfsVisit@{dfsVisit}!dbairport.cpp@{dbairport.cpp}|hyperpage}{54}
+\indexentry{dbairport.cpp@{dbairport.cpp}!distanceEarth@{distanceEarth}|hyperpage}{55}
+\indexentry{distanceEarth@{distanceEarth}!dbairport.cpp@{dbairport.cpp}|hyperpage}{55}
+\indexentry{dbairport.cpp@{dbairport.cpp}!findAirports@{findAirports}|hyperpage}{55}
+\indexentry{findAirports@{findAirports}!dbairport.cpp@{dbairport.cpp}|hyperpage}{55}
+\indexentry{dbairport.cpp@{dbairport.cpp}!findAirports@{findAirports}|hyperpage}{57}
+\indexentry{findAirports@{findAirports}!dbairport.cpp@{dbairport.cpp}|hyperpage}{57}
+\indexentry{dbairport.cpp@{dbairport.cpp}!findArticulationPoints@{findArticulationPoints}|hyperpage}{57}
+\indexentry{findArticulationPoints@{findArticulationPoints}!dbairport.cpp@{dbairport.cpp}|hyperpage}{57}
+\indexentry{dbairport.cpp@{dbairport.cpp}!findBestFlights@{findBestFlights}|hyperpage}{58}
+\indexentry{findBestFlights@{findBestFlights}!dbairport.cpp@{dbairport.cpp}|hyperpage}{58}
+\indexentry{dbairport.cpp@{dbairport.cpp}!findBestFlights@{findBestFlights}|hyperpage}{59}
+\indexentry{findBestFlights@{findBestFlights}!dbairport.cpp@{dbairport.cpp}|hyperpage}{59}
+\indexentry{dbairport.cpp@{dbairport.cpp}!findBestFlights@{findBestFlights}|hyperpage}{60}
+\indexentry{findBestFlights@{findBestFlights}!dbairport.cpp@{dbairport.cpp}|hyperpage}{60}
+\indexentry{dbairport.cpp@{dbairport.cpp}!findBestFlights@{findBestFlights}|hyperpage}{61}
+\indexentry{findBestFlights@{findBestFlights}!dbairport.cpp@{dbairport.cpp}|hyperpage}{61}
+\indexentry{dbairport.cpp@{dbairport.cpp}!findBestFlights@{findBestFlights}|hyperpage}{62}
+\indexentry{findBestFlights@{findBestFlights}!dbairport.cpp@{dbairport.cpp}|hyperpage}{62}
+\indexentry{dbairport.cpp@{dbairport.cpp}!findBestFlights@{findBestFlights}|hyperpage}{62}
+\indexentry{findBestFlights@{findBestFlights}!dbairport.cpp@{dbairport.cpp}|hyperpage}{62}
+\indexentry{dbairport.cpp@{dbairport.cpp}!getPath@{getPath}|hyperpage}{63}
+\indexentry{getPath@{getPath}!dbairport.cpp@{dbairport.cpp}|hyperpage}{63}
+\indexentry{dbairport.cpp@{dbairport.cpp}!quantityAirlinesCountry@{quantityAirlinesCountry}|hyperpage}{64}
+\indexentry{quantityAirlinesCountry@{quantityAirlinesCountry}!dbairport.cpp@{dbairport.cpp}|hyperpage}{64}
+\indexentry{dbairport.cpp@{dbairport.cpp}!quantityAirports@{quantityAirports}|hyperpage}{64}
+\indexentry{quantityAirports@{quantityAirports}!dbairport.cpp@{dbairport.cpp}|hyperpage}{64}
+\indexentry{dbairport.cpp@{dbairport.cpp}!quantityAirportsCity@{quantityAirportsCity}|hyperpage}{65}
+\indexentry{quantityAirportsCity@{quantityAirportsCity}!dbairport.cpp@{dbairport.cpp}|hyperpage}{65}
+\indexentry{dbairport.cpp@{dbairport.cpp}!quantityAirportsCountry@{quantityAirportsCountry}|hyperpage}{65}
+\indexentry{quantityAirportsCountry@{quantityAirportsCountry}!dbairport.cpp@{dbairport.cpp}|hyperpage}{65}
+\indexentry{dbairport.cpp@{dbairport.cpp}!quantityCitiesCountry@{quantityCitiesCountry}|hyperpage}{66}
+\indexentry{quantityCitiesCountry@{quantityCitiesCountry}!dbairport.cpp@{dbairport.cpp}|hyperpage}{66}
+\indexentry{dbairport.cpp@{dbairport.cpp}!quantityDestinationLimitedStop@{quantityDestinationLimitedStop}|hyperpage}{66}
+\indexentry{quantityDestinationLimitedStop@{quantityDestinationLimitedStop}!dbairport.cpp@{dbairport.cpp}|hyperpage}{66}
+\indexentry{dbairport.cpp@{dbairport.cpp}!quantityDestinationMax@{quantityDestinationMax}|hyperpage}{67}
+\indexentry{quantityDestinationMax@{quantityDestinationMax}!dbairport.cpp@{dbairport.cpp}|hyperpage}{67}
+\indexentry{dbairport.cpp@{dbairport.cpp}!quantityDestinationsAirport@{quantityDestinationsAirport}|hyperpage}{68}
+\indexentry{quantityDestinationsAirport@{quantityDestinationsAirport}!dbairport.cpp@{dbairport.cpp}|hyperpage}{68}
+\indexentry{dbairport.cpp@{dbairport.cpp}!quantityFlights@{quantityFlights}|hyperpage}{68}
+\indexentry{quantityFlights@{quantityFlights}!dbairport.cpp@{dbairport.cpp}|hyperpage}{68}
+\indexentry{dbairport.cpp@{dbairport.cpp}!quantityFlights@{quantityFlights}|hyperpage}{69}
+\indexentry{quantityFlights@{quantityFlights}!dbairport.cpp@{dbairport.cpp}|hyperpage}{69}
+\indexentry{dbairport.cpp@{dbairport.cpp}!quantityFlightsAirline@{quantityFlightsAirline}|hyperpage}{69}
+\indexentry{quantityFlightsAirline@{quantityFlightsAirline}!dbairport.cpp@{dbairport.cpp}|hyperpage}{69}
+\indexentry{dbairport.cpp@{dbairport.cpp}!quantityFlightsAirport@{quantityFlightsAirport}|hyperpage}{70}
+\indexentry{quantityFlightsAirport@{quantityFlightsAirport}!dbairport.cpp@{dbairport.cpp}|hyperpage}{70}
+\indexentry{dbairport.cpp@{dbairport.cpp}!quantityFlightsCity@{quantityFlightsCity}|hyperpage}{70}
+\indexentry{quantityFlightsCity@{quantityFlightsCity}!dbairport.cpp@{dbairport.cpp}|hyperpage}{70}
+\indexentry{dbairport.cpp@{dbairport.cpp}!quantityFlightsCountry@{quantityFlightsCountry}|hyperpage}{71}
+\indexentry{quantityFlightsCountry@{quantityFlightsCountry}!dbairport.cpp@{dbairport.cpp}|hyperpage}{71}
+\indexentry{dbairport.cpp@{dbairport.cpp}!rankingAirports@{rankingAirports}|hyperpage}{71}
+\indexentry{rankingAirports@{rankingAirports}!dbairport.cpp@{dbairport.cpp}|hyperpage}{71}
+\indexentry{dbairport.cpp@{dbairport.cpp}!resetVisited@{resetVisited}|hyperpage}{72}
+\indexentry{resetVisited@{resetVisited}!dbairport.cpp@{dbairport.cpp}|hyperpage}{72}
+\indexentry{dbairport.cpp@{dbairport.cpp}!showPath@{showPath}|hyperpage}{72}
+\indexentry{showPath@{showPath}!dbairport.cpp@{dbairport.cpp}|hyperpage}{72}
+\indexentry{dbairport.cpp@{dbairport.cpp}!showPath@{showPath}|hyperpage}{74}
+\indexentry{showPath@{showPath}!dbairport.cpp@{dbairport.cpp}|hyperpage}{74}
+\indexentry{dbairport.cpp@{dbairport.cpp}!toRadians@{toRadians}|hyperpage}{74}
+\indexentry{toRadians@{toRadians}!dbairport.cpp@{dbairport.cpp}|hyperpage}{74}
+\indexentry{src/database/dbairport.cpp@{src/database/dbairport.cpp}|hyperpage}{75}
+\indexentry{src/database/dbairport.h@{src/database/dbairport.h}|hyperpage}{84}
+\indexentry{dbairport.h@{dbairport.h}!bfsPath@{bfsPath}|hyperpage}{87}
+\indexentry{bfsPath@{bfsPath}!dbairport.h@{dbairport.h}|hyperpage}{87}
+\indexentry{dbairport.h@{dbairport.h}!calculateIndegree@{calculateIndegree}|hyperpage}{88}
+\indexentry{calculateIndegree@{calculateIndegree}!dbairport.h@{dbairport.h}|hyperpage}{88}
+\indexentry{dbairport.h@{dbairport.h}!comparatorPath@{comparatorPath}|hyperpage}{88}
+\indexentry{comparatorPath@{comparatorPath}!dbairport.h@{dbairport.h}|hyperpage}{88}
+\indexentry{dbairport.h@{dbairport.h}!connectedComponents@{connectedComponents}|hyperpage}{89}
+\indexentry{connectedComponents@{connectedComponents}!dbairport.h@{dbairport.h}|hyperpage}{89}
+\indexentry{dbairport.h@{dbairport.h}!dfsArtc@{dfsArtc}|hyperpage}{89}
+\indexentry{dfsArtc@{dfsArtc}!dbairport.h@{dbairport.h}|hyperpage}{89}
+\indexentry{dbairport.h@{dbairport.h}!dfsConnectedComponents@{dfsConnectedComponents}|hyperpage}{90}
+\indexentry{dfsConnectedComponents@{dfsConnectedComponents}!dbairport.h@{dbairport.h}|hyperpage}{90}
+\indexentry{dbairport.h@{dbairport.h}!dfsMax@{dfsMax}|hyperpage}{90}
+\indexentry{dfsMax@{dfsMax}!dbairport.h@{dbairport.h}|hyperpage}{90}
+\indexentry{dbairport.h@{dbairport.h}!dfsVisit@{dfsVisit}|hyperpage}{91}
+\indexentry{dfsVisit@{dfsVisit}!dbairport.h@{dbairport.h}|hyperpage}{91}
+\indexentry{dbairport.h@{dbairport.h}!dfsVisit@{dfsVisit}|hyperpage}{92}
+\indexentry{dfsVisit@{dfsVisit}!dbairport.h@{dbairport.h}|hyperpage}{92}
+\indexentry{dbairport.h@{dbairport.h}!distanceEarth@{distanceEarth}|hyperpage}{92}
+\indexentry{distanceEarth@{distanceEarth}!dbairport.h@{dbairport.h}|hyperpage}{92}
+\indexentry{dbairport.h@{dbairport.h}!findAirports@{findAirports}|hyperpage}{93}
+\indexentry{findAirports@{findAirports}!dbairport.h@{dbairport.h}|hyperpage}{93}
+\indexentry{dbairport.h@{dbairport.h}!findAirports@{findAirports}|hyperpage}{94}
+\indexentry{findAirports@{findAirports}!dbairport.h@{dbairport.h}|hyperpage}{94}
+\indexentry{dbairport.h@{dbairport.h}!findArticulationPoints@{findArticulationPoints}|hyperpage}{94}
+\indexentry{findArticulationPoints@{findArticulationPoints}!dbairport.h@{dbairport.h}|hyperpage}{94}
+\indexentry{dbairport.h@{dbairport.h}!findBestFlights@{findBestFlights}|hyperpage}{95}
+\indexentry{findBestFlights@{findBestFlights}!dbairport.h@{dbairport.h}|hyperpage}{95}
+\indexentry{dbairport.h@{dbairport.h}!findBestFlights@{findBestFlights}|hyperpage}{96}
+\indexentry{findBestFlights@{findBestFlights}!dbairport.h@{dbairport.h}|hyperpage}{96}
+\indexentry{dbairport.h@{dbairport.h}!findBestFlights@{findBestFlights}|hyperpage}{97}
+\indexentry{findBestFlights@{findBestFlights}!dbairport.h@{dbairport.h}|hyperpage}{97}
+\indexentry{dbairport.h@{dbairport.h}!findBestFlights@{findBestFlights}|hyperpage}{98}
+\indexentry{findBestFlights@{findBestFlights}!dbairport.h@{dbairport.h}|hyperpage}{98}
+\indexentry{dbairport.h@{dbairport.h}!findBestFlights@{findBestFlights}|hyperpage}{99}
+\indexentry{findBestFlights@{findBestFlights}!dbairport.h@{dbairport.h}|hyperpage}{99}
+\indexentry{dbairport.h@{dbairport.h}!findBestFlights@{findBestFlights}|hyperpage}{99}
+\indexentry{findBestFlights@{findBestFlights}!dbairport.h@{dbairport.h}|hyperpage}{99}
+\indexentry{dbairport.h@{dbairport.h}!getPath@{getPath}|hyperpage}{100}
+\indexentry{getPath@{getPath}!dbairport.h@{dbairport.h}|hyperpage}{100}
+\indexentry{dbairport.h@{dbairport.h}!quantityAirlinesCountry@{quantityAirlinesCountry}|hyperpage}{101}
+\indexentry{quantityAirlinesCountry@{quantityAirlinesCountry}!dbairport.h@{dbairport.h}|hyperpage}{101}
+\indexentry{dbairport.h@{dbairport.h}!quantityAirports@{quantityAirports}|hyperpage}{101}
+\indexentry{quantityAirports@{quantityAirports}!dbairport.h@{dbairport.h}|hyperpage}{101}
+\indexentry{dbairport.h@{dbairport.h}!quantityAirportsCity@{quantityAirportsCity}|hyperpage}{102}
+\indexentry{quantityAirportsCity@{quantityAirportsCity}!dbairport.h@{dbairport.h}|hyperpage}{102}
+\indexentry{dbairport.h@{dbairport.h}!quantityAirportsCountry@{quantityAirportsCountry}|hyperpage}{102}
+\indexentry{quantityAirportsCountry@{quantityAirportsCountry}!dbairport.h@{dbairport.h}|hyperpage}{102}
+\indexentry{dbairport.h@{dbairport.h}!quantityCitiesCountry@{quantityCitiesCountry}|hyperpage}{103}
+\indexentry{quantityCitiesCountry@{quantityCitiesCountry}!dbairport.h@{dbairport.h}|hyperpage}{103}
+\indexentry{dbairport.h@{dbairport.h}!quantityDestinationLimitedStop@{quantityDestinationLimitedStop}|hyperpage}{103}
+\indexentry{quantityDestinationLimitedStop@{quantityDestinationLimitedStop}!dbairport.h@{dbairport.h}|hyperpage}{103}
+\indexentry{dbairport.h@{dbairport.h}!quantityDestinationMax@{quantityDestinationMax}|hyperpage}{104}
+\indexentry{quantityDestinationMax@{quantityDestinationMax}!dbairport.h@{dbairport.h}|hyperpage}{104}
+\indexentry{dbairport.h@{dbairport.h}!quantityDestinationsAirport@{quantityDestinationsAirport}|hyperpage}{104}
+\indexentry{quantityDestinationsAirport@{quantityDestinationsAirport}!dbairport.h@{dbairport.h}|hyperpage}{104}
+\indexentry{dbairport.h@{dbairport.h}!quantityFlights@{quantityFlights}|hyperpage}{105}
+\indexentry{quantityFlights@{quantityFlights}!dbairport.h@{dbairport.h}|hyperpage}{105}
+\indexentry{dbairport.h@{dbairport.h}!quantityFlights@{quantityFlights}|hyperpage}{105}
+\indexentry{quantityFlights@{quantityFlights}!dbairport.h@{dbairport.h}|hyperpage}{105}
+\indexentry{dbairport.h@{dbairport.h}!quantityFlightsAirline@{quantityFlightsAirline}|hyperpage}{106}
+\indexentry{quantityFlightsAirline@{quantityFlightsAirline}!dbairport.h@{dbairport.h}|hyperpage}{106}
+\indexentry{dbairport.h@{dbairport.h}!quantityFlightsAirport@{quantityFlightsAirport}|hyperpage}{107}
+\indexentry{quantityFlightsAirport@{quantityFlightsAirport}!dbairport.h@{dbairport.h}|hyperpage}{107}
+\indexentry{dbairport.h@{dbairport.h}!quantityFlightsCity@{quantityFlightsCity}|hyperpage}{107}
+\indexentry{quantityFlightsCity@{quantityFlightsCity}!dbairport.h@{dbairport.h}|hyperpage}{107}
+\indexentry{dbairport.h@{dbairport.h}!quantityFlightsCountry@{quantityFlightsCountry}|hyperpage}{108}
+\indexentry{quantityFlightsCountry@{quantityFlightsCountry}!dbairport.h@{dbairport.h}|hyperpage}{108}
+\indexentry{dbairport.h@{dbairport.h}!rankingAirports@{rankingAirports}|hyperpage}{108}
+\indexentry{rankingAirports@{rankingAirports}!dbairport.h@{dbairport.h}|hyperpage}{108}
+\indexentry{dbairport.h@{dbairport.h}!resetVisited@{resetVisited}|hyperpage}{109}
+\indexentry{resetVisited@{resetVisited}!dbairport.h@{dbairport.h}|hyperpage}{109}
+\indexentry{dbairport.h@{dbairport.h}!showPath@{showPath}|hyperpage}{109}
+\indexentry{showPath@{showPath}!dbairport.h@{dbairport.h}|hyperpage}{109}
+\indexentry{dbairport.h@{dbairport.h}!showPath@{showPath}|hyperpage}{111}
+\indexentry{showPath@{showPath}!dbairport.h@{dbairport.h}|hyperpage}{111}
+\indexentry{dbairport.h@{dbairport.h}!toRadians@{toRadians}|hyperpage}{111}
+\indexentry{toRadians@{toRadians}!dbairport.h@{dbairport.h}|hyperpage}{111}
+\indexentry{src/database/dbairport.h@{src/database/dbairport.h}|hyperpage}{112}
+\indexentry{src/database/read.cpp@{src/database/read.cpp}|hyperpage}{113}
+\indexentry{read.cpp@{read.cpp}!readAirlines@{readAirlines}|hyperpage}{113}
+\indexentry{readAirlines@{readAirlines}!read.cpp@{read.cpp}|hyperpage}{113}
+\indexentry{read.cpp@{read.cpp}!readAirports@{readAirports}|hyperpage}{114}
+\indexentry{readAirports@{readAirports}!read.cpp@{read.cpp}|hyperpage}{114}
+\indexentry{read.cpp@{read.cpp}!readFlights@{readFlights}|hyperpage}{115}
+\indexentry{readFlights@{readFlights}!read.cpp@{read.cpp}|hyperpage}{115}
+\indexentry{read.cpp@{read.cpp}!airportsHash@{airportsHash}|hyperpage}{116}
+\indexentry{airportsHash@{airportsHash}!read.cpp@{read.cpp}|hyperpage}{116}
+\indexentry{read.cpp@{read.cpp}!citiesHash@{citiesHash}|hyperpage}{116}
+\indexentry{citiesHash@{citiesHash}!read.cpp@{read.cpp}|hyperpage}{116}
+\indexentry{read.cpp@{read.cpp}!countriesHash@{countriesHash}|hyperpage}{116}
+\indexentry{countriesHash@{countriesHash}!read.cpp@{read.cpp}|hyperpage}{116}
+\indexentry{src/database/read.cpp@{src/database/read.cpp}|hyperpage}{117}
+\indexentry{src/database/read.h@{src/database/read.h}|hyperpage}{118}
+\indexentry{read.h@{read.h}!readAirlines@{readAirlines}|hyperpage}{119}
+\indexentry{readAirlines@{readAirlines}!read.h@{read.h}|hyperpage}{119}
+\indexentry{read.h@{read.h}!readAirports@{readAirports}|hyperpage}{120}
+\indexentry{readAirports@{readAirports}!read.h@{read.h}|hyperpage}{120}
+\indexentry{read.h@{read.h}!readFlights@{readFlights}|hyperpage}{121}
+\indexentry{readFlights@{readFlights}!read.h@{read.h}|hyperpage}{121}
+\indexentry{read.h@{read.h}!airportsHash@{airportsHash}|hyperpage}{122}
+\indexentry{airportsHash@{airportsHash}!read.h@{read.h}|hyperpage}{122}
+\indexentry{read.h@{read.h}!citiesHash@{citiesHash}|hyperpage}{122}
+\indexentry{citiesHash@{citiesHash}!read.h@{read.h}|hyperpage}{122}
+\indexentry{read.h@{read.h}!countriesHash@{countriesHash}|hyperpage}{122}
+\indexentry{countriesHash@{countriesHash}!read.h@{read.h}|hyperpage}{122}
+\indexentry{src/database/read.h@{src/database/read.h}|hyperpage}{122}
+\indexentry{src/main.cpp@{src/main.cpp}|hyperpage}{122}
+\indexentry{main.cpp@{main.cpp}!main@{main}|hyperpage}{123}
+\indexentry{main@{main}!main.cpp@{main.cpp}|hyperpage}{123}
+\indexentry{src/main.cpp@{src/main.cpp}|hyperpage}{123}
+\indexentry{src/Menu.cpp@{src/Menu.cpp}|hyperpage}{123}
+\indexentry{Menu.cpp@{Menu.cpp}!bestFlights@{bestFlights}|hyperpage}{124}
+\indexentry{bestFlights@{bestFlights}!Menu.cpp@{Menu.cpp}|hyperpage}{124}
+\indexentry{Menu.cpp@{Menu.cpp}!filterAirplanes@{filterAirplanes}|hyperpage}{126}
+\indexentry{filterAirplanes@{filterAirplanes}!Menu.cpp@{Menu.cpp}|hyperpage}{126}
+\indexentry{Menu.cpp@{Menu.cpp}!Menu@{Menu}|hyperpage}{127}
+\indexentry{Menu@{Menu}!Menu.cpp@{Menu.cpp}|hyperpage}{127}
+\indexentry{Menu.cpp@{Menu.cpp}!menuAirlines@{menuAirlines}|hyperpage}{128}
+\indexentry{menuAirlines@{menuAirlines}!Menu.cpp@{Menu.cpp}|hyperpage}{128}
+\indexentry{Menu.cpp@{Menu.cpp}!menuAirports@{menuAirports}|hyperpage}{129}
+\indexentry{menuAirports@{menuAirports}!Menu.cpp@{Menu.cpp}|hyperpage}{129}
+\indexentry{Menu.cpp@{Menu.cpp}!menuCities@{menuCities}|hyperpage}{130}
+\indexentry{menuCities@{menuCities}!Menu.cpp@{Menu.cpp}|hyperpage}{130}
+\indexentry{Menu.cpp@{Menu.cpp}!menuCountries@{menuCountries}|hyperpage}{131}
+\indexentry{menuCountries@{menuCountries}!Menu.cpp@{Menu.cpp}|hyperpage}{131}
+\indexentry{Menu.cpp@{Menu.cpp}!menuDestination@{menuDestination}|hyperpage}{132}
+\indexentry{menuDestination@{menuDestination}!Menu.cpp@{Menu.cpp}|hyperpage}{132}
+\indexentry{Menu.cpp@{Menu.cpp}!menuFlights@{menuFlights}|hyperpage}{133}
+\indexentry{menuFlights@{menuFlights}!Menu.cpp@{Menu.cpp}|hyperpage}{133}
+\indexentry{Menu.cpp@{Menu.cpp}!menuListing@{menuListing}|hyperpage}{135}
+\indexentry{menuListing@{menuListing}!Menu.cpp@{Menu.cpp}|hyperpage}{135}
+\indexentry{Menu.cpp@{Menu.cpp}!menuQuantity@{menuQuantity}|hyperpage}{136}
+\indexentry{menuQuantity@{menuQuantity}!Menu.cpp@{Menu.cpp}|hyperpage}{136}
+\indexentry{Menu.cpp@{Menu.cpp}!selectType@{selectType}|hyperpage}{137}
+\indexentry{selectType@{selectType}!Menu.cpp@{Menu.cpp}|hyperpage}{137}
+\indexentry{Menu.cpp@{Menu.cpp}!typeAirport@{typeAirport}|hyperpage}{138}
+\indexentry{typeAirport@{typeAirport}!Menu.cpp@{Menu.cpp}|hyperpage}{138}
+\indexentry{Menu.cpp@{Menu.cpp}!typeCity@{typeCity}|hyperpage}{138}
+\indexentry{typeCity@{typeCity}!Menu.cpp@{Menu.cpp}|hyperpage}{138}
+\indexentry{Menu.cpp@{Menu.cpp}!typeCoordinates@{typeCoordinates}|hyperpage}{139}
+\indexentry{typeCoordinates@{typeCoordinates}!Menu.cpp@{Menu.cpp}|hyperpage}{139}
+\indexentry{Menu.cpp@{Menu.cpp}!airlines@{airlines}|hyperpage}{140}
+\indexentry{airlines@{airlines}!Menu.cpp@{Menu.cpp}|hyperpage}{140}
+\indexentry{Menu.cpp@{Menu.cpp}!airports@{airports}|hyperpage}{140}
+\indexentry{airports@{airports}!Menu.cpp@{Menu.cpp}|hyperpage}{140}
+\indexentry{src/Menu.cpp@{src/Menu.cpp}|hyperpage}{140}
+\indexentry{src/Menu.h@{src/Menu.h}|hyperpage}{152}
+\indexentry{Menu.h@{Menu.h}!bestFlights@{bestFlights}|hyperpage}{152}
+\indexentry{bestFlights@{bestFlights}!Menu.h@{Menu.h}|hyperpage}{152}
+\indexentry{Menu.h@{Menu.h}!filterAirplanes@{filterAirplanes}|hyperpage}{154}
+\indexentry{filterAirplanes@{filterAirplanes}!Menu.h@{Menu.h}|hyperpage}{154}
+\indexentry{Menu.h@{Menu.h}!Menu@{Menu}|hyperpage}{155}
+\indexentry{Menu@{Menu}!Menu.h@{Menu.h}|hyperpage}{155}
+\indexentry{Menu.h@{Menu.h}!menuAirlines@{menuAirlines}|hyperpage}{156}
+\indexentry{menuAirlines@{menuAirlines}!Menu.h@{Menu.h}|hyperpage}{156}
+\indexentry{Menu.h@{Menu.h}!menuAirports@{menuAirports}|hyperpage}{157}
+\indexentry{menuAirports@{menuAirports}!Menu.h@{Menu.h}|hyperpage}{157}
+\indexentry{Menu.h@{Menu.h}!menuCities@{menuCities}|hyperpage}{158}
+\indexentry{menuCities@{menuCities}!Menu.h@{Menu.h}|hyperpage}{158}
+\indexentry{Menu.h@{Menu.h}!menuCountries@{menuCountries}|hyperpage}{159}
+\indexentry{menuCountries@{menuCountries}!Menu.h@{Menu.h}|hyperpage}{159}
+\indexentry{Menu.h@{Menu.h}!menuDestination@{menuDestination}|hyperpage}{160}
+\indexentry{menuDestination@{menuDestination}!Menu.h@{Menu.h}|hyperpage}{160}
+\indexentry{Menu.h@{Menu.h}!menuFlights@{menuFlights}|hyperpage}{161}
+\indexentry{menuFlights@{menuFlights}!Menu.h@{Menu.h}|hyperpage}{161}
+\indexentry{Menu.h@{Menu.h}!menuListing@{menuListing}|hyperpage}{163}
+\indexentry{menuListing@{menuListing}!Menu.h@{Menu.h}|hyperpage}{163}
+\indexentry{Menu.h@{Menu.h}!menuQuantity@{menuQuantity}|hyperpage}{164}
+\indexentry{menuQuantity@{menuQuantity}!Menu.h@{Menu.h}|hyperpage}{164}
+\indexentry{Menu.h@{Menu.h}!selectType@{selectType}|hyperpage}{165}
+\indexentry{selectType@{selectType}!Menu.h@{Menu.h}|hyperpage}{165}
+\indexentry{Menu.h@{Menu.h}!typeAirport@{typeAirport}|hyperpage}{166}
+\indexentry{typeAirport@{typeAirport}!Menu.h@{Menu.h}|hyperpage}{166}
+\indexentry{Menu.h@{Menu.h}!typeCity@{typeCity}|hyperpage}{166}
+\indexentry{typeCity@{typeCity}!Menu.h@{Menu.h}|hyperpage}{166}
+\indexentry{Menu.h@{Menu.h}!typeCoordinates@{typeCoordinates}|hyperpage}{167}
+\indexentry{typeCoordinates@{typeCoordinates}!Menu.h@{Menu.h}|hyperpage}{167}
+\indexentry{src/Menu.h@{src/Menu.h}|hyperpage}{168}

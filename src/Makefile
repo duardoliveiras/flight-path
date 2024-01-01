@@ -201,30 +201,6 @@ classes/Airport.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/a.dir/build.make CMakeFiles/a.dir/classes/Airport.cpp.s
 .PHONY : classes/Airport.cpp.s
 
-classes/City.o: classes/City.cpp.o
-.PHONY : classes/City.o
-
-# target to build an object file
-classes/City.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/a.dir/build.make CMakeFiles/a.dir/classes/City.cpp.o
-.PHONY : classes/City.cpp.o
-
-classes/City.i: classes/City.cpp.i
-.PHONY : classes/City.i
-
-# target to preprocess a source file
-classes/City.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/a.dir/build.make CMakeFiles/a.dir/classes/City.cpp.i
-.PHONY : classes/City.cpp.i
-
-classes/City.s: classes/City.cpp.s
-.PHONY : classes/City.s
-
-# target to generate assembly for a file
-classes/City.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/a.dir/build.make CMakeFiles/a.dir/classes/City.cpp.s
-.PHONY : classes/City.cpp.s
-
 database/dbairport.o: database/dbairport.cpp.o
 .PHONY : database/dbairport.o
 
@@ -315,9 +291,6 @@ help:
 	@echo "... classes/Airport.o"
 	@echo "... classes/Airport.i"
 	@echo "... classes/Airport.s"
-	@echo "... classes/City.o"
-	@echo "... classes/City.i"
-	@echo "... classes/City.s"
 	@echo "... database/dbairport.o"
 	@echo "... database/dbairport.i"
 	@echo "... database/dbairport.s"
