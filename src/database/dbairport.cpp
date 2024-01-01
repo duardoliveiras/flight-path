@@ -304,11 +304,11 @@ int quantityDestinationMax(Graph<Airport> airports)
     }
 
     std::cout << "\nStarting in: " << maxPath[0] << std::endl;
-    for (int i = 0; i < maxPath.size() - 1; i++)
-    {
-        std::cout << maxPath[i] << " -> ";
-    }
-    std::cout << "Ending in: " << maxPath[maxPath.size() - 1] << std::endl;
+    // for (int i = 1; i < maxPath.size() - 1; i++)
+    // {
+    //     std::cout << maxPath[i] << " -> ";
+    // }
+    std::cout << "\nEnding in: " << maxPath[maxPath.size() - 1] << std::endl;
     return maxPath.size() - 1;
 }
 

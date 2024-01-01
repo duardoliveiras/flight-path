@@ -62,6 +62,29 @@ Exemplo:
  */
 ```
 
+### Check List Apresentação:
+
+- [✔] Identificação do trabalho e elementos do grupo. (1 slide)
+
+- [✔] Diagrama de classe indicando os ficheiros envolvidos em cada classe. (1 slide)
+
+- [✔] Descrição dos métodos de leitura dos arquivos CSV. (2 slides)
+
+- [✔] Descrição dos grafos usados, utilizar imagens. (2 slides)
+
+- [✔] Descrição das principais funções utilizadas com sua respectiva complexidade. (5 slides)
+
+  - [✔] Origem/Destino: diretamente de um aeroporto para outro? de uma cidade? de uma região? outras combinações?
+  - [✔] Rede de voos: qualquer companhia? somente uma companhia? conjunto customizado de companhias?
+
+- [✔] Descrição da interface do utilizador. (2 slides)
+
+- [✔] Destaque da melhor funcionalidade. (1 slide)
+
+- [✔] Principais dificuldades encontradas. (1 slide)
+
+- [✖] Extra: Exemplos de utilização (5 slides)
+
 ### Check List Final:
 
 - [✖] O programa usa a classe `Graph.h` fornecida em aula com suas devidas modifições que fazem sentido para o problema proposto?
