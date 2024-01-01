@@ -1,0 +1,48 @@
+\doxysection{src/main.cpp File Reference}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{src/main.cpp@{src/main.cpp}}
+{\ttfamily \#include "{}Menu.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGraph}{int}} \mbox{\hyperlink{main_8cpp_abf9e6b7e6f15df4b525a2e7705ba3089}{main}} (\mbox{\hyperlink{classGraph}{int}} \mbox{\hyperlink{classGraph}{argc}}, \mbox{\hyperlink{classGraph}{char}} \mbox{\hyperlink{classGraph}{const}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classGraph}{argv}}\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Main function to run the program and load the database of airports and flights Complexity\+: O(1) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8cpp_abf9e6b7e6f15df4b525a2e7705ba3089}\label{main_8cpp_abf9e6b7e6f15df4b525a2e7705ba3089} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{int}} main (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{int}}}]{argc,  }\item[{\mbox{\hyperlink{classGraph}{char}} \mbox{\hyperlink{classGraph}{const}} \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Main function to run the program and load the database of airports and flights Complexity\+: O(1) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & The number of arguments. If no argument is passed, the default folder is "{}fake"{}. \\
+\hline
+{\em argv} & The arguments (folder name). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 0 if the program runs successfully. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00010}{10}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{argc}}\ <\ 2)}
+\DoxyCodeLine{00013\ \ \ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{classGraph}{argv}}[1]\ =\ \textcolor{stringliteral}{"{}original"{}};}
+\DoxyCodeLine{00015\ \ \ \}}
+\DoxyCodeLine{00016\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Loading\ database..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00017\ \ \ \mbox{\hyperlink{Menu_8cpp_a7bef7cae2480a41f5c2625c6abeaf9d0}{Menu}}(\mbox{\hyperlink{classGraph}{argv}}[1]);}
+\DoxyCodeLine{00018\ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00019\ \}}
+
+\end{DoxyCode}

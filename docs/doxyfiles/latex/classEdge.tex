@@ -1,0 +1,259 @@
+\doxysection{Edge\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classEdge}{}\label{classEdge}\index{Edge$<$ T $>$@{Edge$<$ T $>$}}
+
+
+{\ttfamily \#include $<$Graph.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEdge_acc84a633d166313737a1ac9a0d27751e}{Edge}} (\mbox{\hyperlink{classVertex}{Vertex}}$<$ \mbox{\hyperlink{classGraph}{T}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classGraph}{d}}, \mbox{\hyperlink{classGraph}{double}} \mbox{\hyperlink{classGraph}{w}}, std\+::string route)
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{classEdge}{Edge} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVertex}{Vertex}}$<$ \mbox{\hyperlink{classGraph}{T}} $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classEdge_a9a2de066dff8513dd788d553fc1d0c81}{get\+Dest}} () \mbox{\hyperlink{classGraph}{const}}
+\begin{DoxyCompactList}\small\item\em Function to get the destination vertex of an edge. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{double}} \mbox{\hyperlink{classEdge_a3df378e283d6c8be5be4170ac8d7f4e8}{get\+Weight}} () \mbox{\hyperlink{classGraph}{const}}
+\begin{DoxyCompactList}\small\item\em Function to get the weight of an edge. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classEdge_a24993e52a58e72772e7d12d4b41cdf8a}{get\+Route}} () \mbox{\hyperlink{classGraph}{const}}
+\begin{DoxyCompactList}\small\item\em Function to get the route information of an edge. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{void}} \mbox{\hyperlink{classEdge_a163ee9f75e35701e6a04ea1c987e4094}{set\+Dest}} (\mbox{\hyperlink{classVertex}{Vertex}}$<$ \mbox{\hyperlink{classGraph}{T}} $>$ \texorpdfstring{$\ast$}{*}dest)
+\begin{DoxyCompactList}\small\item\em Function to set the destination vertex of an edge. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{void}} \mbox{\hyperlink{classEdge_aff600b093dd6917feeeb35bb7947bdd4}{set\+Weight}} (\mbox{\hyperlink{classGraph}{double}} weight)
+\begin{DoxyCompactList}\small\item\em Function to set the weight of an edge. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGraph}{class}} \mbox{\hyperlink{classEdge_aefa9b76cd57411c5354e5620dc2d84dd}{Graph$<$ T $>$}}
+\item 
+\mbox{\hyperlink{classGraph}{class}} \mbox{\hyperlink{classEdge_a2e120a12dec663fa334633b4f26cbed8}{Vertex$<$ T $>$}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$\mbox{\hyperlink{classGraph}{class}} \mbox{\hyperlink{classGraph}{T}}$>$\newline
+class Edge$<$ T $>$}
+
+
+Definition at line \mbox{\hyperlink{Graph_8h_source_l00067}{67}} of file \mbox{\hyperlink{Graph_8h_source}{Graph.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classEdge_acc84a633d166313737a1ac9a0d27751e}\label{classEdge_acc84a633d166313737a1ac9a0d27751e} 
+\index{Edge$<$ T $>$@{Edge$<$ T $>$}!Edge@{Edge}}
+\index{Edge@{Edge}!Edge$<$ T $>$@{Edge$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Edge()}{Edge()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classGraph}{class}} \mbox{\hyperlink{classGraph}{T}} $>$ \\
+\mbox{\hyperlink{classEdge}{Edge}}$<$ \mbox{\hyperlink{classGraph}{T}} $>$\mbox{\hyperlink{classEdge}{\+::\+Edge}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVertex}{Vertex}}$<$ \mbox{\hyperlink{classGraph}{T}} $>$ \texorpdfstring{$\ast$}{*}}]{d,  }\item[{\mbox{\hyperlink{classGraph}{double}}}]{w,  }\item[{std\+::string}]{r }\end{DoxyParamCaption})}
+
+
+
+Constructor for \doxylink{classEdge}{Edge} class. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of the graph \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em d} & The destination vertex \\
+\hline
+{\em w} & The weight of the edge \\
+\hline
+{\em r} & The route information of the edge \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Graph_8h_source_l00149}{149}} of file \mbox{\hyperlink{Graph_8h_source}{Graph.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00150\ \ \ \ \ :\ dest(\mbox{\hyperlink{classGraph}{d}}),\ weight(\mbox{\hyperlink{classGraph}{w}}),\ route(\mbox{\hyperlink{classGraph}{r}})\ \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classEdge_a9a2de066dff8513dd788d553fc1d0c81}\label{classEdge_a9a2de066dff8513dd788d553fc1d0c81} 
+\index{Edge$<$ T $>$@{Edge$<$ T $>$}!getDest@{getDest}}
+\index{getDest@{getDest}!Edge$<$ T $>$@{Edge$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getDest()}{getDest()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classGraph}{class}} \mbox{\hyperlink{classGraph}{T}} $>$ \\
+\mbox{\hyperlink{classVertex}{Vertex}}$<$ \mbox{\hyperlink{classGraph}{T}} $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classEdge}{Edge}}$<$ \mbox{\hyperlink{classGraph}{T}} $>$\+::get\+Dest (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Function to get the destination vertex of an edge. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of the graph \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+Vertex$<$\+T$>$\texorpdfstring{$\ast$}{*} The destination vertex of an edge 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Graph_8h_source_l00218}{218}} of file \mbox{\hyperlink{Graph_8h_source}{Graph.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00218\ \{\ \textcolor{keywordflow}{return}\ dest;\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classEdge_a24993e52a58e72772e7d12d4b41cdf8a}\label{classEdge_a24993e52a58e72772e7d12d4b41cdf8a} 
+\index{Edge$<$ T $>$@{Edge$<$ T $>$}!getRoute@{getRoute}}
+\index{getRoute@{getRoute}!Edge$<$ T $>$@{Edge$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getRoute()}{getRoute()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classGraph}{class}} \mbox{\hyperlink{classGraph}{T}} $>$ \\
+std\+::string \mbox{\hyperlink{classEdge}{Edge}}$<$ \mbox{\hyperlink{classGraph}{T}} $>$\+::get\+Route (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Function to get the route information of an edge. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of the graph \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+std\+::string The route information of an edge 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Graph_8h_source_l00255}{255}} of file \mbox{\hyperlink{Graph_8h_source}{Graph.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00255\ \{\ \textcolor{keywordflow}{return}\ route;\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classEdge_a3df378e283d6c8be5be4170ac8d7f4e8}\label{classEdge_a3df378e283d6c8be5be4170ac8d7f4e8} 
+\index{Edge$<$ T $>$@{Edge$<$ T $>$}!getWeight@{getWeight}}
+\index{getWeight@{getWeight}!Edge$<$ T $>$@{Edge$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getWeight()}{getWeight()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classGraph}{class}} \mbox{\hyperlink{classGraph}{T}} $>$ \\
+\mbox{\hyperlink{classGraph}{double}} \mbox{\hyperlink{classEdge}{Edge}}$<$ \mbox{\hyperlink{classGraph}{T}} $>$\+::get\+Weight (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Function to get the weight of an edge. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of the graph \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+double The weight of an edge 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Graph_8h_source_l00235}{235}} of file \mbox{\hyperlink{Graph_8h_source}{Graph.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00235\ \{\ \textcolor{keywordflow}{return}\ weight;\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classEdge_a163ee9f75e35701e6a04ea1c987e4094}\label{classEdge_a163ee9f75e35701e6a04ea1c987e4094} 
+\index{Edge$<$ T $>$@{Edge$<$ T $>$}!setDest@{setDest}}
+\index{setDest@{setDest}!Edge$<$ T $>$@{Edge$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setDest()}{setDest()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classGraph}{class}} \mbox{\hyperlink{classGraph}{T}} $>$ \\
+\mbox{\hyperlink{classGraph}{void}} \mbox{\hyperlink{classEdge}{Edge}}$<$ \mbox{\hyperlink{classGraph}{T}} $>$\+::set\+Dest (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVertex}{Vertex}}$<$ \mbox{\hyperlink{classGraph}{T}} $>$ \texorpdfstring{$\ast$}{*}}]{d }\end{DoxyParamCaption})}
+
+
+
+Function to set the destination vertex of an edge. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of the graph \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em d} & The destination vertex \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Graph_8h_source_l00227}{227}} of file \mbox{\hyperlink{Graph_8h_source}{Graph.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00227\ \{\ Edge::dest\ =\ \mbox{\hyperlink{classGraph}{d}};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classEdge_aff600b093dd6917feeeb35bb7947bdd4}\label{classEdge_aff600b093dd6917feeeb35bb7947bdd4} 
+\index{Edge$<$ T $>$@{Edge$<$ T $>$}!setWeight@{setWeight}}
+\index{setWeight@{setWeight}!Edge$<$ T $>$@{Edge$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setWeight()}{setWeight()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classGraph}{class}} \mbox{\hyperlink{classGraph}{T}} $>$ \\
+\mbox{\hyperlink{classGraph}{void}} \mbox{\hyperlink{classEdge}{Edge}}$<$ \mbox{\hyperlink{classGraph}{T}} $>$\+::set\+Weight (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{double}}}]{weight }\end{DoxyParamCaption})}
+
+
+
+Function to set the weight of an edge. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of the graph \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em weight} & The weight of an edge \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Graph_8h_source_l00244}{244}} of file \mbox{\hyperlink{Graph_8h_source}{Graph.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00245\ \{}
+\DoxyCodeLine{00246\ \ \ Edge::weight\ =\ weight;}
+\DoxyCodeLine{00247\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classEdge_aefa9b76cd57411c5354e5620dc2d84dd}\label{classEdge_aefa9b76cd57411c5354e5620dc2d84dd} 
+\index{Edge$<$ T $>$@{Edge$<$ T $>$}!Graph$<$ T $>$@{Graph$<$ T $>$}}
+\index{Graph$<$ T $>$@{Graph$<$ T $>$}!Edge$<$ T $>$@{Edge$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Graph$<$ T $>$}{Graph< T >}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classGraph}{class}} \mbox{\hyperlink{classGraph}{T}} $>$ \\
+\mbox{\hyperlink{classGraph}{friend}} \mbox{\hyperlink{classGraph}{class}} \mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classGraph}{T}} $>$\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \mbox{\hyperlink{Graph_8h_source_l00084}{84}} of file \mbox{\hyperlink{Graph_8h_source}{Graph.\+h}}.
+
+\Hypertarget{classEdge_a2e120a12dec663fa334633b4f26cbed8}\label{classEdge_a2e120a12dec663fa334633b4f26cbed8} 
+\index{Edge$<$ T $>$@{Edge$<$ T $>$}!Vertex$<$ T $>$@{Vertex$<$ T $>$}}
+\index{Vertex$<$ T $>$@{Vertex$<$ T $>$}!Edge$<$ T $>$@{Edge$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Vertex$<$ T $>$}{Vertex< T >}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classGraph}{class}} \mbox{\hyperlink{classGraph}{T}} $>$ \\
+\mbox{\hyperlink{classGraph}{friend}} \mbox{\hyperlink{classGraph}{class}} \mbox{\hyperlink{classVertex}{Vertex}}$<$ \mbox{\hyperlink{classGraph}{T}} $>$\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \mbox{\hyperlink{Graph_8h_source_l00084}{84}} of file \mbox{\hyperlink{Graph_8h_source}{Graph.\+h}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/classes/\mbox{\hyperlink{Graph_8h}{Graph.\+h}}\end{DoxyCompactItemize}

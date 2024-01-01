@@ -1,0 +1,567 @@
+\doxysection{Graph\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classGraph}{}\label{classGraph}\index{Graph$<$ T $>$@{Graph$<$ T $>$}}
+
+
+{\ttfamily \#include $<$Graph.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVertex}{Vertex}}$<$ \mbox{\hyperlink{classGraph}{T}} $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classGraph_a8b7b7465fbfd562e2a469f90a437ab75}{find\+Vertex}} (\mbox{\hyperlink{classGraph}{const}} \mbox{\hyperlink{classGraph}{T}} \&\mbox{\hyperlink{classGraph}{in}}) \mbox{\hyperlink{classGraph}{const}}
+\begin{DoxyCompactList}\small\item\em Function to find a vertex with a given content. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{int}} \mbox{\hyperlink{classGraph_a0853eac15cdf0f06d63f4b8a7820ec71}{get\+Num\+Vertex}} () \mbox{\hyperlink{classGraph}{const}}
+\begin{DoxyCompactList}\small\item\em Function to get the number of vertices in the graph. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{bool}} \mbox{\hyperlink{classGraph_a00be284ea2be3b3d0f0d2e493b70245b}{add\+Vertex}} (\mbox{\hyperlink{classGraph}{const}} \mbox{\hyperlink{classGraph}{T}} \&\mbox{\hyperlink{classGraph}{in}})
+\begin{DoxyCompactList}\small\item\em Function to add a vertex to a graph. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{bool}} \mbox{\hyperlink{classGraph_af9c903104ad69a7782979fa9caedf163}{remove\+Vertex}} (\mbox{\hyperlink{classGraph}{const}} \mbox{\hyperlink{classGraph}{T}} \&\mbox{\hyperlink{classGraph}{in}})
+\begin{DoxyCompactList}\small\item\em Function to remove a vertex from a graph. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{bool}} \mbox{\hyperlink{classGraph_ac10e312cf5b9d73558b34adc0fc7e5ab}{add\+Edge}} (\mbox{\hyperlink{classGraph}{const}} \mbox{\hyperlink{classGraph}{T}} \&\mbox{\hyperlink{classGraph}{sourc}}, \mbox{\hyperlink{classGraph}{const}} \mbox{\hyperlink{classGraph}{T}} \&dest, \mbox{\hyperlink{classGraph}{double}} \mbox{\hyperlink{classGraph}{w}}, std\+::string route)
+\begin{DoxyCompactList}\small\item\em Function to add an edge to a graph. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{bool}} \mbox{\hyperlink{classGraph_a1106092a37366486cf55576f9ec01692}{remove\+Edge}} (\mbox{\hyperlink{classGraph}{const}} \mbox{\hyperlink{classGraph}{T}} \&\mbox{\hyperlink{classGraph}{sourc}}, \mbox{\hyperlink{classGraph}{const}} \mbox{\hyperlink{classGraph}{T}} \&dest)
+\begin{DoxyCompactList}\small\item\em Function to remove an edge from a graph. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{classVertex}{Vertex}}$<$ \mbox{\hyperlink{classGraph}{T}} $>$ \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classGraph_a923b43995f81ad9319bbc81a1e433e64}{get\+Vertex\+Set}} () \mbox{\hyperlink{classGraph}{const}}
+\begin{DoxyCompactList}\small\item\em Function to get the vector of vertices in the graph. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{classGraph}{T}} $>$ \mbox{\hyperlink{classGraph_a911798b1a89f8c4ae90ba3eee849cff8}{dfs}} () \mbox{\hyperlink{classGraph}{const}}
+\begin{DoxyCompactList}\small\item\em Function to perform a depth-\/first search (dfs) in a graph. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{classGraph}{T}} $>$ \mbox{\hyperlink{classGraph_a510522c8221b321a82e687fe2f2cb484}{dfs}} (\mbox{\hyperlink{classGraph}{const}} \mbox{\hyperlink{classGraph}{T}} \&\mbox{\hyperlink{classGraph}{source}}) \mbox{\hyperlink{classGraph}{const}}
+\begin{DoxyCompactList}\small\item\em Function to perform a depth-\/first search (dfs) in a graph. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{classGraph}{T}} $>$ \mbox{\hyperlink{classGraph_aa47a4130165550e208e7a063fce6983a}{bfs}} (\mbox{\hyperlink{classGraph}{const}} \mbox{\hyperlink{classGraph}{T}} \&\mbox{\hyperlink{classGraph}{source}}) \mbox{\hyperlink{classGraph}{const}}
+\begin{DoxyCompactList}\small\item\em Function to perform a breadth-\/first search (bfs) in a graph. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{classGraph}{T}} $>$ \mbox{\hyperlink{classGraph_af1d4affd1f886bf598d0f4cf4a0cb7cb}{topsort}} () \mbox{\hyperlink{classGraph}{const}}
+\begin{DoxyCompactList}\small\item\em Function to perform a topological sorting of the vertices of a graph. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{bool}} \mbox{\hyperlink{classGraph_a1ea1512afe5ab878301bc806c2eba9d2}{is\+DAG}} () \mbox{\hyperlink{classGraph}{const}}
+\begin{DoxyCompactList}\small\item\em Function to check if a graph is a DAG. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class Graph$<$ T $>$}
+
+
+Definition at line \mbox{\hyperlink{Graph_8h_source_l00092}{92}} of file \mbox{\hyperlink{Graph_8h_source}{Graph.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classGraph_ac10e312cf5b9d73558b34adc0fc7e5ab}\label{classGraph_ac10e312cf5b9d73558b34adc0fc7e5ab} 
+\index{Graph$<$ T $>$@{Graph$<$ T $>$}!addEdge@{addEdge}}
+\index{addEdge@{addEdge}!Graph$<$ T $>$@{Graph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{addEdge()}{addEdge()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classGraph}{class}} \mbox{\hyperlink{classGraph}{T}} $>$ \\
+\mbox{\hyperlink{classGraph}{bool}} \mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classGraph}{T}} $>$\+::add\+Edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{const}} \mbox{\hyperlink{classGraph}{T}} \&}]{sourc,  }\item[{\mbox{\hyperlink{classGraph}{const}} \mbox{\hyperlink{classGraph}{T}} \&}]{dest,  }\item[{\mbox{\hyperlink{classGraph}{double}}}]{w,  }\item[{std\+::string}]{route }\end{DoxyParamCaption})}
+
+
+
+Function to add an edge to a graph. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of the graph \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em sourc} & The source vertex \\
+\hline
+{\em dest} & The destination vertex \\
+\hline
+{\em w} & The weight of the edge \\
+\hline
+{\em route} & The route information of the edge \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True if the edge was added 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Graph_8h_source_l00390}{390}} of file \mbox{\hyperlink{Graph_8h_source}{Graph.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00392\ \{}
+\DoxyCodeLine{00393\ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v1}}\ =\ \mbox{\hyperlink{classGraph_a8b7b7465fbfd562e2a469f90a437ab75}{findVertex}}(\mbox{\hyperlink{classGraph}{sourc}});}
+\DoxyCodeLine{00394\ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v2}}\ =\ \mbox{\hyperlink{classGraph_a8b7b7465fbfd562e2a469f90a437ab75}{findVertex}}(dest);}
+\DoxyCodeLine{00395\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{v1}}\ ==\ \mbox{\hyperlink{classGraph}{NULL}}\ ||\ \mbox{\hyperlink{classGraph}{v2}}\ ==\ \mbox{\hyperlink{classGraph}{NULL}})}
+\DoxyCodeLine{00396\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00397\ \ \ \mbox{\hyperlink{classGraph}{v1}}-\/>\mbox{\hyperlink{classGraph_ac10e312cf5b9d73558b34adc0fc7e5ab}{addEdge}}(\mbox{\hyperlink{classGraph}{v2}},\ \mbox{\hyperlink{classGraph}{w}},\ route);}
+\DoxyCodeLine{00398\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00399\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classGraph_a00be284ea2be3b3d0f0d2e493b70245b}\label{classGraph_a00be284ea2be3b3d0f0d2e493b70245b} 
+\index{Graph$<$ T $>$@{Graph$<$ T $>$}!addVertex@{addVertex}}
+\index{addVertex@{addVertex}!Graph$<$ T $>$@{Graph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{addVertex()}{addVertex()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classGraph}{class}} \mbox{\hyperlink{classGraph}{T}} $>$ \\
+\mbox{\hyperlink{classGraph}{bool}} \mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classGraph}{T}} $>$\+::add\+Vertex (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{const}} \mbox{\hyperlink{classGraph}{T}} \&}]{in }\end{DoxyParamCaption})}
+
+
+
+Function to add a vertex to a graph. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of the graph \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The content of the vertex \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True if the vertex was added 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Graph_8h_source_l00372}{372}} of file \mbox{\hyperlink{Graph_8h_source}{Graph.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00373\ \{}
+\DoxyCodeLine{00374\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph_a8b7b7465fbfd562e2a469f90a437ab75}{findVertex}}(\mbox{\hyperlink{classGraph}{in}})\ !=\ \mbox{\hyperlink{classGraph}{NULL}})}
+\DoxyCodeLine{00375\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00376\ \ \ vertexSet.push\_back(\textcolor{keyword}{new}\ \mbox{\hyperlink{classGraph}{Vertex<T>}}(\mbox{\hyperlink{classGraph}{in}}));}
+\DoxyCodeLine{00377\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00378\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classGraph_aa47a4130165550e208e7a063fce6983a}\label{classGraph_aa47a4130165550e208e7a063fce6983a} 
+\index{Graph$<$ T $>$@{Graph$<$ T $>$}!bfs@{bfs}}
+\index{bfs@{bfs}!Graph$<$ T $>$@{Graph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{bfs()}{bfs()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classGraph}{class}} \mbox{\hyperlink{classGraph}{T}} $>$ \\
+\mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{classGraph}{T}} $>$ \mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classGraph}{T}} $>$\+::bfs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{const}} \mbox{\hyperlink{classGraph}{T}} \&}]{source }\end{DoxyParamCaption}) const}
+
+
+
+Function to perform a breadth-\/first search (bfs) in a graph. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of the graph \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em source} & The source vertex \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector$<$\+T$>$ The vector with the contents of the vertices by bfs order 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Graph_8h_source_l00537}{537}} of file \mbox{\hyperlink{Graph_8h_source}{Graph.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00538\ \{}
+\DoxyCodeLine{00539\ \ \ \mbox{\hyperlink{classGraph}{vector<T>}}\ \mbox{\hyperlink{classGraph}{res}};}
+\DoxyCodeLine{00540\ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{s}}\ =\ \mbox{\hyperlink{classGraph_a8b7b7465fbfd562e2a469f90a437ab75}{findVertex}}(\mbox{\hyperlink{classGraph}{source}});}
+\DoxyCodeLine{00541\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{s}}\ ==\ \mbox{\hyperlink{classGraph}{NULL}})}
+\DoxyCodeLine{00542\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{res}};}
+\DoxyCodeLine{00543\ \ \ \mbox{\hyperlink{classGraph}{queue<Vertex<T>}}\ *>\ \mbox{\hyperlink{classGraph}{q}};}
+\DoxyCodeLine{00544\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ vertexSet)}
+\DoxyCodeLine{00545\ \ \ \ \ \mbox{\hyperlink{classGraph}{v}}-\/>visited\ =\ \mbox{\hyperlink{classGraph}{false}};}
+\DoxyCodeLine{00546\ \ \ \mbox{\hyperlink{classGraph}{q}}.push(\mbox{\hyperlink{classGraph}{s}});}
+\DoxyCodeLine{00547\ \ \ \mbox{\hyperlink{classGraph}{s}}-\/>visited\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00548\ \ \ \textcolor{keywordflow}{while}\ (!\mbox{\hyperlink{classGraph}{q}}.empty())}
+\DoxyCodeLine{00549\ \ \ \{}
+\DoxyCodeLine{00550\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ =\ \mbox{\hyperlink{classGraph}{q}}.front();}
+\DoxyCodeLine{00551\ \ \ \ \ \mbox{\hyperlink{classGraph}{q}}.pop();}
+\DoxyCodeLine{00552\ \ \ \ \ \mbox{\hyperlink{classGraph}{res}}.push\_back(\mbox{\hyperlink{classGraph}{v}}-\/>info);}
+\DoxyCodeLine{00553\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&\mbox{\hyperlink{classGraph}{e}}\ :\ \mbox{\hyperlink{classGraph}{v}}-\/>adj)}
+\DoxyCodeLine{00554\ \ \ \ \ \{}
+\DoxyCodeLine{00555\ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{w}}\ =\ \mbox{\hyperlink{classGraph}{e}}.dest;}
+\DoxyCodeLine{00556\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classGraph}{w}}-\/>visited)}
+\DoxyCodeLine{00557\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00558\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{q}}.push(\mbox{\hyperlink{classGraph}{w}});}
+\DoxyCodeLine{00559\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{w}}-\/>visited\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00560\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00561\ \ \ \ \ \}}
+\DoxyCodeLine{00562\ \ \ \}}
+\DoxyCodeLine{00563\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{res}};}
+\DoxyCodeLine{00564\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classGraph_a911798b1a89f8c4ae90ba3eee849cff8}\label{classGraph_a911798b1a89f8c4ae90ba3eee849cff8} 
+\index{Graph$<$ T $>$@{Graph$<$ T $>$}!dfs@{dfs}}
+\index{dfs@{dfs}!Graph$<$ T $>$@{Graph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{dfs()}{dfs()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classGraph}{class}} \mbox{\hyperlink{classGraph}{T}} $>$ \\
+\mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{classGraph}{T}} $>$ \mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classGraph}{T}} $>$\+::dfs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Function to perform a depth-\/first search (dfs) in a graph. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of the graph \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+vector$<$\+T$>$ The vector with the contents of the vertices by dfs order 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Graph_8h_source_l00478}{478}} of file \mbox{\hyperlink{Graph_8h_source}{Graph.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00479\ \{}
+\DoxyCodeLine{00480\ \ \ \mbox{\hyperlink{classGraph}{vector<T>}}\ \mbox{\hyperlink{classGraph}{res}};}
+\DoxyCodeLine{00481\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ vertexSet)}
+\DoxyCodeLine{00482\ \ \ \ \ \mbox{\hyperlink{classGraph}{v}}-\/>visited\ =\ \mbox{\hyperlink{classGraph}{false}};}
+\DoxyCodeLine{00483\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ vertexSet)}
+\DoxyCodeLine{00484\ \ \ \ \ \mbox{\hyperlink{classGraph}{if}}\ (!\mbox{\hyperlink{classGraph}{v}}-\/>visited)}
+\DoxyCodeLine{00485\ \ \ \ \ \ \ dfsVisit(\mbox{\hyperlink{classGraph}{v}},\ \mbox{\hyperlink{classGraph}{res}});}
+\DoxyCodeLine{00486\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{res}};}
+\DoxyCodeLine{00487\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classGraph_a510522c8221b321a82e687fe2f2cb484}\label{classGraph_a510522c8221b321a82e687fe2f2cb484} 
+\index{Graph$<$ T $>$@{Graph$<$ T $>$}!dfs@{dfs}}
+\index{dfs@{dfs}!Graph$<$ T $>$@{Graph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{dfs()}{dfs()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classGraph}{class}} \mbox{\hyperlink{classGraph}{T}} $>$ \\
+\mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{classGraph}{T}} $>$ \mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classGraph}{T}} $>$\+::dfs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{const}} \mbox{\hyperlink{classGraph}{T}} \&}]{source }\end{DoxyParamCaption}) const}
+
+
+
+Function to perform a depth-\/first search (dfs) in a graph. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of the graph \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em source} & The source vertex \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector$<$\+T$>$ The vector with the contents of the vertices by dfs order 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Graph_8h_source_l00516}{516}} of file \mbox{\hyperlink{Graph_8h_source}{Graph.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00517\ \{}
+\DoxyCodeLine{00518\ \ \ \mbox{\hyperlink{classGraph}{vector<T>}}\ \mbox{\hyperlink{classGraph}{res}};}
+\DoxyCodeLine{00519\ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{s}}\ =\ \mbox{\hyperlink{classGraph_a8b7b7465fbfd562e2a469f90a437ab75}{findVertex}}(\mbox{\hyperlink{classGraph}{source}});}
+\DoxyCodeLine{00520\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{s}}\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00521\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{res}};}
+\DoxyCodeLine{00522\ }
+\DoxyCodeLine{00523\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ vertexSet)}
+\DoxyCodeLine{00524\ \ \ \ \ \mbox{\hyperlink{classGraph}{v}}-\/>visited\ =\ \mbox{\hyperlink{classGraph}{false}};}
+\DoxyCodeLine{00525\ }
+\DoxyCodeLine{00526\ \ \ dfsVisit(\mbox{\hyperlink{classGraph}{s}},\ \mbox{\hyperlink{classGraph}{res}});}
+\DoxyCodeLine{00527\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{res}};}
+\DoxyCodeLine{00528\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classGraph_a8b7b7465fbfd562e2a469f90a437ab75}\label{classGraph_a8b7b7465fbfd562e2a469f90a437ab75} 
+\index{Graph$<$ T $>$@{Graph$<$ T $>$}!findVertex@{findVertex}}
+\index{findVertex@{findVertex}!Graph$<$ T $>$@{Graph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{findVertex()}{findVertex()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classGraph}{class}} \mbox{\hyperlink{classGraph}{T}} $>$ \\
+\mbox{\hyperlink{classVertex}{Vertex}}$<$ \mbox{\hyperlink{classGraph}{T}} $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classGraph}{T}} $>$\+::find\+Vertex (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{const}} \mbox{\hyperlink{classGraph}{T}} \&}]{in }\end{DoxyParamCaption}) const}
+
+
+
+Function to find a vertex with a given content. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of the graph \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The content of the vertex \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vertex$<$\+T$>$\texorpdfstring{$\ast$}{*} The vertex with the given content 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Graph_8h_source_l00264}{264}} of file \mbox{\hyperlink{Graph_8h_source}{Graph.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00265\ \{}
+\DoxyCodeLine{00266\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ vertexSet)}
+\DoxyCodeLine{00267\ \ \ \ \ \mbox{\hyperlink{classGraph}{if}}\ (\mbox{\hyperlink{classGraph}{v}}-\/>info\ ==\ \mbox{\hyperlink{classGraph}{in}})}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{return}}\ \mbox{\hyperlink{classGraph}{v}};}
+\DoxyCodeLine{00269\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{NULL}};}
+\DoxyCodeLine{00270\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classGraph_a0853eac15cdf0f06d63f4b8a7820ec71}\label{classGraph_a0853eac15cdf0f06d63f4b8a7820ec71} 
+\index{Graph$<$ T $>$@{Graph$<$ T $>$}!getNumVertex@{getNumVertex}}
+\index{getNumVertex@{getNumVertex}!Graph$<$ T $>$@{Graph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getNumVertex()}{getNumVertex()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classGraph}{class}} \mbox{\hyperlink{classGraph}{T}} $>$ \\
+\mbox{\hyperlink{classGraph}{int}} \mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classGraph}{T}} $>$\+::get\+Num\+Vertex (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Function to get the number of vertices in the graph. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of the graph \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+int The number of vertices in the graph 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Graph_8h_source_l00158}{158}} of file \mbox{\hyperlink{Graph_8h_source}{Graph.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00159\ \{}
+\DoxyCodeLine{00160\ \ \ \textcolor{keywordflow}{return}\ vertexSet.size();}
+\DoxyCodeLine{00161\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classGraph_a923b43995f81ad9319bbc81a1e433e64}\label{classGraph_a923b43995f81ad9319bbc81a1e433e64} 
+\index{Graph$<$ T $>$@{Graph$<$ T $>$}!getVertexSet@{getVertexSet}}
+\index{getVertexSet@{getVertexSet}!Graph$<$ T $>$@{Graph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getVertexSet()}{getVertexSet()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classGraph}{class}} \mbox{\hyperlink{classGraph}{T}} $>$ \\
+\mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{classVertex}{Vertex}}$<$ \mbox{\hyperlink{classGraph}{T}} $>$ \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classGraph}{T}} $>$\+::get\+Vertex\+Set (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Function to get the vector of vertices in the graph. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of the graph \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+vector\texorpdfstring{$<$}{<}Vertex$<$\+T$>$\texorpdfstring{$\ast$}{*}\texorpdfstring{$>$}{>} The vector of vertices in the graph 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Graph_8h_source_l00170}{170}} of file \mbox{\hyperlink{Graph_8h_source}{Graph.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00171\ \{}
+\DoxyCodeLine{00172\ \ \ \textcolor{keywordflow}{return}\ vertexSet;}
+\DoxyCodeLine{00173\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classGraph_a1ea1512afe5ab878301bc806c2eba9d2}\label{classGraph_a1ea1512afe5ab878301bc806c2eba9d2} 
+\index{Graph$<$ T $>$@{Graph$<$ T $>$}!isDAG@{isDAG}}
+\index{isDAG@{isDAG}!Graph$<$ T $>$@{Graph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{isDAG()}{isDAG()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classGraph}{class}} \mbox{\hyperlink{classGraph}{T}} $>$ \\
+\mbox{\hyperlink{classGraph}{bool}} \mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classGraph}{T}} $>$\+::is\+DAG (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Function to check if a graph is a DAG. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of the graph \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+bool True if the graph is a DAG 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Graph_8h_source_l00572}{572}} of file \mbox{\hyperlink{Graph_8h_source}{Graph.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00573\ \{}
+\DoxyCodeLine{00574\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ vertexSet)}
+\DoxyCodeLine{00575\ \ \ \{}
+\DoxyCodeLine{00576\ \ \ \ \ \mbox{\hyperlink{classGraph}{v}}-\/>visited\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00577\ \ \ \ \ \mbox{\hyperlink{classGraph}{v}}-\/>processing\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00578\ \ \ \}}
+\DoxyCodeLine{00579\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ vertexSet)}
+\DoxyCodeLine{00580\ \ \ \ \ \mbox{\hyperlink{classGraph}{if}}\ (!\mbox{\hyperlink{classGraph}{v}}-\/>visited)}
+\DoxyCodeLine{00581\ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{if}}\ (!dfsIsDAG(\mbox{\hyperlink{classGraph}{v}}))}
+\DoxyCodeLine{00582\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{return}}\ \mbox{\hyperlink{classGraph}{false}};}
+\DoxyCodeLine{00583\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00584\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classGraph_a1106092a37366486cf55576f9ec01692}\label{classGraph_a1106092a37366486cf55576f9ec01692} 
+\index{Graph$<$ T $>$@{Graph$<$ T $>$}!removeEdge@{removeEdge}}
+\index{removeEdge@{removeEdge}!Graph$<$ T $>$@{Graph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{removeEdge()}{removeEdge()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classGraph}{class}} \mbox{\hyperlink{classGraph}{T}} $>$ \\
+\mbox{\hyperlink{classGraph}{bool}} \mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classGraph}{T}} $>$\+::remove\+Edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{const}} \mbox{\hyperlink{classGraph}{T}} \&}]{sourc,  }\item[{\mbox{\hyperlink{classGraph}{const}} \mbox{\hyperlink{classGraph}{T}} \&}]{dest }\end{DoxyParamCaption})}
+
+
+
+Function to remove an edge from a graph. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of the graph \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em sourc} & The source vertex \\
+\hline
+{\em dest} & The destination vertex \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True if the edge was removed 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Graph_8h_source_l00423}{423}} of file \mbox{\hyperlink{Graph_8h_source}{Graph.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00424\ \{}
+\DoxyCodeLine{00425\ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v1}}\ =\ \mbox{\hyperlink{classGraph_a8b7b7465fbfd562e2a469f90a437ab75}{findVertex}}(\mbox{\hyperlink{classGraph}{sourc}});}
+\DoxyCodeLine{00426\ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v2}}\ =\ \mbox{\hyperlink{classGraph_a8b7b7465fbfd562e2a469f90a437ab75}{findVertex}}(dest);}
+\DoxyCodeLine{00427\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{v1}}\ ==\ \mbox{\hyperlink{classGraph}{NULL}}\ ||\ \mbox{\hyperlink{classGraph}{v2}}\ ==\ \mbox{\hyperlink{classGraph}{NULL}})}
+\DoxyCodeLine{00428\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00429\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{v1}}-\/>removeEdgeTo(\mbox{\hyperlink{classGraph}{v2}});}
+\DoxyCodeLine{00430\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classGraph_af9c903104ad69a7782979fa9caedf163}\label{classGraph_af9c903104ad69a7782979fa9caedf163} 
+\index{Graph$<$ T $>$@{Graph$<$ T $>$}!removeVertex@{removeVertex}}
+\index{removeVertex@{removeVertex}!Graph$<$ T $>$@{Graph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{removeVertex()}{removeVertex()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classGraph}{class}} \mbox{\hyperlink{classGraph}{T}} $>$ \\
+\mbox{\hyperlink{classGraph}{bool}} \mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classGraph}{T}} $>$\+::remove\+Vertex (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{const}} \mbox{\hyperlink{classGraph}{T}} \&}]{in }\end{DoxyParamCaption})}
+
+
+
+Function to remove a vertex from a graph. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of the graph \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The content of the vertex to remove \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True if the vertex was removed 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Graph_8h_source_l00457}{457}} of file \mbox{\hyperlink{Graph_8h_source}{Graph.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00458\ \{}
+\DoxyCodeLine{00459\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{it}}\ =\ vertexSet.begin();\ \mbox{\hyperlink{classGraph}{it}}\ !=\ vertexSet.end();\ \mbox{\hyperlink{classGraph}{it}}++)}
+\DoxyCodeLine{00460\ \ \ \ \ \textcolor{keywordflow}{if}\ ((*it)-\/>info\ ==\ \mbox{\hyperlink{classGraph}{in}})}
+\DoxyCodeLine{00461\ \ \ \ \ \{}
+\DoxyCodeLine{00462\ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ =\ *\mbox{\hyperlink{classGraph}{it}};}
+\DoxyCodeLine{00463\ \ \ \ \ \ \ vertexSet.erase(\mbox{\hyperlink{classGraph}{it}});}
+\DoxyCodeLine{00464\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{u}}\ :\ vertexSet)}
+\DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{u}}-\/>removeEdgeTo(\mbox{\hyperlink{classGraph}{v}});}
+\DoxyCodeLine{00466\ \ \ \ \ \ \ \textcolor{keyword}{delete}\ \mbox{\hyperlink{classGraph}{v}};}
+\DoxyCodeLine{00467\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00468\ \ \ \ \ \}}
+\DoxyCodeLine{00469\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00470\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classGraph_af1d4affd1f886bf598d0f4cf4a0cb7cb}\label{classGraph_af1d4affd1f886bf598d0f4cf4a0cb7cb} 
+\index{Graph$<$ T $>$@{Graph$<$ T $>$}!topsort@{topsort}}
+\index{topsort@{topsort}!Graph$<$ T $>$@{Graph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{topsort()}{topsort()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classGraph}{class}} \mbox{\hyperlink{classGraph}{T}} $>$ \\
+\mbox{\hyperlink{classGraph}{vector}}$<$ \mbox{\hyperlink{classGraph}{T}} $>$ \mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classGraph}{T}} $>$\+::topsort (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Function to perform a topological sorting of the vertices of a graph. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of the graph \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+vector$<$\+T$>$ The vector with the contents of the vertices by topological order 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Graph_8h_source_l00616}{616}} of file \mbox{\hyperlink{Graph_8h_source}{Graph.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00617\ \{}
+\DoxyCodeLine{00618\ \ \ \mbox{\hyperlink{classGraph}{vector<T>}}\ \mbox{\hyperlink{classGraph}{res}};}
+\DoxyCodeLine{00619\ }
+\DoxyCodeLine{00620\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ vertexSet)}
+\DoxyCodeLine{00621\ \ \ \{}
+\DoxyCodeLine{00622\ \ \ \ \ \mbox{\hyperlink{classGraph}{v}}-\/>indegree\ =\ 0;}
+\DoxyCodeLine{00623\ \ \ \}}
+\DoxyCodeLine{00624\ }
+\DoxyCodeLine{00625\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ vertexSet)}
+\DoxyCodeLine{00626\ \ \ \{}
+\DoxyCodeLine{00627\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&\mbox{\hyperlink{classGraph}{e}}\ :\ \mbox{\hyperlink{classGraph}{v}}-\/>adj)}
+\DoxyCodeLine{00628\ \ \ \ \ \{}
+\DoxyCodeLine{00629\ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{e}}.dest-\/>indegree\ +=\ 1;}
+\DoxyCodeLine{00630\ \ \ \ \ \}}
+\DoxyCodeLine{00631\ \ \ \}}
+\DoxyCodeLine{00632\ }
+\DoxyCodeLine{00633\ \ \ std::queue<Vertex<T>\ *>\ \mbox{\hyperlink{classGraph}{q}};}
+\DoxyCodeLine{00634\ }
+\DoxyCodeLine{00635\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ vertexSet)}
+\DoxyCodeLine{00636\ \ \ \{}
+\DoxyCodeLine{00637\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{v}}-\/>indegree\ ==\ 0)}
+\DoxyCodeLine{00638\ \ \ \ \ \{}
+\DoxyCodeLine{00639\ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{q}}.push(\mbox{\hyperlink{classGraph}{v}});}
+\DoxyCodeLine{00640\ \ \ \ \ \}}
+\DoxyCodeLine{00641\ \ \ \}}
+\DoxyCodeLine{00642\ }
+\DoxyCodeLine{00643\ \ \ \textcolor{keywordflow}{while}\ (!\mbox{\hyperlink{classGraph}{q}}.empty())}
+\DoxyCodeLine{00644\ \ \ \{}
+\DoxyCodeLine{00645\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{u}}\ =\ \mbox{\hyperlink{classGraph}{q}}.front();}
+\DoxyCodeLine{00646\ \ \ \ \ \mbox{\hyperlink{classGraph}{res}}.push\_back(\mbox{\hyperlink{classGraph}{u}}-\/>info);}
+\DoxyCodeLine{00647\ \ \ \ \ \mbox{\hyperlink{classGraph}{q}}.pop();}
+\DoxyCodeLine{00648\ }
+\DoxyCodeLine{00649\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&\mbox{\hyperlink{classGraph}{e}}\ :\ \mbox{\hyperlink{classGraph}{u}}-\/>adj)}
+\DoxyCodeLine{00650\ \ \ \ \ \{}
+\DoxyCodeLine{00651\ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{w}}\ =\ \mbox{\hyperlink{classGraph}{e}}.dest;}
+\DoxyCodeLine{00652\ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{w}}-\/>indegree\ -\/=\ 1;}
+\DoxyCodeLine{00653\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{w}}-\/>indegree\ ==\ 0)}
+\DoxyCodeLine{00654\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00655\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{q}}.push(\mbox{\hyperlink{classGraph}{w}});}
+\DoxyCodeLine{00656\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00657\ \ \ \ \ \}}
+\DoxyCodeLine{00658\ \ \ \}}
+\DoxyCodeLine{00659\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{res}};}
+\DoxyCodeLine{00660\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/classes/\mbox{\hyperlink{Graph_8h}{Graph.\+h}}\end{DoxyCompactItemize}

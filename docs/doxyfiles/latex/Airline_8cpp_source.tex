@@ -1,0 +1,47 @@
+\doxysection{Airline.\+cpp}
+\hypertarget{Airline_8cpp_source}{}\label{Airline_8cpp_source}\index{src/classes/Airline.cpp@{src/classes/Airline.cpp}}
+\mbox{\hyperlink{Airline_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Airline_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Airline_8h}{Airline.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Airline_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{Airline_8cpp_source_l00011}\mbox{\hyperlink{classAirline_aeab28471086562d53f134c60a5d0a976}{00011}}\ \mbox{\hyperlink{classAirline_aeab28471086562d53f134c60a5d0a976}{Airline::Airline}}(std::string\ code,\ std::string\ name,\ std::string\ callsign,}
+\DoxyCodeLine{\Hypertarget{Airline_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ country)}
+\DoxyCodeLine{\Hypertarget{Airline_8cpp_source_l00013}00013\ \{}
+\DoxyCodeLine{\Hypertarget{Airline_8cpp_source_l00014}00014\ \ \ this-\/>code\ =\ code;}
+\DoxyCodeLine{\Hypertarget{Airline_8cpp_source_l00015}00015\ \ \ this-\/>name\ =\ name;}
+\DoxyCodeLine{\Hypertarget{Airline_8cpp_source_l00016}00016\ \ \ this-\/>callsign\ =\ callsign;}
+\DoxyCodeLine{\Hypertarget{Airline_8cpp_source_l00017}00017\ \ \ this-\/>country\ =\ country;}
+\DoxyCodeLine{\Hypertarget{Airline_8cpp_source_l00018}00018\ \}}
+\DoxyCodeLine{\Hypertarget{Airline_8cpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{Airline_8cpp_source_l00025}\mbox{\hyperlink{classAirline_a1209e8bbc56fe4506609ab16289a4047}{00025}}\ \mbox{\hyperlink{classAirline_aeab28471086562d53f134c60a5d0a976}{Airline::Airline}}(std::string\ code)\ \{\ this-\/>code\ =\ code;\ \}}
+\DoxyCodeLine{\Hypertarget{Airline_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{Airline_8cpp_source_l00033}\mbox{\hyperlink{classAirline_aab550db1265c3df4f66b90c2dea5f6cc}{00033}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classAirline_aab550db1265c3df4f66b90c2dea5f6cc}{Airline::operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classAirline}{Airline}}\ \&other)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{Airline_8cpp_source_l00034}00034\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{Airline_8cpp_source_l00035}00035\ \ \ \textcolor{keywordflow}{return}\ this-\/>code\ ==\ other.code;}
+\DoxyCodeLine{\Hypertarget{Airline_8cpp_source_l00036}00036\ \}}
+\DoxyCodeLine{\Hypertarget{Airline_8cpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{Airline_8cpp_source_l00043}\mbox{\hyperlink{classAirline_a401407885fb55294d82433bf96440fd7}{00043}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classAirline_a401407885fb55294d82433bf96440fd7}{Airline::display}}()}
+\DoxyCodeLine{\Hypertarget{Airline_8cpp_source_l00044}00044\ \{}
+\DoxyCodeLine{\Hypertarget{Airline_8cpp_source_l00045}00045\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Code:\ "{}}\ <<\ this-\/>code\ <<\ \textcolor{stringliteral}{"{}\ /\ "{}};}
+\DoxyCodeLine{\Hypertarget{Airline_8cpp_source_l00046}00046\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Name:\ "{}}\ <<\ this-\/>name\ <<\ \textcolor{stringliteral}{"{}\ /\ "{}};}
+\DoxyCodeLine{\Hypertarget{Airline_8cpp_source_l00047}00047\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Callsign:\ "{}}\ <<\ this-\/>callsign\ <<\ \textcolor{stringliteral}{"{}\ /\ "{}};}
+\DoxyCodeLine{\Hypertarget{Airline_8cpp_source_l00048}00048\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Country:\ "{}}\ <<\ this-\/>country\ <<\ \textcolor{stringliteral}{"{}\ /\ "{}};}
+\DoxyCodeLine{\Hypertarget{Airline_8cpp_source_l00049}00049\ \}}
+\DoxyCodeLine{\Hypertarget{Airline_8cpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{Airline_8cpp_source_l00057}\mbox{\hyperlink{classAirline_a7f75b066fc5bc5d1f93f5ef48afe7a15}{00057}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classAirline_a7f75b066fc5bc5d1f93f5ef48afe7a15}{Airline::setCode}}(std::string\ code)\ \{\ this-\/>code\ =\ code;\ \}}
+\DoxyCodeLine{\Hypertarget{Airline_8cpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{Airline_8cpp_source_l00065}\mbox{\hyperlink{classAirline_a99f12cf83277abbf5a8a3f2690ab052b}{00065}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classAirline_a99f12cf83277abbf5a8a3f2690ab052b}{Airline::setName}}(std::string\ name)\ \{\ this-\/>name\ =\ name;\ \}}
+\DoxyCodeLine{\Hypertarget{Airline_8cpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{Airline_8cpp_source_l00073}\mbox{\hyperlink{classAirline_afb09867f3747093388029536de9a4358}{00073}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classAirline_afb09867f3747093388029536de9a4358}{Airline::setCallsign}}(std::string\ callsign)\ \{\ this-\/>callsign\ =\ callsign;\ \}}
+\DoxyCodeLine{\Hypertarget{Airline_8cpp_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{Airline_8cpp_source_l00081}\mbox{\hyperlink{classAirline_a0ccda2a2860ad5be925b163de63e961c}{00081}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classAirline_a0ccda2a2860ad5be925b163de63e961c}{Airline::setCountry}}(std::string\ country)\ \{\ this-\/>country\ =\ country;\ \}}
+\DoxyCodeLine{\Hypertarget{Airline_8cpp_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{Airline_8cpp_source_l00088}\mbox{\hyperlink{classAirline_a4f3aaa5a61d95fc52373d6e2109d3554}{00088}}\ std::string\ \mbox{\hyperlink{classAirline_a4f3aaa5a61d95fc52373d6e2109d3554}{Airline::getCode}}()\ \{\ \textcolor{keywordflow}{return}\ code;\ \}}
+\DoxyCodeLine{\Hypertarget{Airline_8cpp_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{Airline_8cpp_source_l00095}\mbox{\hyperlink{classAirline_a585ac7eec928b58f7fac04d6391b3cb9}{00095}}\ std::string\ \mbox{\hyperlink{classAirline_a585ac7eec928b58f7fac04d6391b3cb9}{Airline::getName}}()\ \{\ \textcolor{keywordflow}{return}\ name;\ \}}
+\DoxyCodeLine{\Hypertarget{Airline_8cpp_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{Airline_8cpp_source_l00102}\mbox{\hyperlink{classAirline_ab0c52766e069bb818364c21b2cef426d}{00102}}\ std::string\ \mbox{\hyperlink{classAirline_ab0c52766e069bb818364c21b2cef426d}{Airline::getCallsign}}()\ \{\ \textcolor{keywordflow}{return}\ callsign;\ \}}
+\DoxyCodeLine{\Hypertarget{Airline_8cpp_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{Airline_8cpp_source_l00109}\mbox{\hyperlink{classAirline_a3faa1749ed4a512921ae6788147dd426}{00109}}\ std::string\ \mbox{\hyperlink{classAirline_a3faa1749ed4a512921ae6788147dd426}{Airline::getCountry}}()\ \{\ \textcolor{keywordflow}{return}\ country;\ \}}
+
+\end{DoxyCode}

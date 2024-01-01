@@ -1,0 +1,56 @@
+\doxysection{Airport.\+h}
+\hypertarget{Airport_8h_source}{}\label{Airport_8h_source}\index{src/classes/Airport.h@{src/classes/Airport.h}}
+\mbox{\hyperlink{Airport_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Airport_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ AIRPORT\_H}}
+\DoxyCodeLine{\Hypertarget{Airport_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ AIRPORT\_H}}
+\DoxyCodeLine{\Hypertarget{Airport_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{Airport_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{Airport_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{Airport_8h_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{Airport_8h_source_l00007}\mbox{\hyperlink{structRanking}{00007}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structRanking}{Ranking}}\ \{}
+\DoxyCodeLine{\Hypertarget{Airport_8h_source_l00008}\mbox{\hyperlink{structRanking_a92413726b4125a58409f2408fb7ad7ed}{00008}}\ \ \ std::string\ \mbox{\hyperlink{structRanking_a92413726b4125a58409f2408fb7ad7ed}{code}};}
+\DoxyCodeLine{\Hypertarget{Airport_8h_source_l00009}\mbox{\hyperlink{structRanking_a5317e5bf76ec92156227c5717118a692}{00009}}\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structRanking_a5317e5bf76ec92156227c5717118a692}{count}};}
+\DoxyCodeLine{\Hypertarget{Airport_8h_source_l00010}00010\ \};}
+\DoxyCodeLine{\Hypertarget{Airport_8h_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{Airport_8h_source_l00012}00012\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{Airport_8h_ab603d483fe34cbe7743630230defeeb8}{comparator}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structRanking}{Ranking}}\ a,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structRanking}{Ranking}}\ b);}
+\DoxyCodeLine{\Hypertarget{Airport_8h_source_l00013}\mbox{\hyperlink{classAirport}{00013}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classAirport}{Airport}}\ \{}
+\DoxyCodeLine{\Hypertarget{Airport_8h_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{Airport_8h_source_l00015}00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Airport_8h_source_l00016}00016\ \ \ \textcolor{comment}{//\ Constructor}}
+\DoxyCodeLine{\Hypertarget{Airport_8h_source_l00017}00017\ \ \ \mbox{\hyperlink{classAirport_afeee00918b8b3773228b01deb73fa3ae}{Airport}}(std::string\ code,\ std::string\ name,\ std::string\ country,}
+\DoxyCodeLine{\Hypertarget{Airport_8h_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ std::string\ city,\ \textcolor{keywordtype}{double}\ latitude,\ \textcolor{keywordtype}{double}\ longitude);}
+\DoxyCodeLine{\Hypertarget{Airport_8h_source_l00019}00019\ \ \ \mbox{\hyperlink{classAirport_afeee00918b8b3773228b01deb73fa3ae}{Airport}}(std::string\ code);}
+\DoxyCodeLine{\Hypertarget{Airport_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{Airport_8h_source_l00021}00021\ \ \ \textcolor{comment}{//\ Getters}}
+\DoxyCodeLine{\Hypertarget{Airport_8h_source_l00022}00022\ \ \ std::string\ \mbox{\hyperlink{classAirport_a905f775126cf800fe92adab28c0c250e}{getCode}}();}
+\DoxyCodeLine{\Hypertarget{Airport_8h_source_l00023}00023\ \ \ std::string\ \mbox{\hyperlink{classAirport_aafd8d1751d8a1be5f2bb91c2fdef9ebe}{getName}}();}
+\DoxyCodeLine{\Hypertarget{Airport_8h_source_l00024}00024\ \ \ std::string\ \mbox{\hyperlink{classAirport_afbb4797f9deab3b888fea1eaa188dd4f}{getCountry}}();}
+\DoxyCodeLine{\Hypertarget{Airport_8h_source_l00025}00025\ \ \ std::string\ \mbox{\hyperlink{classAirport_aaee4b32654cb846fbc832019abc855f8}{getCity}}();}
+\DoxyCodeLine{\Hypertarget{Airport_8h_source_l00026}00026\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classAirport_afcff199f6f786aa4ee3c15cb2f195487}{getLatitude}}();}
+\DoxyCodeLine{\Hypertarget{Airport_8h_source_l00027}00027\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classAirport_a5d31cceec2a7de9fb902afeda997c3ff}{getLongitude}}();}
+\DoxyCodeLine{\Hypertarget{Airport_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{Airport_8h_source_l00029}00029\ \ \ \textcolor{comment}{//\ Setters}}
+\DoxyCodeLine{\Hypertarget{Airport_8h_source_l00030}00030\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classAirport_a568da108ee1d4addb0057ddad4d3f5a0}{setCode}}(std::string\ code);}
+\DoxyCodeLine{\Hypertarget{Airport_8h_source_l00031}00031\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classAirport_a610597cc090c9f4d2fc46ebcecd6f5d3}{setName}}(std::string\ name);}
+\DoxyCodeLine{\Hypertarget{Airport_8h_source_l00032}00032\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classAirport_a766de9b7a4b04e2d977ac8a979a7b331}{setCountry}}(std::string\ country);}
+\DoxyCodeLine{\Hypertarget{Airport_8h_source_l00033}00033\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classAirport_a1af602e16d7aa497f9156130211b2ab6}{setCity}}(std::string\ city);}
+\DoxyCodeLine{\Hypertarget{Airport_8h_source_l00034}00034\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classAirport_aa6fa7f50efbc47c1013af7d7d3ce1a95}{setLatitude}}(\textcolor{keywordtype}{double}\ latitude);}
+\DoxyCodeLine{\Hypertarget{Airport_8h_source_l00035}00035\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classAirport_a8595da4216165ea42ad2157480573548}{setLongitude}}(\textcolor{keywordtype}{double}\ longitude);}
+\DoxyCodeLine{\Hypertarget{Airport_8h_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{Airport_8h_source_l00037}00037\ \ \ \textcolor{comment}{//\ Other\ functions}}
+\DoxyCodeLine{\Hypertarget{Airport_8h_source_l00038}00038\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classAirport_aacc16029d827e9bc5492ea84b7ad3621}{display}}();}
+\DoxyCodeLine{\Hypertarget{Airport_8h_source_l00039}00039\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classAirport_a2d93e2cadbdb3ed9114aff48aa0bac5c}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classAirport}{Airport}}\ \&other)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{Airport_8h_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{Airport_8h_source_l00041}00041\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{Airport_8h_source_l00042}00042\ \ \ std::string\ code;}
+\DoxyCodeLine{\Hypertarget{Airport_8h_source_l00043}00043\ \ \ std::string\ name;}
+\DoxyCodeLine{\Hypertarget{Airport_8h_source_l00044}00044\ \ \ std::string\ country;}
+\DoxyCodeLine{\Hypertarget{Airport_8h_source_l00045}00045\ \ \ std::string\ city;}
+\DoxyCodeLine{\Hypertarget{Airport_8h_source_l00046}00046\ \ \ \textcolor{keywordtype}{double}\ latitude;}
+\DoxyCodeLine{\Hypertarget{Airport_8h_source_l00047}00047\ \ \ \textcolor{keywordtype}{double}\ longitude;}
+\DoxyCodeLine{\Hypertarget{Airport_8h_source_l00048}00048\ \};}
+\DoxyCodeLine{\Hypertarget{Airport_8h_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{Airport_8h_source_l00050}00050\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
