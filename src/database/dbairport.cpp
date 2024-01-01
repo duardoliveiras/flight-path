@@ -1094,7 +1094,8 @@ void dfsConnectedComponents(Graph<Airport> &airports, Vertex<Airport> *v)
  */
 void findArticulationPoints(Graph<Airport> &airports)
 {
-
+    int i = 0;
+    int total = 0;
     int connected = connectedComponents(airports);
     for (auto v : airports.getVertexSet())
     {
@@ -1115,9 +1116,17 @@ void findArticulationPoints(Graph<Airport> &airports)
         }
         if (component > connected)
         {
-            std::cout << v->getInfo().getCode() << std::endl;
+            std::cout << v->getInfo().getCode() << " ";
+            i++;
+            total++;
+            if (i == 10)
+            {
+                std::cout << std::endl;
+                i = 0;
+            }
         }
     }
+    std::cout << "\nTotal: " << total << std::endl;
 }
 
 /**
