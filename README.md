@@ -4,7 +4,7 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-![activity](https://img.shields.io/github/commit-activity/w/duardoliveiras/flight-path?style=for-the-badge&labelColor=000000)
+![activity](https://img.shields.io/github/commit-activity/w/duardoliveiras/flight-path.svg?style=for-the-badge)
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 <br />
