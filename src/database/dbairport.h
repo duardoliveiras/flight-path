@@ -39,8 +39,6 @@ int quantityFlightsCity(Graph<Airport> airports, std::string city);
 int quantityFlightsAirline(Graph<Airport> airports, std::string airline);
 
 // Quantity Destination Functions
-int quantityDestinationsCountry(Graph<Airport> airports,
-                                std::string country);
 int quantityDestinationsAirport(Graph<Airport> airports, std::string airport);
 int quantityDestinationLimitedStop(Graph<Airport> airports,
                                    std::string airport, int stop);

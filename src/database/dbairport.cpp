@@ -206,35 +206,6 @@ int quantityFlightsAirline(Graph<Airport> airports, std::string airline)
 
 //------------------------------------------------------------
 
-// Update later the objective is to find many destinations is possible starting from a coutry
-/**
- * @brief Function to calculate the quatity of flights in a given country
- * Complexity: O(n + e),  where n is the number of airports in the graph and e is the number of flights
- * @param airports The graph of airports.
- * @param airline The airline to be searched.
- * @return int The quantity of flights in same country.
- */
-int quantityDestinationsCountry(Graph<Airport> airports, std::string country)
-{
-    int totalFlights = 0;
-    for (auto v : airports.getVertexSet())
-    {
-        Airport sourceAirport = v->getInfo();
-        if (sourceAirport.getCountry() == country)
-        {
-            for (auto &edge : v->getAdj())
-            {
-                Airport destinationAirport = edge.getDest()->getInfo();
-                if (destinationAirport.getCountry() == country)
-                {
-                    totalFlights++;
-                }
-            }
-        }
-    }
-    return totalFlights;
-}
-
 /**
  * @brief Function to calculate the number of different countries it is possible to go directly to from an airport
  * Complexity: O(n + e),  where n is the number of airports in the graph and e is the number of flights

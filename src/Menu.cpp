@@ -963,10 +963,9 @@ void menuDestination()
   std::cout << "Number of Destinations:" << std::endl;
   std::cout << "-------------------------------------------------" << std::endl;
 
-  std::cout << "1. Unlimited Stops (by country)" << std::endl;
-  std::cout << "2. Unlimited Stops (by airport)" << std::endl;
-  std::cout << "3. Limited Stops" << std::endl;
-  std::cout << "4. Max destinations" << std::endl;
+  std::cout << "1. Unlimited Stops (by airport)" << std::endl;
+  std::cout << "2. Limited Stops" << std::endl;
+  std::cout << "3. Max destinations" << std::endl;
   std::cout << "0. Back to Main Menu" << std::endl;
   std::cout << "-------------------------------------------------" << std::endl;
 
@@ -982,18 +981,6 @@ void menuDestination()
   switch (flag)
   {
   case 1:
-    std::cout << "Type Country Name: " << std::endl;
-    std::cin >> arg;
-    std::cout << "Destinations in " << arg << ": "
-              << quantityDestinationsCountry(airports, arg) << std::endl;
-    std::cout << "--------------------------------------------------"
-              << std::endl;
-    std::cout << "Press any key to continue..." << std::endl;
-    std::cin.ignore();
-    std::cin.get();
-    menuQuantity();
-    break;
-  case 2:
     std::cout << "Type Airport Code: " << std::endl;
     std::cin >> arg;
 
@@ -1017,7 +1004,7 @@ void menuDestination()
     std::cin.get();
     menuQuantity();
     break;
-  case 3:
+  case 2:
     std::cout << "Type Airport Code: " << std::endl;
     std::cin >> arg;
 
@@ -1050,7 +1037,7 @@ void menuDestination()
     std::cin.ignore();
     std::cin.get();
     menuDestination();
-  case 4:
+  case 3:
     std::cout << "Max number of flights: " << quantityDestinationMax(airports)
               << " stops" << std::endl;
     std::cout << "--------------------------------------------------"

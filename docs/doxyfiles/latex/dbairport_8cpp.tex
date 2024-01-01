@@ -24,8 +24,6 @@
 \begin{DoxyCompactList}\small\item\em Function to calculate the quatity of flights in a given city Complexity\+: O(n), where n is the number of airports in the graph. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classGraph}{int}} \mbox{\hyperlink{dbairport_8cpp_aaf85ea355a04142cc7b72f58ba9d186e}{quantity\+Flights\+Airline}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}, std\+::string airline)
 \begin{DoxyCompactList}\small\item\em Function to calculate the quatity of flights in a given airline Complexity\+: O(n + e), where n is the number of airports in the graph and e is the number of flights. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classGraph}{int}} \mbox{\hyperlink{dbairport_8cpp_a0e27c10ff7622ff861b9a91be36bc480}{quantity\+Destinations\+Country}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}, std\+::string country)
-\begin{DoxyCompactList}\small\item\em Function to calculate the quatity of flights in a given country Complexity\+: O(n + e), where n is the number of airports in the graph and e is the number of flights. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classGraph}{int}} \mbox{\hyperlink{dbairport_8cpp_aa389005aab21de88f5a6957c46246e96}{quantity\+Destinations\+Airport}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}, std\+::string \mbox{\hyperlink{classGraph}{airport}})
 \begin{DoxyCompactList}\small\item\em Function to calculate the number of different countries it is possible to go directly to from an airport Complexity\+: O(n + e), where n is the number of airports in the graph and e is the number of flights. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classGraph}{int}} \mbox{\hyperlink{dbairport_8cpp_a6a318e2669935b8a4cca35c2ab524663}{quantity\+Destination\+Limited\+Stop}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}, std\+::string \mbox{\hyperlink{classGraph}{airport}}, \mbox{\hyperlink{classGraph}{int}} \mbox{\hyperlink{classGraph}{stop}})
@@ -111,56 +109,56 @@ vector$<$vector$<$\+Flight$>$$>$ A vector of vectors of flights representing the
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00993}{993}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00964}{964}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00995\ \{}
-\DoxyCodeLine{00996\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<vector<Flight>}}>\ \mbox{\hyperlink{classGraph}{paths}};}
-\DoxyCodeLine{00997\ \ \ \ \ \mbox{\hyperlink{classGraph}{unordered\_map<string,\ vector<Flight>}}>\ \mbox{\hyperlink{classGraph}{prev}};}
-\DoxyCodeLine{00998\ \ \ \ \ \mbox{\hyperlink{classGraph}{unordered\_map<string,\ int>}}\ \mbox{\hyperlink{classGraph}{dist}};}
-\DoxyCodeLine{00999\ \ \ \ \ \mbox{\hyperlink{classGraph}{queue<Vertex<Airport>}}\ *>\ \mbox{\hyperlink{classGraph}{q}};}
-\DoxyCodeLine{01000\ }
-\DoxyCodeLine{01001\ \ \ \ \ \mbox{\hyperlink{classGraph}{q}}.push(\mbox{\hyperlink{classGraph}{v}});}
-\DoxyCodeLine{01002\ \ \ \ \ \mbox{\hyperlink{classGraph}{v}}-\/>setVisited(\textcolor{keyword}{true});}
-\DoxyCodeLine{01003\ \ \ \ \ \mbox{\hyperlink{classGraph}{dist}}[\mbox{\hyperlink{classGraph}{v}}-\/>getInfo().getCode()]\ =\ 0;}
-\DoxyCodeLine{01004\ }
-\DoxyCodeLine{01005\ \ \ \ \ \textcolor{keywordflow}{while}\ (!\mbox{\hyperlink{classGraph}{q}}.empty())}
-\DoxyCodeLine{01006\ \ \ \ \ \{}
-\DoxyCodeLine{01007\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{vertex}}\ =\ \mbox{\hyperlink{classGraph}{q}}.front();}
-\DoxyCodeLine{01008\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{q}}.pop();}
-\DoxyCodeLine{01009\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{adjs}}\ =\ \mbox{\hyperlink{classGraph}{vertex}}-\/>getAdj();}
-\DoxyCodeLine{01010\ }
-\DoxyCodeLine{01011\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&\mbox{\hyperlink{classGraph}{e}}\ :\ \mbox{\hyperlink{classGraph}{adjs}})}
-\DoxyCodeLine{01012\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{01013\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{w}}\ =\ \mbox{\hyperlink{classGraph}{e}}.getDest();}
-\DoxyCodeLine{01014\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classGraph}{w}}-\/>isVisited()\ \&\&\ (\mbox{\hyperlink{classGraph}{find}}(\mbox{\hyperlink{classGraph}{airplanes}}.begin(),\ \mbox{\hyperlink{classGraph}{airplanes}}.end(),}
-\DoxyCodeLine{01015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{e}}.getRoute())\ !=\ \mbox{\hyperlink{classGraph}{airplanes}}.end()\ ||}
-\DoxyCodeLine{01016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{airplanes}}.size()\ ==\ 0))}
-\DoxyCodeLine{01017\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{01018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{q}}.push(\mbox{\hyperlink{classGraph}{w}});}
-\DoxyCodeLine{01019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{w}}-\/>setVisited(\textcolor{keyword}{true});}
-\DoxyCodeLine{01020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{prev}}[\mbox{\hyperlink{classGraph}{w}}-\/>getInfo().getCode()].push\_back(}
-\DoxyCodeLine{01021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\mbox{\hyperlink{classGraph}{vertex}}-\/>getInfo().getCode(),\ \mbox{\hyperlink{classGraph}{e}}.getRoute()\});}
-\DoxyCodeLine{01022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{dist}}[\mbox{\hyperlink{classGraph}{w}}-\/>getInfo().getCode()]\ =\ \mbox{\hyperlink{classGraph}{dist}}[\mbox{\hyperlink{classGraph}{vertex}}-\/>getInfo().getCode()]\ +\ 1;}
-\DoxyCodeLine{01023\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{01024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{dist}}[\mbox{\hyperlink{classGraph}{w}}-\/>getInfo().getCode()]\ ==}
-\DoxyCodeLine{01025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{dist}}[\mbox{\hyperlink{classGraph}{vertex}}-\/>getInfo().getCode()]\ +\ 1\ \&\&}
-\DoxyCodeLine{01026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{classGraph}{find}}(\mbox{\hyperlink{classGraph}{airplanes}}.begin(),\ \mbox{\hyperlink{classGraph}{airplanes}}.end(),\ \mbox{\hyperlink{classGraph}{e}}.getRoute())\ !=}
-\DoxyCodeLine{01027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{airplanes}}.end()\ ||}
-\DoxyCodeLine{01028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{airplanes}}.size()\ ==\ 0))}
-\DoxyCodeLine{01029\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{01030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{prev}}[\mbox{\hyperlink{classGraph}{w}}-\/>getInfo().getCode()].push\_back(}
-\DoxyCodeLine{01031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\mbox{\hyperlink{classGraph}{vertex}}-\/>getInfo().getCode(),\ \mbox{\hyperlink{classGraph}{e}}.getRoute()\});}
-\DoxyCodeLine{01032\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{01033\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{01034\ \ \ \ \ \}}
-\DoxyCodeLine{01035\ }
-\DoxyCodeLine{01036\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<Flight>}}\ \mbox{\hyperlink{classGraph}{path}};}
-\DoxyCodeLine{01037\ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a9d6a5c56acfccf760e404fa346862107}{getPath}}(\mbox{\hyperlink{classGraph}{tgt}},\ \mbox{\hyperlink{classGraph}{path}},\ \mbox{\hyperlink{classGraph}{prev}},\ \mbox{\hyperlink{classGraph}{paths}},\ \mbox{\hyperlink{classGraph}{v}}-\/>getInfo().getCode(),\ \textcolor{stringliteral}{"{}"{}});}
-\DoxyCodeLine{01038\ }
-\DoxyCodeLine{01039\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{paths}};}
-\DoxyCodeLine{01040\ \}}
+\DoxyCodeLine{00966\ \{}
+\DoxyCodeLine{00967\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<vector<Flight>}}>\ \mbox{\hyperlink{classGraph}{paths}};}
+\DoxyCodeLine{00968\ \ \ \ \ \mbox{\hyperlink{classGraph}{unordered\_map<string,\ vector<Flight>}}>\ \mbox{\hyperlink{classGraph}{prev}};}
+\DoxyCodeLine{00969\ \ \ \ \ \mbox{\hyperlink{classGraph}{unordered\_map<string,\ int>}}\ \mbox{\hyperlink{classGraph}{dist}};}
+\DoxyCodeLine{00970\ \ \ \ \ \mbox{\hyperlink{classGraph}{queue<Vertex<Airport>}}\ *>\ \mbox{\hyperlink{classGraph}{q}};}
+\DoxyCodeLine{00971\ }
+\DoxyCodeLine{00972\ \ \ \ \ \mbox{\hyperlink{classGraph}{q}}.push(\mbox{\hyperlink{classGraph}{v}});}
+\DoxyCodeLine{00973\ \ \ \ \ \mbox{\hyperlink{classGraph}{v}}-\/>setVisited(\textcolor{keyword}{true});}
+\DoxyCodeLine{00974\ \ \ \ \ \mbox{\hyperlink{classGraph}{dist}}[\mbox{\hyperlink{classGraph}{v}}-\/>getInfo().getCode()]\ =\ 0;}
+\DoxyCodeLine{00975\ }
+\DoxyCodeLine{00976\ \ \ \ \ \textcolor{keywordflow}{while}\ (!\mbox{\hyperlink{classGraph}{q}}.empty())}
+\DoxyCodeLine{00977\ \ \ \ \ \{}
+\DoxyCodeLine{00978\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{vertex}}\ =\ \mbox{\hyperlink{classGraph}{q}}.front();}
+\DoxyCodeLine{00979\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{q}}.pop();}
+\DoxyCodeLine{00980\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{adjs}}\ =\ \mbox{\hyperlink{classGraph}{vertex}}-\/>getAdj();}
+\DoxyCodeLine{00981\ }
+\DoxyCodeLine{00982\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&\mbox{\hyperlink{classGraph}{e}}\ :\ \mbox{\hyperlink{classGraph}{adjs}})}
+\DoxyCodeLine{00983\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00984\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{w}}\ =\ \mbox{\hyperlink{classGraph}{e}}.getDest();}
+\DoxyCodeLine{00985\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classGraph}{w}}-\/>isVisited()\ \&\&\ (\mbox{\hyperlink{classGraph}{find}}(\mbox{\hyperlink{classGraph}{airplanes}}.begin(),\ \mbox{\hyperlink{classGraph}{airplanes}}.end(),}
+\DoxyCodeLine{00986\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{e}}.getRoute())\ !=\ \mbox{\hyperlink{classGraph}{airplanes}}.end()\ ||}
+\DoxyCodeLine{00987\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{airplanes}}.size()\ ==\ 0))}
+\DoxyCodeLine{00988\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00989\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{q}}.push(\mbox{\hyperlink{classGraph}{w}});}
+\DoxyCodeLine{00990\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{w}}-\/>setVisited(\textcolor{keyword}{true});}
+\DoxyCodeLine{00991\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{prev}}[\mbox{\hyperlink{classGraph}{w}}-\/>getInfo().getCode()].push\_back(}
+\DoxyCodeLine{00992\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\mbox{\hyperlink{classGraph}{vertex}}-\/>getInfo().getCode(),\ \mbox{\hyperlink{classGraph}{e}}.getRoute()\});}
+\DoxyCodeLine{00993\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{dist}}[\mbox{\hyperlink{classGraph}{w}}-\/>getInfo().getCode()]\ =\ \mbox{\hyperlink{classGraph}{dist}}[\mbox{\hyperlink{classGraph}{vertex}}-\/>getInfo().getCode()]\ +\ 1;}
+\DoxyCodeLine{00994\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00995\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{dist}}[\mbox{\hyperlink{classGraph}{w}}-\/>getInfo().getCode()]\ ==}
+\DoxyCodeLine{00996\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{dist}}[\mbox{\hyperlink{classGraph}{vertex}}-\/>getInfo().getCode()]\ +\ 1\ \&\&}
+\DoxyCodeLine{00997\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{classGraph}{find}}(\mbox{\hyperlink{classGraph}{airplanes}}.begin(),\ \mbox{\hyperlink{classGraph}{airplanes}}.end(),\ \mbox{\hyperlink{classGraph}{e}}.getRoute())\ !=}
+\DoxyCodeLine{00998\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{airplanes}}.end()\ ||}
+\DoxyCodeLine{00999\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{airplanes}}.size()\ ==\ 0))}
+\DoxyCodeLine{01000\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01001\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{prev}}[\mbox{\hyperlink{classGraph}{w}}-\/>getInfo().getCode()].push\_back(}
+\DoxyCodeLine{01002\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\mbox{\hyperlink{classGraph}{vertex}}-\/>getInfo().getCode(),\ \mbox{\hyperlink{classGraph}{e}}.getRoute()\});}
+\DoxyCodeLine{01003\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01004\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01005\ \ \ \ \ \}}
+\DoxyCodeLine{01006\ }
+\DoxyCodeLine{01007\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<Flight>}}\ \mbox{\hyperlink{classGraph}{path}};}
+\DoxyCodeLine{01008\ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a9d6a5c56acfccf760e404fa346862107}{getPath}}(\mbox{\hyperlink{classGraph}{tgt}},\ \mbox{\hyperlink{classGraph}{path}},\ \mbox{\hyperlink{classGraph}{prev}},\ \mbox{\hyperlink{classGraph}{paths}},\ \mbox{\hyperlink{classGraph}{v}}-\/>getInfo().getCode(),\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{01009\ }
+\DoxyCodeLine{01010\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{paths}};}
+\DoxyCodeLine{01011\ \}}
 
 \end{DoxyCode}
 \Hypertarget{dbairport_8cpp_a39f02be201dda44faae784618a5e3deb}\label{dbairport_8cpp_a39f02be201dda44faae784618a5e3deb} 
@@ -183,23 +181,23 @@ void
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00465}{465}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00436}{436}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00466\ \{}
-\DoxyCodeLine{00467\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.getVertexSet())}
-\DoxyCodeLine{00468\ \ \ \ \ \{}
-\DoxyCodeLine{00469\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{v}}-\/>setIndegree(0);}
-\DoxyCodeLine{00470\ \ \ \ \ \}}
-\DoxyCodeLine{00471\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.getVertexSet())}
-\DoxyCodeLine{00472\ \ \ \ \ \{}
-\DoxyCodeLine{00473\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{e}}\ :\ \mbox{\hyperlink{classGraph}{v}}-\/>getAdj())}
-\DoxyCodeLine{00474\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00475\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{e}}.getDest()-\/>setIndegree(\mbox{\hyperlink{classGraph}{e}}.getDest()-\/>getIndegree()\ +\ 1);}
-\DoxyCodeLine{00476\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00477\ \ \ \ \ \}}
-\DoxyCodeLine{00478\ \}}
+\DoxyCodeLine{00437\ \{}
+\DoxyCodeLine{00438\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.getVertexSet())}
+\DoxyCodeLine{00439\ \ \ \ \ \{}
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{v}}-\/>setIndegree(0);}
+\DoxyCodeLine{00441\ \ \ \ \ \}}
+\DoxyCodeLine{00442\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.getVertexSet())}
+\DoxyCodeLine{00443\ \ \ \ \ \{}
+\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{e}}\ :\ \mbox{\hyperlink{classGraph}{v}}-\/>getAdj())}
+\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{e}}.getDest()-\/>setIndegree(\mbox{\hyperlink{classGraph}{e}}.getDest()-\/>getIndegree()\ +\ 1);}
+\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00448\ \ \ \ \ \}}
+\DoxyCodeLine{00449\ \}}
 
 \end{DoxyCode}
 \Hypertarget{dbairport_8cpp_af365ed6716b9c0e05c725ef20edbb240}\label{dbairport_8cpp_af365ed6716b9c0e05c725ef20edbb240} 
@@ -224,13 +222,13 @@ bool True if the first vector is smaller than the second vector.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00355}{355}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00326}{326}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00356\ \{}
-\DoxyCodeLine{00357\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{a}}.size()\ <\ \mbox{\hyperlink{classGraph}{b}}.size();}
-\DoxyCodeLine{00358\ \}}
+\DoxyCodeLine{00327\ \{}
+\DoxyCodeLine{00328\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{a}}.size()\ <\ \mbox{\hyperlink{classGraph}{b}}.size();}
+\DoxyCodeLine{00329\ \}}
 
 \end{DoxyCode}
 \Hypertarget{dbairport_8cpp_a665a614f527d8aebcbc1ac43800d1e9e}\label{dbairport_8cpp_a665a614f527d8aebcbc1ac43800d1e9e} 
@@ -253,27 +251,27 @@ int The number of connected components.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l01048}{1048}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l01019}{1019}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{01049\ \{}
-\DoxyCodeLine{01050\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classGraph}{component}}\ =\ 0;}
-\DoxyCodeLine{01051\ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a91627b34536fbd704b2fb7ca6853b47a}{resetVisited}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}});}
-\DoxyCodeLine{01052\ \ \ \ \ \mbox{\hyperlink{classGraph}{Graph<Airport>}}\ \mbox{\hyperlink{classGraph}{g}}\ =\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}};}
-\DoxyCodeLine{01053\ }
-\DoxyCodeLine{01054\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{classGraph}{g}}.getVertexSet())}
-\DoxyCodeLine{01055\ \ \ \ \ \{}
-\DoxyCodeLine{01056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classGraph}{v}}-\/>isVisited())}
-\DoxyCodeLine{01057\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{01058\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a9e3b5b395873914809a385cfc71f4ed9}{dfsConnectedComponents}}(\mbox{\hyperlink{classGraph}{g}},\ \mbox{\hyperlink{classGraph}{v}});}
-\DoxyCodeLine{01059\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{component}}++;}
-\DoxyCodeLine{01060\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{01061\ \ \ \ \ \}}
-\DoxyCodeLine{01062\ \ \ \ \ \textcolor{comment}{//\ std::cout\ <<\ "{}Number\ of\ connected\ components:\ "{}\ <<\ component\ <<}}
-\DoxyCodeLine{01063\ \ \ \ \ \textcolor{comment}{//\ std::endl;}}
-\DoxyCodeLine{01064\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{component}};}
-\DoxyCodeLine{01065\ \}}
+\DoxyCodeLine{01020\ \{}
+\DoxyCodeLine{01021\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classGraph}{component}}\ =\ 0;}
+\DoxyCodeLine{01022\ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a91627b34536fbd704b2fb7ca6853b47a}{resetVisited}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}});}
+\DoxyCodeLine{01023\ \ \ \ \ \mbox{\hyperlink{classGraph}{Graph<Airport>}}\ \mbox{\hyperlink{classGraph}{g}}\ =\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}};}
+\DoxyCodeLine{01024\ }
+\DoxyCodeLine{01025\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{classGraph}{g}}.getVertexSet())}
+\DoxyCodeLine{01026\ \ \ \ \ \{}
+\DoxyCodeLine{01027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classGraph}{v}}-\/>isVisited())}
+\DoxyCodeLine{01028\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01029\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a9e3b5b395873914809a385cfc71f4ed9}{dfsConnectedComponents}}(\mbox{\hyperlink{classGraph}{g}},\ \mbox{\hyperlink{classGraph}{v}});}
+\DoxyCodeLine{01030\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{component}}++;}
+\DoxyCodeLine{01031\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01032\ \ \ \ \ \}}
+\DoxyCodeLine{01033\ \ \ \ \ \textcolor{comment}{//\ std::cout\ <<\ "{}Number\ of\ connected\ components:\ "{}\ <<\ component\ <<}}
+\DoxyCodeLine{01034\ \ \ \ \ \textcolor{comment}{//\ std::endl;}}
+\DoxyCodeLine{01035\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{component}};}
+\DoxyCodeLine{01036\ \}}
 
 \end{DoxyCode}
 \Hypertarget{dbairport_8cpp_a83d1f2374fc9cb9a69c57410d6715489}\label{dbairport_8cpp_a83d1f2374fc9cb9a69c57410d6715489} 
@@ -298,23 +296,23 @@ void
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l01138}{1138}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l01109}{1109}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{01139\ \{}
-\DoxyCodeLine{01140\ \ \ \ \ \mbox{\hyperlink{classGraph}{w}}-\/>setVisited(\textcolor{keyword}{true});}
-\DoxyCodeLine{01141\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{adjs}}\ =\ \mbox{\hyperlink{classGraph}{w}}-\/>getAdj();}
-\DoxyCodeLine{01142\ }
-\DoxyCodeLine{01143\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&\mbox{\hyperlink{classGraph}{e}}\ :\ \mbox{\hyperlink{classGraph}{adjs}})}
-\DoxyCodeLine{01144\ \ \ \ \ \{}
-\DoxyCodeLine{01145\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{t}}\ =\ \mbox{\hyperlink{classGraph}{e}}.getDest();}
-\DoxyCodeLine{01146\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classGraph}{t}}-\/>isVisited()\ \&\&\ \mbox{\hyperlink{classGraph}{t}}-\/>getInfo().getCode()\ !=\ \mbox{\hyperlink{classGraph}{v}}-\/>getInfo().getCode())}
-\DoxyCodeLine{01147\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{01148\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a83d1f2374fc9cb9a69c57410d6715489}{dfsArtc}}(\mbox{\hyperlink{classGraph}{v}},\ \mbox{\hyperlink{classGraph}{t}});}
-\DoxyCodeLine{01149\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{01150\ \ \ \ \ \}}
-\DoxyCodeLine{01151\ \}}
+\DoxyCodeLine{01110\ \{}
+\DoxyCodeLine{01111\ \ \ \ \ \mbox{\hyperlink{classGraph}{w}}-\/>setVisited(\textcolor{keyword}{true});}
+\DoxyCodeLine{01112\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{adjs}}\ =\ \mbox{\hyperlink{classGraph}{w}}-\/>getAdj();}
+\DoxyCodeLine{01113\ }
+\DoxyCodeLine{01114\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&\mbox{\hyperlink{classGraph}{e}}\ :\ \mbox{\hyperlink{classGraph}{adjs}})}
+\DoxyCodeLine{01115\ \ \ \ \ \{}
+\DoxyCodeLine{01116\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{t}}\ =\ \mbox{\hyperlink{classGraph}{e}}.getDest();}
+\DoxyCodeLine{01117\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classGraph}{t}}-\/>isVisited()\ \&\&\ \mbox{\hyperlink{classGraph}{t}}-\/>getInfo().getCode()\ !=\ \mbox{\hyperlink{classGraph}{v}}-\/>getInfo().getCode())}
+\DoxyCodeLine{01118\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01119\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a83d1f2374fc9cb9a69c57410d6715489}{dfsArtc}}(\mbox{\hyperlink{classGraph}{v}},\ \mbox{\hyperlink{classGraph}{t}});}
+\DoxyCodeLine{01120\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01121\ \ \ \ \ \}}
+\DoxyCodeLine{01122\ \}}
 
 \end{DoxyCode}
 \Hypertarget{dbairport_8cpp_a9e3b5b395873914809a385cfc71f4ed9}\label{dbairport_8cpp_a9e3b5b395873914809a385cfc71f4ed9} 
@@ -339,23 +337,23 @@ void
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l01074}{1074}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l01045}{1045}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{01075\ \{}
-\DoxyCodeLine{01076\ \ \ \ \ \mbox{\hyperlink{classGraph}{v}}-\/>setVisited(\textcolor{keyword}{true});}
-\DoxyCodeLine{01077\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{adjs}}\ =\ \mbox{\hyperlink{classGraph}{v}}-\/>getAdj();}
-\DoxyCodeLine{01078\ }
-\DoxyCodeLine{01079\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&\mbox{\hyperlink{classGraph}{e}}\ :\ \mbox{\hyperlink{classGraph}{adjs}})}
-\DoxyCodeLine{01080\ \ \ \ \ \{}
-\DoxyCodeLine{01081\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{w}}\ =\ \mbox{\hyperlink{classGraph}{e}}.getDest();}
-\DoxyCodeLine{01082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classGraph}{w}}-\/>isVisited())}
-\DoxyCodeLine{01083\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{01084\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a9e3b5b395873914809a385cfc71f4ed9}{dfsConnectedComponents}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ \mbox{\hyperlink{classGraph}{w}});}
-\DoxyCodeLine{01085\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{01086\ \ \ \ \ \}}
-\DoxyCodeLine{01087\ \}}
+\DoxyCodeLine{01046\ \{}
+\DoxyCodeLine{01047\ \ \ \ \ \mbox{\hyperlink{classGraph}{v}}-\/>setVisited(\textcolor{keyword}{true});}
+\DoxyCodeLine{01048\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{adjs}}\ =\ \mbox{\hyperlink{classGraph}{v}}-\/>getAdj();}
+\DoxyCodeLine{01049\ }
+\DoxyCodeLine{01050\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&\mbox{\hyperlink{classGraph}{e}}\ :\ \mbox{\hyperlink{classGraph}{adjs}})}
+\DoxyCodeLine{01051\ \ \ \ \ \{}
+\DoxyCodeLine{01052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{w}}\ =\ \mbox{\hyperlink{classGraph}{e}}.getDest();}
+\DoxyCodeLine{01053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classGraph}{w}}-\/>isVisited())}
+\DoxyCodeLine{01054\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01055\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a9e3b5b395873914809a385cfc71f4ed9}{dfsConnectedComponents}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ \mbox{\hyperlink{classGraph}{w}});}
+\DoxyCodeLine{01056\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01057\ \ \ \ \ \}}
+\DoxyCodeLine{01058\ \}}
 
 \end{DoxyCode}
 \Hypertarget{dbairport_8cpp_a5e6b59a373a5bf83b48a0160d67d68fd}\label{dbairport_8cpp_a5e6b59a373a5bf83b48a0160d67d68fd} 
@@ -382,31 +380,31 @@ void
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00322}{322}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00293}{293}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00323\ \{}
-\DoxyCodeLine{00324\ \ \ \ \ \mbox{\hyperlink{classGraph}{v}}-\/>setVisited(\textcolor{keyword}{true});}
-\DoxyCodeLine{00325\ \ \ \ \ \mbox{\hyperlink{classGraph}{path}}.push\_back(\mbox{\hyperlink{classGraph}{v}}-\/>getInfo().getCode());}
-\DoxyCodeLine{00326\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{adjs}}\ =\ \mbox{\hyperlink{classGraph}{v}}-\/>getAdj();}
-\DoxyCodeLine{00327\ }
-\DoxyCodeLine{00328\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{path}}.size()\ >\ \mbox{\hyperlink{classGraph}{maxPath}}.size())}
-\DoxyCodeLine{00329\ \ \ \ \ \{}
-\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{maxPath}}\ =\ \mbox{\hyperlink{classGraph}{path}};}
-\DoxyCodeLine{00331\ \ \ \ \ \}}
-\DoxyCodeLine{00332\ }
-\DoxyCodeLine{00333\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&\mbox{\hyperlink{classGraph}{e}}\ :\ \mbox{\hyperlink{classGraph}{adjs}})}
-\DoxyCodeLine{00334\ \ \ \ \ \{}
-\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{w}}\ =\ \mbox{\hyperlink{classGraph}{e}}.getDest();}
-\DoxyCodeLine{00336\ }
-\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classGraph}{w}}-\/>isVisited())}
-\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a5e6b59a373a5bf83b48a0160d67d68fd}{dfsMax}}(\mbox{\hyperlink{classGraph}{w}},\ \mbox{\hyperlink{classGraph}{path}},\ \mbox{\hyperlink{classGraph}{maxPath}});}
-\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00341\ \ \ \ \ \}}
-\DoxyCodeLine{00342\ \ \ \ \ \mbox{\hyperlink{classGraph}{path}}.pop\_back();}
-\DoxyCodeLine{00343\ \}}
+\DoxyCodeLine{00294\ \{}
+\DoxyCodeLine{00295\ \ \ \ \ \mbox{\hyperlink{classGraph}{v}}-\/>setVisited(\textcolor{keyword}{true});}
+\DoxyCodeLine{00296\ \ \ \ \ \mbox{\hyperlink{classGraph}{path}}.push\_back(\mbox{\hyperlink{classGraph}{v}}-\/>getInfo().getCode());}
+\DoxyCodeLine{00297\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{adjs}}\ =\ \mbox{\hyperlink{classGraph}{v}}-\/>getAdj();}
+\DoxyCodeLine{00298\ }
+\DoxyCodeLine{00299\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{path}}.size()\ >\ \mbox{\hyperlink{classGraph}{maxPath}}.size())}
+\DoxyCodeLine{00300\ \ \ \ \ \{}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{maxPath}}\ =\ \mbox{\hyperlink{classGraph}{path}};}
+\DoxyCodeLine{00302\ \ \ \ \ \}}
+\DoxyCodeLine{00303\ }
+\DoxyCodeLine{00304\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&\mbox{\hyperlink{classGraph}{e}}\ :\ \mbox{\hyperlink{classGraph}{adjs}})}
+\DoxyCodeLine{00305\ \ \ \ \ \{}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{w}}\ =\ \mbox{\hyperlink{classGraph}{e}}.getDest();}
+\DoxyCodeLine{00307\ }
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classGraph}{w}}-\/>isVisited())}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a5e6b59a373a5bf83b48a0160d67d68fd}{dfsMax}}(\mbox{\hyperlink{classGraph}{w}},\ \mbox{\hyperlink{classGraph}{path}},\ \mbox{\hyperlink{classGraph}{maxPath}});}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00312\ \ \ \ \ \}}
+\DoxyCodeLine{00313\ \ \ \ \ \mbox{\hyperlink{classGraph}{path}}.pop\_back();}
+\DoxyCodeLine{00314\ \}}
 
 \end{DoxyCode}
 \Hypertarget{dbairport_8cpp_a90c3f842c8877fb0fc2c7a63a2df5ac2}\label{dbairport_8cpp_a90c3f842c8877fb0fc2c7a63a2df5ac2} 
@@ -431,27 +429,27 @@ vector$<$string$>$ The vector with the countries.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00390}{390}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00361}{361}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00392\ \{}
-\DoxyCodeLine{00393\ \ \ \ \ \mbox{\hyperlink{classGraph}{v}}-\/>setVisited(\textcolor{keyword}{true});}
-\DoxyCodeLine{00394\ \ \ \ \ \mbox{\hyperlink{classGraph}{res}}.push\_back(\mbox{\hyperlink{classGraph}{v}}-\/>getInfo().getCountry());}
-\DoxyCodeLine{00395\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{adjs}}\ =\ \mbox{\hyperlink{classGraph}{v}}-\/>getAdj();}
-\DoxyCodeLine{00396\ }
-\DoxyCodeLine{00397\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&\mbox{\hyperlink{classGraph}{e}}\ :\ \mbox{\hyperlink{classGraph}{adjs}})}
-\DoxyCodeLine{00398\ \ \ \ \ \{}
-\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{w}}\ =\ \mbox{\hyperlink{classGraph}{e}}.getDest();}
-\DoxyCodeLine{00400\ }
-\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classGraph}{w}}-\/>isVisited())}
-\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a90c3f842c8877fb0fc2c7a63a2df5ac2}{dfsVisit}}(\mbox{\hyperlink{classGraph}{w}},\ \mbox{\hyperlink{classGraph}{res}});}
-\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00405\ \ \ \ \ \}}
-\DoxyCodeLine{00406\ }
-\DoxyCodeLine{00407\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{res}};}
-\DoxyCodeLine{00408\ \}}
+\DoxyCodeLine{00363\ \{}
+\DoxyCodeLine{00364\ \ \ \ \ \mbox{\hyperlink{classGraph}{v}}-\/>setVisited(\textcolor{keyword}{true});}
+\DoxyCodeLine{00365\ \ \ \ \ \mbox{\hyperlink{classGraph}{res}}.push\_back(\mbox{\hyperlink{classGraph}{v}}-\/>getInfo().getCountry());}
+\DoxyCodeLine{00366\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{adjs}}\ =\ \mbox{\hyperlink{classGraph}{v}}-\/>getAdj();}
+\DoxyCodeLine{00367\ }
+\DoxyCodeLine{00368\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&\mbox{\hyperlink{classGraph}{e}}\ :\ \mbox{\hyperlink{classGraph}{adjs}})}
+\DoxyCodeLine{00369\ \ \ \ \ \{}
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{w}}\ =\ \mbox{\hyperlink{classGraph}{e}}.getDest();}
+\DoxyCodeLine{00371\ }
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classGraph}{w}}-\/>isVisited())}
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a90c3f842c8877fb0fc2c7a63a2df5ac2}{dfsVisit}}(\mbox{\hyperlink{classGraph}{w}},\ \mbox{\hyperlink{classGraph}{res}});}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00376\ \ \ \ \ \}}
+\DoxyCodeLine{00377\ }
+\DoxyCodeLine{00378\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{res}};}
+\DoxyCodeLine{00379\ \}}
 
 \end{DoxyCode}
 \Hypertarget{dbairport_8cpp_a17cbb53667559946ff3b47d65e2a7a68}\label{dbairport_8cpp_a17cbb53667559946ff3b47d65e2a7a68} 
@@ -478,33 +476,33 @@ vector$<$string$>$ The vector with the countries.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00418}{418}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00389}{389}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00420\ \{}
-\DoxyCodeLine{00421\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{stop}}\ ==\ 0)}
-\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{res}};}
-\DoxyCodeLine{00423\ }
-\DoxyCodeLine{00424\ \ \ \ \ \textcolor{comment}{//\ std::cout\ <<\ "{}Saindo\ de\ "{}\ <<\ v-\/>getInfo().getCode()\ <<\ std::endl;}}
-\DoxyCodeLine{00425\ }
-\DoxyCodeLine{00426\ \ \ \ \ \mbox{\hyperlink{classGraph}{v}}-\/>setVisited(\textcolor{keyword}{true});}
-\DoxyCodeLine{00427\ \ \ \ \ \mbox{\hyperlink{classGraph}{res}}.push\_back(\mbox{\hyperlink{classGraph}{v}}-\/>getInfo().getCountry());}
-\DoxyCodeLine{00428\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{adjs}}\ =\ \mbox{\hyperlink{classGraph}{v}}-\/>getAdj();}
-\DoxyCodeLine{00429\ }
-\DoxyCodeLine{00430\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&\mbox{\hyperlink{classGraph}{e}}\ :\ \mbox{\hyperlink{classGraph}{adjs}})}
-\DoxyCodeLine{00431\ \ \ \ \ \{}
-\DoxyCodeLine{00432\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{w}}\ =\ \mbox{\hyperlink{classGraph}{e}}.getDest();}
-\DoxyCodeLine{00433\ }
-\DoxyCodeLine{00434\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classGraph}{w}}-\/>isVisited())}
-\DoxyCodeLine{00435\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00436\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::cout\ <<\ "{}\(\backslash\)t\ Eu\ vou\ para:\ "{}\ <<\ w-\/>getInfo().getCode()\ <<}}
-\DoxyCodeLine{00437\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::endl;}}
-\DoxyCodeLine{00438\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a90c3f842c8877fb0fc2c7a63a2df5ac2}{dfsVisit}}(\mbox{\hyperlink{classGraph}{w}},\ \mbox{\hyperlink{classGraph}{res}},\ (\mbox{\hyperlink{classGraph}{stop}}\ -\/\ 1));}
-\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00440\ \ \ \ \ \}}
-\DoxyCodeLine{00441\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{res}};}
-\DoxyCodeLine{00442\ \}}
+\DoxyCodeLine{00391\ \{}
+\DoxyCodeLine{00392\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{stop}}\ ==\ 0)}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{res}};}
+\DoxyCodeLine{00394\ }
+\DoxyCodeLine{00395\ \ \ \ \ \textcolor{comment}{//\ std::cout\ <<\ "{}Saindo\ de\ "{}\ <<\ v-\/>getInfo().getCode()\ <<\ std::endl;}}
+\DoxyCodeLine{00396\ }
+\DoxyCodeLine{00397\ \ \ \ \ \mbox{\hyperlink{classGraph}{v}}-\/>setVisited(\textcolor{keyword}{true});}
+\DoxyCodeLine{00398\ \ \ \ \ \mbox{\hyperlink{classGraph}{res}}.push\_back(\mbox{\hyperlink{classGraph}{v}}-\/>getInfo().getCountry());}
+\DoxyCodeLine{00399\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{adjs}}\ =\ \mbox{\hyperlink{classGraph}{v}}-\/>getAdj();}
+\DoxyCodeLine{00400\ }
+\DoxyCodeLine{00401\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&\mbox{\hyperlink{classGraph}{e}}\ :\ \mbox{\hyperlink{classGraph}{adjs}})}
+\DoxyCodeLine{00402\ \ \ \ \ \{}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{w}}\ =\ \mbox{\hyperlink{classGraph}{e}}.getDest();}
+\DoxyCodeLine{00404\ }
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classGraph}{w}}-\/>isVisited())}
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::cout\ <<\ "{}\(\backslash\)t\ Eu\ vou\ para:\ "{}\ <<\ w-\/>getInfo().getCode()\ <<}}
+\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::endl;}}
+\DoxyCodeLine{00409\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a90c3f842c8877fb0fc2c7a63a2df5ac2}{dfsVisit}}(\mbox{\hyperlink{classGraph}{w}},\ \mbox{\hyperlink{classGraph}{res}},\ (\mbox{\hyperlink{classGraph}{stop}}\ -\/\ 1));}
+\DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00411\ \ \ \ \ \}}
+\DoxyCodeLine{00412\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{res}};}
+\DoxyCodeLine{00413\ \}}
 
 \end{DoxyCode}
 \Hypertarget{dbairport_8cpp_a54a366c729ef7171badd198f16af649c}\label{dbairport_8cpp_a54a366c729ef7171badd198f16af649c} 
@@ -533,30 +531,30 @@ double The distance between the two points.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00764}{764}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00735}{735}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00766\ \{}
-\DoxyCodeLine{00767\ \ \ \ \ \mbox{\hyperlink{classGraph}{latOrigin}}\ =\ \mbox{\hyperlink{dbairport_8cpp_aec487f2b258d2630193c6dee0c78665d}{toRadians}}(\mbox{\hyperlink{classGraph}{latOrigin}});}
-\DoxyCodeLine{00768\ \ \ \ \ \mbox{\hyperlink{classGraph}{longOrigin}}\ =\ \mbox{\hyperlink{dbairport_8cpp_aec487f2b258d2630193c6dee0c78665d}{toRadians}}(\mbox{\hyperlink{classGraph}{longOrigin}});}
-\DoxyCodeLine{00769\ \ \ \ \ \mbox{\hyperlink{classGraph}{latDest}}\ =\ \mbox{\hyperlink{dbairport_8cpp_aec487f2b258d2630193c6dee0c78665d}{toRadians}}(\mbox{\hyperlink{classGraph}{latDest}});}
-\DoxyCodeLine{00770\ \ \ \ \ \mbox{\hyperlink{classGraph}{longDest}}\ =\ \mbox{\hyperlink{dbairport_8cpp_aec487f2b258d2630193c6dee0c78665d}{toRadians}}(\mbox{\hyperlink{classGraph}{longDest}});}
-\DoxyCodeLine{00771\ }
-\DoxyCodeLine{00772\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classGraph}{dlong}}\ =\ \mbox{\hyperlink{classGraph}{longDest}}\ -\/\ \mbox{\hyperlink{classGraph}{longOrigin}};}
-\DoxyCodeLine{00773\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classGraph}{dlat}}\ =\ \mbox{\hyperlink{classGraph}{latDest}}\ -\/\ \mbox{\hyperlink{classGraph}{latOrigin}};}
-\DoxyCodeLine{00774\ }
-\DoxyCodeLine{00775\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classGraph}{ans}}\ =\ \mbox{\hyperlink{classGraph}{pow}}(\mbox{\hyperlink{classGraph}{sin}}(\mbox{\hyperlink{classGraph}{dlat}}\ /\ 2),\ 2)\ +}
-\DoxyCodeLine{00776\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{cos}}(\mbox{\hyperlink{classGraph}{latOrigin}})\ *\ \mbox{\hyperlink{classGraph}{cos}}(\mbox{\hyperlink{classGraph}{latDest}})\ *\ \mbox{\hyperlink{classGraph}{pow}}(\mbox{\hyperlink{classGraph}{sin}}(\mbox{\hyperlink{classGraph}{dlong}}\ /\ 2),\ 2);}
-\DoxyCodeLine{00777\ }
-\DoxyCodeLine{00778\ \ \ \ \ \mbox{\hyperlink{classGraph}{ans}}\ =\ 2\ *\ \mbox{\hyperlink{classGraph}{asin}}(\mbox{\hyperlink{classGraph}{sqrt}}(\mbox{\hyperlink{classGraph}{ans}}));}
-\DoxyCodeLine{00779\ }
-\DoxyCodeLine{00780\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classGraph}{R}}\ =\ 6371;}
-\DoxyCodeLine{00781\ }
-\DoxyCodeLine{00782\ \ \ \ \ \mbox{\hyperlink{classGraph}{ans}}\ =\ \mbox{\hyperlink{classGraph}{ans}}\ *\ \mbox{\hyperlink{classGraph}{R}};}
-\DoxyCodeLine{00783\ }
-\DoxyCodeLine{00784\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{ans}};}
-\DoxyCodeLine{00785\ \}}
+\DoxyCodeLine{00737\ \{}
+\DoxyCodeLine{00738\ \ \ \ \ \mbox{\hyperlink{classGraph}{latOrigin}}\ =\ \mbox{\hyperlink{dbairport_8cpp_aec487f2b258d2630193c6dee0c78665d}{toRadians}}(\mbox{\hyperlink{classGraph}{latOrigin}});}
+\DoxyCodeLine{00739\ \ \ \ \ \mbox{\hyperlink{classGraph}{longOrigin}}\ =\ \mbox{\hyperlink{dbairport_8cpp_aec487f2b258d2630193c6dee0c78665d}{toRadians}}(\mbox{\hyperlink{classGraph}{longOrigin}});}
+\DoxyCodeLine{00740\ \ \ \ \ \mbox{\hyperlink{classGraph}{latDest}}\ =\ \mbox{\hyperlink{dbairport_8cpp_aec487f2b258d2630193c6dee0c78665d}{toRadians}}(\mbox{\hyperlink{classGraph}{latDest}});}
+\DoxyCodeLine{00741\ \ \ \ \ \mbox{\hyperlink{classGraph}{longDest}}\ =\ \mbox{\hyperlink{dbairport_8cpp_aec487f2b258d2630193c6dee0c78665d}{toRadians}}(\mbox{\hyperlink{classGraph}{longDest}});}
+\DoxyCodeLine{00742\ }
+\DoxyCodeLine{00743\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classGraph}{dlong}}\ =\ \mbox{\hyperlink{classGraph}{longDest}}\ -\/\ \mbox{\hyperlink{classGraph}{longOrigin}};}
+\DoxyCodeLine{00744\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classGraph}{dlat}}\ =\ \mbox{\hyperlink{classGraph}{latDest}}\ -\/\ \mbox{\hyperlink{classGraph}{latOrigin}};}
+\DoxyCodeLine{00745\ }
+\DoxyCodeLine{00746\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classGraph}{ans}}\ =\ \mbox{\hyperlink{classGraph}{pow}}(\mbox{\hyperlink{classGraph}{sin}}(\mbox{\hyperlink{classGraph}{dlat}}\ /\ 2),\ 2)\ +}
+\DoxyCodeLine{00747\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{cos}}(\mbox{\hyperlink{classGraph}{latOrigin}})\ *\ \mbox{\hyperlink{classGraph}{cos}}(\mbox{\hyperlink{classGraph}{latDest}})\ *\ \mbox{\hyperlink{classGraph}{pow}}(\mbox{\hyperlink{classGraph}{sin}}(\mbox{\hyperlink{classGraph}{dlong}}\ /\ 2),\ 2);}
+\DoxyCodeLine{00748\ }
+\DoxyCodeLine{00749\ \ \ \ \ \mbox{\hyperlink{classGraph}{ans}}\ =\ 2\ *\ \mbox{\hyperlink{classGraph}{asin}}(\mbox{\hyperlink{classGraph}{sqrt}}(\mbox{\hyperlink{classGraph}{ans}}));}
+\DoxyCodeLine{00750\ }
+\DoxyCodeLine{00751\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classGraph}{R}}\ =\ 6371;}
+\DoxyCodeLine{00752\ }
+\DoxyCodeLine{00753\ \ \ \ \ \mbox{\hyperlink{classGraph}{ans}}\ =\ \mbox{\hyperlink{classGraph}{ans}}\ *\ \mbox{\hyperlink{classGraph}{R}};}
+\DoxyCodeLine{00754\ }
+\DoxyCodeLine{00755\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{ans}};}
+\DoxyCodeLine{00756\ \}}
 
 \end{DoxyCode}
 \Hypertarget{dbairport_8cpp_af16d621e81af427879ea63d8dce32e8d}\label{dbairport_8cpp_af16d621e81af427879ea63d8dce32e8d} 
@@ -585,26 +583,26 @@ vector\texorpdfstring{$<$}{<}Vertex$<$\+Airport$>$\texorpdfstring{$\ast$}{*}\tex
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00799}{799}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00770}{770}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00801\ \{}
-\DoxyCodeLine{00802\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<Vertex<Airport>}}\ *>\ \mbox{\hyperlink{classGraph}{vec}};}
-\DoxyCodeLine{00803\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.getVertexSet())}
-\DoxyCodeLine{00804\ \ \ \ \ \{}
-\DoxyCodeLine{00805\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classGraph}{lat2}}\ =\ \mbox{\hyperlink{classGraph}{v}}-\/>getInfo().getLatitude();}
-\DoxyCodeLine{00806\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classGraph}{lon2}}\ =\ \mbox{\hyperlink{classGraph}{v}}-\/>getInfo().getLongitude();}
-\DoxyCodeLine{00807\ }
-\DoxyCodeLine{00808\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classGraph}{dist}}\ =\ \mbox{\hyperlink{dbairport_8cpp_a54a366c729ef7171badd198f16af649c}{distanceEarth}}(\mbox{\hyperlink{classGraph}{lat}},\ \mbox{\hyperlink{classGraph}{lon}},\ \mbox{\hyperlink{classGraph}{lat2}},\ \mbox{\hyperlink{classGraph}{lon2}});}
-\DoxyCodeLine{00809\ }
-\DoxyCodeLine{00810\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{dist}}\ <=\ \mbox{\hyperlink{classGraph}{distMax}})}
-\DoxyCodeLine{00811\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00812\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{vec}}.push\_back(\mbox{\hyperlink{classGraph}{v}});}
-\DoxyCodeLine{00813\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00814\ \ \ \ \ \}}
-\DoxyCodeLine{00815\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{vec}};}
-\DoxyCodeLine{00816\ \}}
+\DoxyCodeLine{00772\ \{}
+\DoxyCodeLine{00773\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<Vertex<Airport>}}\ *>\ \mbox{\hyperlink{classGraph}{vec}};}
+\DoxyCodeLine{00774\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.getVertexSet())}
+\DoxyCodeLine{00775\ \ \ \ \ \{}
+\DoxyCodeLine{00776\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classGraph}{lat2}}\ =\ \mbox{\hyperlink{classGraph}{v}}-\/>getInfo().getLatitude();}
+\DoxyCodeLine{00777\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classGraph}{lon2}}\ =\ \mbox{\hyperlink{classGraph}{v}}-\/>getInfo().getLongitude();}
+\DoxyCodeLine{00778\ }
+\DoxyCodeLine{00779\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classGraph}{dist}}\ =\ \mbox{\hyperlink{dbairport_8cpp_a54a366c729ef7171badd198f16af649c}{distanceEarth}}(\mbox{\hyperlink{classGraph}{lat}},\ \mbox{\hyperlink{classGraph}{lon}},\ \mbox{\hyperlink{classGraph}{lat2}},\ \mbox{\hyperlink{classGraph}{lon2}});}
+\DoxyCodeLine{00780\ }
+\DoxyCodeLine{00781\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{dist}}\ <=\ \mbox{\hyperlink{classGraph}{distMax}})}
+\DoxyCodeLine{00782\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00783\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{vec}}.push\_back(\mbox{\hyperlink{classGraph}{v}});}
+\DoxyCodeLine{00784\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00785\ \ \ \ \ \}}
+\DoxyCodeLine{00786\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{vec}};}
+\DoxyCodeLine{00787\ \}}
 
 \end{DoxyCode}
 \Hypertarget{dbairport_8cpp_a8630a8877e9e655e680f5bbdb5da5ae1}\label{dbairport_8cpp_a8630a8877e9e655e680f5bbdb5da5ae1} 
@@ -631,22 +629,22 @@ vector\texorpdfstring{$<$}{<}Vertex$<$\+Airport$>$\texorpdfstring{$\ast$}{*}\tex
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00700}{700}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00671}{671}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00702\ \{}
-\DoxyCodeLine{00703\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<Vertex<Airport>}}\ *>\ \mbox{\hyperlink{classGraph}{vec}};}
-\DoxyCodeLine{00704\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.getVertexSet())}
-\DoxyCodeLine{00705\ \ \ \ \ \{}
-\DoxyCodeLine{00706\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{v}}-\/>getInfo().getCountry()\ ==\ country\ \&\&}
-\DoxyCodeLine{00707\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{v}}-\/>getInfo().getCity()\ ==\ city)}
-\DoxyCodeLine{00708\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00709\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{vec}}.push\_back(\mbox{\hyperlink{classGraph}{v}});}
-\DoxyCodeLine{00710\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00711\ \ \ \ \ \}}
-\DoxyCodeLine{00712\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{vec}};}
-\DoxyCodeLine{00713\ \}}
+\DoxyCodeLine{00673\ \{}
+\DoxyCodeLine{00674\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<Vertex<Airport>}}\ *>\ \mbox{\hyperlink{classGraph}{vec}};}
+\DoxyCodeLine{00675\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.getVertexSet())}
+\DoxyCodeLine{00676\ \ \ \ \ \{}
+\DoxyCodeLine{00677\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{v}}-\/>getInfo().getCountry()\ ==\ country\ \&\&}
+\DoxyCodeLine{00678\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{v}}-\/>getInfo().getCity()\ ==\ city)}
+\DoxyCodeLine{00679\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00680\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{vec}}.push\_back(\mbox{\hyperlink{classGraph}{v}});}
+\DoxyCodeLine{00681\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00682\ \ \ \ \ \}}
+\DoxyCodeLine{00683\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{vec}};}
+\DoxyCodeLine{00684\ \}}
 
 \end{DoxyCode}
 \Hypertarget{dbairport_8cpp_aff562f54bfc193a204b61dac9cd850a4}\label{dbairport_8cpp_aff562f54bfc193a204b61dac9cd850a4} 
@@ -669,45 +667,45 @@ void
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l01095}{1095}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l01066}{1066}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{01096\ \{}
-\DoxyCodeLine{01097\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classGraph}{i}}\ =\ 0;}
-\DoxyCodeLine{01098\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classGraph}{total}}\ =\ 0;}
-\DoxyCodeLine{01099\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classGraph}{connected}}\ =\ \mbox{\hyperlink{dbairport_8cpp_a665a614f527d8aebcbc1ac43800d1e9e}{connectedComponents}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}});}
-\DoxyCodeLine{01100\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.getVertexSet())}
-\DoxyCodeLine{01101\ \ \ \ \ \{}
-\DoxyCodeLine{01102\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::cout\ <<\ "{}\ Analisando\ o\ vertice:\ "{}\ <<\ v-\/>getInfo().getCode()\ <<}}
-\DoxyCodeLine{01103\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::endl;}}
-\DoxyCodeLine{01104\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a91627b34536fbd704b2fb7ca6853b47a}{resetVisited}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}});}
-\DoxyCodeLine{01105\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classGraph}{component}}\ =\ 0;}
-\DoxyCodeLine{01106\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{w}}\ :\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.getVertexSet())}
-\DoxyCodeLine{01107\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{01108\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::cout\ <<\ "{}\(\backslash\)tAnalisando\ o\ vertice:\ "{}\ <<\ w-\/>getInfo().getCode()<<}}
-\DoxyCodeLine{01109\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::endl;}}
-\DoxyCodeLine{01110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classGraph}{w}}-\/>isVisited()\ \&\&\ \mbox{\hyperlink{classGraph}{w}}-\/>getInfo().getCode()\ !=\ \mbox{\hyperlink{classGraph}{v}}-\/>getInfo().getCode())}
-\DoxyCodeLine{01111\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{01112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::cout\ <<\ "{}\(\backslash\)t\(\backslash\)tChamando\ o\ DFS\ component++"{}\ <<\ std::endl;}}
-\DoxyCodeLine{01113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a83d1f2374fc9cb9a69c57410d6715489}{dfsArtc}}(\mbox{\hyperlink{classGraph}{v}},\ \mbox{\hyperlink{classGraph}{w}});}
-\DoxyCodeLine{01114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{component}}++;}
-\DoxyCodeLine{01115\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{01116\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{01117\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{component}}\ >\ \mbox{\hyperlink{classGraph}{connected}})}
-\DoxyCodeLine{01118\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{01119\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \mbox{\hyperlink{classGraph}{v}}-\/>getInfo().getCode()\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
-\DoxyCodeLine{01120\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{i}}++;}
-\DoxyCodeLine{01121\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{total}}++;}
-\DoxyCodeLine{01122\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{i}}\ ==\ 10)}
-\DoxyCodeLine{01123\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{01124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ std::endl;}
-\DoxyCodeLine{01125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{i}}\ =\ 0;}
-\DoxyCodeLine{01126\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{01127\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{01128\ \ \ \ \ \}}
-\DoxyCodeLine{01129\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nTotal:\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{total}}\ <<\ std::endl;}
-\DoxyCodeLine{01130\ \}}
+\DoxyCodeLine{01067\ \{}
+\DoxyCodeLine{01068\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classGraph}{i}}\ =\ 0;}
+\DoxyCodeLine{01069\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classGraph}{total}}\ =\ 0;}
+\DoxyCodeLine{01070\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classGraph}{connected}}\ =\ \mbox{\hyperlink{dbairport_8cpp_a665a614f527d8aebcbc1ac43800d1e9e}{connectedComponents}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}});}
+\DoxyCodeLine{01071\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.getVertexSet())}
+\DoxyCodeLine{01072\ \ \ \ \ \{}
+\DoxyCodeLine{01073\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::cout\ <<\ "{}\ Analisando\ o\ vertice:\ "{}\ <<\ v-\/>getInfo().getCode()\ <<}}
+\DoxyCodeLine{01074\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::endl;}}
+\DoxyCodeLine{01075\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a91627b34536fbd704b2fb7ca6853b47a}{resetVisited}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}});}
+\DoxyCodeLine{01076\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classGraph}{component}}\ =\ 0;}
+\DoxyCodeLine{01077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{w}}\ :\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.getVertexSet())}
+\DoxyCodeLine{01078\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::cout\ <<\ "{}\(\backslash\)tAnalisando\ o\ vertice:\ "{}\ <<\ w-\/>getInfo().getCode()<<}}
+\DoxyCodeLine{01080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::endl;}}
+\DoxyCodeLine{01081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classGraph}{w}}-\/>isVisited()\ \&\&\ \mbox{\hyperlink{classGraph}{w}}-\/>getInfo().getCode()\ !=\ \mbox{\hyperlink{classGraph}{v}}-\/>getInfo().getCode())}
+\DoxyCodeLine{01082\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::cout\ <<\ "{}\(\backslash\)t\(\backslash\)tChamando\ o\ DFS\ component++"{}\ <<\ std::endl;}}
+\DoxyCodeLine{01084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a83d1f2374fc9cb9a69c57410d6715489}{dfsArtc}}(\mbox{\hyperlink{classGraph}{v}},\ \mbox{\hyperlink{classGraph}{w}});}
+\DoxyCodeLine{01085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{component}}++;}
+\DoxyCodeLine{01086\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01087\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{component}}\ >\ \mbox{\hyperlink{classGraph}{connected}})}
+\DoxyCodeLine{01089\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01090\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \mbox{\hyperlink{classGraph}{v}}-\/>getInfo().getCode()\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{01091\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{i}}++;}
+\DoxyCodeLine{01092\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{total}}++;}
+\DoxyCodeLine{01093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{i}}\ ==\ 10)}
+\DoxyCodeLine{01094\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ std::endl;}
+\DoxyCodeLine{01096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{i}}\ =\ 0;}
+\DoxyCodeLine{01097\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01098\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01099\ \ \ \ \ \}}
+\DoxyCodeLine{01100\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nTotal:\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{total}}\ <<\ std::endl;}
+\DoxyCodeLine{01101\ \}}
 
 \end{DoxyCode}
 \Hypertarget{dbairport_8cpp_a6810f143c1f93bd40c549be758c3b5c0}\label{dbairport_8cpp_a6810f143c1f93bd40c549be758c3b5c0} 
@@ -742,19 +740,19 @@ void
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00831}{831}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00802}{802}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00834\ \{}
-\DoxyCodeLine{00835\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<Vertex<Airport>}}\ *>\ \mbox{\hyperlink{classGraph}{src}}\ =}
-\DoxyCodeLine{00836\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a8630a8877e9e655e680f5bbdb5da5ae1}{findAirports}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ \mbox{\hyperlink{classGraph}{latOrigin}},\ \mbox{\hyperlink{classGraph}{longOrigin}},\ \mbox{\hyperlink{classGraph}{distMax}});}
-\DoxyCodeLine{00837\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<Vertex<Airport>}}\ *>\ dest\ =}
-\DoxyCodeLine{00838\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a8630a8877e9e655e680f5bbdb5da5ae1}{findAirports}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ \mbox{\hyperlink{classGraph}{latDest}},\ \mbox{\hyperlink{classGraph}{longDest}},\ \mbox{\hyperlink{classGraph}{distMax}});}
-\DoxyCodeLine{00839\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<vector<Flight>}}>\ \mbox{\hyperlink{classGraph}{paths}};}
-\DoxyCodeLine{00840\ }
-\DoxyCodeLine{00841\ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a3ca85a500cf9c70a12ba8f2dd24b016e}{showPath}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ \mbox{\hyperlink{classGraph}{src}},\ dest,\ \mbox{\hyperlink{classGraph}{paths}},\ \mbox{\hyperlink{classGraph}{airplanes}});}
-\DoxyCodeLine{00842\ \}}
+\DoxyCodeLine{00805\ \{}
+\DoxyCodeLine{00806\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<Vertex<Airport>}}\ *>\ \mbox{\hyperlink{classGraph}{src}}\ =}
+\DoxyCodeLine{00807\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a8630a8877e9e655e680f5bbdb5da5ae1}{findAirports}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ \mbox{\hyperlink{classGraph}{latOrigin}},\ \mbox{\hyperlink{classGraph}{longOrigin}},\ \mbox{\hyperlink{classGraph}{distMax}});}
+\DoxyCodeLine{00808\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<Vertex<Airport>}}\ *>\ dest\ =}
+\DoxyCodeLine{00809\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a8630a8877e9e655e680f5bbdb5da5ae1}{findAirports}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ \mbox{\hyperlink{classGraph}{latDest}},\ \mbox{\hyperlink{classGraph}{longDest}},\ \mbox{\hyperlink{classGraph}{distMax}});}
+\DoxyCodeLine{00810\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<vector<Flight>}}>\ \mbox{\hyperlink{classGraph}{paths}};}
+\DoxyCodeLine{00811\ }
+\DoxyCodeLine{00812\ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a3ca85a500cf9c70a12ba8f2dd24b016e}{showPath}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ \mbox{\hyperlink{classGraph}{src}},\ dest,\ \mbox{\hyperlink{classGraph}{paths}},\ \mbox{\hyperlink{classGraph}{airplanes}});}
+\DoxyCodeLine{00813\ \}}
 
 \end{DoxyCode}
 \Hypertarget{dbairport_8cpp_a4c312ce194bc762e2bca1ce2dfe38319}\label{dbairport_8cpp_a4c312ce194bc762e2bca1ce2dfe38319} 
@@ -789,37 +787,37 @@ void
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00857}{857}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00828}{828}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00860\ \{}
-\DoxyCodeLine{00861\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<Vertex<Airport>}}\ *>\ \mbox{\hyperlink{classGraph}{vec}};}
-\DoxyCodeLine{00862\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<vector<Flight>}}>\ \mbox{\hyperlink{classGraph}{paths}};}
-\DoxyCodeLine{00863\ \ \ \ \ \mbox{\hyperlink{classGraph}{vec}}\ =\ \mbox{\hyperlink{dbairport_8cpp_a8630a8877e9e655e680f5bbdb5da5ae1}{findAirports}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ \mbox{\hyperlink{classGraph}{lat}},\ \mbox{\hyperlink{classGraph}{lon}},\ \mbox{\hyperlink{classGraph}{distMax}});}
-\DoxyCodeLine{00864\ }
-\DoxyCodeLine{00865\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{type}}\ ==\ 0)}
-\DoxyCodeLine{00866\ \ \ \ \ \{}
-\DoxyCodeLine{00867\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{classGraph}{vec}})}
-\DoxyCodeLine{00868\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00869\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Source:\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{v}}-\/>getInfo().getCode()\ <<\ std::endl;}
-\DoxyCodeLine{00870\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a91627b34536fbd704b2fb7ca6853b47a}{resetVisited}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}});}
-\DoxyCodeLine{00871\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{paths}}\ =\ \mbox{\hyperlink{dbairport_8cpp_ab6dcff908aa0804d5b7a4e7cbcf3103f}{bfsPath}}(\mbox{\hyperlink{classGraph}{v}},\ \mbox{\hyperlink{classGraph}{airport}},\ \mbox{\hyperlink{classGraph}{airplanes}});}
-\DoxyCodeLine{00872\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a3ca85a500cf9c70a12ba8f2dd24b016e}{showPath}}(\mbox{\hyperlink{classGraph}{paths}});}
-\DoxyCodeLine{00873\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00874\ \ \ \ \ \}}
-\DoxyCodeLine{00875\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{type}}\ ==\ 1)}
-\DoxyCodeLine{00876\ \ \ \ \ \{}
-\DoxyCodeLine{00877\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{classGraph}{vec}})}
-\DoxyCodeLine{00878\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00879\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Source:\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{airport}}\ <<\ std::endl;}
-\DoxyCodeLine{00880\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classGraph}{tgt}}\ =\ \mbox{\hyperlink{classGraph}{v}}-\/>getInfo().getCode();}
-\DoxyCodeLine{00881\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a91627b34536fbd704b2fb7ca6853b47a}{resetVisited}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}});}
-\DoxyCodeLine{00882\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{paths}}\ =\ \mbox{\hyperlink{dbairport_8cpp_ab6dcff908aa0804d5b7a4e7cbcf3103f}{bfsPath}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.\mbox{\hyperlink{classGraph_a8b7b7465fbfd562e2a469f90a437ab75}{findVertex}}(\mbox{\hyperlink{classAirport}{Airport}}(\mbox{\hyperlink{classGraph}{airport}})),\ \mbox{\hyperlink{classGraph}{tgt}},\ \mbox{\hyperlink{classGraph}{airplanes}});}
-\DoxyCodeLine{00883\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a3ca85a500cf9c70a12ba8f2dd24b016e}{showPath}}(\mbox{\hyperlink{classGraph}{paths}});}
-\DoxyCodeLine{00884\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00885\ \ \ \ \ \}}
-\DoxyCodeLine{00886\ \}}
+\DoxyCodeLine{00831\ \{}
+\DoxyCodeLine{00832\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<Vertex<Airport>}}\ *>\ \mbox{\hyperlink{classGraph}{vec}};}
+\DoxyCodeLine{00833\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<vector<Flight>}}>\ \mbox{\hyperlink{classGraph}{paths}};}
+\DoxyCodeLine{00834\ \ \ \ \ \mbox{\hyperlink{classGraph}{vec}}\ =\ \mbox{\hyperlink{dbairport_8cpp_a8630a8877e9e655e680f5bbdb5da5ae1}{findAirports}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ \mbox{\hyperlink{classGraph}{lat}},\ \mbox{\hyperlink{classGraph}{lon}},\ \mbox{\hyperlink{classGraph}{distMax}});}
+\DoxyCodeLine{00835\ }
+\DoxyCodeLine{00836\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{type}}\ ==\ 0)}
+\DoxyCodeLine{00837\ \ \ \ \ \{}
+\DoxyCodeLine{00838\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{classGraph}{vec}})}
+\DoxyCodeLine{00839\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00840\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Source:\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{v}}-\/>getInfo().getCode()\ <<\ std::endl;}
+\DoxyCodeLine{00841\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a91627b34536fbd704b2fb7ca6853b47a}{resetVisited}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}});}
+\DoxyCodeLine{00842\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{paths}}\ =\ \mbox{\hyperlink{dbairport_8cpp_ab6dcff908aa0804d5b7a4e7cbcf3103f}{bfsPath}}(\mbox{\hyperlink{classGraph}{v}},\ \mbox{\hyperlink{classGraph}{airport}},\ \mbox{\hyperlink{classGraph}{airplanes}});}
+\DoxyCodeLine{00843\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a3ca85a500cf9c70a12ba8f2dd24b016e}{showPath}}(\mbox{\hyperlink{classGraph}{paths}});}
+\DoxyCodeLine{00844\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00845\ \ \ \ \ \}}
+\DoxyCodeLine{00846\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{type}}\ ==\ 1)}
+\DoxyCodeLine{00847\ \ \ \ \ \{}
+\DoxyCodeLine{00848\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{classGraph}{vec}})}
+\DoxyCodeLine{00849\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00850\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Source:\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{airport}}\ <<\ std::endl;}
+\DoxyCodeLine{00851\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classGraph}{tgt}}\ =\ \mbox{\hyperlink{classGraph}{v}}-\/>getInfo().getCode();}
+\DoxyCodeLine{00852\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a91627b34536fbd704b2fb7ca6853b47a}{resetVisited}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}});}
+\DoxyCodeLine{00853\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{paths}}\ =\ \mbox{\hyperlink{dbairport_8cpp_ab6dcff908aa0804d5b7a4e7cbcf3103f}{bfsPath}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.\mbox{\hyperlink{classGraph_a8b7b7465fbfd562e2a469f90a437ab75}{findVertex}}(\mbox{\hyperlink{classAirport}{Airport}}(\mbox{\hyperlink{classGraph}{airport}})),\ \mbox{\hyperlink{classGraph}{tgt}},\ \mbox{\hyperlink{classGraph}{airplanes}});}
+\DoxyCodeLine{00854\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a3ca85a500cf9c70a12ba8f2dd24b016e}{showPath}}(\mbox{\hyperlink{classGraph}{paths}});}
+\DoxyCodeLine{00855\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00856\ \ \ \ \ \}}
+\DoxyCodeLine{00857\ \}}
 
 \end{DoxyCode}
 \Hypertarget{dbairport_8cpp_ae4772dd7051a9845f6e81b4c5a9dcfeb}\label{dbairport_8cpp_ae4772dd7051a9845f6e81b4c5a9dcfeb} 
@@ -856,49 +854,49 @@ void
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00907}{907}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00878}{878}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00910\ \{}
-\DoxyCodeLine{00911\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<Vertex<Airport>}}\ *>\ \mbox{\hyperlink{classGraph}{vec\_point}};}
-\DoxyCodeLine{00912\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<Vertex<Airport>}}\ *>\ \mbox{\hyperlink{classGraph}{vec\_city}};}
-\DoxyCodeLine{00913\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<vector<Flight>}}>\ \mbox{\hyperlink{classGraph}{paths}};}
-\DoxyCodeLine{00914\ }
-\DoxyCodeLine{00915\ \ \ \ \ \mbox{\hyperlink{classGraph}{vec\_point}}\ =\ \mbox{\hyperlink{dbairport_8cpp_a8630a8877e9e655e680f5bbdb5da5ae1}{findAirports}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ \mbox{\hyperlink{classGraph}{lat}},\ \mbox{\hyperlink{classGraph}{lon}},\ \mbox{\hyperlink{classGraph}{distMax}});}
-\DoxyCodeLine{00916\ \ \ \ \ \mbox{\hyperlink{classGraph}{vec\_city}}\ =\ \mbox{\hyperlink{dbairport_8cpp_a8630a8877e9e655e680f5bbdb5da5ae1}{findAirports}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ country,\ city);}
-\DoxyCodeLine{00917\ }
-\DoxyCodeLine{00918\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{type}}\ ==\ 0)}
-\DoxyCodeLine{00919\ \ \ \ \ \{}
-\DoxyCodeLine{00920\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{c}}\ :\ \mbox{\hyperlink{classGraph}{vec\_city}})}
-\DoxyCodeLine{00921\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00922\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Source:\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{c}}-\/>getInfo().getCode()\ <<\ std::endl;}
-\DoxyCodeLine{00923\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{p}}\ :\ \mbox{\hyperlink{classGraph}{vec\_point}})}
-\DoxyCodeLine{00924\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00925\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Destination:\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{p}}-\/>getInfo().getCode()\ <<\ std::endl;}
-\DoxyCodeLine{00926\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a91627b34536fbd704b2fb7ca6853b47a}{resetVisited}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}});}
-\DoxyCodeLine{00927\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classGraph}{tgt}}\ =\ \mbox{\hyperlink{classGraph}{p}}-\/>getInfo().getCode();}
-\DoxyCodeLine{00928\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{paths}}\ =\ \mbox{\hyperlink{dbairport_8cpp_ab6dcff908aa0804d5b7a4e7cbcf3103f}{bfsPath}}(\mbox{\hyperlink{classGraph}{c}},\ \mbox{\hyperlink{classGraph}{tgt}},\ \mbox{\hyperlink{classGraph}{airplanes}});}
-\DoxyCodeLine{00929\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a3ca85a500cf9c70a12ba8f2dd24b016e}{showPath}}(\mbox{\hyperlink{classGraph}{paths}});}
-\DoxyCodeLine{00930\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00931\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00932\ \ \ \ \ \}}
-\DoxyCodeLine{00933\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{type}}\ ==\ 1)}
-\DoxyCodeLine{00934\ \ \ \ \ \{}
-\DoxyCodeLine{00935\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{p}}\ :\ \mbox{\hyperlink{classGraph}{vec\_point}})}
-\DoxyCodeLine{00936\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00937\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Source:\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{p}}-\/>getInfo().getCode()\ <<\ std::endl;}
-\DoxyCodeLine{00938\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{c}}\ :\ \mbox{\hyperlink{classGraph}{vec\_city}})}
-\DoxyCodeLine{00939\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00940\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Destination:\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{c}}-\/>getInfo().getCode()\ <<\ std::endl;}
-\DoxyCodeLine{00941\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a91627b34536fbd704b2fb7ca6853b47a}{resetVisited}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}});}
-\DoxyCodeLine{00942\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classGraph}{tgt}}\ =\ \mbox{\hyperlink{classGraph}{c}}-\/>getInfo().getCode();}
-\DoxyCodeLine{00943\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{paths}}\ =\ \mbox{\hyperlink{dbairport_8cpp_ab6dcff908aa0804d5b7a4e7cbcf3103f}{bfsPath}}(\mbox{\hyperlink{classGraph}{p}},\ \mbox{\hyperlink{classGraph}{tgt}},\ \mbox{\hyperlink{classGraph}{airplanes}});}
-\DoxyCodeLine{00944\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a3ca85a500cf9c70a12ba8f2dd24b016e}{showPath}}(\mbox{\hyperlink{classGraph}{paths}});}
-\DoxyCodeLine{00945\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00946\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00947\ \ \ \ \ \}}
-\DoxyCodeLine{00948\ \}}
+\DoxyCodeLine{00881\ \{}
+\DoxyCodeLine{00882\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<Vertex<Airport>}}\ *>\ \mbox{\hyperlink{classGraph}{vec\_point}};}
+\DoxyCodeLine{00883\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<Vertex<Airport>}}\ *>\ \mbox{\hyperlink{classGraph}{vec\_city}};}
+\DoxyCodeLine{00884\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<vector<Flight>}}>\ \mbox{\hyperlink{classGraph}{paths}};}
+\DoxyCodeLine{00885\ }
+\DoxyCodeLine{00886\ \ \ \ \ \mbox{\hyperlink{classGraph}{vec\_point}}\ =\ \mbox{\hyperlink{dbairport_8cpp_a8630a8877e9e655e680f5bbdb5da5ae1}{findAirports}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ \mbox{\hyperlink{classGraph}{lat}},\ \mbox{\hyperlink{classGraph}{lon}},\ \mbox{\hyperlink{classGraph}{distMax}});}
+\DoxyCodeLine{00887\ \ \ \ \ \mbox{\hyperlink{classGraph}{vec\_city}}\ =\ \mbox{\hyperlink{dbairport_8cpp_a8630a8877e9e655e680f5bbdb5da5ae1}{findAirports}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ country,\ city);}
+\DoxyCodeLine{00888\ }
+\DoxyCodeLine{00889\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{type}}\ ==\ 0)}
+\DoxyCodeLine{00890\ \ \ \ \ \{}
+\DoxyCodeLine{00891\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{c}}\ :\ \mbox{\hyperlink{classGraph}{vec\_city}})}
+\DoxyCodeLine{00892\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00893\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Source:\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{c}}-\/>getInfo().getCode()\ <<\ std::endl;}
+\DoxyCodeLine{00894\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{p}}\ :\ \mbox{\hyperlink{classGraph}{vec\_point}})}
+\DoxyCodeLine{00895\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00896\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Destination:\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{p}}-\/>getInfo().getCode()\ <<\ std::endl;}
+\DoxyCodeLine{00897\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a91627b34536fbd704b2fb7ca6853b47a}{resetVisited}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}});}
+\DoxyCodeLine{00898\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classGraph}{tgt}}\ =\ \mbox{\hyperlink{classGraph}{p}}-\/>getInfo().getCode();}
+\DoxyCodeLine{00899\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{paths}}\ =\ \mbox{\hyperlink{dbairport_8cpp_ab6dcff908aa0804d5b7a4e7cbcf3103f}{bfsPath}}(\mbox{\hyperlink{classGraph}{c}},\ \mbox{\hyperlink{classGraph}{tgt}},\ \mbox{\hyperlink{classGraph}{airplanes}});}
+\DoxyCodeLine{00900\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a3ca85a500cf9c70a12ba8f2dd24b016e}{showPath}}(\mbox{\hyperlink{classGraph}{paths}});}
+\DoxyCodeLine{00901\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00902\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00903\ \ \ \ \ \}}
+\DoxyCodeLine{00904\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{type}}\ ==\ 1)}
+\DoxyCodeLine{00905\ \ \ \ \ \{}
+\DoxyCodeLine{00906\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{p}}\ :\ \mbox{\hyperlink{classGraph}{vec\_point}})}
+\DoxyCodeLine{00907\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00908\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Source:\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{p}}-\/>getInfo().getCode()\ <<\ std::endl;}
+\DoxyCodeLine{00909\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{c}}\ :\ \mbox{\hyperlink{classGraph}{vec\_city}})}
+\DoxyCodeLine{00910\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00911\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Destination:\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{c}}-\/>getInfo().getCode()\ <<\ std::endl;}
+\DoxyCodeLine{00912\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a91627b34536fbd704b2fb7ca6853b47a}{resetVisited}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}});}
+\DoxyCodeLine{00913\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classGraph}{tgt}}\ =\ \mbox{\hyperlink{classGraph}{c}}-\/>getInfo().getCode();}
+\DoxyCodeLine{00914\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{paths}}\ =\ \mbox{\hyperlink{dbairport_8cpp_ab6dcff908aa0804d5b7a4e7cbcf3103f}{bfsPath}}(\mbox{\hyperlink{classGraph}{p}},\ \mbox{\hyperlink{classGraph}{tgt}},\ \mbox{\hyperlink{classGraph}{airplanes}});}
+\DoxyCodeLine{00915\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a3ca85a500cf9c70a12ba8f2dd24b016e}{showPath}}(\mbox{\hyperlink{classGraph}{paths}});}
+\DoxyCodeLine{00916\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00917\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00918\ \ \ \ \ \}}
+\DoxyCodeLine{00919\ \}}
 
 \end{DoxyCode}
 \Hypertarget{dbairport_8cpp_abc81a6e3813f6f6c5105ad0523405671}\label{dbairport_8cpp_abc81a6e3813f6f6c5105ad0523405671} 
@@ -931,37 +929,37 @@ void
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00551}{551}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00522}{522}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00553\ \{}
-\DoxyCodeLine{00554\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<Vertex<Airport>}}\ *>\ \mbox{\hyperlink{classGraph}{vec}};}
-\DoxyCodeLine{00555\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<vector<Flight>}}>\ \mbox{\hyperlink{classGraph}{paths}};}
-\DoxyCodeLine{00556\ \ \ \ \ \mbox{\hyperlink{classGraph}{vec}}\ =\ \mbox{\hyperlink{dbairport_8cpp_a8630a8877e9e655e680f5bbdb5da5ae1}{findAirports}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ country,\ city);}
-\DoxyCodeLine{00557\ }
-\DoxyCodeLine{00558\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{type}}\ ==\ 0)}
-\DoxyCodeLine{00559\ \ \ \ \ \{}
-\DoxyCodeLine{00560\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{classGraph}{vec}})}
-\DoxyCodeLine{00561\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00562\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::cout\ <<\ "{}Source:\ "{}\ <<\ v-\/>getInfo().getCode()\ <<\ std::endl;}}
-\DoxyCodeLine{00563\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a91627b34536fbd704b2fb7ca6853b47a}{resetVisited}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}});}
-\DoxyCodeLine{00564\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{paths}}\ =\ \mbox{\hyperlink{dbairport_8cpp_ab6dcff908aa0804d5b7a4e7cbcf3103f}{bfsPath}}(\mbox{\hyperlink{classGraph}{v}},\ \mbox{\hyperlink{classGraph}{airport}},\ \mbox{\hyperlink{classGraph}{airplanes}});}
-\DoxyCodeLine{00565\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a3ca85a500cf9c70a12ba8f2dd24b016e}{showPath}}(\mbox{\hyperlink{classGraph}{paths}});}
-\DoxyCodeLine{00566\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00567\ \ \ \ \ \}}
-\DoxyCodeLine{00568\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{type}}\ ==\ 1)}
-\DoxyCodeLine{00569\ \ \ \ \ \{}
-\DoxyCodeLine{00570\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{classGraph}{vec}})}
-\DoxyCodeLine{00571\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00572\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::cout\ <<\ "{}Source:\ "{}\ <<\ airport\ <<\ std::endl;}}
-\DoxyCodeLine{00573\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classGraph}{tgt}}\ =\ \mbox{\hyperlink{classGraph}{v}}-\/>getInfo().getCode();}
-\DoxyCodeLine{00574\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a91627b34536fbd704b2fb7ca6853b47a}{resetVisited}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}});}
-\DoxyCodeLine{00575\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{paths}}\ =\ \mbox{\hyperlink{dbairport_8cpp_ab6dcff908aa0804d5b7a4e7cbcf3103f}{bfsPath}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.\mbox{\hyperlink{classGraph_a8b7b7465fbfd562e2a469f90a437ab75}{findVertex}}(\mbox{\hyperlink{classAirport}{Airport}}(\mbox{\hyperlink{classGraph}{airport}})),\ \mbox{\hyperlink{classGraph}{tgt}},\ \mbox{\hyperlink{classGraph}{airplanes}});}
-\DoxyCodeLine{00576\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a3ca85a500cf9c70a12ba8f2dd24b016e}{showPath}}(\mbox{\hyperlink{classGraph}{paths}});}
-\DoxyCodeLine{00577\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00578\ \ \ \ \ \}}
-\DoxyCodeLine{00579\ \}}
+\DoxyCodeLine{00524\ \{}
+\DoxyCodeLine{00525\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<Vertex<Airport>}}\ *>\ \mbox{\hyperlink{classGraph}{vec}};}
+\DoxyCodeLine{00526\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<vector<Flight>}}>\ \mbox{\hyperlink{classGraph}{paths}};}
+\DoxyCodeLine{00527\ \ \ \ \ \mbox{\hyperlink{classGraph}{vec}}\ =\ \mbox{\hyperlink{dbairport_8cpp_a8630a8877e9e655e680f5bbdb5da5ae1}{findAirports}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ country,\ city);}
+\DoxyCodeLine{00528\ }
+\DoxyCodeLine{00529\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{type}}\ ==\ 0)}
+\DoxyCodeLine{00530\ \ \ \ \ \{}
+\DoxyCodeLine{00531\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{classGraph}{vec}})}
+\DoxyCodeLine{00532\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00533\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::cout\ <<\ "{}Source:\ "{}\ <<\ v-\/>getInfo().getCode()\ <<\ std::endl;}}
+\DoxyCodeLine{00534\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a91627b34536fbd704b2fb7ca6853b47a}{resetVisited}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}});}
+\DoxyCodeLine{00535\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{paths}}\ =\ \mbox{\hyperlink{dbairport_8cpp_ab6dcff908aa0804d5b7a4e7cbcf3103f}{bfsPath}}(\mbox{\hyperlink{classGraph}{v}},\ \mbox{\hyperlink{classGraph}{airport}},\ \mbox{\hyperlink{classGraph}{airplanes}});}
+\DoxyCodeLine{00536\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a3ca85a500cf9c70a12ba8f2dd24b016e}{showPath}}(\mbox{\hyperlink{classGraph}{paths}});}
+\DoxyCodeLine{00537\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00538\ \ \ \ \ \}}
+\DoxyCodeLine{00539\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{type}}\ ==\ 1)}
+\DoxyCodeLine{00540\ \ \ \ \ \{}
+\DoxyCodeLine{00541\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{classGraph}{vec}})}
+\DoxyCodeLine{00542\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00543\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::cout\ <<\ "{}Source:\ "{}\ <<\ airport\ <<\ std::endl;}}
+\DoxyCodeLine{00544\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classGraph}{tgt}}\ =\ \mbox{\hyperlink{classGraph}{v}}-\/>getInfo().getCode();}
+\DoxyCodeLine{00545\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a91627b34536fbd704b2fb7ca6853b47a}{resetVisited}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}});}
+\DoxyCodeLine{00546\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{paths}}\ =\ \mbox{\hyperlink{dbairport_8cpp_ab6dcff908aa0804d5b7a4e7cbcf3103f}{bfsPath}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.\mbox{\hyperlink{classGraph_a8b7b7465fbfd562e2a469f90a437ab75}{findVertex}}(\mbox{\hyperlink{classAirport}{Airport}}(\mbox{\hyperlink{classGraph}{airport}})),\ \mbox{\hyperlink{classGraph}{tgt}},\ \mbox{\hyperlink{classGraph}{airplanes}});}
+\DoxyCodeLine{00547\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a3ca85a500cf9c70a12ba8f2dd24b016e}{showPath}}(\mbox{\hyperlink{classGraph}{paths}});}
+\DoxyCodeLine{00548\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00549\ \ \ \ \ \}}
+\DoxyCodeLine{00550\ \}}
 
 \end{DoxyCode}
 \Hypertarget{dbairport_8cpp_a8a88fb88325945c6dcb83c9a2d9697bd}\label{dbairport_8cpp_a8a88fb88325945c6dcb83c9a2d9697bd} 
@@ -994,20 +992,20 @@ void
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00727}{727}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00698}{698}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00730\ \{}
-\DoxyCodeLine{00731\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<Vertex<Airport>}}\ *>\ \mbox{\hyperlink{classGraph}{src}};}
-\DoxyCodeLine{00732\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<Vertex<Airport>}}\ *>\ dest;}
-\DoxyCodeLine{00733\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<vector<Flight>}}>\ \mbox{\hyperlink{classGraph}{paths}};}
-\DoxyCodeLine{00734\ }
-\DoxyCodeLine{00735\ \ \ \ \ \mbox{\hyperlink{classGraph}{src}}\ =\ \mbox{\hyperlink{dbairport_8cpp_a8630a8877e9e655e680f5bbdb5da5ae1}{findAirports}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ \mbox{\hyperlink{classGraph}{countrySrc}},\ \mbox{\hyperlink{classGraph}{citySrc}});}
-\DoxyCodeLine{00736\ \ \ \ \ dest\ =\ \mbox{\hyperlink{dbairport_8cpp_a8630a8877e9e655e680f5bbdb5da5ae1}{findAirports}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ \mbox{\hyperlink{classGraph}{countryDest}},\ \mbox{\hyperlink{classGraph}{cityDest}});}
-\DoxyCodeLine{00737\ }
-\DoxyCodeLine{00738\ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a3ca85a500cf9c70a12ba8f2dd24b016e}{showPath}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ \mbox{\hyperlink{classGraph}{src}},\ dest,\ \mbox{\hyperlink{classGraph}{paths}},\ \mbox{\hyperlink{classGraph}{airplanes}});}
-\DoxyCodeLine{00739\ \}}
+\DoxyCodeLine{00701\ \{}
+\DoxyCodeLine{00702\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<Vertex<Airport>}}\ *>\ \mbox{\hyperlink{classGraph}{src}};}
+\DoxyCodeLine{00703\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<Vertex<Airport>}}\ *>\ dest;}
+\DoxyCodeLine{00704\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<vector<Flight>}}>\ \mbox{\hyperlink{classGraph}{paths}};}
+\DoxyCodeLine{00705\ }
+\DoxyCodeLine{00706\ \ \ \ \ \mbox{\hyperlink{classGraph}{src}}\ =\ \mbox{\hyperlink{dbairport_8cpp_a8630a8877e9e655e680f5bbdb5da5ae1}{findAirports}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ \mbox{\hyperlink{classGraph}{countrySrc}},\ \mbox{\hyperlink{classGraph}{citySrc}});}
+\DoxyCodeLine{00707\ \ \ \ \ dest\ =\ \mbox{\hyperlink{dbairport_8cpp_a8630a8877e9e655e680f5bbdb5da5ae1}{findAirports}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ \mbox{\hyperlink{classGraph}{countryDest}},\ \mbox{\hyperlink{classGraph}{cityDest}});}
+\DoxyCodeLine{00708\ }
+\DoxyCodeLine{00709\ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a3ca85a500cf9c70a12ba8f2dd24b016e}{showPath}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}},\ \mbox{\hyperlink{classGraph}{src}},\ dest,\ \mbox{\hyperlink{classGraph}{paths}},\ \mbox{\hyperlink{classGraph}{airplanes}});}
+\DoxyCodeLine{00710\ \}}
 
 \end{DoxyCode}
 \Hypertarget{dbairport_8cpp_a6108e3a7a039ea61aab4a250b21412f8}\label{dbairport_8cpp_a6108e3a7a039ea61aab4a250b21412f8} 
@@ -1036,23 +1034,23 @@ void
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00523}{523}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00494}{494}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00525\ \{}
-\DoxyCodeLine{00526\ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a91627b34536fbd704b2fb7ca6853b47a}{resetVisited}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}});}
-\DoxyCodeLine{00527\ }
-\DoxyCodeLine{00528\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{s}}\ =\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.\mbox{\hyperlink{classGraph_a8b7b7465fbfd562e2a469f90a437ab75}{findVertex}}(\mbox{\hyperlink{classAirport}{Airport}}(\mbox{\hyperlink{classGraph}{src}}));}
-\DoxyCodeLine{00529\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{d}}\ =\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.\mbox{\hyperlink{classGraph_a8b7b7465fbfd562e2a469f90a437ab75}{findVertex}}(\mbox{\hyperlink{classAirport}{Airport}}(dest));}
-\DoxyCodeLine{00530\ }
-\DoxyCodeLine{00531\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{s}}\ ==\ \textcolor{keyword}{nullptr}\ ||\ \mbox{\hyperlink{classGraph}{d}}\ ==\ \textcolor{keyword}{nullptr})}
-\DoxyCodeLine{00532\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00533\ }
-\DoxyCodeLine{00534\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<vector<Flight>}}>\ \mbox{\hyperlink{classGraph}{paths}};}
-\DoxyCodeLine{00535\ \ \ \ \ \mbox{\hyperlink{classGraph}{paths}}\ =\ \mbox{\hyperlink{dbairport_8cpp_ab6dcff908aa0804d5b7a4e7cbcf3103f}{bfsPath}}(\mbox{\hyperlink{classGraph}{s}},\ dest,\ \mbox{\hyperlink{classGraph}{airplanes}});}
-\DoxyCodeLine{00536\ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a3ca85a500cf9c70a12ba8f2dd24b016e}{showPath}}(\mbox{\hyperlink{classGraph}{paths}});}
-\DoxyCodeLine{00537\ \}}
+\DoxyCodeLine{00496\ \{}
+\DoxyCodeLine{00497\ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a91627b34536fbd704b2fb7ca6853b47a}{resetVisited}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}});}
+\DoxyCodeLine{00498\ }
+\DoxyCodeLine{00499\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{s}}\ =\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.\mbox{\hyperlink{classGraph_a8b7b7465fbfd562e2a469f90a437ab75}{findVertex}}(\mbox{\hyperlink{classAirport}{Airport}}(\mbox{\hyperlink{classGraph}{src}}));}
+\DoxyCodeLine{00500\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{d}}\ =\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.\mbox{\hyperlink{classGraph_a8b7b7465fbfd562e2a469f90a437ab75}{findVertex}}(\mbox{\hyperlink{classAirport}{Airport}}(dest));}
+\DoxyCodeLine{00501\ }
+\DoxyCodeLine{00502\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{s}}\ ==\ \textcolor{keyword}{nullptr}\ ||\ \mbox{\hyperlink{classGraph}{d}}\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00503\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00504\ }
+\DoxyCodeLine{00505\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<vector<Flight>}}>\ \mbox{\hyperlink{classGraph}{paths}};}
+\DoxyCodeLine{00506\ \ \ \ \ \mbox{\hyperlink{classGraph}{paths}}\ =\ \mbox{\hyperlink{dbairport_8cpp_ab6dcff908aa0804d5b7a4e7cbcf3103f}{bfsPath}}(\mbox{\hyperlink{classGraph}{s}},\ dest,\ \mbox{\hyperlink{classGraph}{airplanes}});}
+\DoxyCodeLine{00507\ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a3ca85a500cf9c70a12ba8f2dd24b016e}{showPath}}(\mbox{\hyperlink{classGraph}{paths}});}
+\DoxyCodeLine{00508\ \}}
 
 \end{DoxyCode}
 \Hypertarget{dbairport_8cpp_a9d6a5c56acfccf760e404fa346862107}\label{dbairport_8cpp_a9d6a5c56acfccf760e404fa346862107} 
@@ -1085,30 +1083,30 @@ void
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00961}{961}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00932}{932}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00964\ \{}
-\DoxyCodeLine{00965\ \ \ \ \ \mbox{\hyperlink{classGraph}{path}}.push\_back(\{\mbox{\hyperlink{classGraph}{current}},\ airline\});}
-\DoxyCodeLine{00966\ }
-\DoxyCodeLine{00967\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{current}}\ ==\ \mbox{\hyperlink{classGraph}{startCode}})}
-\DoxyCodeLine{00968\ \ \ \ \ \{}
-\DoxyCodeLine{00969\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<Flight>}}\ \mbox{\hyperlink{classGraph}{validPath}}\ =\ \mbox{\hyperlink{classGraph}{path}};}
-\DoxyCodeLine{00970\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{reverse}}(\mbox{\hyperlink{classGraph}{validPath}}.begin(),\ \mbox{\hyperlink{classGraph}{validPath}}.end());}
-\DoxyCodeLine{00971\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{paths}}.push\_back(\mbox{\hyperlink{classGraph}{validPath}});}
-\DoxyCodeLine{00972\ \ \ \ \ \}}
-\DoxyCodeLine{00973\ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00974\ \ \ \ \ \{}
-\DoxyCodeLine{00975\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&\mbox{\hyperlink{classGraph}{prevVertex}}\ :\ \mbox{\hyperlink{classGraph}{prev}}[\mbox{\hyperlink{classGraph}{current}}])}
-\DoxyCodeLine{00976\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00977\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a9d6a5c56acfccf760e404fa346862107}{getPath}}(\mbox{\hyperlink{classGraph}{prevVertex}}.code,\ \mbox{\hyperlink{classGraph}{path}},\ \mbox{\hyperlink{classGraph}{prev}},\ \mbox{\hyperlink{classGraph}{paths}},\ \mbox{\hyperlink{classGraph}{startCode}},}
-\DoxyCodeLine{00978\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{prevVertex}}.airline);}
-\DoxyCodeLine{00979\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00980\ \ \ \ \ \}}
-\DoxyCodeLine{00981\ }
-\DoxyCodeLine{00982\ \ \ \ \ \mbox{\hyperlink{classGraph}{path}}.pop\_back();}
-\DoxyCodeLine{00983\ \}}
+\DoxyCodeLine{00935\ \{}
+\DoxyCodeLine{00936\ \ \ \ \ \mbox{\hyperlink{classGraph}{path}}.push\_back(\{\mbox{\hyperlink{classGraph}{current}},\ airline\});}
+\DoxyCodeLine{00937\ }
+\DoxyCodeLine{00938\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{current}}\ ==\ \mbox{\hyperlink{classGraph}{startCode}})}
+\DoxyCodeLine{00939\ \ \ \ \ \{}
+\DoxyCodeLine{00940\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<Flight>}}\ \mbox{\hyperlink{classGraph}{validPath}}\ =\ \mbox{\hyperlink{classGraph}{path}};}
+\DoxyCodeLine{00941\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{reverse}}(\mbox{\hyperlink{classGraph}{validPath}}.begin(),\ \mbox{\hyperlink{classGraph}{validPath}}.end());}
+\DoxyCodeLine{00942\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{paths}}.push\_back(\mbox{\hyperlink{classGraph}{validPath}});}
+\DoxyCodeLine{00943\ \ \ \ \ \}}
+\DoxyCodeLine{00944\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00945\ \ \ \ \ \{}
+\DoxyCodeLine{00946\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&\mbox{\hyperlink{classGraph}{prevVertex}}\ :\ \mbox{\hyperlink{classGraph}{prev}}[\mbox{\hyperlink{classGraph}{current}}])}
+\DoxyCodeLine{00947\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00948\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a9d6a5c56acfccf760e404fa346862107}{getPath}}(\mbox{\hyperlink{classGraph}{prevVertex}}.code,\ \mbox{\hyperlink{classGraph}{path}},\ \mbox{\hyperlink{classGraph}{prev}},\ \mbox{\hyperlink{classGraph}{paths}},\ \mbox{\hyperlink{classGraph}{startCode}},}
+\DoxyCodeLine{00949\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{prevVertex}}.airline);}
+\DoxyCodeLine{00950\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00951\ \ \ \ \ \}}
+\DoxyCodeLine{00952\ }
+\DoxyCodeLine{00953\ \ \ \ \ \mbox{\hyperlink{classGraph}{path}}.pop\_back();}
+\DoxyCodeLine{00954\ \}}
 
 \end{DoxyCode}
 \Hypertarget{dbairport_8cpp_a38042ded6e2c8623a1c1d303e597b2a5}\label{dbairport_8cpp_a38042ded6e2c8623a1c1d303e597b2a5} 
@@ -1324,24 +1322,24 @@ int The quantity of countries.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00270}{270}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00241}{241}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00272\ \{}
-\DoxyCodeLine{00273\ \ \ \ \ std::set<std::string>\ \mbox{\hyperlink{classGraph}{countries}};}
-\DoxyCodeLine{00274\ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{classGraph}{res}};}
-\DoxyCodeLine{00275\ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a91627b34536fbd704b2fb7ca6853b47a}{resetVisited}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}});}
-\DoxyCodeLine{00276\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{s}}\ =\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.\mbox{\hyperlink{classGraph_a8b7b7465fbfd562e2a469f90a437ab75}{findVertex}}(\mbox{\hyperlink{classAirport}{Airport}}(\mbox{\hyperlink{classGraph}{airport}}));}
-\DoxyCodeLine{00277\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{s}}\ ==\ \textcolor{keyword}{nullptr})}
-\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{00279\ \ \ \ \ \mbox{\hyperlink{classGraph}{res}}\ =\ \mbox{\hyperlink{dbairport_8cpp_a90c3f842c8877fb0fc2c7a63a2df5ac2}{dfsVisit}}(\mbox{\hyperlink{classGraph}{s}},\ \mbox{\hyperlink{classGraph}{res}},\ (\mbox{\hyperlink{classGraph}{stop}}\ +\ 1));}
-\DoxyCodeLine{00280\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{c}}\ :\ \mbox{\hyperlink{classGraph}{res}})}
-\DoxyCodeLine{00281\ \ \ \ \ \{}
-\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{countries}}.insert(\mbox{\hyperlink{classGraph}{c}});}
-\DoxyCodeLine{00283\ \ \ \ \ \}}
-\DoxyCodeLine{00284\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{countries}}.size();}
-\DoxyCodeLine{00285\ \}}
+\DoxyCodeLine{00243\ \{}
+\DoxyCodeLine{00244\ \ \ \ \ std::set<std::string>\ \mbox{\hyperlink{classGraph}{countries}};}
+\DoxyCodeLine{00245\ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{classGraph}{res}};}
+\DoxyCodeLine{00246\ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a91627b34536fbd704b2fb7ca6853b47a}{resetVisited}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}});}
+\DoxyCodeLine{00247\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{s}}\ =\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.\mbox{\hyperlink{classGraph_a8b7b7465fbfd562e2a469f90a437ab75}{findVertex}}(\mbox{\hyperlink{classAirport}{Airport}}(\mbox{\hyperlink{classGraph}{airport}}));}
+\DoxyCodeLine{00248\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{s}}\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00250\ \ \ \ \ \mbox{\hyperlink{classGraph}{res}}\ =\ \mbox{\hyperlink{dbairport_8cpp_a90c3f842c8877fb0fc2c7a63a2df5ac2}{dfsVisit}}(\mbox{\hyperlink{classGraph}{s}},\ \mbox{\hyperlink{classGraph}{res}},\ (\mbox{\hyperlink{classGraph}{stop}}\ +\ 1));}
+\DoxyCodeLine{00251\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{c}}\ :\ \mbox{\hyperlink{classGraph}{res}})}
+\DoxyCodeLine{00252\ \ \ \ \ \{}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{countries}}.insert(\mbox{\hyperlink{classGraph}{c}});}
+\DoxyCodeLine{00254\ \ \ \ \ \}}
+\DoxyCodeLine{00255\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{countries}}.size();}
+\DoxyCodeLine{00256\ \}}
 
 \end{DoxyCode}
 \Hypertarget{dbairport_8cpp_a7dfe79c689755a0daafe18eec770515f}\label{dbairport_8cpp_a7dfe79c689755a0daafe18eec770515f} 
@@ -1364,29 +1362,29 @@ int The number of stops on the longest trip
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00294}{294}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00265}{265}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00295\ \{}
-\DoxyCodeLine{00296\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<string>}}\ \mbox{\hyperlink{classGraph}{path}},\ \mbox{\hyperlink{classGraph}{maxPath}};}
-\DoxyCodeLine{00297\ }
-\DoxyCodeLine{00298\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.getVertexSet())}
-\DoxyCodeLine{00299\ \ \ \ \ \{}
-\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::cout\ <<\ "{}Consultando...\ "{}\ <<\ v-\/>getInfo().getCode()\ <<\ std::endl;}}
-\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a91627b34536fbd704b2fb7ca6853b47a}{resetVisited}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}});}
-\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{path}}.clear();}
-\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a5e6b59a373a5bf83b48a0160d67d68fd}{dfsMax}}(\mbox{\hyperlink{classGraph}{v}},\ \mbox{\hyperlink{classGraph}{path}},\ \mbox{\hyperlink{classGraph}{maxPath}});}
-\DoxyCodeLine{00304\ \ \ \ \ \}}
-\DoxyCodeLine{00305\ }
-\DoxyCodeLine{00306\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nStarting\ in:\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{maxPath}}[0]\ <<\ std::endl;}
-\DoxyCodeLine{00307\ \ \ \ \ \textcolor{comment}{//\ for\ (int\ i\ =\ 1;\ i\ <\ maxPath.size()\ -\/\ 1;\ i++)}}
-\DoxyCodeLine{00308\ \ \ \ \ \textcolor{comment}{//\ \{}}
-\DoxyCodeLine{00309\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ std::cout\ <<\ maxPath[i]\ <<\ "{}\ -\/>\ "{};}}
-\DoxyCodeLine{00310\ \ \ \ \ \textcolor{comment}{//\ \}}}
-\DoxyCodeLine{00311\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nEnding\ in:\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{maxPath}}[\mbox{\hyperlink{classGraph}{maxPath}}.size()\ -\/\ 1]\ <<\ std::endl;}
-\DoxyCodeLine{00312\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{maxPath}}.size()\ -\/\ 1;}
-\DoxyCodeLine{00313\ \}}
+\DoxyCodeLine{00266\ \{}
+\DoxyCodeLine{00267\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<string>}}\ \mbox{\hyperlink{classGraph}{path}},\ \mbox{\hyperlink{classGraph}{maxPath}};}
+\DoxyCodeLine{00268\ }
+\DoxyCodeLine{00269\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.getVertexSet())}
+\DoxyCodeLine{00270\ \ \ \ \ \{}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::cout\ <<\ "{}Consultando...\ "{}\ <<\ v-\/>getInfo().getCode()\ <<\ std::endl;}}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a91627b34536fbd704b2fb7ca6853b47a}{resetVisited}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}});}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{path}}.clear();}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a5e6b59a373a5bf83b48a0160d67d68fd}{dfsMax}}(\mbox{\hyperlink{classGraph}{v}},\ \mbox{\hyperlink{classGraph}{path}},\ \mbox{\hyperlink{classGraph}{maxPath}});}
+\DoxyCodeLine{00275\ \ \ \ \ \}}
+\DoxyCodeLine{00276\ }
+\DoxyCodeLine{00277\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nStarting\ in:\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{maxPath}}[0]\ <<\ std::endl;}
+\DoxyCodeLine{00278\ \ \ \ \ \textcolor{comment}{//\ for\ (int\ i\ =\ 1;\ i\ <\ maxPath.size()\ -\/\ 1;\ i++)}}
+\DoxyCodeLine{00279\ \ \ \ \ \textcolor{comment}{//\ \{}}
+\DoxyCodeLine{00280\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ std::cout\ <<\ maxPath[i]\ <<\ "{}\ -\/>\ "{};}}
+\DoxyCodeLine{00281\ \ \ \ \ \textcolor{comment}{//\ \}}}
+\DoxyCodeLine{00282\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nEnding\ in:\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{maxPath}}[\mbox{\hyperlink{classGraph}{maxPath}}.size()\ -\/\ 1]\ <<\ std::endl;}
+\DoxyCodeLine{00283\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{maxPath}}.size()\ -\/\ 1;}
+\DoxyCodeLine{00284\ \}}
 
 \end{DoxyCode}
 \Hypertarget{dbairport_8cpp_aa389005aab21de88f5a6957c46246e96}\label{dbairport_8cpp_aa389005aab21de88f5a6957c46246e96} 
@@ -1411,72 +1409,25 @@ int The quantity of countries.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00245}{245}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00216}{216}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00246\ \{}
-\DoxyCodeLine{00247\ \ \ \ \ std::set<std::string>\ \mbox{\hyperlink{classGraph}{countries}};}
-\DoxyCodeLine{00248\ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{classGraph}{res}};}
-\DoxyCodeLine{00249\ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a91627b34536fbd704b2fb7ca6853b47a}{resetVisited}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}});}
-\DoxyCodeLine{00250\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{s}}\ =\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.\mbox{\hyperlink{classGraph_a8b7b7465fbfd562e2a469f90a437ab75}{findVertex}}(\mbox{\hyperlink{classAirport}{Airport}}(\mbox{\hyperlink{classGraph}{airport}}));}
-\DoxyCodeLine{00251\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{s}}\ ==\ \textcolor{keyword}{nullptr})}
-\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{00253\ \ \ \ \ \mbox{\hyperlink{classGraph}{Graph<Airport>}}\ \mbox{\hyperlink{classGraph}{g}};}
-\DoxyCodeLine{00254\ \ \ \ \ \mbox{\hyperlink{classGraph}{res}}\ =\ \mbox{\hyperlink{dbairport_8cpp_a90c3f842c8877fb0fc2c7a63a2df5ac2}{dfsVisit}}(\mbox{\hyperlink{classGraph}{s}},\ \mbox{\hyperlink{classGraph}{res}});}
-\DoxyCodeLine{00255\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{c}}\ :\ \mbox{\hyperlink{classGraph}{res}})}
-\DoxyCodeLine{00256\ \ \ \ \ \{}
-\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{countries}}.insert(\mbox{\hyperlink{classGraph}{c}});}
-\DoxyCodeLine{00258\ \ \ \ \ \}}
-\DoxyCodeLine{00259\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{countries}}.size();}
-\DoxyCodeLine{00260\ \}}
-
-\end{DoxyCode}
-\Hypertarget{dbairport_8cpp_a0e27c10ff7622ff861b9a91be36bc480}\label{dbairport_8cpp_a0e27c10ff7622ff861b9a91be36bc480} 
-\index{dbairport.cpp@{dbairport.cpp}!quantityDestinationsCountry@{quantityDestinationsCountry}}
-\index{quantityDestinationsCountry@{quantityDestinationsCountry}!dbairport.cpp@{dbairport.cpp}}
-\doxysubsubsection{\texorpdfstring{quantityDestinationsCountry()}{quantityDestinationsCountry()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{int}} quantity\+Destinations\+Country (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$}]{airports,  }\item[{std\+::string}]{country }\end{DoxyParamCaption})}
-
-
-
-Function to calculate the quatity of flights in a given country Complexity\+: O(n + e), where n is the number of airports in the graph and e is the number of flights. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em airports} & The graph of airports. \\
-\hline
-{\em airline} & The airline to be searched. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-int The quantity of flights in same country. 
-\end{DoxyReturn}
-
-
-Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00217}{217}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00218\ \{}
-\DoxyCodeLine{00219\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classGraph}{totalFlights}}\ =\ 0;}
-\DoxyCodeLine{00220\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.getVertexSet())}
-\DoxyCodeLine{00221\ \ \ \ \ \{}
-\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classAirport}{Airport}}\ \mbox{\hyperlink{classGraph}{sourceAirport}}\ =\ \mbox{\hyperlink{classGraph}{v}}-\/>getInfo();}
-\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{sourceAirport}}.getCountry()\ ==\ country)}
-\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&\mbox{\hyperlink{classGraph}{edge}}\ :\ \mbox{\hyperlink{classGraph}{v}}-\/>getAdj())}
-\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classAirport}{Airport}}\ \mbox{\hyperlink{classGraph}{destinationAirport}}\ =\ \mbox{\hyperlink{classGraph}{edge}}.getDest()-\/>getInfo();}
-\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{destinationAirport}}.getCountry()\ ==\ country)}
-\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{totalFlights}}++;}
-\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00234\ \ \ \ \ \}}
-\DoxyCodeLine{00235\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{totalFlights}};}
-\DoxyCodeLine{00236\ \}}
+\DoxyCodeLine{00217\ \{}
+\DoxyCodeLine{00218\ \ \ \ \ std::set<std::string>\ \mbox{\hyperlink{classGraph}{countries}};}
+\DoxyCodeLine{00219\ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{classGraph}{res}};}
+\DoxyCodeLine{00220\ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a91627b34536fbd704b2fb7ca6853b47a}{resetVisited}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}});}
+\DoxyCodeLine{00221\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{s}}\ =\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.\mbox{\hyperlink{classGraph_a8b7b7465fbfd562e2a469f90a437ab75}{findVertex}}(\mbox{\hyperlink{classAirport}{Airport}}(\mbox{\hyperlink{classGraph}{airport}}));}
+\DoxyCodeLine{00222\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{s}}\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00224\ \ \ \ \ \mbox{\hyperlink{classGraph}{Graph<Airport>}}\ \mbox{\hyperlink{classGraph}{g}};}
+\DoxyCodeLine{00225\ \ \ \ \ \mbox{\hyperlink{classGraph}{res}}\ =\ \mbox{\hyperlink{dbairport_8cpp_a90c3f842c8877fb0fc2c7a63a2df5ac2}{dfsVisit}}(\mbox{\hyperlink{classGraph}{s}},\ \mbox{\hyperlink{classGraph}{res}});}
+\DoxyCodeLine{00226\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{c}}\ :\ \mbox{\hyperlink{classGraph}{res}})}
+\DoxyCodeLine{00227\ \ \ \ \ \{}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{countries}}.insert(\mbox{\hyperlink{classGraph}{c}});}
+\DoxyCodeLine{00229\ \ \ \ \ \}}
+\DoxyCodeLine{00230\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGraph}{countries}}.size();}
+\DoxyCodeLine{00231\ \}}
 
 \end{DoxyCode}
 \Hypertarget{dbairport_8cpp_aa0bc5f11f0adef0d78c529b0c82ee23c}\label{dbairport_8cpp_aa0bc5f11f0adef0d78c529b0c82ee23c} 
@@ -1535,25 +1486,25 @@ pair$<$int, int$>$ The quantity of flights and unique airlines.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00367}{367}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00338}{338}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00368\ \{}
-\DoxyCodeLine{00369\ \ \ \ \ \textcolor{keywordtype}{int}\ count\ =\ 0;}
-\DoxyCodeLine{00370\ \ \ \ \ std::set<std::string>\ \mbox{\hyperlink{Menu_8cpp_a6dc6a799c4379ce9e053fe2e8f731a5e}{airlines}};}
-\DoxyCodeLine{00371\ }
-\DoxyCodeLine{00372\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{s}}\ =\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.\mbox{\hyperlink{classGraph_a8b7b7465fbfd562e2a469f90a437ab75}{findVertex}}(\mbox{\hyperlink{classAirport}{Airport}}(code));}
-\DoxyCodeLine{00373\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{s}}\ !=\ \textcolor{keyword}{nullptr})}
-\DoxyCodeLine{00374\ \ \ \ \ \{}
-\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{classGraph}{s}}-\/>getAdj())}
-\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \ \ \ \ count++;}
-\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a6dc6a799c4379ce9e053fe2e8f731a5e}{airlines}}.insert(\mbox{\hyperlink{classGraph}{v}}.getRoute());}
-\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00380\ \ \ \ \ \}}
-\DoxyCodeLine{00381\ \ \ \ \ \textcolor{keywordflow}{return}\ std::pair<int,\ int>(count,\ \mbox{\hyperlink{Menu_8cpp_a6dc6a799c4379ce9e053fe2e8f731a5e}{airlines}}.size());}
-\DoxyCodeLine{00382\ \}}
+\DoxyCodeLine{00339\ \{}
+\DoxyCodeLine{00340\ \ \ \ \ \textcolor{keywordtype}{int}\ count\ =\ 0;}
+\DoxyCodeLine{00341\ \ \ \ \ std::set<std::string>\ \mbox{\hyperlink{Menu_8cpp_a6dc6a799c4379ce9e053fe2e8f731a5e}{airlines}};}
+\DoxyCodeLine{00342\ }
+\DoxyCodeLine{00343\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{s}}\ =\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.\mbox{\hyperlink{classGraph_a8b7b7465fbfd562e2a469f90a437ab75}{findVertex}}(\mbox{\hyperlink{classAirport}{Airport}}(code));}
+\DoxyCodeLine{00344\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{s}}\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00345\ \ \ \ \ \{}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{classGraph}{s}}-\/>getAdj())}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \ \ \ \ count++;}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Menu_8cpp_a6dc6a799c4379ce9e053fe2e8f731a5e}{airlines}}.insert(\mbox{\hyperlink{classGraph}{v}}.getRoute());}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00351\ \ \ \ \ \}}
+\DoxyCodeLine{00352\ \ \ \ \ \textcolor{keywordflow}{return}\ std::pair<int,\ int>(count,\ \mbox{\hyperlink{Menu_8cpp_a6dc6a799c4379ce9e053fe2e8f731a5e}{airlines}}.size());}
+\DoxyCodeLine{00353\ \}}
 
 \end{DoxyCode}
 \Hypertarget{dbairport_8cpp_aaf85ea355a04142cc7b72f58ba9d186e}\label{dbairport_8cpp_aaf85ea355a04142cc7b72f58ba9d186e} 
@@ -1738,33 +1689,33 @@ void
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00489}{489}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00460}{460}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00490\ \{}
-\DoxyCodeLine{00491\ \ \ \ \ std::vector<Ranking>\ \mbox{\hyperlink{classGraph}{vec}};}
-\DoxyCodeLine{00492\ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a39f02be201dda44faae784618a5e3deb}{calculateIndegree}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}});}
-\DoxyCodeLine{00493\ }
-\DoxyCodeLine{00494\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.getVertexSet())}
-\DoxyCodeLine{00495\ \ \ \ \ \{}
-\DoxyCodeLine{00496\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classGraph}{total}}\ =\ \mbox{\hyperlink{classGraph}{v}}-\/>getIndegree()\ +\ \mbox{\hyperlink{classGraph}{v}}-\/>getAdj().size();}
-\DoxyCodeLine{00497\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structRanking}{Ranking}}\ \mbox{\hyperlink{classGraph}{rank}}\ =\ \{\mbox{\hyperlink{classGraph}{v}}-\/>getInfo().getCode(),\ \mbox{\hyperlink{classGraph}{total}}\};}
-\DoxyCodeLine{00498\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{vec}}.push\_back(\mbox{\hyperlink{classGraph}{rank}});}
-\DoxyCodeLine{00499\ \ \ \ \ \}}
-\DoxyCodeLine{00500\ \ \ \ \ std::sort(\mbox{\hyperlink{classGraph}{vec}}.begin(),\ \mbox{\hyperlink{classGraph}{vec}}.end(),\ \mbox{\hyperlink{Airport_8cpp_ab603d483fe34cbe7743630230defeeb8}{comparator}});}
-\DoxyCodeLine{00501\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classGraph}{i}}\ =\ 0;}
-\DoxyCodeLine{00502\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{classGraph}{vec}})}
-\DoxyCodeLine{00503\ \ \ \ \ \{}
-\DoxyCodeLine{00504\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{i}}\ <\ \mbox{\hyperlink{classGraph}{arg}})}
-\DoxyCodeLine{00505\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00506\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Code:\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{v}}.code\ <<\ \textcolor{stringliteral}{"{}\ /\ "{}};}
-\DoxyCodeLine{00507\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Name:\ "{}}\ <<\ \mbox{\hyperlink{read_8cpp_a7d6197753985fd4d83f8827b8dde7ed2}{airportsHash}}.find(\mbox{\hyperlink{classGraph}{v}}.code)-\/>second.getName()\ <<\ \textcolor{stringliteral}{"{}\ /\ "{}};}
-\DoxyCodeLine{00508\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Total:\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{v}}.count\ <<\ std::endl;}
-\DoxyCodeLine{00509\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{i}}++;}
-\DoxyCodeLine{00510\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00511\ \ \ \ \ \}}
-\DoxyCodeLine{00512\ \}}
+\DoxyCodeLine{00461\ \{}
+\DoxyCodeLine{00462\ \ \ \ \ std::vector<Ranking>\ \mbox{\hyperlink{classGraph}{vec}};}
+\DoxyCodeLine{00463\ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a39f02be201dda44faae784618a5e3deb}{calculateIndegree}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}});}
+\DoxyCodeLine{00464\ }
+\DoxyCodeLine{00465\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.getVertexSet())}
+\DoxyCodeLine{00466\ \ \ \ \ \{}
+\DoxyCodeLine{00467\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classGraph}{total}}\ =\ \mbox{\hyperlink{classGraph}{v}}-\/>getIndegree()\ +\ \mbox{\hyperlink{classGraph}{v}}-\/>getAdj().size();}
+\DoxyCodeLine{00468\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structRanking}{Ranking}}\ \mbox{\hyperlink{classGraph}{rank}}\ =\ \{\mbox{\hyperlink{classGraph}{v}}-\/>getInfo().getCode(),\ \mbox{\hyperlink{classGraph}{total}}\};}
+\DoxyCodeLine{00469\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{vec}}.push\_back(\mbox{\hyperlink{classGraph}{rank}});}
+\DoxyCodeLine{00470\ \ \ \ \ \}}
+\DoxyCodeLine{00471\ \ \ \ \ std::sort(\mbox{\hyperlink{classGraph}{vec}}.begin(),\ \mbox{\hyperlink{classGraph}{vec}}.end(),\ \mbox{\hyperlink{Airport_8cpp_ab603d483fe34cbe7743630230defeeb8}{comparator}});}
+\DoxyCodeLine{00472\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classGraph}{i}}\ =\ 0;}
+\DoxyCodeLine{00473\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{classGraph}{vec}})}
+\DoxyCodeLine{00474\ \ \ \ \ \{}
+\DoxyCodeLine{00475\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{i}}\ <\ \mbox{\hyperlink{classGraph}{arg}})}
+\DoxyCodeLine{00476\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00477\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Code:\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{v}}.code\ <<\ \textcolor{stringliteral}{"{}\ /\ "{}};}
+\DoxyCodeLine{00478\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Name:\ "{}}\ <<\ \mbox{\hyperlink{read_8cpp_a7d6197753985fd4d83f8827b8dde7ed2}{airportsHash}}.find(\mbox{\hyperlink{classGraph}{v}}.code)-\/>second.getName()\ <<\ \textcolor{stringliteral}{"{}\ /\ "{}};}
+\DoxyCodeLine{00479\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Total:\ "{}}\ <<\ \mbox{\hyperlink{classGraph}{v}}.count\ <<\ std::endl;}
+\DoxyCodeLine{00480\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{i}}++;}
+\DoxyCodeLine{00481\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00482\ \ \ \ \ \}}
+\DoxyCodeLine{00483\ \}}
 
 \end{DoxyCode}
 \Hypertarget{dbairport_8cpp_a91627b34536fbd704b2fb7ca6853b47a}\label{dbairport_8cpp_a91627b34536fbd704b2fb7ca6853b47a} 
@@ -1787,16 +1738,16 @@ void
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00450}{450}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00421}{421}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00451\ \{}
-\DoxyCodeLine{00452\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.getVertexSet())}
-\DoxyCodeLine{00453\ \ \ \ \ \{}
-\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{v}}-\/>setVisited(\textcolor{keyword}{false});}
-\DoxyCodeLine{00455\ \ \ \ \ \}}
-\DoxyCodeLine{00456\ \}}
+\DoxyCodeLine{00422\ \{}
+\DoxyCodeLine{00423\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{v}}\ :\ \mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}}.getVertexSet())}
+\DoxyCodeLine{00424\ \ \ \ \ \{}
+\DoxyCodeLine{00425\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{v}}-\/>setVisited(\textcolor{keyword}{false});}
+\DoxyCodeLine{00426\ \ \ \ \ \}}
+\DoxyCodeLine{00427\ \}}
 
 \end{DoxyCode}
 \Hypertarget{dbairport_8cpp_a3ca85a500cf9c70a12ba8f2dd24b016e}\label{dbairport_8cpp_a3ca85a500cf9c70a12ba8f2dd24b016e} 
@@ -1827,66 +1778,66 @@ void
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00592}{592}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00563}{563}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00595\ \{}
-\DoxyCodeLine{00596\ }
-\DoxyCodeLine{00597\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<vector<Flight>}}>\ \mbox{\hyperlink{classGraph}{flights}};}
-\DoxyCodeLine{00598\ }
-\DoxyCodeLine{00599\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{s}}\ :\ \mbox{\hyperlink{classGraph}{source}})}
-\DoxyCodeLine{00600\ \ \ \ \ \{}
-\DoxyCodeLine{00601\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::cout\ <<\ "{}Source:\ "{}\ <<\ s-\/>getInfo().getCode()\ <<\ std::endl;}}
-\DoxyCodeLine{00602\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{d}}\ :\ dest)}
-\DoxyCodeLine{00603\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00604\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::cout\ <<\ "{}Destination:\ "{}\ <<\ d-\/>getInfo().getCode()\ <<}}
-\DoxyCodeLine{00605\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::endl;}}
-\DoxyCodeLine{00606\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classGraph}{tgt}}\ =\ \mbox{\hyperlink{classGraph}{d}}-\/>getInfo().getCode();}
-\DoxyCodeLine{00607\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a91627b34536fbd704b2fb7ca6853b47a}{resetVisited}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}});}
-\DoxyCodeLine{00608\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{flights}}\ =\ \mbox{\hyperlink{dbairport_8cpp_ab6dcff908aa0804d5b7a4e7cbcf3103f}{bfsPath}}(\mbox{\hyperlink{classGraph}{s}},\ \mbox{\hyperlink{classGraph}{tgt}},\ \mbox{\hyperlink{classGraph}{airplanes}});}
-\DoxyCodeLine{00609\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{paths}}.insert(\mbox{\hyperlink{classGraph}{paths}}.end(),\ \mbox{\hyperlink{classGraph}{flights}}.begin(),\ \mbox{\hyperlink{classGraph}{flights}}.end());}
-\DoxyCodeLine{00610\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00611\ \ \ \ \ \}}
-\DoxyCodeLine{00612\ }
-\DoxyCodeLine{00613\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{paths}}.empty())}
-\DoxyCodeLine{00614\ \ \ \ \ \{}
-\DoxyCodeLine{00615\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
-\DoxyCodeLine{00616\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
-\DoxyCodeLine{00617\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Sorry,\ but\ there\ is\ no\ result\ with\ those\ inputs."{}}}
-\DoxyCodeLine{00618\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
-\DoxyCodeLine{00619\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00566\ \{}
+\DoxyCodeLine{00567\ }
+\DoxyCodeLine{00568\ \ \ \ \ \mbox{\hyperlink{classGraph}{vector<vector<Flight>}}>\ \mbox{\hyperlink{classGraph}{flights}};}
+\DoxyCodeLine{00569\ }
+\DoxyCodeLine{00570\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{s}}\ :\ \mbox{\hyperlink{classGraph}{source}})}
+\DoxyCodeLine{00571\ \ \ \ \ \{}
+\DoxyCodeLine{00572\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::cout\ <<\ "{}Source:\ "{}\ <<\ s-\/>getInfo().getCode()\ <<\ std::endl;}}
+\DoxyCodeLine{00573\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{d}}\ :\ dest)}
+\DoxyCodeLine{00574\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00575\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::cout\ <<\ "{}Destination:\ "{}\ <<\ d-\/>getInfo().getCode()\ <<}}
+\DoxyCodeLine{00576\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::endl;}}
+\DoxyCodeLine{00577\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classGraph}{tgt}}\ =\ \mbox{\hyperlink{classGraph}{d}}-\/>getInfo().getCode();}
+\DoxyCodeLine{00578\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbairport_8cpp_a91627b34536fbd704b2fb7ca6853b47a}{resetVisited}}(\mbox{\hyperlink{Menu_8cpp_a0871053e60fa6b95b353b30264e80e6b}{airports}});}
+\DoxyCodeLine{00579\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{flights}}\ =\ \mbox{\hyperlink{dbairport_8cpp_ab6dcff908aa0804d5b7a4e7cbcf3103f}{bfsPath}}(\mbox{\hyperlink{classGraph}{s}},\ \mbox{\hyperlink{classGraph}{tgt}},\ \mbox{\hyperlink{classGraph}{airplanes}});}
+\DoxyCodeLine{00580\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGraph}{paths}}.insert(\mbox{\hyperlink{classGraph}{paths}}.end(),\ \mbox{\hyperlink{classGraph}{flights}}.begin(),\ \mbox{\hyperlink{classGraph}{flights}}.end());}
+\DoxyCodeLine{00581\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00582\ \ \ \ \ \}}
+\DoxyCodeLine{00583\ }
+\DoxyCodeLine{00584\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{paths}}.empty())}
+\DoxyCodeLine{00585\ \ \ \ \ \{}
+\DoxyCodeLine{00586\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{00587\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00588\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Sorry,\ but\ there\ is\ no\ result\ with\ those\ inputs."{}}}
+\DoxyCodeLine{00589\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00590\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00591\ \ \ \ \ \}}
+\DoxyCodeLine{00592\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00593\ \ \ \ \ \{}
+\DoxyCodeLine{00594\ }
+\DoxyCodeLine{00595\ \ \ \ \ \ \ \ \ std::sort(\mbox{\hyperlink{classGraph}{paths}}.begin(),\ \mbox{\hyperlink{classGraph}{paths}}.end(),\ \mbox{\hyperlink{dbairport_8cpp_af365ed6716b9c0e05c725ef20edbb240}{comparatorPath}});}
+\DoxyCodeLine{00596\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classGraph}{min}}\ =\ \mbox{\hyperlink{classGraph}{paths}}[0].size();}
+\DoxyCodeLine{00597\ }
+\DoxyCodeLine{00598\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&\mbox{\hyperlink{classGraph}{p}}\ :\ \mbox{\hyperlink{classGraph}{paths}})}
+\DoxyCodeLine{00599\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00600\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{p}}.size()\ >\ \mbox{\hyperlink{classGraph}{min}})}
+\DoxyCodeLine{00601\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00602\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00603\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00604\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{00605\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00606\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&\mbox{\hyperlink{classGraph}{f}}\ :\ \mbox{\hyperlink{classGraph}{p}})}
+\DoxyCodeLine{00607\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00608\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classGraph}{f}}.airline.empty())}
+\DoxyCodeLine{00609\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00610\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \mbox{\hyperlink{classGraph}{f}}.code\ <<\ \textcolor{stringliteral}{"{}\ -\/("{}}\ <<\ \mbox{\hyperlink{classGraph}{f}}.airline\ <<\ \textcolor{stringliteral}{"{})"{}}}
+\DoxyCodeLine{00611\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}-\/>\ "{}};}
+\DoxyCodeLine{00612\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00613\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00614\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00615\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \mbox{\hyperlink{classGraph}{f}}.code;}
+\DoxyCodeLine{00616\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00617\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00618\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ std::endl;}
+\DoxyCodeLine{00619\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00620\ \ \ \ \ \}}
-\DoxyCodeLine{00621\ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00622\ \ \ \ \ \{}
-\DoxyCodeLine{00623\ }
-\DoxyCodeLine{00624\ \ \ \ \ \ \ \ \ std::sort(\mbox{\hyperlink{classGraph}{paths}}.begin(),\ \mbox{\hyperlink{classGraph}{paths}}.end(),\ \mbox{\hyperlink{dbairport_8cpp_af365ed6716b9c0e05c725ef20edbb240}{comparatorPath}});}
-\DoxyCodeLine{00625\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classGraph}{min}}\ =\ \mbox{\hyperlink{classGraph}{paths}}[0].size();}
-\DoxyCodeLine{00626\ }
-\DoxyCodeLine{00627\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&\mbox{\hyperlink{classGraph}{p}}\ :\ \mbox{\hyperlink{classGraph}{paths}})}
-\DoxyCodeLine{00628\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00629\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{p}}.size()\ >\ \mbox{\hyperlink{classGraph}{min}})}
-\DoxyCodeLine{00630\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00631\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
-\DoxyCodeLine{00632\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00633\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
-\DoxyCodeLine{00634\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
-\DoxyCodeLine{00635\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&\mbox{\hyperlink{classGraph}{f}}\ :\ \mbox{\hyperlink{classGraph}{p}})}
-\DoxyCodeLine{00636\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00637\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classGraph}{f}}.airline.empty())}
-\DoxyCodeLine{00638\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00639\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \mbox{\hyperlink{classGraph}{f}}.code\ <<\ \textcolor{stringliteral}{"{}\ -\/("{}}\ <<\ \mbox{\hyperlink{classGraph}{f}}.airline\ <<\ \textcolor{stringliteral}{"{})"{}}}
-\DoxyCodeLine{00640\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}-\/>\ "{}};}
-\DoxyCodeLine{00641\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00642\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00643\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00644\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \mbox{\hyperlink{classGraph}{f}}.code;}
-\DoxyCodeLine{00645\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00646\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00647\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ std::endl;}
-\DoxyCodeLine{00648\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00649\ \ \ \ \ \}}
-\DoxyCodeLine{00650\ \}}
+\DoxyCodeLine{00621\ \}}
 
 \end{DoxyCode}
 \Hypertarget{dbairport_8cpp_a713722d082d9cd3da930466d38d2305c}\label{dbairport_8cpp_a713722d082d9cd3da930466d38d2305c} 
@@ -1909,39 +1860,39 @@ void
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00661}{661}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00632}{632}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00662\ \{}
-\DoxyCodeLine{00663\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{paths}}.empty())}
-\DoxyCodeLine{00664\ \ \ \ \ \{}
-\DoxyCodeLine{00665\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
-\DoxyCodeLine{00666\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
-\DoxyCodeLine{00667\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Sorry,\ but\ there\ is\ no\ result\ with\ those\ inputs."{}}}
-\DoxyCodeLine{00668\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
-\DoxyCodeLine{00669\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00670\ \ \ \ \ \}}
-\DoxyCodeLine{00671\ }
-\DoxyCodeLine{00672\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{path}}\ :\ \mbox{\hyperlink{classGraph}{paths}})}
-\DoxyCodeLine{00673\ \ \ \ \ \{}
-\DoxyCodeLine{00674\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
-\DoxyCodeLine{00675\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
-\DoxyCodeLine{00676\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{p}}\ :\ \mbox{\hyperlink{classGraph}{path}})}
-\DoxyCodeLine{00677\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00678\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classGraph}{p}}.airline.empty())}
-\DoxyCodeLine{00679\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00680\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \mbox{\hyperlink{classGraph}{p}}.code\ <<\ \textcolor{stringliteral}{"{}\ -\/("{}}\ <<\ \mbox{\hyperlink{classGraph}{p}}.airline\ <<\ \textcolor{stringliteral}{"{})"{}}}
-\DoxyCodeLine{00681\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}-\/>\ "{}};}
-\DoxyCodeLine{00682\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00683\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00684\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00685\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \mbox{\hyperlink{classGraph}{p}}.code;}
-\DoxyCodeLine{00686\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00687\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00688\ \ \ \ \ \ \ \ \ std::cout\ <<\ std::endl;}
-\DoxyCodeLine{00689\ \ \ \ \ \}}
-\DoxyCodeLine{00690\ \}}
+\DoxyCodeLine{00633\ \{}
+\DoxyCodeLine{00634\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGraph}{paths}}.empty())}
+\DoxyCodeLine{00635\ \ \ \ \ \{}
+\DoxyCodeLine{00636\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{00637\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00638\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Sorry,\ but\ there\ is\ no\ result\ with\ those\ inputs."{}}}
+\DoxyCodeLine{00639\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00640\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00641\ \ \ \ \ \}}
+\DoxyCodeLine{00642\ }
+\DoxyCodeLine{00643\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{path}}\ :\ \mbox{\hyperlink{classGraph}{paths}})}
+\DoxyCodeLine{00644\ \ \ \ \ \{}
+\DoxyCodeLine{00645\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{00646\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00647\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classGraph}{p}}\ :\ \mbox{\hyperlink{classGraph}{path}})}
+\DoxyCodeLine{00648\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00649\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classGraph}{p}}.airline.empty())}
+\DoxyCodeLine{00650\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00651\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \mbox{\hyperlink{classGraph}{p}}.code\ <<\ \textcolor{stringliteral}{"{}\ -\/("{}}\ <<\ \mbox{\hyperlink{classGraph}{p}}.airline\ <<\ \textcolor{stringliteral}{"{})"{}}}
+\DoxyCodeLine{00652\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}-\/>\ "{}};}
+\DoxyCodeLine{00653\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00654\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00655\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00656\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \mbox{\hyperlink{classGraph}{p}}.code;}
+\DoxyCodeLine{00657\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00658\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00659\ \ \ \ \ \ \ \ \ std::cout\ <<\ std::endl;}
+\DoxyCodeLine{00660\ \ \ \ \ \}}
+\DoxyCodeLine{00661\ \}}
 
 \end{DoxyCode}
 \Hypertarget{dbairport_8cpp_aec487f2b258d2630193c6dee0c78665d}\label{dbairport_8cpp_aec487f2b258d2630193c6dee0c78665d} 
@@ -1964,10 +1915,10 @@ double The converted degree.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00747}{747}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
+Definition at line \mbox{\hyperlink{dbairport_8cpp_source_l00718}{718}} of file \mbox{\hyperlink{dbairport_8cpp_source}{dbairport.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00747\ \{\ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{classGraph}{degree}}\ *\ \mbox{\hyperlink{classGraph}{M\_PI}}\ /\ 180);\ \}}
+\DoxyCodeLine{00718\ \{\ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{classGraph}{degree}}\ *\ \mbox{\hyperlink{classGraph}{M\_PI}}\ /\ 180);\ \}}
 
 \end{DoxyCode}

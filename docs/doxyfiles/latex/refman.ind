@@ -19,7 +19,7 @@
   \item {airline}
     \subitem {Flight}, \hyperpage{20}
   \item {airlines}
-    \subitem {Menu.cpp}, \hyperpage{142}
+    \subitem {Menu.cpp}, \hyperpage{140}
   \item {Airport}, \hyperpage{10}
     \subitem {Airport}, \hyperpage{11}
     \subitem {display}, \hyperpage{12}
@@ -41,16 +41,16 @@
   \item {Airport.h}
     \subitem {comparator}, \hyperpage{40}
   \item {airports}
-    \subitem {Menu.cpp}, \hyperpage{142}
+    \subitem {Menu.cpp}, \hyperpage{140}
   \item {airportsHash}
-    \subitem {read.cpp}, \hyperpage{118}
-    \subitem {read.h}, \hyperpage{124}
+    \subitem {read.cpp}, \hyperpage{116}
+    \subitem {read.h}, \hyperpage{122}
 
   \indexspace
 
   \item {bestFlights}
-    \subitem {Menu.cpp}, \hyperpage{126}
-    \subitem {Menu.h}, \hyperpage{155}
+    \subitem {Menu.cpp}, \hyperpage{124}
+    \subitem {Menu.h}, \hyperpage{152}
   \item {bfs}
     \subitem {Graph$<$ T $>$}, \hyperpage{23}
   \item {bfsPath}
@@ -63,8 +63,8 @@
     \subitem {dbairport.cpp}, \hyperpage{50}
     \subitem {dbairport.h}, \hyperpage{88}
   \item {citiesHash}
-    \subitem {read.cpp}, \hyperpage{118}
-    \subitem {read.h}, \hyperpage{124}
+    \subitem {read.cpp}, \hyperpage{116}
+    \subitem {read.h}, \hyperpage{122}
   \item {code}
     \subitem {Flight}, \hyperpage{20}
     \subitem {Ranking}, \hyperpage{29}
@@ -73,15 +73,15 @@
     \subitem {Airport.h}, \hyperpage{40}
   \item {comparatorPath}
     \subitem {dbairport.cpp}, \hyperpage{51}
-    \subitem {dbairport.h}, \hyperpage{89}
+    \subitem {dbairport.h}, \hyperpage{88}
   \item {connectedComponents}
     \subitem {dbairport.cpp}, \hyperpage{51}
     \subitem {dbairport.h}, \hyperpage{89}
   \item {count}
     \subitem {Ranking}, \hyperpage{29}
   \item {countriesHash}
-    \subitem {read.cpp}, \hyperpage{118}
-    \subitem {read.h}, \hyperpage{124}
+    \subitem {read.cpp}, \hyperpage{116}
+    \subitem {read.h}, \hyperpage{122}
 
   \indexspace
 
@@ -95,19 +95,18 @@
     \subitem {dfsMax}, \hyperpage{53}
     \subitem {dfsVisit}, \hyperpage{53, 54}
     \subitem {distanceEarth}, \hyperpage{55}
-    \subitem {findAirports}, \hyperpage{55, 56}
+    \subitem {findAirports}, \hyperpage{55}, \hyperpage{57}
     \subitem {findArticulationPoints}, \hyperpage{57}
-    \subitem {findBestFlights}, \hyperpage{57--62}
-    \subitem {getPath}, \hyperpage{62}
-    \subitem {quantityAirlinesCountry}, \hyperpage{63}
+    \subitem {findBestFlights}, \hyperpage{58--62}
+    \subitem {getPath}, \hyperpage{63}
+    \subitem {quantityAirlinesCountry}, \hyperpage{64}
     \subitem {quantityAirports}, \hyperpage{64}
-    \subitem {quantityAirportsCity}, \hyperpage{64}
+    \subitem {quantityAirportsCity}, \hyperpage{65}
     \subitem {quantityAirportsCountry}, \hyperpage{65}
-    \subitem {quantityCitiesCountry}, \hyperpage{65}
+    \subitem {quantityCitiesCountry}, \hyperpage{66}
     \subitem {quantityDestinationLimitedStop}, \hyperpage{66}
-    \subitem {quantityDestinationMax}, \hyperpage{66}
-    \subitem {quantityDestinationsAirport}, \hyperpage{67}
-    \subitem {quantityDestinationsCountry}, \hyperpage{67}
+    \subitem {quantityDestinationMax}, \hyperpage{67}
+    \subitem {quantityDestinationsAirport}, \hyperpage{68}
     \subitem {quantityFlights}, \hyperpage{68, 69}
     \subitem {quantityFlightsAirline}, \hyperpage{69}
     \subitem {quantityFlightsAirport}, \hyperpage{70}
@@ -120,46 +119,45 @@
   \item {dbairport.h}
     \subitem {bfsPath}, \hyperpage{87}
     \subitem {calculateIndegree}, \hyperpage{88}
-    \subitem {comparatorPath}, \hyperpage{89}
+    \subitem {comparatorPath}, \hyperpage{88}
     \subitem {connectedComponents}, \hyperpage{89}
-    \subitem {dfsArtc}, \hyperpage{90}
+    \subitem {dfsArtc}, \hyperpage{89}
     \subitem {dfsConnectedComponents}, \hyperpage{90}
-    \subitem {dfsMax}, \hyperpage{91}
+    \subitem {dfsMax}, \hyperpage{90}
     \subitem {dfsVisit}, \hyperpage{91, 92}
-    \subitem {distanceEarth}, \hyperpage{93}
-    \subitem {findAirports}, \hyperpage{93}, \hyperpage{95}
-    \subitem {findArticulationPoints}, \hyperpage{95}
-    \subitem {findBestFlights}, \hyperpage{96--100}
-    \subitem {getPath}, \hyperpage{101}
-    \subitem {quantityAirlinesCountry}, \hyperpage{102}
-    \subitem {quantityAirports}, \hyperpage{102}
-    \subitem {quantityAirportsCity}, \hyperpage{103}
-    \subitem {quantityAirportsCountry}, \hyperpage{103}
-    \subitem {quantityCitiesCountry}, \hyperpage{104}
-    \subitem {quantityDestinationLimitedStop}, \hyperpage{104}
-    \subitem {quantityDestinationMax}, \hyperpage{105}
-    \subitem {quantityDestinationsAirport}, \hyperpage{106}
-    \subitem {quantityDestinationsCountry}, \hyperpage{106}
-    \subitem {quantityFlights}, \hyperpage{107}
-    \subitem {quantityFlightsAirline}, \hyperpage{108}
-    \subitem {quantityFlightsAirport}, \hyperpage{108}
-    \subitem {quantityFlightsCity}, \hyperpage{109}
-    \subitem {quantityFlightsCountry}, \hyperpage{110}
-    \subitem {rankingAirports}, \hyperpage{110}
-    \subitem {resetVisited}, \hyperpage{111}
-    \subitem {showPath}, \hyperpage{111, 112}
-    \subitem {toRadians}, \hyperpage{113}
+    \subitem {distanceEarth}, \hyperpage{92}
+    \subitem {findAirports}, \hyperpage{93, 94}
+    \subitem {findArticulationPoints}, \hyperpage{94}
+    \subitem {findBestFlights}, \hyperpage{95--99}
+    \subitem {getPath}, \hyperpage{100}
+    \subitem {quantityAirlinesCountry}, \hyperpage{101}
+    \subitem {quantityAirports}, \hyperpage{101}
+    \subitem {quantityAirportsCity}, \hyperpage{102}
+    \subitem {quantityAirportsCountry}, \hyperpage{102}
+    \subitem {quantityCitiesCountry}, \hyperpage{103}
+    \subitem {quantityDestinationLimitedStop}, \hyperpage{103}
+    \subitem {quantityDestinationMax}, \hyperpage{104}
+    \subitem {quantityDestinationsAirport}, \hyperpage{104}
+    \subitem {quantityFlights}, \hyperpage{105}
+    \subitem {quantityFlightsAirline}, \hyperpage{106}
+    \subitem {quantityFlightsAirport}, \hyperpage{107}
+    \subitem {quantityFlightsCity}, \hyperpage{107}
+    \subitem {quantityFlightsCountry}, \hyperpage{108}
+    \subitem {rankingAirports}, \hyperpage{108}
+    \subitem {resetVisited}, \hyperpage{109}
+    \subitem {showPath}, \hyperpage{109}, \hyperpage{111}
+    \subitem {toRadians}, \hyperpage{111}
   \item {dfs}
     \subitem {Graph$<$ T $>$}, \hyperpage{23, 24}
   \item {dfsArtc}
     \subitem {dbairport.cpp}, \hyperpage{52}
-    \subitem {dbairport.h}, \hyperpage{90}
+    \subitem {dbairport.h}, \hyperpage{89}
   \item {dfsConnectedComponents}
     \subitem {dbairport.cpp}, \hyperpage{52}
     \subitem {dbairport.h}, \hyperpage{90}
   \item {dfsMax}
     \subitem {dbairport.cpp}, \hyperpage{53}
-    \subitem {dbairport.h}, \hyperpage{91}
+    \subitem {dbairport.h}, \hyperpage{90}
   \item {dfsVisit}
     \subitem {dbairport.cpp}, \hyperpage{53, 54}
     \subitem {dbairport.h}, \hyperpage{91, 92}
@@ -168,7 +166,7 @@
     \subitem {Airport}, \hyperpage{12}
   \item {distanceEarth}
     \subitem {dbairport.cpp}, \hyperpage{55}
-    \subitem {dbairport.h}, \hyperpage{93}
+    \subitem {dbairport.h}, \hyperpage{92}
 
   \indexspace
 
@@ -187,17 +185,17 @@
   \indexspace
 
   \item {filterAirplanes}
-    \subitem {Menu.cpp}, \hyperpage{128}
-    \subitem {Menu.h}, \hyperpage{156}
+    \subitem {Menu.cpp}, \hyperpage{126}
+    \subitem {Menu.h}, \hyperpage{154}
   \item {findAirports}
-    \subitem {dbairport.cpp}, \hyperpage{55, 56}
-    \subitem {dbairport.h}, \hyperpage{93}, \hyperpage{95}
+    \subitem {dbairport.cpp}, \hyperpage{55}, \hyperpage{57}
+    \subitem {dbairport.h}, \hyperpage{93, 94}
   \item {findArticulationPoints}
     \subitem {dbairport.cpp}, \hyperpage{57}
-    \subitem {dbairport.h}, \hyperpage{95}
+    \subitem {dbairport.h}, \hyperpage{94}
   \item {findBestFlights}
-    \subitem {dbairport.cpp}, \hyperpage{57--62}
-    \subitem {dbairport.h}, \hyperpage{96--100}
+    \subitem {dbairport.cpp}, \hyperpage{58--62}
+    \subitem {dbairport.h}, \hyperpage{95--99}
   \item {findVertex}
     \subitem {Graph$<$ T $>$}, \hyperpage{24}
   \item {Flight}, \hyperpage{20}
@@ -238,8 +236,8 @@
   \item {getNumVertex}
     \subitem {Graph$<$ T $>$}, \hyperpage{25}
   \item {getPath}
-    \subitem {dbairport.cpp}, \hyperpage{62}
-    \subitem {dbairport.h}, \hyperpage{101}
+    \subitem {dbairport.cpp}, \hyperpage{63}
+    \subitem {dbairport.h}, \hyperpage{100}
   \item {getRoute}
     \subitem {Edge$<$ T $>$}, \hyperpage{18}
   \item {getVertexSet}
@@ -273,70 +271,70 @@
   \indexspace
 
   \item {main}
-    \subitem {main.cpp}, \hyperpage{125}
+    \subitem {main.cpp}, \hyperpage{123}
   \item {main.cpp}
-    \subitem {main}, \hyperpage{125}
+    \subitem {main}, \hyperpage{123}
   \item {Menu}
+    \subitem {Menu.cpp}, \hyperpage{127}
+    \subitem {Menu.h}, \hyperpage{155}
+  \item {Menu.cpp}
+    \subitem {airlines}, \hyperpage{140}
+    \subitem {airports}, \hyperpage{140}
+    \subitem {bestFlights}, \hyperpage{124}
+    \subitem {filterAirplanes}, \hyperpage{126}
+    \subitem {Menu}, \hyperpage{127}
+    \subitem {menuAirlines}, \hyperpage{128}
+    \subitem {menuAirports}, \hyperpage{129}
+    \subitem {menuCities}, \hyperpage{130}
+    \subitem {menuCountries}, \hyperpage{131}
+    \subitem {menuDestination}, \hyperpage{132}
+    \subitem {menuFlights}, \hyperpage{133}
+    \subitem {menuListing}, \hyperpage{135}
+    \subitem {menuQuantity}, \hyperpage{136}
+    \subitem {selectType}, \hyperpage{137}
+    \subitem {typeAirport}, \hyperpage{138}
+    \subitem {typeCity}, \hyperpage{138}
+    \subitem {typeCoordinates}, \hyperpage{139}
+  \item {Menu.h}
+    \subitem {bestFlights}, \hyperpage{152}
+    \subitem {filterAirplanes}, \hyperpage{154}
+    \subitem {Menu}, \hyperpage{155}
+    \subitem {menuAirlines}, \hyperpage{156}
+    \subitem {menuAirports}, \hyperpage{157}
+    \subitem {menuCities}, \hyperpage{158}
+    \subitem {menuCountries}, \hyperpage{159}
+    \subitem {menuDestination}, \hyperpage{160}
+    \subitem {menuFlights}, \hyperpage{161}
+    \subitem {menuListing}, \hyperpage{163}
+    \subitem {menuQuantity}, \hyperpage{164}
+    \subitem {selectType}, \hyperpage{165}
+    \subitem {typeAirport}, \hyperpage{166}
+    \subitem {typeCity}, \hyperpage{166}
+    \subitem {typeCoordinates}, \hyperpage{167}
+  \item {menuAirlines}
+    \subitem {Menu.cpp}, \hyperpage{128}
+    \subitem {Menu.h}, \hyperpage{156}
+  \item {menuAirports}
     \subitem {Menu.cpp}, \hyperpage{129}
     \subitem {Menu.h}, \hyperpage{157}
-  \item {Menu.cpp}
-    \subitem {airlines}, \hyperpage{142}
-    \subitem {airports}, \hyperpage{142}
-    \subitem {bestFlights}, \hyperpage{126}
-    \subitem {filterAirplanes}, \hyperpage{128}
-    \subitem {Menu}, \hyperpage{129}
-    \subitem {menuAirlines}, \hyperpage{130}
-    \subitem {menuAirports}, \hyperpage{131}
-    \subitem {menuCities}, \hyperpage{132}
-    \subitem {menuCountries}, \hyperpage{133}
-    \subitem {menuDestination}, \hyperpage{134}
-    \subitem {menuFlights}, \hyperpage{136}
-    \subitem {menuListing}, \hyperpage{137}
-    \subitem {menuQuantity}, \hyperpage{138}
-    \subitem {selectType}, \hyperpage{139}
-    \subitem {typeAirport}, \hyperpage{140}
-    \subitem {typeCity}, \hyperpage{140}
-    \subitem {typeCoordinates}, \hyperpage{141}
-  \item {Menu.h}
-    \subitem {bestFlights}, \hyperpage{155}
-    \subitem {filterAirplanes}, \hyperpage{156}
-    \subitem {Menu}, \hyperpage{157}
-    \subitem {menuAirlines}, \hyperpage{158}
-    \subitem {menuAirports}, \hyperpage{159}
-    \subitem {menuCities}, \hyperpage{160}
-    \subitem {menuCountries}, \hyperpage{161}
-    \subitem {menuDestination}, \hyperpage{162}
-    \subitem {menuFlights}, \hyperpage{164}
-    \subitem {menuListing}, \hyperpage{165}
-    \subitem {menuQuantity}, \hyperpage{166}
-    \subitem {selectType}, \hyperpage{167}
-    \subitem {typeAirport}, \hyperpage{168}
-    \subitem {typeCity}, \hyperpage{169}
-    \subitem {typeCoordinates}, \hyperpage{169}
-  \item {menuAirlines}
+  \item {menuCities}
     \subitem {Menu.cpp}, \hyperpage{130}
     \subitem {Menu.h}, \hyperpage{158}
-  \item {menuAirports}
+  \item {menuCountries}
     \subitem {Menu.cpp}, \hyperpage{131}
     \subitem {Menu.h}, \hyperpage{159}
-  \item {menuCities}
+  \item {menuDestination}
     \subitem {Menu.cpp}, \hyperpage{132}
     \subitem {Menu.h}, \hyperpage{160}
-  \item {menuCountries}
+  \item {menuFlights}
     \subitem {Menu.cpp}, \hyperpage{133}
     \subitem {Menu.h}, \hyperpage{161}
-  \item {menuDestination}
-    \subitem {Menu.cpp}, \hyperpage{134}
-    \subitem {Menu.h}, \hyperpage{162}
-  \item {menuFlights}
+  \item {menuListing}
+    \subitem {Menu.cpp}, \hyperpage{135}
+    \subitem {Menu.h}, \hyperpage{163}
+  \item {menuQuantity}
     \subitem {Menu.cpp}, \hyperpage{136}
     \subitem {Menu.h}, \hyperpage{164}
-  \item {menuListing}
-    \subitem {Menu.cpp}, \hyperpage{137}
-    \subitem {Menu.h}, \hyperpage{165}
-  \item {menuQuantity}
-    \subitem {Menu.cpp}, \hyperpage{138}
-    \subitem {Menu.h}, \hyperpage{166}
 
   \indexspace
 
@@ -347,47 +345,44 @@
   \indexspace
 
   \item {quantityAirlinesCountry}
-    \subitem {dbairport.cpp}, \hyperpage{63}
-    \subitem {dbairport.h}, \hyperpage{102}
+    \subitem {dbairport.cpp}, \hyperpage{64}
+    \subitem {dbairport.h}, \hyperpage{101}
   \item {quantityAirports}
     \subitem {dbairport.cpp}, \hyperpage{64}
-    \subitem {dbairport.h}, \hyperpage{102}
+    \subitem {dbairport.h}, \hyperpage{101}
   \item {quantityAirportsCity}
-    \subitem {dbairport.cpp}, \hyperpage{64}
-    \subitem {dbairport.h}, \hyperpage{103}
+    \subitem {dbairport.cpp}, \hyperpage{65}
+    \subitem {dbairport.h}, \hyperpage{102}
   \item {quantityAirportsCountry}
     \subitem {dbairport.cpp}, \hyperpage{65}
-    \subitem {dbairport.h}, \hyperpage{103}
+    \subitem {dbairport.h}, \hyperpage{102}
   \item {quantityCitiesCountry}
-    \subitem {dbairport.cpp}, \hyperpage{65}
-    \subitem {dbairport.h}, \hyperpage{104}
+    \subitem {dbairport.cpp}, \hyperpage{66}
+    \subitem {dbairport.h}, \hyperpage{103}
   \item {quantityDestinationLimitedStop}
     \subitem {dbairport.cpp}, \hyperpage{66}
-    \subitem {dbairport.h}, \hyperpage{104}
+    \subitem {dbairport.h}, \hyperpage{103}
   \item {quantityDestinationMax}
-    \subitem {dbairport.cpp}, \hyperpage{66}
-    \subitem {dbairport.h}, \hyperpage{105}
+    \subitem {dbairport.cpp}, \hyperpage{67}
+    \subitem {dbairport.h}, \hyperpage{104}
   \item {quantityDestinationsAirport}
-    \subitem {dbairport.cpp}, \hyperpage{67}
-    \subitem {dbairport.h}, \hyperpage{106}
-  \item {quantityDestinationsCountry}
-    \subitem {dbairport.cpp}, \hyperpage{67}
-    \subitem {dbairport.h}, \hyperpage{106}
+    \subitem {dbairport.cpp}, \hyperpage{68}
+    \subitem {dbairport.h}, \hyperpage{104}
   \item {quantityFlights}
     \subitem {dbairport.cpp}, \hyperpage{68, 69}
-    \subitem {dbairport.h}, \hyperpage{107}
+    \subitem {dbairport.h}, \hyperpage{105}
   \item {quantityFlightsAirline}
     \subitem {dbairport.cpp}, \hyperpage{69}
-    \subitem {dbairport.h}, \hyperpage{108}
+    \subitem {dbairport.h}, \hyperpage{106}
   \item {quantityFlightsAirport}
     \subitem {dbairport.cpp}, \hyperpage{70}
-    \subitem {dbairport.h}, \hyperpage{108}
+    \subitem {dbairport.h}, \hyperpage{107}
   \item {quantityFlightsCity}
     \subitem {dbairport.cpp}, \hyperpage{70}
-    \subitem {dbairport.h}, \hyperpage{109}
+    \subitem {dbairport.h}, \hyperpage{107}
   \item {quantityFlightsCountry}
     \subitem {dbairport.cpp}, \hyperpage{71}
-    \subitem {dbairport.h}, \hyperpage{110}
+    \subitem {dbairport.h}, \hyperpage{108}
 
   \indexspace
 
@@ -396,43 +391,43 @@
     \subitem {count}, \hyperpage{29}
   \item {rankingAirports}
     \subitem {dbairport.cpp}, \hyperpage{71}
-    \subitem {dbairport.h}, \hyperpage{110}
+    \subitem {dbairport.h}, \hyperpage{108}
   \item {read.cpp}
-    \subitem {airportsHash}, \hyperpage{118}
-    \subitem {citiesHash}, \hyperpage{118}
-    \subitem {countriesHash}, \hyperpage{118}
-    \subitem {readAirlines}, \hyperpage{115}
-    \subitem {readAirports}, \hyperpage{116}
-    \subitem {readFlights}, \hyperpage{117}
+    \subitem {airportsHash}, \hyperpage{116}
+    \subitem {citiesHash}, \hyperpage{116}
+    \subitem {countriesHash}, \hyperpage{116}
+    \subitem {readAirlines}, \hyperpage{113}
+    \subitem {readAirports}, \hyperpage{114}
+    \subitem {readFlights}, \hyperpage{115}
   \item {read.h}
-    \subitem {airportsHash}, \hyperpage{124}
-    \subitem {citiesHash}, \hyperpage{124}
-    \subitem {countriesHash}, \hyperpage{124}
-    \subitem {readAirlines}, \hyperpage{121}
-    \subitem {readAirports}, \hyperpage{122}
-    \subitem {readFlights}, \hyperpage{123}
+    \subitem {airportsHash}, \hyperpage{122}
+    \subitem {citiesHash}, \hyperpage{122}
+    \subitem {countriesHash}, \hyperpage{122}
+    \subitem {readAirlines}, \hyperpage{119}
+    \subitem {readAirports}, \hyperpage{120}
+    \subitem {readFlights}, \hyperpage{121}
   \item {readAirlines}
+    \subitem {read.cpp}, \hyperpage{113}
+    \subitem {read.h}, \hyperpage{119}
+  \item {readAirports}
+    \subitem {read.cpp}, \hyperpage{114}
+    \subitem {read.h}, \hyperpage{120}
+  \item {readFlights}
     \subitem {read.cpp}, \hyperpage{115}
     \subitem {read.h}, \hyperpage{121}
-  \item {readAirports}
-    \subitem {read.cpp}, \hyperpage{116}
-    \subitem {read.h}, \hyperpage{122}
-  \item {readFlights}
-    \subitem {read.cpp}, \hyperpage{117}
-    \subitem {read.h}, \hyperpage{123}
   \item {removeEdge}
     \subitem {Graph$<$ T $>$}, \hyperpage{26}
   \item {removeVertex}
     \subitem {Graph$<$ T $>$}, \hyperpage{27}
   \item {resetVisited}
     \subitem {dbairport.cpp}, \hyperpage{72}
-    \subitem {dbairport.h}, \hyperpage{111}
+    \subitem {dbairport.h}, \hyperpage{109}
 
   \indexspace
 
   \item {selectType}
-    \subitem {Menu.cpp}, \hyperpage{139}
-    \subitem {Menu.h}, \hyperpage{167}
+    \subitem {Menu.cpp}, \hyperpage{137}
+    \subitem {Menu.h}, \hyperpage{165}
   \item {setAdj}
     \subitem {Vertex$<$ T $>$}, \hyperpage{33}
   \item {setCallsign}
@@ -470,19 +465,19 @@
     \subitem {Edge$<$ T $>$}, \hyperpage{19}
   \item {showPath}
     \subitem {dbairport.cpp}, \hyperpage{72}, \hyperpage{74}
-    \subitem {dbairport.h}, \hyperpage{111, 112}
+    \subitem {dbairport.h}, \hyperpage{109}, \hyperpage{111}
   \item {src/classes/Airline.cpp}, \hyperpage{37}
   \item {src/classes/Airline.h}, \hyperpage{38}
   \item {src/classes/Airport.cpp}, \hyperpage{38, 39}
   \item {src/classes/Airport.h}, \hyperpage{40, 41}
   \item {src/classes/Graph.h}, \hyperpage{41, 42}
   \item {src/database/dbairport.cpp}, \hyperpage{47}, \hyperpage{75}
-  \item {src/database/dbairport.h}, \hyperpage{84}, \hyperpage{113}
-  \item {src/database/read.cpp}, \hyperpage{115}, \hyperpage{119}
-  \item {src/database/read.h}, \hyperpage{120}, \hyperpage{124}
-  \item {src/main.cpp}, \hyperpage{124, 125}
-  \item {src/Menu.cpp}, \hyperpage{125}, \hyperpage{142}
-  \item {src/Menu.h}, \hyperpage{154}, \hyperpage{170}
+  \item {src/database/dbairport.h}, \hyperpage{84}, \hyperpage{112}
+  \item {src/database/read.cpp}, \hyperpage{113}, \hyperpage{117}
+  \item {src/database/read.h}, \hyperpage{118}, \hyperpage{122}
+  \item {src/main.cpp}, \hyperpage{122, 123}
+  \item {src/Menu.cpp}, \hyperpage{123}, \hyperpage{140}
+  \item {src/Menu.h}, \hyperpage{152}, \hyperpage{168}
 
   \indexspace
 
@@ -490,16 +485,16 @@
     \subitem {Graph$<$ T $>$}, \hyperpage{27}
   \item {toRadians}
     \subitem {dbairport.cpp}, \hyperpage{74}
-    \subitem {dbairport.h}, \hyperpage{113}
+    \subitem {dbairport.h}, \hyperpage{111}
   \item {typeAirport}
-    \subitem {Menu.cpp}, \hyperpage{140}
-    \subitem {Menu.h}, \hyperpage{168}
+    \subitem {Menu.cpp}, \hyperpage{138}
+    \subitem {Menu.h}, \hyperpage{166}
   \item {typeCity}
-    \subitem {Menu.cpp}, \hyperpage{140}
-    \subitem {Menu.h}, \hyperpage{169}
+    \subitem {Menu.cpp}, \hyperpage{138}
+    \subitem {Menu.h}, \hyperpage{166}
   \item {typeCoordinates}
-    \subitem {Menu.cpp}, \hyperpage{141}
-    \subitem {Menu.h}, \hyperpage{169}
+    \subitem {Menu.cpp}, \hyperpage{139}
+    \subitem {Menu.h}, \hyperpage{167}
 
   \indexspace
 
